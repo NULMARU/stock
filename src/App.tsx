@@ -3,6 +3,7 @@ import HomePage from '@/pages/HomePage'
 import StockDetailPage from '@/pages/StockDetailPage'
 import GlossaryPage from '@/pages/GlossaryPage'
 import NewsPage from '@/pages/NewsPage'
+import { Toaster } from '@/components/ui/sonner'
 import { cn } from '@/lib/utils'
 
 const NAV_ITEMS = [
@@ -57,6 +58,8 @@ export default function App() {
           <Route path="/glossary" element={<GlossaryPage />} />
         </Routes>
       </main>
+
+      <Toaster />
     </div>
   )
 }

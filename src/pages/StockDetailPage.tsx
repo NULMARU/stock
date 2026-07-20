@@ -20,6 +20,7 @@ import { GlossaryTermModal } from "@/components/GlossaryTermModal"
 import { MetricCard } from "@/components/MetricCard"
 import { PriceChart } from "@/components/PriceChart"
 import stocksData from "@/data/stocks.json"
+import rawNewsData from "@/data/news.json"
 import {
   changeArrow,
   changeColorClass,
@@ -30,10 +31,12 @@ import {
   MARKET_LABEL,
 } from "@/lib/format"
 import { formatRelativeTime, getNewsForTicker } from "@/lib/news"
+import { useLiveData } from "@/lib/liveData"
 import { cn } from "@/lib/utils"
-import type { BeginnerFit, StockEntry } from "@/types/stock"
+import type { BeginnerFit, NewsData, StockEntry } from "@/types/stock"
 
-const stocks = stocksData as StockEntry[]
+const bundledStocks = stocksData as StockEntry[]
+const bundledNews = rawNewsData as NewsData
 
 const BEGINNER_FIT_META: Record<BeginnerFit, { label: string; className: string }> = {
   good: {
@@ -71,6 +74,11 @@ interface MetricSpec {
 export default function StockDetailPage() {
   const { ticker } = useParams<{ ticker: string }>()
 
+  // 런타임 라이브 데이터 (실패 시 번들 fallback 유지)
+  const stocksLive = useLiveData<StockEntry[]>("stocks.json", bundledStocks)
+  const newsLive = useLiveData<NewsData>("news.json", bundledNews)
+  const stocks = stocksLive.data
+
   const [glossaryTermId, setGlossaryTermId] = useState<string | null>(null)
   const [glossaryOpen, setGlossaryOpen] = useState(false)
   const openGlossary = (id: string) => {
@@ -83,7 +91,7 @@ export default function StockDetailPage() {
       stocks.find(
         (s) => s.ticker.toLowerCase() === (ticker ?? "").toLowerCase(),
       ),
-    [ticker],
+    [stocks, ticker],
   )
 
   // 존재하지 않는 티커 — 친절한 안내 + 홈 링크
@@ -385,7 +393,7 @@ export default function StockDetailPage() {
   const fit = BEGINNER_FIT_META[stock.beginnerFit]
 
   // 이 종목의 수집 뉴스 (최신순 최대 5개)
-  const newsItems = getNewsForTicker(stock.ticker, 5)
+  const newsItems = getNewsForTicker(newsLive.data, stock.ticker, 5)
 
   return (
     <div className="mx-auto w-full max-w-5xl space-y-6 px-4 py-6">

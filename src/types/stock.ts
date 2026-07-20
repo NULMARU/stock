@@ -121,6 +121,63 @@ export interface NewsData {
   entries: Record<string, NewsItem[]>;
 }
 
+/** 유니콘 평가 개별 체크 항목 */
+export interface UnicornCheck {
+  label: string;
+  pass: boolean;
+  /** 판정 근거 — 지표값과 임계값 포함 */
+  detail: string;
+}
+
+/** 유니콘 3축 중 한 축 (밸류에이션 40 / 퀄리티 35 / 성장 25) */
+export interface UnicornPillar {
+  score: number;
+  max: number;
+  checks: UnicornCheck[];
+}
+
+export type UnicornGrade = "A" | "B" | "C";
+
+/** 유니콘 평가 통과 종목 1건 (unicorns.json — 매주 토요일 갱신) */
+export interface UnicornEntry {
+  ticker: string;
+  name: string;
+  nameEn: string;
+  market: Market;
+  currency: Currency;
+  theme: string[];
+  description: string;
+  /** 100점 만점 총점 */
+  totalScore: number;
+  grade: UnicornGrade;
+  pillars: {
+    valuation: UnicornPillar;
+    quality: UnicornPillar;
+    growth: UnicornPillar;
+  };
+  /** 주요 지표 (PER/PBR/PEG/ROE/부채비율/성장률 등), 값 없으면 null */
+  metrics: Record<string, number | null>;
+  quote: {
+    price: number;
+    changePct: number;
+    marketCap: number;
+  };
+  /** 선정 이유 */
+  reasons: string[];
+  risks: string[];
+  sourceNotes: string[];
+}
+
+/** unicorns.json 전체 구조 */
+export interface UnicornData {
+  /** 기준일 YYYY-MM-DD, 평가 전이면 빈 문자열 */
+  asOf: string;
+  methodologyVersion: string;
+  /** 평가 대상 종목 수 */
+  evaluated: number;
+  passed: UnicornEntry[];
+}
+
 /** 사용자가 앱에서 직접 추가한 간이 종목 (localStorage 저장, 정식 데이터 아님) */
 export interface UserAddedStock {
   /** Yahoo Finance 형식 권장: "TSLA", "005930.KS" */

@@ -1,37 +1,45 @@
 import { useMemo } from 'react'
 import { Link } from 'react-router'
 import { Bell, Clock, ExternalLink, Newspaper } from 'lucide-react'
-import type { StockEntry } from '@/types/stock'
+import type { NewsData, StockEntry } from '@/types/stock'
 import stocksData from '@/data/stocks.json'
+import rawNewsData from '@/data/news.json'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { formatAsOf, formatRelativeTime, getNewsForTickers, newsData } from '@/lib/news'
+import { formatAsOf, formatRelativeTime, getNewsForTickers } from '@/lib/news'
+import { useLiveData } from '@/lib/liveData'
 import { MARKET_BADGE_CLASS, MARKET_LABEL } from '@/lib/format'
 import { useUserStore } from '@/lib/userStore'
 import { cn } from '@/lib/utils'
 
-const stocks = stocksData as StockEntry[]
+const bundledStocks = stocksData as StockEntry[]
+const bundledNews = rawNewsData as NewsData
 
 /** 티커 → 표기용 정보 (기본 종목 + 사용자 추가 종목) */
-function useTickerDirectory() {
+function useTickerDirectory(stocks: StockEntry[]) {
   const { addedStocks } = useUserStore()
   return useMemo(() => {
     const map = new Map<string, { name: string; market: string }>()
     for (const s of stocks) map.set(s.ticker.toUpperCase(), { name: s.name, market: s.market })
     for (const s of addedStocks) map.set(s.ticker.toUpperCase(), { name: s.name, market: s.market })
     return map
-  }, [addedStocks])
+  }, [stocks, addedStocks])
 }
 
 export default function NewsPage() {
   const { newsChecked } = useUserStore()
-  const directory = useTickerDirectory()
+  const stocksLive = useLiveData<StockEntry[]>('stocks.json', bundledStocks)
+  const newsLive = useLiveData<NewsData>('news.json', bundledNews)
+  const directory = useTickerDirectory(stocksLive.data)
 
   // 체크된 종목들의 뉴스만 모아 시간 역순
-  const feed = useMemo(() => getNewsForTickers(newsChecked), [newsChecked])
+  const feed = useMemo(
+    () => getNewsForTickers(newsLive.data, newsChecked),
+    [newsLive.data, newsChecked],
+  )
 
-  const asOfLabel = formatAsOf(newsData.asOf)
+  const asOfLabel = formatAsOf(newsLive.data.asOf)
 
   return (
     <div className="mx-auto w-full max-w-3xl px-4 pb-16 pt-8 sm:px-6">

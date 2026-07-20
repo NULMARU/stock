@@ -1,10 +1,14 @@
 import { useMemo, useState } from 'react'
 import type { FormEvent } from 'react'
-import { Pencil, Plus, RotateCcw } from 'lucide-react'
-import type { Market, StockEntry, UserAddedStock } from '@/types/stock'
+import { ExternalLink, Pencil, Plus, RefreshCw, RotateCcw, Satellite } from 'lucide-react'
+import { toast } from 'sonner'
+import type { Market, NewsData, StockEntry, UnicornData, UserAddedStock } from '@/types/stock'
 import stocksData from '@/data/stocks.json'
+import newsJsonData from '@/data/news.json'
+import unicornsJsonData from '@/data/unicorns.json'
 import { StockCard } from '@/components/StockCard'
 import { AddedStockCard } from '@/components/AddedStockCard'
+import { UnicornPanel } from '@/components/UnicornPanel'
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Input } from '@/components/ui/input'
@@ -24,19 +28,26 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import { useLiveData } from '@/lib/liveData'
 import { useUserStore } from '@/lib/userStore'
 import { cn } from '@/lib/utils'
 
-const stocks = stocksData as StockEntry[]
+const bundledStocks = stocksData as StockEntry[]
+const bundledNews = newsJsonData as NewsData
+const bundledUnicorns = unicornsJsonData as UnicornData
 
-type MarketFilter = 'ALL' | 'US' | 'KR' | 'CN'
+type MarketFilter = 'ALL' | 'US' | 'KR' | 'CN' | 'UNICORN'
 
 const MARKET_TABS: { value: MarketFilter; label: string }[] = [
   { value: 'ALL', label: '전체' },
   { value: 'US', label: '미국' },
   { value: 'KR', label: '한국' },
   { value: 'CN', label: '중국' },
+  { value: 'UNICORN', label: '유니콘' },
 ]
+
+const DATA_REQUEST_URL =
+  'https://github.com/NULMARU/stock/issues/new?title=%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EA%B0%B1%EC%8B%A0%20%EC%9A%94%EC%B2%AD&body=%EC%A0%84%EC%B2%B4%20%EC%A2%85%EB%AA%A9%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EA%B0%B1%EC%8B%A0%EC%9D%84%20%EC%9A%94%EC%B2%AD%ED%95%A9%EB%8B%88%EB%8B%A4.'
 
 type ListItem =
   | { kind: 'base'; stock: StockEntry }
@@ -47,6 +58,33 @@ export default function HomePage() {
   const [theme, setTheme] = useState<string | null>(null)
   const [query, setQuery] = useState('')
   const [editMode, setEditMode] = useState(false)
+
+  // 런타임 라이브 데이터 (실패 시 번들 fallback 유지)
+  const stocksLive = useLiveData<StockEntry[]>('stocks.json', bundledStocks)
+  const newsLive = useLiveData<NewsData>('news.json', bundledNews)
+  const unicornsLive = useLiveData<UnicornData>('unicorns.json', bundledUnicorns)
+  const stocks = stocksLive.data
+
+  // '새 데이터 수집 요청' 다이얼로그
+  const [requestOpen, setRequestOpen] = useState(false)
+
+  const refreshingAll =
+    stocksLive.refreshing || newsLive.refreshing || unicornsLive.refreshing
+
+  // 전체 갱신 — stocks + news + unicorns 모두 캐시버스팅 재조회
+  const handleRefreshAll = async () => {
+    const [freshStocks] = await Promise.all([
+      stocksLive.refresh(),
+      newsLive.refresh(),
+      unicornsLive.refresh(),
+    ])
+    const asOfLabel = freshStocks?.[0]?.asOf ?? stocksLive.data[0]?.asOf
+    toast.success(
+      asOfLabel
+        ? `최신 게시 데이터로 갱신했어요 (기준일: ${asOfLabel})`
+        : '최신 게시 데이터로 갱신했어요',
+    )
+  }
 
   const {
     hiddenTickers,
@@ -83,7 +121,7 @@ export default function HomePage() {
       for (const t of s.theme) count.set(t, (count.get(t) ?? 0) + 1)
     }
     return [...count.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'ko'))
-  }, [addedStocks])
+  }, [stocks, addedStocks])
 
   // 숨긴 기본 종목을 제외하고, 추가 종목과 병합해 필터링
   const filtered = useMemo<ListItem[]>(() => {
@@ -105,7 +143,7 @@ export default function HomePage() {
       .map((s) => ({ kind: 'added', stock: s }))
 
     return [...baseItems, ...addedItems]
-  }, [market, theme, query, hiddenTickers, addedStocks])
+  }, [market, theme, query, stocks, hiddenTickers, addedStocks])
 
   const asOf = stocks[0]?.asOf
 
@@ -136,13 +174,42 @@ export default function HomePage() {
     <div className="mx-auto w-full max-w-6xl px-4 pb-16 pt-8 sm:px-6">
       {/* 소개 헤더 */}
       <header className="mb-6">
-        <h1 className="text-2xl font-bold tracking-tight text-foreground">
-          AI·우주 테마 종목 탐색 🚀
-        </h1>
-        <p className="mt-1.5 text-sm text-muted-foreground">
-          초보 투자자를 위한 학습 도구예요. 종목을 골라 기업 분석과 기본 개념을 함께 배워보세요.
-          {asOf && <span className="ml-1">(데이터 기준일: {asOf})</span>}
-        </p>
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight text-foreground">
+              AI·우주 테마 종목 탐색 🚀
+            </h1>
+            <p className="mt-1.5 text-sm text-muted-foreground">
+              초보 투자자를 위한 학습 도구예요. 종목을 골라 기업 분석과 기본 개념을 함께 배워보세요.
+              {asOf && <span className="ml-1">(데이터 기준일: {asOf})</span>}
+            </p>
+          </div>
+          <div className="flex shrink-0 items-center gap-2">
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={handleRefreshAll}
+              disabled={refreshingAll}
+            >
+              <RefreshCw
+                className={cn('h-4 w-4', refreshingAll && 'animate-spin')}
+                aria-hidden
+              />
+              {refreshingAll ? '갱신 중…' : '전체 갱신'}
+            </Button>
+            <Button
+              type="button"
+              variant="ghost"
+              size="sm"
+              className="text-muted-foreground"
+              onClick={() => setRequestOpen(true)}
+            >
+              <Satellite className="h-4 w-4" aria-hidden />
+              새 데이터 수집 요청
+            </Button>
+          </div>
+        </div>
       </header>
 
       {/* 시장 탭 + 검색 + 편집 토글 */}
@@ -194,80 +261,109 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* 테마 칩 필터 */}
-      <div className="mb-6 flex flex-wrap gap-1.5">
-        <button
-          type="button"
-          onClick={() => setTheme(null)}
-          className={cn(
-            'rounded-full border px-3 py-1 text-xs font-medium transition-colors',
-            theme === null
-              ? 'border-primary bg-primary text-primary-foreground'
-              : 'border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground',
-          )}
-        >
-          전체 테마
-        </button>
-        {themes.map(([t, count]) => (
-          <button
-            key={t}
-            type="button"
-            onClick={() => setTheme(theme === t ? null : t)}
-            className={cn(
-              'rounded-full border px-3 py-1 text-xs font-medium transition-colors',
-              theme === t
-                ? 'border-primary bg-primary text-primary-foreground'
-                : 'border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground',
-            )}
-          >
-            {t} <span className="opacity-70">{count}</span>
-          </button>
-        ))}
-      </div>
-
-      {/* 결과 수 */}
-      <p className="mb-3 text-xs text-muted-foreground">
-        {filtered.length}개 종목
-        {editMode && ' · 편집 모드: 카드의 숨기기/삭제로 목록을 정리할 수 있어요'}
-      </p>
-
-      {/* 종목 카드 그리드 */}
-      {filtered.length > 0 ? (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((item) =>
-            item.kind === 'base' ? (
-              <StockCard
-                key={item.stock.ticker}
-                stock={item.stock}
-                editMode={editMode}
-                onHide={() => hideTicker(item.stock.ticker)}
-              />
-            ) : (
-              <AddedStockCard
-                key={`added-${item.stock.ticker}`}
-                stock={item.stock}
-                editMode={editMode}
-                onRemove={() => removeAddedStock(item.stock.ticker)}
-              />
-            ),
-          )}
-        </div>
+      {/* 유니콘 탭 — 3축 알고리즘 평가 통과 종목 */}
+      {market === 'UNICORN' ? (
+        <UnicornPanel data={unicornsLive.data} />
       ) : (
-        <div className="rounded-xl border border-dashed border-border bg-card/60 py-16 text-center text-sm text-muted-foreground">
-          조건에 맞는 종목이 없어요. 검색어나 필터를 바꿔보세요.
-        </div>
+        <>
+          {/* 테마 칩 필터 */}
+          <div className="mb-6 flex flex-wrap gap-1.5">
+            <button
+              type="button"
+              onClick={() => setTheme(null)}
+              className={cn(
+                'rounded-full border px-3 py-1 text-xs font-medium transition-colors',
+                theme === null
+                  ? 'border-primary bg-primary text-primary-foreground'
+                  : 'border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground',
+              )}
+            >
+              전체 테마
+            </button>
+            {themes.map(([t, count]) => (
+              <button
+                key={t}
+                type="button"
+                onClick={() => setTheme(theme === t ? null : t)}
+                className={cn(
+                  'rounded-full border px-3 py-1 text-xs font-medium transition-colors',
+                  theme === t
+                    ? 'border-primary bg-primary text-primary-foreground'
+                    : 'border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground',
+                )}
+              >
+                {t} <span className="opacity-70">{count}</span>
+              </button>
+            ))}
+          </div>
+
+          {/* 결과 수 */}
+          <p className="mb-3 text-xs text-muted-foreground">
+            {filtered.length}개 종목
+            {editMode && ' · 편집 모드: 카드의 숨기기/삭제로 목록을 정리할 수 있어요'}
+          </p>
+
+          {/* 종목 카드 그리드 */}
+          {filtered.length > 0 ? (
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {filtered.map((item) =>
+                item.kind === 'base' ? (
+                  <StockCard
+                    key={item.stock.ticker}
+                    stock={item.stock}
+                    editMode={editMode}
+                    onHide={() => hideTicker(item.stock.ticker)}
+                  />
+                ) : (
+                  <AddedStockCard
+                    key={`added-${item.stock.ticker}`}
+                    stock={item.stock}
+                    editMode={editMode}
+                    onRemove={() => removeAddedStock(item.stock.ticker)}
+                  />
+                ),
+              )}
+            </div>
+          ) : (
+            <div className="rounded-xl border border-dashed border-border bg-card/60 py-16 text-center text-sm text-muted-foreground">
+              조건에 맞는 종목이 없어요. 검색어나 필터를 바꿔보세요.
+            </div>
+          )}
+
+          {/* 숨긴 종목 복원 */}
+          {hiddenTickers.length > 0 && (
+            <div className="mt-6 flex items-center justify-center gap-3 rounded-xl border border-dashed border-border bg-card/60 px-4 py-3 text-sm text-muted-foreground">
+              <span>숨긴 종목 {hiddenTickers.length}개</span>
+              <Button type="button" variant="outline" size="sm" onClick={restoreHidden}>
+                <RotateCcw className="h-3.5 w-3.5" aria-hidden />
+                모두 복원
+              </Button>
+            </div>
+          )}
+        </>
       )}
 
-      {/* 숨긴 종목 복원 */}
-      {hiddenTickers.length > 0 && (
-        <div className="mt-6 flex items-center justify-center gap-3 rounded-xl border border-dashed border-border bg-card/60 px-4 py-3 text-sm text-muted-foreground">
-          <span>숨긴 종목 {hiddenTickers.length}개</span>
-          <Button type="button" variant="outline" size="sm" onClick={restoreHidden}>
-            <RotateCcw className="h-3.5 w-3.5" aria-hidden />
-            모두 복원
-          </Button>
-        </div>
-      )}
+      {/* 새 데이터 수집 요청 다이얼로그 */}
+      <Dialog open={requestOpen} onOpenChange={setRequestOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>새 데이터 수집 요청</DialogTitle>
+            <DialogDescription>
+              자동 수집은 매일 06:47, 뉴스는 08:19/18:19에 실행돼요. 지금 바로 새 데이터를
+              수집하려면 GitHub 로그인 상태에서 아래 버튼으로 요청을 남겨주세요. 약 3~5분 뒤
+              반영돼요.
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button asChild>
+              <a href={DATA_REQUEST_URL} target="_blank" rel="noopener noreferrer">
+                GitHub에 수집 요청 남기기
+                <ExternalLink className="h-4 w-4" aria-hidden />
+              </a>
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
 
       {/* 종목 추가 다이얼로그 */}
       <Dialog

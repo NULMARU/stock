@@ -1,12 +1,10 @@
 /**
  * 스페이스AI 스톡랩 — 뉴스 데이터 접근 유틸
  * news.json은 자동 수집 워커가 갱신 (하루 2회 08:19/18:19 KST)
+ * 데이터는 useLiveData 훅으로 조회한 뒤 인자로 주입해서 사용한다.
  */
 
 import type { NewsData, NewsItem } from '@/types/stock'
-import rawNewsData from '@/data/news.json'
-
-export const newsData = rawNewsData as NewsData
 
 /** 피드용 — 어떤 종목의 뉴스인지 티커를 붙인 형태 */
 export interface NewsFeedItem extends NewsItem {
@@ -24,10 +22,10 @@ function byPublishedDesc(a: NewsItem, b: NewsItem): number {
 }
 
 /** 여러 티커의 뉴스를 모아 시간 역순 피드로 반환 */
-export function getNewsForTickers(tickers: string[]): NewsFeedItem[] {
+export function getNewsForTickers(data: NewsData, tickers: string[]): NewsFeedItem[] {
   const wanted = new Set(tickers.map((t) => t.toUpperCase()))
   const items: NewsFeedItem[] = []
-  for (const [ticker, list] of Object.entries(newsData.entries ?? {})) {
+  for (const [ticker, list] of Object.entries(data.entries ?? {})) {
     if (!wanted.has(ticker.toUpperCase())) continue
     for (const item of list) items.push({ ...item, ticker })
   }
@@ -35,8 +33,8 @@ export function getNewsForTickers(tickers: string[]): NewsFeedItem[] {
 }
 
 /** 한 종목의 뉴스 (최신순, 최대 limit개) */
-export function getNewsForTicker(ticker: string, limit = 5): NewsItem[] {
-  const entries = newsData.entries ?? {}
+export function getNewsForTicker(data: NewsData, ticker: string, limit = 5): NewsItem[] {
+  const entries = data.entries ?? {}
   const key =
     Object.keys(entries).find((k) => k.toUpperCase() === ticker.toUpperCase()) ??
     ticker
