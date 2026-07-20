@@ -1,0 +1,61 @@
+name: On-demand Data Refresh
+
+on:
+  workflow_dispatch:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+  actions: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    # 수동 dispatch이거나, NULMARU가 '데이터 갱신'이 포함된 제목으로 연 이슈일 때만 실행
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.issue.user.login == 'NULMARU' && contains(github.event.issue.title, '데이터 갱신'))
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Comment on issue
+        if: github.event_name == 'issues'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue comment "${{ github.event.issue.number }}" --body "갱신이 시작되었습니다 🔄" --repo "${{ github.repository }}"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install yfinance
+
+      - name: Refresh stock data
+        run: python scripts/refresh_data.py
+
+      - name: Fetch news
+        run: python scripts/fetch_news.py
+
+      - name: Copy data to public/
+        run: |
+          mkdir -p public/data
+          cp src/data/stocks.json src/data/news.json public/data/
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/stocks.json src/data/news.json public/data/stocks.json public/data/news.json
+          if git diff --cached --quiet; then
+            echo "변경 없음 — 커밋 생략"
+          else
+            git commit -m "data: on-demand refresh (workflow)"
+            git push
+          fi
+
+      - name: Trigger Pages redeploy
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --repo "${{ github.repository }}"
