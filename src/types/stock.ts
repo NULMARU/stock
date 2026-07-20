@@ -104,6 +104,34 @@ export interface StockEntry {
   methodologyVersion: string;
 }
 
+/** 뉴스 항목 1건 (news.json — 하루 2회 자동 수집) */
+export interface NewsItem {
+  title: string;
+  link: string;
+  /** 언론사 (예: "Reuters") */
+  source: string;
+  /** ISO 8601 발행 시각 */
+  publishedAt: string;
+}
+
+/** news.json 전체 구조 — entries 키는 티커 */
+export interface NewsData {
+  /** 데이터 기준 시각 (ISO 8601, 수집 전이면 빈 문자열) */
+  asOf: string;
+  entries: Record<string, NewsItem[]>;
+}
+
+/** 사용자가 앱에서 직접 추가한 간이 종목 (localStorage 저장, 정식 데이터 아님) */
+export interface UserAddedStock {
+  /** Yahoo Finance 형식 권장: "TSLA", "005930.KS" */
+  ticker: string;
+  /** 한국어 표기 */
+  name: string;
+  market: Market;
+  theme: string[];
+  note?: string;
+}
+
 export type GlossaryGroup = "가치평가" | "실적재무" | "주주환원" | "시장수급";
 
 export interface GlossaryTerm {

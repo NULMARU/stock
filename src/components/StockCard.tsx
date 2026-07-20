@@ -1,8 +1,10 @@
 import { Link } from 'react-router'
+import { EyeOff } from 'lucide-react'
 import type { BeginnerFit, StockEntry } from '@/types/stock'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { ScoreBar } from '@/components/ScoreBar'
+import { NewsCheckToggle } from '@/components/NewsCheckToggle'
 import { cn } from '@/lib/utils'
 import {
   changeColorClass,
@@ -29,10 +31,13 @@ const BEGINNER_FIT: Record<BeginnerFit, { label: string; className: string }> = 
 
 interface StockCardProps {
   stock: StockEntry
+  /** 편집 모드 — '숨기기' 버튼 표시 */
+  editMode?: boolean
+  onHide?: () => void
 }
 
-/** 홈 종목 카드 — 이름/티커/가격·등락/5축 미니 바/초보 적합도/리스크 플래그 */
-export function StockCard({ stock }: StockCardProps) {
+/** 홈 종목 카드 — 이름/티커/가격·등락/5축 미니 바/초보 적합도/리스크 플래그/뉴스 받기 */
+export function StockCard({ stock, editMode = false, onHide }: StockCardProps) {
   const fit = BEGINNER_FIT[stock.beginnerFit]
 
   return (
@@ -102,6 +107,25 @@ export function StockCard({ stock }: StockCardProps) {
             )}
           </div>
         )}
+
+        {/* 하단: 뉴스 받기 (항상) + 숨기기 (편집 모드) */}
+        <div className="flex items-center justify-between gap-2 border-t border-border/60 pt-2.5">
+          <NewsCheckToggle ticker={stock.ticker} />
+          {editMode && onHide && (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault()
+                e.stopPropagation()
+                onHide()
+              }}
+              className="flex items-center gap-1 text-[11px] font-medium text-muted-foreground transition-colors hover:text-destructive"
+            >
+              <EyeOff className="h-3 w-3" aria-hidden />
+              숨기기
+            </button>
+          )}
+        </div>
       </Card>
     </Link>
   )

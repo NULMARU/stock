@@ -4,7 +4,10 @@ import {
   AlertTriangle,
   ArrowLeft,
   CalendarDays,
+  Clock,
+  ExternalLink,
   Info,
+  Newspaper,
   Sparkles,
   Telescope,
 } from "lucide-react"
@@ -26,6 +29,7 @@ import {
   MARKET_BADGE_CLASS,
   MARKET_LABEL,
 } from "@/lib/format"
+import { formatRelativeTime, getNewsForTicker } from "@/lib/news"
 import { cn } from "@/lib/utils"
 import type { BeginnerFit, StockEntry } from "@/types/stock"
 
@@ -380,6 +384,9 @@ export default function StockDetailPage() {
 
   const fit = BEGINNER_FIT_META[stock.beginnerFit]
 
+  // 이 종목의 수집 뉴스 (최신순 최대 5개)
+  const newsItems = getNewsForTicker(stock.ticker, 5)
+
   return (
     <div className="mx-auto w-full max-w-5xl space-y-6 px-4 py-6">
       {/* 상단 네비게이션 */}
@@ -558,6 +565,50 @@ export default function StockDetailPage() {
           )}
         </CardContent>
       </Card>
+
+      {/* ── 관련 뉴스 (최대 5개) ─────────────────────────── */}
+      <section className="space-y-3">
+        <h2 className="flex items-center gap-2 text-lg font-bold text-foreground">
+          <Newspaper className="h-5 w-5 text-[#C2571B]" aria-hidden />
+          관련 뉴스
+        </h2>
+        {newsItems.length > 0 ? (
+          <div className="space-y-2">
+            {newsItems.map((item, i) => (
+              <Card key={i} className="py-3">
+                <CardContent className="space-y-1 px-4">
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-start gap-1.5 text-sm font-medium leading-snug text-foreground hover:text-primary"
+                  >
+                    <span className="group-hover:underline">{item.title}</span>
+                    <ExternalLink
+                      className="mt-0.5 h-3.5 w-3.5 shrink-0 text-muted-foreground"
+                      aria-hidden
+                    />
+                  </a>
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <span>{item.source}</span>
+                    <span aria-hidden>·</span>
+                    <span className="inline-flex items-center gap-1">
+                      <Clock className="h-3 w-3" aria-hidden />
+                      {formatRelativeTime(item.publishedAt)}
+                    </span>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        ) : (
+          <Card className="py-6">
+            <CardContent className="px-4 text-center text-sm text-muted-foreground">
+              수집된 뉴스가 아직 없어요
+            </CardContent>
+          </Card>
+        )}
+      </section>
 
       {/* 용어 설명 모달 (W4 컴포넌트) */}
       <GlossaryTermModal

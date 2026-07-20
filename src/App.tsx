@@ -2,10 +2,12 @@ import { Link, NavLink, Route, Routes } from 'react-router'
 import HomePage from '@/pages/HomePage'
 import StockDetailPage from '@/pages/StockDetailPage'
 import GlossaryPage from '@/pages/GlossaryPage'
+import NewsPage from '@/pages/NewsPage'
 import { cn } from '@/lib/utils'
 
 const NAV_ITEMS = [
   { to: '/', label: '종목 탐색', end: true },
+  { to: '/news', label: '뉴스', end: false },
   { to: '/glossary', label: '용어 사전', end: false },
 ] as const
 
@@ -51,6 +53,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/stock/:ticker" element={<StockDetailPage />} />
+          <Route path="/news" element={<NewsPage />} />
           <Route path="/glossary" element={<GlossaryPage />} />
         </Routes>
       </main>
