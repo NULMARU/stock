@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* 저채도 웜 톤 디자인 토큰 (spec §8) */
+    --background: 37 44% 96%;           /* 크림 #FAF7F2 */
+    --foreground: 30 10% 10%;           /* 잉크 #1C1917 */
+    --card: 0 0% 100%;                  /* 카드 흰색 */
+    --card-foreground: 30 10% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 10%;
+    --primary: 22 76% 43%;              /* 테라코타 #C2571B */
+    --primary-foreground: 36 40% 97%;
+    --secondary: 96 15% 92%;            /* 세이지 계열 연한 배경 */
+    --secondary-foreground: 96 14% 30%;
+    --muted: 36 24% 91%;
+    --muted-foreground: 30 8% 42%;
+    --accent: 22 60% 93%;
+    --accent-foreground: 22 76% 33%;
+    --destructive: 3 58% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 33 18% 86%;
+    --input: 33 18% 86%;
+    --ring: 22 76% 43%;
+    --radius: 0.75rem;
+
+    /* 커스텀 토큰 */
+    --stock-up: 3 63% 55%;              /* 상승 빨강 #D64545 */
+    --stock-down: 221 70% 53%;          /* 하락 파랑 #2563EB */
+    --sage: 96 15% 43%;                 /* 보조 세이지 #6B7F5E */
+    --market-us: 215 19% 35%;           /* 슬레이트 #475569 */
+    --market-kr: 22 76% 43%;            /* 테라코타 #C2571B */
+    --market-cn: 78 34% 37%;            /* 올리브 #6B7F3E */
+
+    --sidebar-background: 36 40% 97%;
+    --sidebar-foreground: 30 10% 10%;
+    --sidebar-primary: 22 76% 43%;
+    --sidebar-primary-foreground: 36 40% 97%;
+    --sidebar-accent: 22 60% 93%;
+    --sidebar-accent-foreground: 22 76% 33%;
+    --sidebar-border: 33 18% 86%;
+    --sidebar-ring: 22 76% 43%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  /* 등락 색상 — 한국 관습: 상승 빨강 / 하락 파랑 */
+  .text-stock-up {
+    color: hsl(var(--stock-up));
+  }
+  .text-stock-down {
+    color: hsl(var(--stock-down));
+  }
+  .bg-stock-up {
+    background-color: hsl(var(--stock-up));
+  }
+  .bg-stock-down {
+    background-color: hsl(var(--stock-down));
+  }
+
+  /* 시장 배지 */
+  .bg-market-us {
+    background-color: hsl(var(--market-us));
+  }
+  .bg-market-kr {
+    background-color: hsl(var(--market-kr));
+  }
+  .bg-market-cn {
+    background-color: hsl(var(--market-cn));
+  }
+
+  .text-sage {
+    color: hsl(var(--sage));
+  }
+  .bg-sage {
+    background-color: hsl(var(--sage));
+  }
+
+  /* 카드용 부드러운 그림자 */
+  .shadow-card {
+    box-shadow:
+      0 1px 2px rgb(28 25 23 / 0.04),
+      0 6px 16px rgb(28 25 23 / 0.06);
+  }
+  .shadow-card-hover {
+    box-shadow:
+      0 2px 4px rgb(28 25 23 / 0.05),
+      0 12px 28px rgb(28 25 23 / 0.1);
+  }
+}
