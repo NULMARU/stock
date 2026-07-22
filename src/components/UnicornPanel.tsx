@@ -369,7 +369,7 @@ export interface UnicornPanelProps {
   data: UnicornData
 }
 
-/** 유니콘 탭 — 저평가·내실·성장 3축 알고리즘 평가 통과 종목 */
+/** 멋주 탭 — 저평가·내실·성장 3축 알고리즘 평가 통과 종목 */
 export function UnicornPanel({ data }: UnicornPanelProps) {
   const [selected, setSelected] = useState<UnicornEntry | null>(null)
   const [detailOpen, setDetailOpen] = useState(false)
@@ -384,7 +384,7 @@ export function UnicornPanel({ data }: UnicornPanelProps) {
       {/* 평가 요약 헤더 */}
       <div className="mb-4 rounded-xl border border-border/70 bg-card/60 px-4 py-3">
         <p className="text-sm font-semibold text-foreground">
-          저평가·내실·성장 3축 알고리즘 평가 통과 종목 (매주 토요일 갱신)
+          멋주(멋진 주식) · 저평가·내실·성장 3축 알고리즘 평가 통과 종목 (매주 토요일 갱신)
         </p>
         <p className="mt-1 text-xs text-muted-foreground">
           평가 {data.evaluated}개 중 {data.passed.length}개 통과

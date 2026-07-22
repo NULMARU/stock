@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { ScoreBar } from '@/components/ScoreBar'
 import { NewsCheckToggle } from '@/components/NewsCheckToggle'
+import { Sparkline } from '@/components/Sparkline'
 import { cn } from '@/lib/utils'
 import {
   changeColorClass,
@@ -78,14 +79,17 @@ export function StockCard({ stock, editMode = false, onHide }: StockCardProps) {
           ))}
         </div>
 
-        {/* 가격 + 등락 */}
-        <div className="mt-auto flex items-baseline justify-between gap-2 pt-1">
-          <span className="text-lg font-bold tabular-nums text-foreground">
-            {formatPrice(stock.quote.price, stock.currency)}
-          </span>
-          <span className={cn('text-sm font-semibold tabular-nums', changeColorClass(stock.quote.changePct))}>
-            {formatChange(stock.quote.changePct)}
-          </span>
+        {/* 가격 + 등락 + 1년 미니 차트 */}
+        <div className="mt-auto flex items-end justify-between gap-2 pt-1">
+          <div className="flex min-w-0 flex-col gap-0.5">
+            <span className="text-lg font-bold tabular-nums text-foreground">
+              {formatPrice(stock.quote.price, stock.currency)}
+            </span>
+            <span className={cn('text-sm font-semibold tabular-nums', changeColorClass(stock.quote.changePct))}>
+              {formatChange(stock.quote.changePct)}
+            </span>
+          </div>
+          <Sparkline points={stock.priceHistory} className="shrink-0" />
         </div>
 
         {/* 5축 미니 점수 바 */}

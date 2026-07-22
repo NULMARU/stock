@@ -4,6 +4,7 @@ import StockDetailPage from '@/pages/StockDetailPage'
 import GlossaryPage from '@/pages/GlossaryPage'
 import NewsPage from '@/pages/NewsPage'
 import { Toaster } from '@/components/ui/sonner'
+import TickerBar from '@/components/TickerBar'
 import { cn } from '@/lib/utils'
 
 const NAV_ITEMS = [
@@ -49,6 +50,8 @@ export default function App() {
           </nav>
         </div>
       </header>
+
+      <TickerBar />
 
       <main>
         <Routes>

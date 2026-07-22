@@ -1,73 +1,32 @@
-# React + TypeScript + Vite
+# 스페이스AI 스톡랩 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+초보 투자자를 위한 AI·우주 테마 주식 학습 웹앱입니다.
+시장 탐험(전체/미국/한국/중국/멋주), 용어 사전, 뉴스를 한 곳에서 제공합니다.
 
-Currently, two official plugins are available:
+- 배포 주소: https://nulmaru.github.io/stock/
+- 기술 스택: React + TypeScript + Vite + Tailwind CSS (정적 호스팅, GitHub Pages)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 갤럭시 설치 방법 (PWA)
 
-## React Compiler
+이 앱은 PWA로 만들어져 있어 갤럭시 폰 홈 화면에 앱처럼 설치할 수 있습니다.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. 갤럭시 폰에서 **크롬(Chrome)** 브라우저를 엽니다.
+2. 주소창에 **https://nulmaru.github.io/stock/** 을 입력해 접속합니다.
+3. 아래 둘 중 한 가지 방법으로 설치합니다.
+   - 화면 하단에 **앱 설치 배너**가 뜨면 **[설치]**를 누릅니다.
+   - 배너가 보이지 않으면 오른쪽 위 **⋮ (메뉴)** → **홈 화면에 추가** → **[설치]**를 누릅니다.
+4. 홈 화면에 생긴 **스톡랩** 아이콘을 누르면 브라우저 주소창 없이 앱처럼 실행됩니다.
 
-## Expanding the ESLint configuration
+> 설치가 안 될 때는 크롬을 최신 버전으로 업데이트한 뒤, 사이트에 한 번 더 접속해 보세요.
+> (설치 배너는 사이트를 잠시 둘러본 뒤에 뜨는 경우도 있습니다.)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 개발
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev      # 개발 서버
+npm run build    # 타입 검사 + 프로덕션 빌드 (dist/)
+npm run preview  # 빌드 결과 미리보기
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+> 참고: 서비스워커는 프로덕션 빌드에서만 등록되므로, 개발 서버(`npm run dev`)에서는 HMR이 그대로 동작합니다.

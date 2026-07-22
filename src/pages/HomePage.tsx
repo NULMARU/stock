@@ -9,6 +9,7 @@ import unicornsJsonData from '@/data/unicorns.json'
 import { StockCard } from '@/components/StockCard'
 import { AddedStockCard } from '@/components/AddedStockCard'
 import { UnicornPanel } from '@/components/UnicornPanel'
+import { ThemeFilter } from '@/components/ThemeFilter'
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Input } from '@/components/ui/input'
@@ -43,7 +44,7 @@ const MARKET_TABS: { value: MarketFilter; label: string }[] = [
   { value: 'US', label: '미국' },
   { value: 'KR', label: '한국' },
   { value: 'CN', label: '중국' },
-  { value: 'UNICORN', label: '유니콘' },
+  { value: 'UNICORN', label: '멋주' },
 ]
 
 const DATA_REQUEST_URL =
@@ -111,7 +112,7 @@ export default function HomePage() {
     setFormError(null)
   }
 
-  // 테마 칩: 기본 종목 + 사용자 추가 종목의 theme 값에서 동적 생성 (등장 빈도 내림차순)
+  // 테마 콤보박스 항목: 기본 종목 + 사용자 추가 종목의 theme 값에서 동적 생성 (등장 빈도 내림차순)
   const themes = useMemo(() => {
     const count = new Map<string, number>()
     for (const s of stocks) {
@@ -261,41 +262,13 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* 유니콘 탭 — 3축 알고리즘 평가 통과 종목 */}
+      {/* 멋주 탭 — 3축 알고리즘 평가 통과 종목 */}
       {market === 'UNICORN' ? (
         <UnicornPanel data={unicornsLive.data} />
       ) : (
         <>
-          {/* 테마 칩 필터 */}
-          <div className="mb-6 flex flex-wrap gap-1.5">
-            <button
-              type="button"
-              onClick={() => setTheme(null)}
-              className={cn(
-                'rounded-full border px-3 py-1 text-xs font-medium transition-colors',
-                theme === null
-                  ? 'border-primary bg-primary text-primary-foreground'
-                  : 'border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground',
-              )}
-            >
-              전체 테마
-            </button>
-            {themes.map(([t, count]) => (
-              <button
-                key={t}
-                type="button"
-                onClick={() => setTheme(theme === t ? null : t)}
-                className={cn(
-                  'rounded-full border px-3 py-1 text-xs font-medium transition-colors',
-                  theme === t
-                    ? 'border-primary bg-primary text-primary-foreground'
-                    : 'border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground',
-                )}
-              >
-                {t} <span className="opacity-70">{count}</span>
-              </button>
-            ))}
-          </div>
+          {/* 테마 필터 — '전체테마' 고정 버튼 + 테마 콤보박스 */}
+          <ThemeFilter themes={themes} value={theme} onChange={setTheme} />
 
           {/* 결과 수 */}
           <p className="mb-3 text-xs text-muted-foreground">
