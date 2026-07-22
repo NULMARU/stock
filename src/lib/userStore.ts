@@ -5,6 +5,7 @@
  * - hiddenTickers: 홈에서 '숨기기'한 기본 종목 티커
  * - addedStocks:   사용자가 직접 추가한 간이 종목
  * - newsChecked:   '뉴스 받기'를 체크한 티커
+ * - newsCheckedAt: 체크한 시각 (대문자 티커 → epoch ms)
  *
  * 같은 탭 안에서는 커스텀 이벤트로, 다른 탭에서는 storage 이벤트로
  * 변경이 즉시 전파된다. React 쪽은 useSyncExternalStore로 구독한다.
@@ -23,18 +24,36 @@ export interface UserState {
   addedStocks: UserAddedStock[]
   /** '뉴스 받기' 체크한 티커 */
   newsChecked: string[]
+  /** 체크 시각 — 대문자 티커 → epoch ms (체크 해제 시 제거) */
+  newsCheckedAt: Record<string, number>
 }
 
 const DEFAULT_STATE: UserState = {
   hiddenTickers: [],
   addedStocks: [],
   newsChecked: [],
+  newsCheckedAt: {},
 }
 
 function sanitize(parsed: Partial<UserState> | null): UserState {
   if (!parsed || typeof parsed !== 'object') return DEFAULT_STATE
   const strArray = (v: unknown): string[] =>
     Array.isArray(v) ? v.filter((x): x is string => typeof x === 'string') : []
+  const newsChecked = strArray(parsed.newsChecked)
+
+  // 마이그레이션: 시각 맵이 없던 구버전 데이터(배열만 저장)는
+  // 배열 순서를 유지하도록 인덱스(ms)를 점진적 시각으로 부여
+  const rawAt =
+    parsed.newsCheckedAt && typeof parsed.newsCheckedAt === 'object'
+      ? (parsed.newsCheckedAt as Record<string, unknown>)
+      : {}
+  const newsCheckedAt: Record<string, number> = {}
+  newsChecked.forEach((ticker, i) => {
+    const v = rawAt[ticker.toUpperCase()]
+    newsCheckedAt[ticker.toUpperCase()] =
+      typeof v === 'number' && Number.isFinite(v) ? v : i
+  })
+
   return {
     hiddenTickers: strArray(parsed.hiddenTickers),
     addedStocks: Array.isArray(parsed.addedStocks)
@@ -47,7 +66,8 @@ function sanitize(parsed: Partial<UserState> | null): UserState {
             Array.isArray((s as UserAddedStock).theme),
         )
       : [],
-    newsChecked: strArray(parsed.newsChecked),
+    newsChecked,
+    newsCheckedAt,
   }
 }
 
@@ -118,24 +138,39 @@ export function addStock(stock: UserAddedStock) {
 
 /** 간이 종목 삭제 — 뉴스 체크도 함께 해제 */
 export function removeAddedStock(ticker: string) {
+  const newsCheckedAt = { ...state.newsCheckedAt }
+  delete newsCheckedAt[ticker.toUpperCase()]
   setState({
     ...state,
     addedStocks: state.addedStocks.filter((s) => !sameTicker(s.ticker, ticker)),
     newsChecked: state.newsChecked.filter((t) => !sameTicker(t, ticker)),
+    newsCheckedAt,
   })
 }
 
-/** 뉴스 받기 체크/해제 */
+/** 뉴스 받기 체크/해제 — 체크 시 현재 시각 기록, 해제 시 제거 */
 export function setNewsChecked(ticker: string, checked: boolean) {
   const has = state.newsChecked.some((t) => sameTicker(t, ticker))
   if (checked && !has) {
-    setState({ ...state, newsChecked: [...state.newsChecked, ticker] })
+    setState({
+      ...state,
+      newsChecked: [...state.newsChecked, ticker],
+      newsCheckedAt: { ...state.newsCheckedAt, [ticker.toUpperCase()]: Date.now() },
+    })
   } else if (!checked && has) {
+    const newsCheckedAt = { ...state.newsCheckedAt }
+    delete newsCheckedAt[ticker.toUpperCase()]
     setState({
       ...state,
       newsChecked: state.newsChecked.filter((t) => !sameTicker(t, ticker)),
+      newsCheckedAt,
     })
   }
+}
+
+/** 체크 시각 조회 — 체크 안 된 종목은 undefined */
+export function getCheckedAt(ticker: string): number | undefined {
+  return state.newsCheckedAt[ticker.toUpperCase()]
 }
 
 /** React 훅 — 상태 + 액션을 한 번에 제공 */
@@ -148,5 +183,6 @@ export function useUserStore() {
     addStock,
     removeAddedStock,
     setNewsChecked,
+    getCheckedAt,
   }
 }

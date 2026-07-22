@@ -90,6 +90,8 @@ export default function HomePage() {
   const {
     hiddenTickers,
     addedStocks,
+    newsChecked,
+    newsCheckedAt,
     hideTicker,
     restoreHidden,
     addStock,
@@ -145,6 +147,18 @@ export default function HomePage() {
 
     return [...baseItems, ...addedItems]
   }, [market, theme, query, stocks, hiddenTickers, addedStocks])
+
+  // 필터링 후 정렬: 뉴스 체크 종목을 최신 체크 순으로 맨 위에, 나머지는 기존 순서 유지
+  const { sorted, checkedCount } = useMemo<{ sorted: ListItem[]; checkedCount: number }>(() => {
+    const checkedAtOf = (ticker: string) => newsCheckedAt[ticker.toUpperCase()]
+    const isChecked = (ticker: string) =>
+      newsChecked.some((t) => t.toUpperCase() === ticker.toUpperCase())
+    const checkedItems = filtered
+      .filter((item) => isChecked(item.stock.ticker))
+      .sort((a, b) => (checkedAtOf(b.stock.ticker) ?? 0) - (checkedAtOf(a.stock.ticker) ?? 0))
+    const uncheckedItems = filtered.filter((item) => !isChecked(item.stock.ticker))
+    return { sorted: [...checkedItems, ...uncheckedItems], checkedCount: checkedItems.length }
+  }, [filtered, newsChecked, newsCheckedAt])
 
   const asOf = stocks[0]?.asOf
 
@@ -272,14 +286,21 @@ export default function HomePage() {
 
           {/* 결과 수 */}
           <p className="mb-3 text-xs text-muted-foreground">
-            {filtered.length}개 종목
+            {sorted.length}개 종목
             {editMode && ' · 편집 모드: 카드의 숨기기/삭제로 목록을 정리할 수 있어요'}
           </p>
 
+          {/* 뉴스 체크 정렬 안내 — 체크된 종목이 있을 때만 표시 */}
+          {checkedCount > 0 && (
+            <p className="mb-3 text-xs text-muted-foreground/80">
+              🔔 뉴스 체크한 종목 {checkedCount}개가 최신 체크 순으로 위에 표시돼요
+            </p>
+          )}
+
           {/* 종목 카드 그리드 */}
-          {filtered.length > 0 ? (
+          {sorted.length > 0 ? (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {filtered.map((item) =>
+              {sorted.map((item) =>
                 item.kind === 'base' ? (
                   <StockCard
                     key={item.stock.ticker}

@@ -8,9 +8,9 @@ import TickerBar from '@/components/TickerBar'
 import { cn } from '@/lib/utils'
 
 const NAV_ITEMS = [
-  { to: '/', label: '종목 탐색', end: true },
+  { to: '/', label: '종목', end: true },
   { to: '/news', label: '뉴스', end: false },
-  { to: '/glossary', label: '용어 사전', end: false },
+  { to: '/glossary', label: '용어', end: false },
 ] as const
 
 export default function App() {
@@ -24,7 +24,7 @@ export default function App() {
               🚀
             </span>
             <span className="text-base font-bold tracking-tight text-foreground">
-              스페이스AI 스톡랩
+              Dsup 주식
             </span>
           </Link>
 
