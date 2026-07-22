@@ -1,0 +1,766 @@
+{
+ "asOf": "2026-07-22T23:33:59+09:00",
+ "methodologyVersion": "predict-v1.0",
+ "model": {
+  "weights": {
+   "reversal": 0.34,
+   "trend": 0.33,
+   "drift": 0.33
+  },
+  "hitRate20": null,
+  "hitRateAll": null,
+  "evaluated": 0
+ },
+ "entries": {
+  "NVDA": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "flat",
+   "probability": 0.5,
+   "expectedReturnPct": 0.0,
+   "band": {
+    "low": -3.34,
+    "high": 3.34
+   },
+   "close": 206.79,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "flat",
+     "detail": "RSI 52·5일 -2.7% — 반전 신호 약함"
+    },
+    {
+     "name": "trend",
+     "signal": "flat",
+     "detail": "20일선 202 vs 50일선 209, 종가 207 — 추세 혼조"
+    },
+    {
+     "name": "drift",
+     "signal": "flat",
+     "detail": "60일 평균 +0.02%/일, ATR 대비 +0.01 — 드리프트 미미"
+    }
+   ],
+   "lastFeedback": null
+  },
+  "MSFT": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "flat",
+   "probability": 0.5,
+   "expectedReturnPct": 0.0,
+   "band": {
+    "low": -3.01,
+    "high": 3.01
+   },
+   "close": 390.0,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "flat",
+     "detail": "RSI 49·5일 -1.4% — 반전 신호 약함"
+    },
+    {
+     "name": "trend",
+     "signal": "flat",
+     "detail": "20일선 385 vs 50일선 400, 종가 390 — 추세 혼조"
+    },
+    {
+     "name": "drift",
+     "signal": "flat",
+     "detail": "60일 평균 -0.12%/일, ATR 대비 -0.04 — 드리프트 미미"
+    }
+   ],
+   "lastFeedback": null
+  },
+  "GOOGL": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.576,
+   "expectedReturnPct": -0.47,
+   "band": {
+    "low": -3.56,
+    "high": 2.62
+   },
+   "close": 348.4,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "up",
+     "detail": "RSI 44·5일 -6.1% — 단기 과매도, 반등 기대"
+    },
+    {
+     "name": "trend",
+     "signal": "down",
+     "detail": "20일선 355 vs 50일선 368, 종가 348 — 역배열·20일선 하회, 하락 추세"
+    },
+    {
+     "name": "drift",
+     "signal": "flat",
+     "detail": "60일 평균 +0.05%/일, ATR 대비 +0.01 — 드리프트 미미"
+    }
+   ],
+   "lastFeedback": null
+  },
+  "TSLA": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.665,
+   "expectedReturnPct": -1.39,
+   "band": {
+    "low": -5.6,
+    "high": 2.82
+   },
+   "close": 377.64,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "flat",
+     "detail": "RSI 43·5일 -4.3% — 반전 신호 약함"
+    },
+    {
+     "name": "trend",
+     "signal": "down",
+     "detail": "20일선 395 vs 50일선 408, 종가 378 — 역배열·20일선 하회, 하락 추세"
+    },
+    {
+     "name": "drift",
+     "signal": "flat",
+     "detail": "60일 평균 +0.05%/일, ATR 대비 +0.01 — 드리프트 미미"
+    }
+   ],
+   "lastFeedback": null
+  },
+  "PLTR": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "flat",
+   "probability": 0.5,
+   "expectedReturnPct": 0.0,
+   "band": {
+    "low": -5.09,
+    "high": 5.09
+   },
+   "close": 127.5,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "flat",
+     "detail": "RSI 47·5일 -4.7% — 반전 신호 약함"
+    },
+    {
+     "name": "trend",
+     "signal": "flat",
+     "detail": "20일선 127 vs 50일선 132, 종가 128 — 추세 혼조"
+    },
+    {
+     "name": "drift",
+     "signal": "flat",
+     "detail": "60일 평균 -0.14%/일, ATR 대비 -0.03 — 드리프트 미미"
+    }
+   ],
+   "lastFeedback": null
+  },
+  "RKLB": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.614,
+   "expectedReturnPct": -2.3,
+   "band": {
+    "low": -12.38,
+    "high": 7.78
+   },
+   "close": 72.32,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "up",
+     "detail": "RSI 38·5일 -5.1% — 단기 과매도, 반등 기대"
+    },
+    {
+     "name": "trend",
+     "signal": "down",
+     "detail": "20일선 82 vs 50일선 105, 종가 72 — 역배열·20일선 하회, 하락 추세"
+    },
+    {
+     "name": "drift",
+     "signal": "flat",
+     "detail": "60일 평균 +0.11%/일, ATR 대비 +0.01 — 드리프트 미미"
+    }
+   ],
+   "lastFeedback": null
+  },
+  "ASTS": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.665,
+   "expectedReturnPct": -3.75,
+   "band": {
+    "low": -15.11,
+    "high": 7.61
+   },
+   "close": 63.46,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "flat",
+     "detail": "RSI 41·5일 -4.3% — 반전 신호 약함"
+    },
+    {
+     "name": "trend",
+     "signal": "down",
+     "detail": "20일선 71 vs 50일선 85, 종가 63 — 역배열·20일선 하회, 하락 추세"
+    },
+    {
+     "name": "drift",
+     "signal": "flat",
+     "detail": "60일 평균 +0.01%/일, ATR 대비 +0.00 — 드리프트 미미"
+    }
+   ],
+   "lastFeedback": null
+  },
+  "LUNR": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.665,
+   "expectedReturnPct": -4.15,
+   "band": {
+    "low": -16.71,
+    "high": 8.42
+   },
+   "close": 14.44,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "flat",
+     "detail": "RSI 32·5일 -2.8% — 반전 신호 약함"
+    },
+    {
+     "name": "trend",
+     "signal": "down",
+     "detail": "20일선 17 vs 50일선 26, 종가 14 — 역배열·20일선 하회, 하락 추세"
+    },
+    {
+     "name": "drift",
+     "signal": "flat",
+     "detail": "60일 평균 -0.68%/일, ATR 대비 -0.05 — 드리프트 미미"
+    }
+   ],
+   "lastFeedback": null
+  },
+  "005930.KS": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.665,
+   "expectedReturnPct": -3.08,
+   "band": {
+    "low": -12.43,
+    "high": 6.26
+   },
+   "close": 260500.0,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "flat",
+     "detail": "RSI 43·5일 -1.0% — 반전 신호 약함"
+    },
+    {
+     "name": "trend",
+     "signal": "down",
+     "detail": "20일선 293,775 vs 50일선 305,510, 종가 260,500 — 역배열·20일선 하회, 하락 추세"
+    },
+    {
+     "name": "drift",
+     "signal": "flat",
+     "detail": "60일 평균 +0.47%/일, ATR 대비 +0.05 — 드리프트 미미"
+    }
+   ],
+   "lastFeedback": null
+  },
+  "000660.KS": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "flat",
+   "probability": 0.5,
+   "expectedReturnPct": 0.0,
+   "band": {
+    "low": -12.27,
+    "high": 12.27
+   },
+   "close": 1830000.0,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "flat",
+     "detail": "RSI 41·5일 -4.3% — 반전 신호 약함"
+    },
+    {
+     "name": "trend",
+     "signal": "flat",
+     "detail": "20일선 2,237,950 vs 50일선 2,199,863, 종가 1,830,000 — 추세 혼조"
+    },
+    {
+     "name": "drift",
+     "signal": "flat",
+     "detail": "60일 평균 +0.91%/일, ATR 대비 +0.07 — 드리프트 미미"
+    }
+   ],
+   "lastFeedback": null
+  },
+  "035420.KS": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.609,
+   "expectedReturnPct": -1.31,
+   "band": {
+    "low": -7.34,
+    "high": 4.72
+   },
+   "close": 196900.0,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "down",
+     "detail": "RSI 47·5일 +7.5% — 단기 과열, 조정 경계"
+    },
+    {
+     "name": "trend",
+     "signal": "flat",
+     "detail": "20일선 194,020 vs 50일선 213,506, 종가 196,900 — 추세 혼조"
+    },
+    {
+     "name": "drift",
+     "signal": "flat",
+     "detail": "60일 평균 -0.03%/일, ATR 대비 -0.01 — 드리프트 미미"
+    }
+   ],
+   "lastFeedback": null
+  },
+  "012450.KS": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.665,
+   "expectedReturnPct": -2.93,
+   "band": {
+    "low": -11.79,
+    "high": 5.94
+   },
+   "close": 891000.0,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "flat",
+     "detail": "RSI 37·5일 +2.2% — 반전 신호 약함"
+    },
+    {
+     "name": "trend",
+     "signal": "down",
+     "detail": "20일선 1,007,900 vs 50일선 1,103,480, 종가 891,000 — 역배열·20일선 하회, 하락 추세"
+    },
+    {
+     "name": "drift",
+     "signal": "flat",
+     "detail": "60일 평균 -0.69%/일, ATR 대비 -0.08 — 드리프트 미미"
+    }
+   ],
+   "lastFeedback": null
+  },
+  "047810.KS": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.568,
+   "expectedReturnPct": -0.95,
+   "band": {
+    "low": -7.87,
+    "high": 5.98
+   },
+   "close": 149300.0,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "down",
+     "detail": "RSI 50·5일 +5.8% — 단기 과열, 조정 경계"
+    },
+    {
+     "name": "trend",
+     "signal": "flat",
+     "detail": "20일선 148,165 vs 50일선 151,818, 종가 149,300 — 추세 혼조"
+    },
+    {
+     "name": "drift",
+     "signal": "flat",
+     "detail": "60일 평균 -0.28%/일, ATR 대비 -0.04 — 드리프트 미미"
+    }
+   ],
+   "lastFeedback": null
+  },
+  "079550.KS": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.665,
+   "expectedReturnPct": -3.52,
+   "band": {
+    "low": -14.19,
+    "high": 7.15
+   },
+   "close": 667000.0,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "flat",
+     "detail": "RSI 41·5일 +0.3% — 반전 신호 약함"
+    },
+    {
+     "name": "trend",
+     "signal": "down",
+     "detail": "20일선 741,550 vs 50일선 796,680, 종가 667,000 — 역배열·20일선 하회, 하락 추세"
+    },
+    {
+     "name": "drift",
+     "signal": "flat",
+     "detail": "60일 평균 -0.56%/일, ATR 대비 -0.05 — 드리프트 미미"
+    }
+   ],
+   "lastFeedback": null
+  },
+  "272210.KS": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.736,
+   "expectedReturnPct": -5.07,
+   "band": {
+    "low": -15.82,
+    "high": 5.67
+   },
+   "close": 61900.0,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "flat",
+     "detail": "RSI 36·5일 -1.1% — 반전 신호 약함"
+    },
+    {
+     "name": "trend",
+     "signal": "down",
+     "detail": "20일선 70,445 vs 50일선 88,728, 종가 61,900 — 역배열·20일선 하회, 하락 추세"
+    },
+    {
+     "name": "drift",
+     "signal": "down",
+     "detail": "60일 평균 -1.16%/일, ATR 대비 -0.11 — 하방 드리프트"
+    }
+   ],
+   "lastFeedback": null
+  },
+  "099320.KQ": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.75,
+   "expectedReturnPct": -7.44,
+   "band": {
+    "low": -19.26,
+    "high": 4.38
+   },
+   "close": 78200.0,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "down",
+     "detail": "RSI 41·5일 +6.4% — 단기 과열, 조정 경계"
+    },
+    {
+     "name": "trend",
+     "signal": "down",
+     "detail": "20일선 82,490 vs 50일선 112,376, 종가 78,200 — 역배열·20일선 하회, 하락 추세"
+    },
+    {
+     "name": "drift",
+     "signal": "down",
+     "detail": "60일 평균 -1.20%/일, ATR 대비 -0.10 — 하방 드리프트"
+    }
+   ],
+   "lastFeedback": null
+  },
+  "9988.HK": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "flat",
+   "probability": 0.5,
+   "expectedReturnPct": 0.0,
+   "band": {
+    "low": -4.79,
+    "high": 4.79
+   },
+   "close": 113.6,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "flat",
+     "detail": "RSI 55·5일 +0.2% — 반전 신호 약함"
+    },
+    {
+     "name": "trend",
+     "signal": "flat",
+     "detail": "20일선 104 vs 50일선 114, 종가 114 — 추세 혼조"
+    },
+    {
+     "name": "drift",
+     "signal": "flat",
+     "detail": "60일 평균 -0.18%/일, ATR 대비 -0.04 — 드리프트 미미"
+    }
+   ],
+   "lastFeedback": null
+  },
+  "0700.HK": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "up",
+   "probability": 0.598,
+   "expectedReturnPct": 0.86,
+   "band": {
+    "low": -3.52,
+    "high": 5.25
+   },
+   "close": 440.6,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "up",
+     "detail": "RSI 45·5일 -7.0% — 단기 과매도, 반등 기대"
+    },
+    {
+     "name": "trend",
+     "signal": "flat",
+     "detail": "20일선 451 vs 50일선 450, 종가 441 — 추세 혼조"
+    },
+    {
+     "name": "drift",
+     "signal": "flat",
+     "detail": "60일 평균 -0.14%/일, ATR 대비 -0.03 — 드리프트 미미"
+    }
+   ],
+   "lastFeedback": null
+  },
+  "9888.HK": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.665,
+   "expectedReturnPct": -1.67,
+   "band": {
+    "low": -6.71,
+    "high": 3.38
+   },
+   "close": 104.4,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "flat",
+     "detail": "RSI 41·5일 -2.9% — 반전 신호 약함"
+    },
+    {
+     "name": "trend",
+     "signal": "down",
+     "detail": "20일선 109 vs 50일선 119, 종가 104 — 역배열·20일선 하회, 하락 추세"
+    },
+    {
+     "name": "drift",
+     "signal": "flat",
+     "detail": "60일 평균 -0.19%/일, ATR 대비 -0.04 — 드리프트 미미"
+    }
+   ],
+   "lastFeedback": null
+  },
+  "1810.HK": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "flat",
+   "probability": 0.5,
+   "expectedReturnPct": 0.0,
+   "band": {
+    "low": -4.65,
+    "high": 4.65
+   },
+   "close": 26.68,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "flat",
+     "detail": "RSI 55·5일 +3.2% — 반전 신호 약함"
+    },
+    {
+     "name": "trend",
+     "signal": "flat",
+     "detail": "20일선 25 vs 50일선 27, 종가 27 — 추세 혼조"
+    },
+    {
+     "name": "drift",
+     "signal": "flat",
+     "detail": "60일 평균 -0.22%/일, ATR 대비 -0.05 — 드리프트 미미"
+    }
+   ],
+   "lastFeedback": null
+  },
+  "1211.HK": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "flat",
+   "probability": 0.5,
+   "expectedReturnPct": 0.0,
+   "band": {
+    "low": -4.14,
+    "high": 4.14
+   },
+   "close": 87.85,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "flat",
+     "detail": "RSI 54·5일 +1.0% — 반전 신호 약함"
+    },
+    {
+     "name": "trend",
+     "signal": "flat",
+     "detail": "20일선 83 vs 50일선 87, 종가 88 — 추세 혼조"
+    },
+    {
+     "name": "drift",
+     "signal": "flat",
+     "detail": "60일 평균 -0.23%/일, ATR 대비 -0.05 — 드리프트 미미"
+    }
+   ],
+   "lastFeedback": null
+  },
+  "0981.HK": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "flat",
+   "probability": 0.5,
+   "expectedReturnPct": 0.0,
+   "band": {
+    "low": -9.03,
+    "high": 9.03
+   },
+   "close": 72.9,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "flat",
+     "detail": "RSI 46·5일 -4.5% — 반전 신호 약함"
+    },
+    {
+     "name": "trend",
+     "signal": "flat",
+     "detail": "20일선 78 vs 50일선 77, 종가 73 — 추세 혼조"
+    },
+    {
+     "name": "drift",
+     "signal": "flat",
+     "detail": "60일 평균 +0.49%/일, ATR 대비 +0.05 — 드리프트 미미"
+    }
+   ],
+   "lastFeedback": null
+  },
+  "002230.SZ": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.665,
+   "expectedReturnPct": -1.28,
+   "band": {
+    "low": -5.17,
+    "high": 2.6
+   },
+   "close": 40.83,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "flat",
+     "detail": "RSI 44·5일 -1.3% — 반전 신호 약함"
+    },
+    {
+     "name": "trend",
+     "signal": "down",
+     "detail": "20일선 41 vs 50일선 44, 종가 41 — 역배열·20일선 하회, 하락 추세"
+    },
+    {
+     "name": "drift",
+     "signal": "flat",
+     "detail": "60일 평균 -0.27%/일, ATR 대비 -0.07 — 드리프트 미미"
+    }
+   ],
+   "lastFeedback": null
+  },
+  "688256.SS": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "up",
+   "probability": 0.562,
+   "expectedReturnPct": 1.06,
+   "band": {
+    "low": -7.43,
+    "high": 9.55
+   },
+   "close": 1310.0,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "flat",
+     "detail": "RSI 48·5일 -2.8% — 반전 신호 약함"
+    },
+    {
+     "name": "trend",
+     "signal": "flat",
+     "detail": "20일선 1,392 vs 50일선 1,351, 종가 1,310 — 추세 혼조"
+    },
+    {
+     "name": "drift",
+     "signal": "up",
+     "detail": "60일 평균 +0.80%/일, ATR 대비 +0.09 — 상방 드리프트"
+    }
+   ],
+   "lastFeedback": null
+  },
+  "688066.SS": {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.559,
+   "expectedReturnPct": -1.61,
+   "band": {
+    "low": -15.23,
+    "high": 12.0
+   },
+   "close": 7.17,
+   "components": [
+    {
+     "name": "reversal",
+     "signal": "up",
+     "detail": "RSI 24·5일 -30.4% — 단기 과매도, 반등 기대"
+    },
+    {
+     "name": "trend",
+     "signal": "down",
+     "detail": "20일선 11 vs 50일선 12, 종가 7 — 역배열·20일선 하회, 하락 추세"
+    },
+    {
+     "name": "drift",
+     "signal": "down",
+     "detail": "60일 평균 -1.32%/일, ATR 대비 -0.10 — 하방 드리프트"
+    }
+   ],
+   "lastFeedback": null
+  }
+ }
+}

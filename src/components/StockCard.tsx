@@ -6,6 +6,9 @@ import { Badge } from '@/components/ui/badge'
 import { ScoreBar } from '@/components/ScoreBar'
 import { NewsCheckToggle } from '@/components/NewsCheckToggle'
 import { Sparkline } from '@/components/Sparkline'
+import { RangeGauge } from '@/components/RangeGauge'
+import { PredictionChip } from '@/components/PredictionChip'
+import { useUserStore } from '@/lib/userStore'
 import { cn } from '@/lib/utils'
 import {
   changeColorClass,
@@ -40,6 +43,8 @@ interface StockCardProps {
 /** 홈 종목 카드 — 이름/티커/가격·등락/5축 미니 바/초보 적합도/리스크 플래그/뉴스 받기 */
 export function StockCard({ stock, editMode = false, onHide }: StockCardProps) {
   const fit = BEGINNER_FIT[stock.beginnerFit]
+  const { newsChecked } = useUserStore()
+  const isChecked = newsChecked.some((t) => t.toUpperCase() === stock.ticker.toUpperCase())
 
   return (
     <Link to={`/stock/${stock.ticker}`} className="block focus:outline-none">
@@ -91,6 +96,17 @@ export function StockCard({ stock, editMode = false, onHide }: StockCardProps) {
           </div>
           <Sparkline points={stock.priceHistory} className="shrink-0" />
         </div>
+
+        {/* 52주 범위 게이지 (스파크라인 아래) — 데이터 없으면 자동 숨김 */}
+        <RangeGauge
+          low={stock.quote.fiftyTwoWeekLow}
+          high={stock.quote.fiftyTwoWeekHigh}
+          price={stock.quote.price}
+          currency={stock.currency}
+        />
+
+        {/* AI 예측 칩 — '뉴스 받기' 체크 종목 + 오늘 예측 데이터 있을 때만 */}
+        <PredictionChip ticker={stock.ticker} isChecked={isChecked} />
 
         {/* 5축 미니 점수 바 */}
         <ScoreBar scores={stock.scores} />

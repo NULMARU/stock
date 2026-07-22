@@ -1,0 +1,452 @@
+{
+ "NVDA": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 206.79,
+   "forDate": "2026-07-23",
+   "direction": "flat",
+   "probability": 0.5,
+   "expectedReturnPct": 0.0,
+   "signals": {
+    "reversal": "flat",
+    "trend": "flat",
+    "drift": "flat"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ],
+ "MSFT": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 390.0,
+   "forDate": "2026-07-23",
+   "direction": "flat",
+   "probability": 0.5,
+   "expectedReturnPct": 0.0,
+   "signals": {
+    "reversal": "flat",
+    "trend": "flat",
+    "drift": "flat"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ],
+ "GOOGL": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 348.4,
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.576,
+   "expectedReturnPct": -0.47,
+   "signals": {
+    "reversal": "up",
+    "trend": "down",
+    "drift": "flat"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ],
+ "TSLA": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 377.64,
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.665,
+   "expectedReturnPct": -1.39,
+   "signals": {
+    "reversal": "flat",
+    "trend": "down",
+    "drift": "flat"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ],
+ "PLTR": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 127.5,
+   "forDate": "2026-07-23",
+   "direction": "flat",
+   "probability": 0.5,
+   "expectedReturnPct": 0.0,
+   "signals": {
+    "reversal": "flat",
+    "trend": "flat",
+    "drift": "flat"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ],
+ "RKLB": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 72.32,
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.614,
+   "expectedReturnPct": -2.3,
+   "signals": {
+    "reversal": "up",
+    "trend": "down",
+    "drift": "flat"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ],
+ "ASTS": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 63.46,
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.665,
+   "expectedReturnPct": -3.75,
+   "signals": {
+    "reversal": "flat",
+    "trend": "down",
+    "drift": "flat"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ],
+ "LUNR": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 14.44,
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.665,
+   "expectedReturnPct": -4.15,
+   "signals": {
+    "reversal": "flat",
+    "trend": "down",
+    "drift": "flat"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ],
+ "005930.KS": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 260500.0,
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.665,
+   "expectedReturnPct": -3.08,
+   "signals": {
+    "reversal": "flat",
+    "trend": "down",
+    "drift": "flat"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ],
+ "000660.KS": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 1830000.0,
+   "forDate": "2026-07-23",
+   "direction": "flat",
+   "probability": 0.5,
+   "expectedReturnPct": 0.0,
+   "signals": {
+    "reversal": "flat",
+    "trend": "flat",
+    "drift": "flat"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ],
+ "035420.KS": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 196900.0,
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.609,
+   "expectedReturnPct": -1.31,
+   "signals": {
+    "reversal": "down",
+    "trend": "flat",
+    "drift": "flat"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ],
+ "012450.KS": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 891000.0,
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.665,
+   "expectedReturnPct": -2.93,
+   "signals": {
+    "reversal": "flat",
+    "trend": "down",
+    "drift": "flat"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ],
+ "047810.KS": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 149300.0,
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.568,
+   "expectedReturnPct": -0.95,
+   "signals": {
+    "reversal": "down",
+    "trend": "flat",
+    "drift": "flat"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ],
+ "079550.KS": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 667000.0,
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.665,
+   "expectedReturnPct": -3.52,
+   "signals": {
+    "reversal": "flat",
+    "trend": "down",
+    "drift": "flat"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ],
+ "272210.KS": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 61900.0,
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.736,
+   "expectedReturnPct": -5.07,
+   "signals": {
+    "reversal": "flat",
+    "trend": "down",
+    "drift": "down"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ],
+ "099320.KQ": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 78200.0,
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.75,
+   "expectedReturnPct": -7.44,
+   "signals": {
+    "reversal": "down",
+    "trend": "down",
+    "drift": "down"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ],
+ "9988.HK": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 113.6,
+   "forDate": "2026-07-23",
+   "direction": "flat",
+   "probability": 0.5,
+   "expectedReturnPct": 0.0,
+   "signals": {
+    "reversal": "flat",
+    "trend": "flat",
+    "drift": "flat"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ],
+ "0700.HK": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 440.6,
+   "forDate": "2026-07-23",
+   "direction": "up",
+   "probability": 0.598,
+   "expectedReturnPct": 0.86,
+   "signals": {
+    "reversal": "up",
+    "trend": "flat",
+    "drift": "flat"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ],
+ "9888.HK": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 104.4,
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.665,
+   "expectedReturnPct": -1.67,
+   "signals": {
+    "reversal": "flat",
+    "trend": "down",
+    "drift": "flat"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ],
+ "1810.HK": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 26.68,
+   "forDate": "2026-07-23",
+   "direction": "flat",
+   "probability": 0.5,
+   "expectedReturnPct": 0.0,
+   "signals": {
+    "reversal": "flat",
+    "trend": "flat",
+    "drift": "flat"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ],
+ "1211.HK": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 87.85,
+   "forDate": "2026-07-23",
+   "direction": "flat",
+   "probability": 0.5,
+   "expectedReturnPct": 0.0,
+   "signals": {
+    "reversal": "flat",
+    "trend": "flat",
+    "drift": "flat"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ],
+ "0981.HK": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 72.9,
+   "forDate": "2026-07-23",
+   "direction": "flat",
+   "probability": 0.5,
+   "expectedReturnPct": 0.0,
+   "signals": {
+    "reversal": "flat",
+    "trend": "flat",
+    "drift": "flat"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ],
+ "002230.SZ": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 40.83,
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.665,
+   "expectedReturnPct": -1.28,
+   "signals": {
+    "reversal": "flat",
+    "trend": "down",
+    "drift": "flat"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ],
+ "688256.SS": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 1310.0,
+   "forDate": "2026-07-23",
+   "direction": "up",
+   "probability": 0.562,
+   "expectedReturnPct": 1.06,
+   "signals": {
+    "reversal": "flat",
+    "trend": "flat",
+    "drift": "up"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ],
+ "688066.SS": [
+  {
+   "predictedAt": "2026-07-22T23:33:59+09:00",
+   "baseDate": "2026-07-22",
+   "baseClose": 7.17,
+   "forDate": "2026-07-23",
+   "direction": "down",
+   "probability": 0.559,
+   "expectedReturnPct": -1.61,
+   "signals": {
+    "reversal": "up",
+    "trend": "down",
+    "drift": "down"
+   },
+   "actualReturnPct": null,
+   "hit": null
+  }
+ ]
+}

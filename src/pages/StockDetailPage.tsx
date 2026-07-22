@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react"
+import { lazy, Suspense, useMemo, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import {
   AlertTriangle,
@@ -15,10 +15,11 @@ import {
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Skeleton } from "@/components/ui/skeleton"
 import { ChecklistPanel } from "@/components/ChecklistPanel"
 import { GlossaryTermModal } from "@/components/GlossaryTermModal"
 import { MetricCard } from "@/components/MetricCard"
-import { PriceChart } from "@/components/PriceChart"
+import { PredictionPanel } from "@/components/PredictionPanel"
 import stocksData from "@/data/stocks.json"
 import rawNewsData from "@/data/news.json"
 import {
@@ -37,6 +38,10 @@ import type { BeginnerFit, NewsData, StockEntry } from "@/types/stock"
 
 const bundledStocks = stocksData as StockEntry[]
 const bundledNews = rawNewsData as NewsData
+
+// recharts 기반 차트는 무거워 초기 번들에서 분리 — 상세 페이지 진입 시 별도 청크로 지연 로딩
+// (PriceChart.tsx는 default export를 제공하므로 그대로 lazy 래핑)
+const PriceChart = lazy(() => import("@/components/PriceChart"))
 
 const BEGINNER_FIT_META: Record<BeginnerFit, { label: string; className: string }> = {
   good: {
@@ -506,6 +511,9 @@ export default function StockDetailPage() {
         </div>
       </section>
 
+      {/* ── 단기 방향 예측 (오늘 데이터가 있는 종목만 표시) ── */}
+      <PredictionPanel ticker={stock.ticker} currency={stock.currency} />
+
       {/* ── 5축 체크리스트 ────────────────────────────────── */}
       <section>
         <ChecklistPanel scores={stock.scores} />
@@ -543,12 +551,18 @@ export default function StockDetailPage() {
           </p>
         </CardHeader>
         <CardContent>
-          <PriceChart
-            priceHistory={stock.priceHistory}
-            fiftyTwoWeekHigh={quote.fiftyTwoWeekHigh}
-            fiftyTwoWeekLow={quote.fiftyTwoWeekLow}
-            currency={stock.currency}
-          />
+          <Suspense
+            fallback={
+              <Skeleton className="h-72 w-full" aria-label="차트를 불러오는 중" />
+            }
+          >
+            <PriceChart
+              priceHistory={stock.priceHistory}
+              fiftyTwoWeekHigh={quote.fiftyTwoWeekHigh}
+              fiftyTwoWeekLow={quote.fiftyTwoWeekLow}
+              currency={stock.currency}
+            />
+          </Suspense>
         </CardContent>
       </Card>
 

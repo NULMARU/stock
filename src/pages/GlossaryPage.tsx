@@ -4,6 +4,7 @@ import { Search, Compass, ChevronRight } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { GlossaryTermModal } from "@/components/GlossaryTermModal"
+import { TermQuiz } from "@/components/TermQuiz"
 import type { GlossaryGroup, GlossaryTerm } from "@/types/stock"
 import glossaryData from "@/data/glossary.json"
 
@@ -64,6 +65,9 @@ export default function GlossaryPage() {
             </p>
           </div>
         </div>
+
+        {/* 오늘의 용어 퀴즈 */}
+        <TermQuiz />
 
         {/* 검색 */}
         <div className="relative mb-8 max-w-md">

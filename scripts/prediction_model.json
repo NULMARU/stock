@@ -1,0 +1,9 @@
+{
+ "version": "predict-v1.0",
+ "weights": {
+  "reversal": 0.34,
+  "trend": 0.33,
+  "drift": 0.33
+ },
+ "updateHistory": []
+}
