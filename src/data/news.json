@@ -1,5 +1,5 @@
 {
- "asOf": "2026-07-30T08:20:03+09:00",
+ "asOf": "2026-07-30T18:19:56+09:00",
  "entries": {
   "NVDA": [
    {
@@ -7,6 +7,18 @@
     "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOek44NTdlVzRSOW5LXzNZbjRRMjFXNUVLX19fNjRHb2xaMzFzRGluSDZiU0JhSE0zTDlkRlAzbHBoT0ZaM3ZGSDdkVEZZR3NqOGdla1NOcnZuTk5LemlLY3NQaUo0NWo0bHlhdk9Cei0yTGN6UjhGbTlmN0dFNjNjYkdHZDN1RnFRTzhv?oc=5",
     "source": "Barron's",
     "publishedAt": "2026-07-29T20:46:00+09:00"
+   },
+   {
+    "title": "AI Stocks Crash After NVIDIA Plans to Finance $250 Billion OpenAI Buildout Are Reported - Yahoo Finance",
+    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOTHdnbU82UC0wUWNSbXZac1g3bkEyTXRkSm8xVjdieXlSTXBxa1JSSHQ0aGF1TGZjdkdXRTFvdmFTbFJvRUo4c19pNlJsSmpoSUhYNHFRaFFtWWFIRklMUllXSVZGVlhWdVNDc0FYRFVJeG8yek1kRlFtQmVPeDBYakE5SS1GT0FKYzBLWURLNEtnWW9IZk5Mbw?oc=5",
+    "source": "Yahoo Finance",
+    "publishedAt": "2026-07-28T01:00:49+09:00"
+   },
+   {
+    "title": "Nvidia: Reported OpenAI Deal Raises Circular Deal Fears, but We Think the Stock Is Undervalued - Morningstar",
+    "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNc2E4OUJQRXFRQXBDOTU2TzNqLUk1cGVQRU9VVjlhd2EwX3BLQzBWRHJENGZ6ZmdNRERxY190a3hycVF4VUNfdXhGNkFEakQzVlB6NHVjU2V2R21hb1MtbkE4YnBTdERpcDNTMUNkZnV2X3RleWVuNk5nNW9ENTEtSHEwUUN1M0pQWWx0TG5FN0hEbm1ob2R6c05mTTktV21EMVVEdlhXT1ZSU0hpOHFKYm1BM3BGLTVXdWgxS253T3FxOVA1WlpN?oc=5",
+    "source": "Morningstar",
+    "publishedAt": "2026-07-28T18:19:25+09:00"
    },
    {
     "title": "Nvidia, Micron, AMD sink after SK Hynix results fail to impress, AI trade unwinds - Yahoo Finance",
@@ -19,18 +31,6 @@
     "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNVlY1Ukx4MzJoZFMyX0xSMElyTUxIY1VmXzFQV3hTY2RjS0tkZmNuTUFlUkhRcm45NmNXTTVpbUtFcWNIdFJZNWVPYkRYQ2RQR3MzeVhmOVVyYkZFZHpRTjFHNDl0Q2hpc1VaVDU5Y2JNS0c3WmRFM051dVBjYnVHdmRaYkxaV1ZkWmQyLTdoSWUxY3NlU2g4?oc=5",
     "source": "CNBC",
     "publishedAt": "2026-07-29T21:17:11+09:00"
-   },
-   {
-    "title": "Famous Investor Michael Burry Is Short Nvidia, Palantir, and Tesla. Why I'd Buy 1 of the Stocks, Hold Another, and Sell the Third. - The Motley Fool",
-    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQbTRRMWVLdEg3Mk1CMGI2Q2xzaVZQSHNINUJ0LWhncHJZZVZPTkhnN19HTFdQak1QWGF3Rk5zVFZDQTRPMGFYckR4alVOcE5QR0NEOEcwTnRsTXJqWFpzU0NpZmdUaFl3OVR3V1VwT3c2T0JSa0tKTm5Zdm1fZkYxRlRsOU44OTdxRDNtdk55OHRRaVdia04wUQ?oc=5",
-    "source": "The Motley Fool",
-    "publishedAt": "2026-07-30T01:15:00+09:00"
-   },
-   {
-    "title": "QUICK SPARK: Google, Amazon, Nvidia Among 2026's Top 10 Most-Shorted Stocks - TradingView",
-    "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQa1VoUkJFU2Y4a1I2ZVBlalVCbWJwckVLVUVWb2Q0TTlxMjMtTU53VFJ0TFN5UEp2ZnFxeXA2d1JEZUJTT3JJeC1lbmJjUFplWnptMldlbnJ0ek44MjBaWjRfQVBvNEpBVFd2OHA2d1lVM19uWEsyTWhSVmlVYmwyMVdlZVVzYmQtUm5iTzBoWnUtZUpvcTJPNDdBcmtmMWlraG9RTWdEUFRtZ2YtczliZ2lPSjBCdkRTa0xtQm9fM0VLWTFQeTRTRE43MA?oc=5",
-    "source": "TradingView",
-    "publishedAt": "2026-07-30T02:25:23+09:00"
    }
   ],
   "MSFT": [
@@ -38,7 +38,7 @@
     "title": "Microsoft earnings impress Wall Street. Here's why the stock is soaring. - MarketWatch",
     "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxORFB4OExaZmw0R1lXMjN1alBod0pWY0doNktFbDduRld1Q19BU2FtZjFGNktFRTVtNkY2NDZ5bnBNa2lqNkRkc2V2MXBkQ1J4RDBIalhWSUVBOXNsNTlwcm9Fdjd4QjhLVWtlaVphMTBiVGxhSGRQMWE4dEREUW1sT3gzSFRfdTM4N29uMjlfcHdKUQ?oc=5",
     "source": "MarketWatch",
-    "publishedAt": "2026-07-30T07:42:00+09:00"
+    "publishedAt": "2026-07-30T10:30:00+09:00"
    },
    {
     "title": "Tech Earnings Today: Microsoft Beats Expectations, While Meta’s Profits Disappoint - Investopedia",
@@ -47,22 +47,22 @@
     "publishedAt": "2026-07-30T05:53:38+09:00"
    },
    {
-    "title": "Microsoft beats Wall Street expectations with $90B in revenue - ABC News - Breaking News, Latest News and Videos",
-    "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQbGEwQkRmWWlFX1hmQWw0TG1uRFdaM1pfX0FmdFI1eU5kT2NkMkQ3S3NMMUQ2cHFWMnRodmZPNGVscmVCV2k1UURNMkF2RkF5MFpQeTd2N3Bvc0pqX0xoR0RHbDJXcXk4WThfWV9YWEw3d2pEVUhmVmtZdGVmcXZoWjFrUmt6SkVGZk5ENXVFZXBDYVc0YS1LSUpHeDdmWHozVnQ00gGoAUFVX3lxTE1yZ09nOWlwWkpxTnZfRGw4cG8wbUl4SEtqQTNyZGlyejhWQnU3YjUwcVh3VDVKbU9rMVl4MU9TNXBxMmZGY202MFEzZWRsaUdPUmRKblFlRl9uVGxTelNOanJLMG5KM3Jrbms2ZGxkSGE4MGZHRnpSWHpKQ0JvRHdQZFBTSTd3c0dwRXRYUGNSelpUVm5zLWl4QTJKR29BRS1SQzFzSUNsMQ?oc=5",
-    "source": "ABC News - Breaking News, Latest News and Videos",
-    "publishedAt": "2026-07-30T07:05:52+09:00"
+    "title": "Microsoft: What We Think of the Stock After Earnings - Morningstar",
+    "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOcHkyUHdZLVBrcjBsMThaU1U5c3BxMUJGYnQ0NHJVcVhKUGxVRUVCLUhtakhTbGp1djNsci1vZ2lIZ2dSaWFRUHJBbVpnTFI5MUpBSDcwWUNVMEZuYUhpdldLVkRGSTNFelUtVmM5cS1NWWZ4ZXZYenlqY2hDVlNnc0lLMkVqTXd4TW8wbS1vaEs4dw?oc=5",
+    "source": "Morningstar",
+    "publishedAt": "2026-07-30T17:52:21+09:00"
    },
    {
-    "title": "Shares of Microsoft extend gains to 7% after hours on capex guide - investingLive",
-    "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOYUs1MXI4RjNpSXc5YWFSQ191cWV0cmx3eGhzemZuWVZwYWt6VF9GU0hfeHRQMkJqWkdtcElLVVdfbHpfNkxMdzdCR0M2N0ZXSUZIWkRGUGV4NWNrYnZnZEtjNWRRQVctSEtjT3M5c0VpSFlheVhTZHV0dmRpWVpqV2IwVWIzcVNsTEZfU1Vnb0RHWGh2eGVtSjJxRC1ranc?oc=5",
-    "source": "investingLive",
-    "publishedAt": "2026-07-30T07:26:38+09:00"
+    "title": "MSFT Stock Jumps 3% After-Hours — Lower-Than-Expected Q4 Capex, Strong Azure Sales Boost Sentiment - Yahoo Finance",
+    "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQRXEtT084RzhSbWlLdHdYQVJZc3B5NUpqd0tSTi1FTE9MeHdBcjF1NnBnV0p1c3FPWnoxZ200NkxSNWVBam82T1ZCUmJUZk8tbkVjNmZJM2syTzhwQWVRcURPcTZOWGM3YnZsSTY0WExCTFR0VlUtZ1FQd1lHZXhYMG5jYVFMX3VEd0VlQ0JpTktzLTA?oc=5",
+    "source": "Yahoo Finance",
+    "publishedAt": "2026-07-30T06:12:38+09:00"
    },
    {
-    "title": "Microsoft keeps capex forecast unchanged, becoming one of the first data center giants to hold the line on AI spending - Business Insider",
-    "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQaXpnVl9jUlRXaHctcHJVdDlBWE9oLU5VYnlHT1NDT0UxdGlkcWNpR3VmdzM3clFseXg2T3RQQmM5bVBMcjJ3bk1QZ0ItY3FOTkNsWWtGaVNoSDI1bzZ4SGRCd1FzNTJZMFEtN0RkX2lZOXZlZGhRcncyU0huaXdVNXFsUUlpX3BOakxqTDlROEcxcGYwR1FIV0xzWk5sT09pNHFR?oc=5",
-    "source": "Business Insider",
-    "publishedAt": "2026-07-30T07:04:55+09:00"
+    "title": "Microsoft’s stock rises 9% on strong Azure revenue growth and steady capex spending - siliconangle.com",
+    "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOTG9Qb001enNUU0VxcFU3TGltWlV2RjJ2VmRpTTJkNmdfVE5uaEVKOE1VUGo5VWFzYTFIX0JyX0RrZW1uLUhQRUxuQTFuMFJNb3pwQkFjS2tUMGJHOTZkV2VvTGZhN0tZcXJGZTVMQi1xOHZQOURLU2IyQmJ3OWs3eDBVYkFMZlZfSTRsWmloN29UR005cC1nejdFNGRmNHBjV3BVVHdlaXlUMlU4Tjg1WA?oc=5",
+    "source": "siliconangle.com",
+    "publishedAt": "2026-07-30T09:44:06+09:00"
    }
   ],
   "GOOGL": [
@@ -73,36 +73,36 @@
     "publishedAt": "2026-07-30T05:59:03+09:00"
    },
    {
-    "title": "3 Reasons Alphabet Stock Could Double by 2030 - Yahoo Finance",
-    "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOeDdZQk1hTk5QV1dWbHpTcVdOQkFDNEpsZzhXaFhFNnFXNWlNZkhHVVNKZG85MjFMbjRucm1iN2p2OTQxcnNhaFFWU0VCTWVkb2NMRUpMb05OUmpGTVZ4MFlZbzdpVkV6aGhYSVVuaVJYZ2tOSmVlVWRJY1Q2dzdNUEFpRWNNQnpVRDVQcklsM0FiOXNGNE44cGVlRQ?oc=5",
+    "title": "Is Google Parent Company Alphabet Stock Too Cheap to Ignore Right Now? - Yahoo Finance",
+    "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNUFNjaGtUaVJ5U1JwZkdVRFBqSG5WUnNlUVJCS1pMeGpWeG81enUzc24zUTB1anhTTW8xZHFKNE0xZEc2MTRhOVNlQ0x2TnJoTXBTVlZtMXY5YnJLUm5GODlUYjZYYURyRmJrVEtRWHVtazJHaXhaSDRrQTN2QmZXUGZhOFZaZU9scnFKeVR3aGZXSHdUWnZKV2FrS0tzQXRaTzZv?oc=5",
     "source": "Yahoo Finance",
-    "publishedAt": "2026-07-29T17:05:00+09:00"
+    "publishedAt": "2026-07-30T03:33:00+09:00"
    },
    {
-    "title": "Is Google Parent Company Alphabet Stock Too Cheap to Ignore Right Now? - The Motley Fool",
-    "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOYV9SLTdkT2RxQkRrSm4zZkJYQjVDRnRESVdJR2lIN3FzTTA3d3pKR3p0dnNEN1VkSWxFZDdNd0tiZ0pLY0pVMFh1a2VOeGtfdmwtb19NUXJYUUs1X2RxS0ROWXI3ZGFmUjRVVGZOUDNMYTRwWm9jdGRWdWwxWWdWQ0xsNF9JWmNjLXpUa0M3Y1RNTnpQ?oc=5",
-    "source": "The Motley Fool",
-    "publishedAt": "2026-07-30T04:13:00+09:00"
-   },
-   {
-    "title": "QUICK SPARK: Google, Amazon, Nvidia Among 2026's Top 10 Most-Shorted Stocks - TradingView",
-    "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQa1VoUkJFU2Y4a1I2ZVBlalVCbWJwckVLVUVWb2Q0TTlxMjMtTU53VFJ0TFN5UEp2ZnFxeXA2d1JEZUJTT3JJeC1lbmJjUFplWnptMldlbnJ0ek44MjBaWjRfQVBvNEpBVFd2OHA2d1lVM19uWEsyTWhSVmlVYmwyMVdlZVVzYmQtUm5iTzBoWnUtZUpvcTJPNDdBcmtmMWlraG9RTWdEUFRtZ2YtczliZ2lPSjBCdkRTa0xtQm9fM0VLWTFQeTRTRE43MA?oc=5",
-    "source": "TradingView",
+    "title": "QUICK SPARK: Google, Amazon, Nvidia Among 2026's Top 10 Most-Shorted Stocks - Benzinga",
+    "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOYWVQUk5RSWk3MEo2ZzhWVmx5Zk1RRm83MDhsSzc3TTRnLXVNRWx3ZlE2c3I3UHEzNEttV2ZKYXoya0c1dnBtSEhxdFV5dTFuNkVpa0MwWlRIZFZTXzlrbjdBSkRYVXpEZThKRGVPOWhIVFBaNVdwRmNiWFNiSnYtdmZqaXM5V3JudndvTmtKS0VNRm9KWXhtb1ZZSk1jT0dyanRaLXlpeG10MDQtX28xRl81STI3a2tmcmVaV0JZVy1NUQ?oc=5",
+    "source": "Benzinga",
     "publishedAt": "2026-07-30T02:25:23+09:00"
    },
    {
-    "title": "Billionaire Money Manager Christopher Begg Bought Google at 15x Earnings. Here's Why He Calls It the Best Business in the World - 24/7 Wall St.",
-    "link": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOX3hpLWFwT1o0QmlKY19QUjduWEZDenNkaTNxaWlaSVduT3hmRmR3QTdjWG11TzZCOE0tTFlXOWxGMzhFZ0d2ZTQwa1RvaDZQZ1ZMZ2xtaEl0NmZIQzR6dWxoZlFYUUllTDZrOGVRaVZxWHcxOG5OcFh1dmNTc3BpaFdyRE5KMFFrLTFlcng3UTlpQlhreWNjTmZONWpLQ3F1akQwazY1LXVZUjcwQmhKMl9odDRpd0xDb01hWE5mLXkwSzU3cWxmZUVYNDRpR09SbEdON29CTFN6dUNCTzVicEJtS1VaTHFmSEttbW9EUS15Y1ZXSkNNX003NDZ0QQ?oc=5",
-    "source": "24/7 Wall St.",
-    "publishedAt": "2026-07-30T02:00:24+09:00"
+    "title": "Here's Exactly How Much Alphabet's SpaceX Shares Are Worth - The Motley Fool",
+    "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOdjFfY0txTEVmd0RMVTQ1TTBUSlktZU4xQjJFbG82Ry1ZTDBLbmxFbFhZMTN4ZWV4ZkhxYkF6SG9xT2FBZl92VHhJNVRxaGtHbjIyWERRdDk1aGlxNEhhQnFMa095bGNrR29pZWlzVUlkaDJIb3YyM2R2blY2ek9uQkZfMkxSQ2d4SklWWThzSTc?oc=5",
+    "source": "The Motley Fool",
+    "publishedAt": "2026-07-29T00:00:00+09:00"
+   },
+   {
+    "title": "Top analyst revamps Google stock price target on key move - thestreet.com",
+    "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOWVpwNVpCZkVLSmdabC1uQjdkOGh3OGZqMjktWG1IOVpuT2FWUGp6bGVoNmoyODBBbEVFSHlkRHpDQUtPMlZUYkxlYXltYk5kdnNhMTdnWUZWdnF4SFNGaElFV2U5cFJVdm41a2ZzbkcxaFY5emtCVnc0VXhiXzVMam80bWtvel9NZnN4N0Z4TEFKdzZIcDZYZndoT1FGbWdEcF9n?oc=5",
+    "source": "thestreet.com",
+    "publishedAt": "2026-07-29T06:37:06+09:00"
    }
   ],
   "TSLA": [
    {
-    "title": "Tesla Stock Falls Again, Putting Trillion Dollar Status at Risk - Barron's",
-    "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPb3VRWVpzdlBQYnJlaE84RXljMVpQYWNEemNPWUQ4ODlSU3lza3BvSmZadzhFSW1KX0xZRWJSbHpncWVEUmE3Y3EycXktM2lZc1k0b2tvWGVYUHh3VUc4a0hvcGFlNjc2U1F3dnBCM01FSTF4V0dtbGxPQVktSVRtdEJR?oc=5",
-    "source": "Barron's",
-    "publishedAt": "2026-07-30T05:29:00+09:00"
+    "title": "Tesla stock hasn't been this oversold in more than a year - Yahoo Finance",
+    "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPa29LeUlEV09Yb2trbl9GNnhTQTV4eVFCQVpPZUxPakFMVzJPelNPeDM3LWl6Q21HLUMxX0ZIdUxUd2ltdFloR212R0x5OUdhWWtMNXFxdHZLTmJOZV9sMVE3MDMxMkFsbTJEM1dpOTJ5SVdGY3ZKZGFwbUU4RU80eDU0OEdCYzE4MXp1MVlOTjN0RVl2WHFQMmhpcWdfLUwtUjVzMlNVeXZJWUl5cmtlWnEwNGs5dFdSVndtZA?oc=5",
+    "source": "Yahoo Finance",
+    "publishedAt": "2026-07-28T23:30:54+09:00"
    },
    {
     "title": "Cathie Wood Keeps The Faith; Rakes In Diving Tesla, SpaceX Shares - Investor's Business Daily",
@@ -111,10 +111,10 @@
     "publishedAt": "2026-07-29T02:48:00+09:00"
    },
    {
-    "title": "Elon Musk stocks take $1.5 trillion hit with fresh test in SpaceX lockup ahead - CNBC",
-    "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQTDduYUhOQ2dIYVhVY05TdU1NTE44WFJLYk5YY01RVTdVRXRIOVkxOGE5bkV3T01ua0V1czBXSFFyVW8tMF85UzJjZDlpd0VyZnNFVktRR0JiTDFFd25mWkJlZHR6b1RUYmJldV9jTzFmZDl4OExsbklld3BqWjRkd1ZqdC0wWi1PRlYyZ0tTZmtoWkZHTmd3NURqMHM5WVpyN0ZuSVNuVy1YTTItLXRWTjJFSTZzNGl3WlHSAb8BQVVfeXFMTjFaM0puTnFHSmlEc1ZhaE93YzBxS2cwMG1xWm1Dal9iblZWTVBhNlZwbmhILUZJdHJfU0tfdU8wWEV6dUw3MjFtc2V5VmVWeEsyUkxxMm5GTHVTVmwwQXdsa1AzMGxoemZ2eTZTeGhXN29wdExrS1N6Q3NFX1hLamtfODZSaUh6SW4zeGhDREJBdTVjMFRiWkdnb3c4R294TF9lVmJWdi1jektGZWhJRHhBNm9fTm5BVm8teHZ1NUk?oc=5",
-    "source": "CNBC",
-    "publishedAt": "2026-07-29T03:56:34+09:00"
+    "title": "Cathie Wood Bought $53.5 Million of Tesla Stock Right After Elon Musk's Post-Earnings Sell-Off. Is a Rebound Coming? - The Motley Fool",
+    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOZWtGTFlIeDF3WFBveUF5RVRHa1huMmxLQ2dZeHlNWFpKRURMWDN2RThSWUszSEhSQVkxRmwzUXZ5aGl5ZS1TRW5XZ194YWJsQk1ZWFZqTTJjMDFiVDBudHhFMEJGWlBqdDNSb1cyNl9fODVVZWJpdlNJSGRTeUl0X2plTmItbDVrMTRtWTVCSlJGM2QwRjlzVw?oc=5",
+    "source": "The Motley Fool",
+    "publishedAt": "2026-07-30T15:30:00+09:00"
    },
    {
     "title": "Musk’s SpaceX tumbles back to Earth, dragging Tesla stock down with it - The Washington Post",
@@ -123,10 +123,10 @@
     "publishedAt": "2026-07-28T01:00:00+09:00"
    },
    {
-    "title": "Cathie Wood Doubles Down on Tesla Stock. Should Investors Follow? - The Motley Fool",
-    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQZHNBZkIwcjNtcVlCN0VPR0U0Q1RoNDhnMDd6WW51TUc2QXhja1NEbzJYOGlQTWx4LTZkR0N5eVAtekRVLVYtYWo3YnpWRmRfS3d0M2dqUTZrNktHSW5jY2pNaGpmeE1yUTlQR0FGR00zT3BOaFZTeUVjbmdiQ1h6SkpCYlRBSE81MjYyRHo3dklONzFLRzB4Vg?oc=5",
-    "source": "The Motley Fool",
-    "publishedAt": "2026-07-29T10:05:00+09:00"
+    "title": "BYD Shares Rally 22% As Tesla Dives 23% - 24/7 Wall St.",
+    "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNeUd1SDlka1o3M1paZHJpeThjV0hJd3NQWXRJaWhfVjAxMXRzWmdUTzR1U09Pb3U4SGNJSE80RS02QkMwZDU4NGZBTnFtOF9qaGMyV241T0F1Y1RhZ0ZIMEtMbWpuR0tMc3hNVmNMcnV4czdocU5oRW9QTDd4V3huZzB2aUF5Yjgz?oc=5",
+    "source": "24/7 Wall St.",
+    "publishedAt": "2026-07-28T23:39:22+09:00"
    }
   ],
   "PLTR": [
@@ -137,54 +137,54 @@
     "publishedAt": "2026-07-29T05:15:52+09:00"
    },
    {
-    "title": "Why Palantir’s stock is missing out on a big software rally - MarketWatch",
-    "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPS0FuYzRpNWxDZ2FwVGRjSjA2Y0JSdU1lbEtzOExNZE1LZGxxR1ZmTnBfQTAyUkJsOS04VG9pZWhyQUtrUVZVRVN1Y1B4NTU5MEluaDloaVhkdDJpbVlkSG41OE5CaGo3OU9zd2ZkVjliUUtwY1JuR20wVGpVbzUxWEFMNFhycjQ4UDljT3RBN2IyNW9QNllsZVJiR2hwdW1NS2VZ?oc=5",
-    "source": "MarketWatch",
-    "publishedAt": "2026-07-29T04:46:00+09:00"
-   },
-   {
-    "title": "Prediction: Palantir's Stock Will Make a Huge Move on Aug. 3 - Yahoo Finance",
-    "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQOXdNcE9sOWhRWWdEQy1aSGNDMFgySDFKRTZmZE5pTWs2dmhwNERCMHI3U3pYaXRCR3RQMWc1YWVqVWVzams4bEs1X1lSU1dZT092NWdfS0ZieDhzMWhqWUFKRS1ydThQODdBZ1FXWXY1NVhuSXJPWHE5SlJZZUJkLTdUYXJUTzdUYTl5ZWpPazVyQXlWaUFUMFh0YkxoR1IwYjhv?oc=5",
+    "title": "Why Did Palantir Technologies Stock Drop Again? - Yahoo Finance",
+    "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxORUpYa2ZXWnVudzY4cm4tVEJBY09EbmVCTkdERTRrSHhaZlNsOVdCT09ZZjZxMnVvZGxFZmRESFlsUDFJWmw3cml3ZVpCVnh4ZHZldFNjbkJ2R0tsWkhjVU9uUjBIdEhXaUl6TzJrWDgwd3c5QUJ1WXl1TlBSTm5sSU16ZUE2ZEVFbGFUa2s3OWhHVUdwRVRHTUN3bGxqNGtXQ2c?oc=5",
     "source": "Yahoo Finance",
-    "publishedAt": "2026-07-29T16:12:00+09:00"
+    "publishedAt": "2026-07-29T06:01:06+09:00"
    },
    {
-    "title": "Why Did Palantir Technologies Stock Drop Again? - The Motley Fool",
-    "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOSkhoODBCZjhiRElTUExQeTZlWnE5S1dEOG9OU2JtYm5MalR3UVlDb1lRUkNTTHlOcmMzc2Z0UThycjhWOGdyMmVyaWhqSlpUYkFTRU4wLUFFRmdWb1dIUHdEYmdIdTZsY0xvVXFlTEI0cGNzVGI1VkFNVlk0akcydHBZdFJxR3BMdFJBTTFVR2hWNjA?oc=5",
-    "source": "The Motley Fool",
-    "publishedAt": "2026-07-29T06:41:00+09:00"
+    "title": "Ahead of Earnings, Is Palantir Stock a Buy, a Sell, or Fairly Valued? - Morningstar",
+    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOUXlIQjFZNkVmZzR3YjA4WlltVGRZeXpYOGRQb1FWeWpodkRPTFJGWEd5WkR0LUFGdXNVblVpTkhDVGNYTUFuUDZQUzZET0UtSXl5RFVuQWk2LXYtTDJnRkVlRDlUZl9vME5qUzZvaGd1OFRJdGlydlM4Q1E2MnZNdUJ0bG1YOUFnYzRSNGFzSFlSeTdLN2M4Tw?oc=5",
+    "source": "Morningstar",
+    "publishedAt": "2026-07-27T19:05:29+09:00"
    },
    {
-    "title": "Decoding PLTR Stock’s Premium Valuation - Trefis",
-    "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPZHY3aEZXUmJLNnRWS0pxVjM1Q0JLODRkUE9HN010VjJ6V2w2dkRDVzEyYlRmVmRUNkwtNE9JY1FIV3k4V3NZd1h3Y24zcmNmbE5wSnU3NDhCbGsyXzJHYnQxeWgtN1R3cVdRVEc4UGxQVjJqNFlOVGwzSzdCOTBDMFlZRVZ0VmdWOXBwNm9CQ0syRm1aRXJ4R3JSOVZCRHNqTUZN?oc=5",
-    "source": "Trefis",
-    "publishedAt": "2026-07-30T00:41:05+09:00"
+    "title": "Why Is Palantir Stock Falling on Tuesday? - Benzinga",
+    "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOcE1YbjM5aVN6SUFPS1hmVEtGVXVnOEJrUHFPVjBua3V2bDlURzFjUGNCdkVwVmtGcUN6OUplYTFtN2JJYUhYUnFFNlJ5VkhUQ1hpUEhzcEo1N2dDRzRVQVR0cHQ0WWY4U3JaZms3eldiTzRma05PbENqU09EWjZEbnNJLUp1dXVmSHc5ekVpeGlsek0zMW5ocXNmZ1ktOGF2WGRqZnNn?oc=5",
+    "source": "Benzinga",
+    "publishedAt": "2026-07-29T01:16:00+09:00"
+   },
+   {
+    "title": "Palantir Q2: Seeking Stabilization In Commercial Bookings, Shares Are Attractive (PLTR) - Seeking Alpha",
+    "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOVkRDMFp2TTBtQWtHU3ZwX2dZXzNvQ1NmSkdzeTlOdmdpTEd2VWRVUlBDbGlMejhsT3NPdEhlRTlBUWdaU1FkX01hME9CX2U3c0V4LTZaNkZmbFRRWTJGQ1M5Yk1HQTJ5UVVxcEd2eWlFTGQwQXBrVFVicVoxNERtejJ2cUpEWWxQWEljWnVjYVpva1owNDhXNGJodjUxbElhZ1plWWZiMG11OXE1R1lfYndfUURGUQ?oc=5",
+    "source": "Seeking Alpha",
+    "publishedAt": "2026-07-28T00:02:29+09:00"
    }
   ],
   "SPCX": [
    {
-    "title": "Wall Street Races to Sell SpaceX-Linked Products as Stock Sinks - Bloomberg.com",
+    "title": "Wall Street Races to Sell SpaceX-Linked Notes as Stock Sinks - Bloomberg.com",
     "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNSDZjblQ1bk5OUFBOelhNMWVvVElXV28taVJKVTlxUFU5TjNjdi04VG9CR0h2TXh4YVBoS2lXQXp1Y1ZjN1VTdUVhOXBtd2tZaG5yM0pwUkQ3aWxnRVV2YXJ2NzBlZm1EeXgwNWE3eVF6T1prdHVjZXJtcTRyVXVyVllrdWQyWXcwLXY5SFFpZks0eTZxeDdreDdjQVJBb0NfT0YwUjgzSVlQMi13Y2E5R1I2ZEc?oc=5",
     "source": "Bloomberg.com",
-    "publishedAt": "2026-07-29T21:06:42+09:00"
+    "publishedAt": "2026-07-30T01:39:59+09:00"
    },
    {
-    "title": "SpaceX stock trying to recover after hitting all-time low - Yahoo Finance",
-    "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNa2Z4UWVPNFlCNmtDTjBuSjk5RG0zcnNna2paY1pjd3hhTWwzMl9mUndJSkwyc25WTkVMcDQ0US1IdHB5V0wtMDNjZ05HS1g0aXhzQXFwd28xRXJyOE1WM1dmMHJady0wcHRRcXZSa19SdFRWVVNXOWg0RVp1aEt3WEVKZmpHYlFVa2lza2h6Zi1sUEI0b21Wa0g4Z0FTZGd6cFF3TlZPU0ZZQUtEMW12Q3REQURSeEhoN0g1WkVB?oc=5",
-    "source": "Yahoo Finance",
-    "publishedAt": "2026-07-29T01:16:13+09:00"
-   },
-   {
-    "title": "SpaceX stock-purchasing by Congress members fuels conflict concerns - CNBC",
+    "title": "SpaceX stock-purchasing by Congress members fuels conflict concerns - cnbc.com",
     "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNR3p4LTdqVEZVMG9CNW5WVEVQQTRxcjlXQnlpY19TWTF1dy1fenktU2c4TU1HMXpUUGVMTDJqbEtDT2FkMnVJZHNJRHdrZF83cWxER1hpUGZBZzZZNmlaZnl1WEpxYTVBZEJWQUtTMUU4QlU0VlhTYmNMTDlWMk5aaVV3LTB6VkZ3TmVzRnVCZHNLcUdZSUZTRdIBngFBVV95cUxPVy1GUno5Mkd2dXBJVWNvQlBqNGhua0lMZHQ4MXprd29sNFJKWUZWdDROQ09PMWFZSHF6cGYxVXJHVlBYT25tR3lBRzVuaEYwQkVnWWlxS1RxN1d2RHdYX1Q5Q2Q2eUVWeFFuQWpScHZpSGV0WE9OOFhfeTh4b3RQRkhYUzdhTVBfcXpRNTFNRkNTZU9CUGRTbFVqcUlHQQ?oc=5",
-    "source": "CNBC",
+    "source": "cnbc.com",
     "publishedAt": "2026-07-28T19:30:01+09:00"
    },
    {
-    "title": "ARK Buys Millions In Falling Space Names. SpaceX Preps Classified Mission. - Investor's Business Daily",
-    "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOcFRndVFXRDFvRDdNeFlianVsb21jbVBsNnc0S0dkeC0wanl6bnBibnNEM3YxU3NFWVY1cmVKVkRLQlEyV21UYTVmWUxSZExMdnVFb1prQ2ZlcUdWa2lad3kzc2J0cU5QQlQzU3VfQ3lXaEhTREtQeDNIYllWckI2Smc3UU1VUFlCRHhjNnQ3S1dpZVVUa3QzajJqWWR0YjVral9nV21reVhNcGlkdnJ5eHRYa3ZrUXFsb0NCOExzbllLYjdVWUp1Mw?oc=5",
-    "source": "Investor's Business Daily",
-    "publishedAt": "2026-07-30T05:13:00+09:00"
+    "title": "SpaceX stock sags again to a new low as Q2 earnings approach - Yahoo Finance",
+    "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQM29mWkZsSU5Pa3FRM0hITUlwOU02NHlrUTE0S2k3X0xhbEN3aFZ4aVR2TTlxTHEwNFphMmNKTHNTQVF4WVB6akNaLThudmp4ZUZLVEtiUTNsT0FoZFNsMjd6Mko4UC1PZ3V2cjJiRTlJd0JpenQzZUxpT2RLdGZWNUY5Z1VQQ3JDaGl1OGtBOGJjczk5LVAxeDZTcG9JWTlISnowc2tuRWpSQ01QRjhObGhrSUY1NUlneFZwTGRfZkQ4QQ?oc=5",
+    "source": "Yahoo Finance",
+    "publishedAt": "2026-07-30T05:05:07+09:00"
+   },
+   {
+    "title": "Nearly 1 Billion SpaceX Shares Unlock On Aug. 6. Here's What Retail Investors Should Do. - The Motley Fool",
+    "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNZ2pEbFUtWk12Q1FYdkxxYVBmcHJ2WVh6cGswdHVBbzdZNmp2OUlrM1d6XzlFS0xIQVFFeTFnYzhqbXg0cC1YREJWM3hvVWpGRE81ODhFdHdaR3RJT3JDMXZtbGZYcTZvaGxzdVVMNTVSbnIteXoyQXpGaHZxNkpQbkZSLWlFMlpPb0N1QlYwWQ?oc=5",
+    "source": "The Motley Fool",
+    "publishedAt": "2026-07-30T02:32:00+09:00"
    },
    {
     "title": "SpaceX Stock: Washington Looks Set to Deliver the Easier Regulations It Needs - Barron's",
@@ -195,16 +195,10 @@
   ],
   "RKLB": [
    {
-    "title": "Can a $266 Million Defense Deal Help Rocket Lab Escape SpaceX’s Shadow? - Barron's",
-    "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQNU9pVlI1TXlEd2RUYmt1cDYwVThETGttXzhobWhTTDBSUllQV2NYWjJ2UzNzcEhxRlVsQVR0eEVMYThSQ04zb3NmdjdLUm5wOTlKRjNnQUtYY2hieko4Rjd0VV9GeG9SSzRVOEt1dzRDU0NmMlBEcExkamZDbDZkZHlJSVhseDB2a3EwZA?oc=5",
-    "source": "Barron's",
-    "publishedAt": "2026-07-28T05:15:00+09:00"
-   },
-   {
-    "title": "Rocket Lab Stock Has Plunged 60% From YTD High - benzinga.com",
-    "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQRjZSTXdiSWZGLWdXMVQwclNJc0RkbGFia3J5ZVlBbXBRUUdoZmdWeTNRVS1tMG5HN3hsMHp0TU9MSmxpbElZRVFOT3gzTHFhS3BUcUR5MVp4cm1wRjJ0Mm1BUW5ZUGo1eTByellEWjdPd05EYjlSSVBLSlFGMkdYczBDRDFHVVVTbFd4UmtqZ1FIdnpTZXlCUGJad3BVa1U?oc=5",
-    "source": "benzinga.com",
-    "publishedAt": "2026-07-27T05:27:20+09:00"
+    "title": "Rocket Lab Stock Keeps Dropping. Here's Exactly When I'd Buy The Dip. - Yahoo Finance",
+    "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZHpCamY4NnZhX3UzYS1OV0JfYjhySjBMQ0dCN0JfT3NXSmVOanJ3dlhYX3dMdG9rbHFFelp6LW12UjB5dGRsU3R1UTVMbng5QU1tQm1zWGxiM1NUWmE5d3ItaENvZ2VIQzJpcFNjbHRrMnQtTlA2bmdCc3huVjlBc2ZYMlRjQlI5a3h4OGp5dEVTVWZ5NnVxOFREUVc?oc=5",
+    "source": "Yahoo Finance",
+    "publishedAt": "2026-07-30T09:25:00+09:00"
    },
    {
     "title": "ARK Buys Millions In Falling Space Names. SpaceX Preps Classified Mission. - Investor's Business Daily",
@@ -213,16 +207,22 @@
     "publishedAt": "2026-07-30T05:13:00+09:00"
    },
    {
-    "title": "Rocket Lab, SpaceX fall despite historic FAA deregulation - thestreet.com",
-    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBiSEhtZDJmWVIzaTJIejdKM28zbFVaY0N2elYyMzBvQ0RRVVR4WlJrVG1SdzhhTWhXZDQ2TEczS2VMYjBpaVJRTjZTaDNIdkMzU1lOYUZHYTNaZWFYcnpzQXVKYXJ1MlJPRU1abEpoZWhITWVJakJaTW1Kd3E?oc=5",
-    "source": "thestreet.com",
-    "publishedAt": "2026-07-30T02:07:00+09:00"
+    "title": "Can a $266 Million Defense Deal Help Rocket Lab Escape SpaceX’s Shadow? - Barron's",
+    "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQNU9pVlI1TXlEd2RUYmt1cDYwVThETGttXzhobWhTTDBSUllQV2NYWjJ2UzNzcEhxRlVsQVR0eEVMYThSQ04zb3NmdjdLUm5wOTlKRjNnQUtYY2hieko4Rjd0VV9GeG9SSzRVOEt1dzRDU0NmMlBEcExkamZDbDZkZHlJSVhseDB2a3EwZA?oc=5",
+    "source": "Barron's",
+    "publishedAt": "2026-07-28T05:15:00+09:00"
    },
    {
-    "title": "SpaceX Slips 3%, Rocket Lab Sinks 9%, AST SpaceMobile Drops 7% Even as Six Members of Congress Buy SPCX Stock - 24/7 Wall St.",
-    "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQakdWdDRFZU8xQzVKVThZcGltU21WQk5KNmxRZHRBRnhTQlVyMWhXUzVVQzY1V0xkVXBucGtXUjNwcmUzQmR3RUUtQ1VmWjQzbklPY0RhUjZ3cnpnb1JtVHI3eUhnYzdhT08xdFRWVFdaRURPNDJ6RTEyYlBrMjU1N3pEcmQ2SmZWQ2tzdjlGeEFSNjRwQ3ZQakFaSVJhcERNTGJKbEpPUV9MRGVGaEZYMVZGeHh4U0U5bU9faUN0bzgzZzltSE5OSERSSFdHeVVxcmhRTGhrSEtOX051MXhNWWZ3?oc=5",
-    "source": "24/7 Wall St.",
-    "publishedAt": "2026-07-28T23:37:53+09:00"
+    "title": "Rocket Lab (RKLB) Is Down 7.6% After Record US$266M U.S. Space Force Launch Deal - What's Changed - Yahoo Finance",
+    "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNWm5JMmVFUG9sWm9MajVvbkhyaFhTTlRudk9kTUdHZERqOThJQ1NRMzNwTnNFUVF3WkphZ214U3V4ajRrQXBrMnFmbldyOXBsSnZhNXIzS0diSzV1WXNLZUhwM1V6YVlVUlRyLUt2VWtiOTRBNEVSemJ2QnExOUIySVcza3dDWE4zNTZuQ2dkNjY?oc=5",
+    "source": "Yahoo Finance",
+    "publishedAt": "2026-07-30T06:10:03+09:00"
+   },
+   {
+    "title": "Cetera Investment Advisers Acquires 17,084 Shares of Rocket Lab Corporation $RKLB - MarketBeat",
+    "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOWTJyYWh5QkFHLXp4ejg1VDdZeWtwMjdZbDdnSnJVZ3NnQmtXdUg5T2xDVVdOMi1fUF9nUERzdFFFOE5LdDR6bUl3V2ZZdWVjSUFac0txRTQ1bE9iZ2ZDNkhic1lhRGNtTjIyVndHMVlLc0RkV2lrYjdwMTVoVGVrbzdkeGpEeTcwQmpxa2I1SjMtZ05QdHdLQXB4NFpqVEF0R1ItcXlUUTZ6c1RmLWdSc0VRSGxSSHhXUE1XeUFXbGJkZGgwVHliUGhMRlE1RkpHVkRxR3c0Yw?oc=5",
+    "source": "MarketBeat",
+    "publishedAt": "2026-07-30T16:59:50+09:00"
    }
   ],
   "ASTS": [
@@ -230,7 +230,7 @@
     "title": "AST SpaceMobile vs. QuantumScape: Which Stock Is a Better Buy in 2026? - The Motley Fool",
     "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPNXlfbkpzZTdkaHMzY3BHZGd0c1VQMGkxZlJneXlScEp1dTRJemlSUzF6RkJHZGJaVW1JR0tnbXhFc0hnX0pZVmdidWh4ZjBtUWhYTlNRZFYtX0habGp0YjhjQkRlazhTVVhYZm55LTk2T3VHRFJ3YzdWdDUtSUczQTUzMXJYbzI4a1doODhUWHQyT1N0M1lsODVnclJGLUFPSG1Zd0VXdm1VUXVDeFpRcGllTmhUdkp1VmhRMg?oc=5",
     "source": "The Motley Fool",
-    "publishedAt": "2026-07-30T05:40:47+09:00"
+    "publishedAt": "2026-07-30T06:30:00+09:00"
    },
    {
     "title": "AST SpaceMobile (NASDAQ:ASTS) Stock Price Down 6.2% - Time to Sell? - MarketBeat",
@@ -251,30 +251,24 @@
     "publishedAt": "2026-07-28T02:56:24+09:00"
    },
    {
-    "title": "Despite Challenges, AST SpaceMobile Stock Could Make a Compelling Options Trade for Contrarians Here - barchart.com",
+    "title": "Despite Challenges, AST SpaceMobile Stock Could Make a Compelling Options Trade for Contrarians Here - Barchart.com",
     "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNeURIZTdfa1ROeVdUN3dCUF92M0ptT2lmNGQtNnVObDljczdINV9BOWJNeXg4ODRsaVlhclJlaFpzX1pNM2NLYVlZTkFkczIyU3BBVm1nMkh6SERHQlU5MzY0N3VKazlGUjBUNjdXTXFKejRFU0VfR3dmSmEzT1p5dE1vRWlub0UwdUhlei0zSW5xUkl1RjFNQkJaSnRuWHFkSXhQdzZoellJTnpxOHRqbVZTbUEyT3c4aVFteklTenlWbXlGMDFsbGdkU2VXb2djRllHSFcycU43SHc?oc=5",
-    "source": "barchart.com",
+    "source": "Barchart.com",
     "publishedAt": "2026-07-27T23:25:25+09:00"
    }
   ],
   "LUNR": [
    {
-    "title": "Intuitive Machines (NASDAQ:LUNR) Major Shareholder Sells 11,495,514 Shares - MarketBeat",
-    "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPWTV4VC01NmZHLWVSTGNRVTBoVzQ4SGk5RmxmNDhsT0F2Qm90YWNfdEdkTG1LakFybEJHNnctazYybmN1Q3FhSW1QMWc3M2pIb3BBVW9KYlBCS0tHNWxxN0o3QWg0eWpScm56SXN6SXA2dmktZmYxTWV1UjgwMW1RYnN0TW93Yi1DM1BhTEJYQzhGUmJ3djJ3YUF2akl2S05Vem9ES016ZlJqckw5MUxjZEhIalZ6UzJieDZ1THdFRmo?oc=5",
-    "source": "MarketBeat",
-    "publishedAt": "2026-07-30T07:04:35+09:00"
-   },
-   {
     "title": "LUNR Stock Hits 52-Week High Ahead Of Q1 Earnings This Week — Retail Says SpaceX IPO Will Fuel A Rally In Intuitive Machines Shares - Stocktwits",
     "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNM01nLTZndkJPYWRzZGIzd1J3d1hXc1N5dndxWTJfQ3BQYUlXeDA1Y0Vza05yM3ZpT3NEYjZfcENhWE45eUdFU0lsWTZfbS1aS3dNSWJDdXRsaDhHN19MZlpkNndZaXM3cW1uNUJPSWZGV3pHZTdxSWp1VDVsZ05hbEVhaHlVOTFSYWliTFdBdzBmY0VrU1F5MFQ0M3pZT2pSamdLUWZFam5vWXU2MDRvem5QTkFhSEV4cEpYb2hDZ1doV1dxa2tKdGw5WEoxd01OQUE?oc=5",
     "source": "Stocktwits",
-    "publishedAt": "2026-07-29T08:11:22+09:00"
+    "publishedAt": "2026-07-29T14:49:36+09:00"
    },
    {
-    "title": "Advent-linked Galileo TopCo reports Intuitive Machines (NASDAQ: LUNR) share sale - Stock Titan",
-    "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQU2tSUG1Td3NEeFl0Uy1ZSmxoVWdLT3N3UHcxZHVTdmg2MVhjSndxb1hMWGQ5VWRqeGcxRTFzZnBlVkE5aEQ0QkpqblhwVUlYV29pcFJtaTNuWVZyTG8ybUlRbFJBX2w2bGhJWk9EQUxQdURRZEFOV2RVRnFkdnI1N19xYmM2T3U5UC1jVnROX0JXbmhMY1YyZkItNEhkRUQtamUyOGFFdmJzNFpQTV80YTJaLUJETmM?oc=5",
-    "source": "Stock Titan",
-    "publishedAt": "2026-07-30T05:16:14+09:00"
+    "title": "Insider Selling: Intuitive Machines (NASDAQ:LUNR) Director Sells 47,303 Shares of Stock - MarketBeat",
+    "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQZmRrS1Z0WVI4MWVvc19hS1Q3VEVrWEJvQkljMVhzMWRvNURfbVFRLWprbW1YZ2pGYjNiaVRrU1lJNVktVzlBOTkwNDFBdWc5RmdDbDIydkowdi1xaHE0Q25qX0tYXzNuTDFQQVljZm1GaUJNNm5YWG1iMjlfM3VzTGFiVEU4UFB1d3BvMU5SZU94OW93RmFtWVZBS3dOWWpwTE5zeUQwdTMxc2hRbVhGME9Jc3FJZkFYOHVPNnpwOTRpaEtwcUFhMnhfRUVvbVdSZHc?oc=5",
+    "source": "MarketBeat",
+    "publishedAt": "2026-07-30T10:13:32+09:00"
    },
    {
     "title": "ARK Buys Millions In Falling Space Names. SpaceX Preps Classified Mission. - Investor's Business Daily",
@@ -283,74 +277,80 @@
     "publishedAt": "2026-07-30T05:13:00+09:00"
    },
    {
-    "title": "Intuitive Machines (LUNR) Stock Looks Pricey After a 51% Three Year Run - Yahoo! Finance Canada",
-    "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPUXNPd0xzM252SzlpU1Q4aEVjZzkwY09kX3BETWZ2QTYyMmNoNFpSNVVqNnpNNEpDVGZpS2hXUW4zSFdNSjB3QVJtVzZweHBHRURKZEJHMzk2akFXbUtROWwycXZOYlZzMXJKeEVjNVF0dzh6bUxsZWlkLUJscEFuUko4eWluSjYyVVNqWA?oc=5",
-    "source": "Yahoo! Finance Canada",
-    "publishedAt": "2026-07-26T10:11:00+09:00"
+    "title": "Advent-linked Galileo TopCo reports Intuitive Machines (NASDAQ: LUNR) share sale - Stock Titan",
+    "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQU2tSUG1Td3NEeFl0Uy1ZSmxoVWdLT3N3UHcxZHVTdmg2MVhjSndxb1hMWGQ5VWRqeGcxRTFzZnBlVkE5aEQ0QkpqblhwVUlYV29pcFJtaTNuWVZyTG8ybUlRbFJBX2w2bGhJWk9EQUxQdURRZEFOV2RVRnFkdnI1N19xYmM2T3U5UC1jVnROX0JXbmhMY1YyZkItNEhkRUQtamUyOGFFdmJzNFpQTV80YTJaLUJETmM?oc=5",
+    "source": "Stock Titan",
+    "publishedAt": "2026-07-30T05:16:14+09:00"
+   },
+   {
+    "title": "Intuitive Machines director Kamal Ghaffarian sells $624,404 in stock - Investing.com",
+    "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNcU04MlFXenZfUnBqek1QZnBhdmdlQmJXWnhHRWVpa2JxZnNkb0xoeGw2bTRYVmN6X2xMQzNLOG0tS251aV9JTE0xeVdQMEhLQkxzWWt1aFBucUdxOW5WQjllc2Y1MkgtLWtKZHFBOHZ1ZXNHcGR3ZzB6dFZjOFJDVkg0ZVJJVlk5cVI0M3dEdDA2ME92UXdoUVluSXZ5U2huRGp5X0U5UWhiQ2lIMlNja0JJNlN0RGtjUS1fVDZxZnN4ZXpUREg2MmJ2aVlOWVU0dmxKNjhn?oc=5",
+    "source": "Investing.com",
+    "publishedAt": "2026-07-30T10:16:00+09:00"
    }
   ],
   "005930.KS": [
+   {
+    "title": "삼성전자와 SK하이닉스 주가 하락은 \"빙산의 일각\" 외신 평가, AI 버블 우려 더 커져 - 비즈니스포스트",
+    "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBKcjJjU0IzT0pqNm9nUHk5TUQ2bjZ3MEUzNC1WNXk3NlZENjdpeUo0VU1TTUNXSkwwMEloVmpRTDdYcmFvc191MGROczdoa184TnMwYzhrRU93NmFIcFVySDBmcWpiOXE1c1hqZkxfajZLSnM?oc=5",
+    "source": "비즈니스포스트",
+    "publishedAt": "2026-07-30T12:06:13+09:00"
+   },
+   {
+    "title": "역대급 실적에도 길 잃은 주가…‘37만 전자’ 회복할 수 있을까 - v.daum.net",
+    "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5XVHY4WHVhS05vM3FrX1ZtNkROdzlTbTZ0MXRJSzFzTy01TUVxUFphbWVlMDlfSlNhQ1J0U2IybUVjX09uYnpjaWNWSk41MVU?oc=5",
+    "source": "v.daum.net",
+    "publishedAt": "2026-07-30T15:58:09+09:00"
+   },
+   {
+    "title": "증권가와 테크 업계, \"반도체 주가 급락? 공급 부족 본질은 여전히 유효\" - 조선일보",
+    "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQcnZyVGlJdlF1MHBnelhmVG9GcThpVjhOSFRYTG1uTDlRajlHSGQ2eFBYbkFEU3BsMGpaeHpmMEVHY1B3c0hvT3FfRFBRemxFTzVQYnZ3SzlKZzhXQ1FGem04RFVqMTlQVUd2RDRLWFo0NmZNeXdkVnZ1YnpEZHlKcWJfcw?oc=5",
+    "source": "조선일보",
+    "publishedAt": "2026-07-30T14:39:00+09:00"
+   },
    {
     "title": "\"삼전닉스 오늘 또 왜 이래요?\" 반도체에 대한 끝없는 '의심들' - YTN",
     "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFAzSXdBMW54SUF0NXA2SVJXOXlwcnk0dmhGbDNYSWx1eXZvaHpzVnFDTTZKRjZpdkZYbW5ncnlocU93bXo4YmJ4aDJLaS15NlRMbnFzUk5jTXpsSUNpQ3c?oc=5",
     "source": "YTN",
     "publishedAt": "2026-07-28T09:50:00+09:00"
-   },
-   {
-    "title": "\"주가 20만원 깨지면 어쩌나\"…삼전 개미 '초긴장' 하는 이유 - 한국경제",
-    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5ZbXlCU2h1dkl1dWhoWkRQM3E3NGhXclFzNXFFcEdnS1E3STVPRDBQRHhUbTlEWVhZX0Z3TEY2TFBRTUxWR3lJR1psNGg3ODN4NTZBNWZxUGU0Zw?oc=5",
-    "source": "한국경제",
-    "publishedAt": "2026-07-28T17:54:54+09:00"
    },
    {
     "title": "“삼성물산, 삼성전자 주가 부진에 덩달아 휘청”…목표가↓ - 매일경제 마켓",
     "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE83Q1VRNW9Ddm1jRHNWV1J6aUVHS1Y3Sjc1cmszOTBHWWh5NkJLTEd1UEl5ZjhsX2VmNGhwMG5qeTdOcnpOSkFUcXh0bUE1Y05qMGc?oc=5",
     "source": "매일경제 마켓",
     "publishedAt": "2026-07-30T08:05:15+09:00"
-   },
-   {
-    "title": "메모리 호황 이어져도 삼성전자 SK하이닉스 주가 반등에 '역부족' 평가, \"시장 기대치 과도\" - 비즈니스포스트",
-    "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE14MFVjVmVzMHRtTG1VTlBEVGExOVNNSG5HdHFQbzNUamp6QTE0Y0w3SU1pdV90d0JmRExxb2YtZFlaclJZSm9rVHBZMXVidzhlMWxsZHZqQzloS19xUDVSVGcwbWphWE1TQUF2b0pRV0FNd2c?oc=5",
-    "source": "비즈니스포스트",
-    "publishedAt": "2026-07-29T10:55:29+09:00"
-   },
-   {
-    "title": "SK하이닉스 –22.85%, 삼성전자 –17.91%…주가, 이틀 만에 빠졌다 - 한겨레",
-    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE10TlUtdUJMcEtkOWNOQ1BnQW4zUXhUS2NuU3QyZ2NkQnZ3Y2lFek5xN3h6bkwyVDY5UWYyRnBMc1RwbXBYLUZ4TXZoRHlaZi00N2dKa1hvMm9iR1dZVFZ2a3V5Ui0yYUk2amNNR0pEVjByQQ?oc=5",
-    "source": "한겨레",
-    "publishedAt": "2026-07-29T21:37:00+09:00"
    }
   ],
   "000660.KS": [
+   {
+    "title": "하닉 급락에도 “470만원 간다”…목표주가 되레 올린 한투, 왜 - 중앙일보",
+    "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1ENE1ic1UwT1lpU2hBd1JXVHZxUXlMYXhwY1hBeE5VaFRTbXBHQl94aDd6X1hGMmt0SnNEVGpXY1I0YlMtU2pFc0hxRkNKTkhwTGZTUERn?oc=5",
+    "source": "중앙일보",
+    "publishedAt": "2026-07-30T09:36:45+09:00"
+   },
+   {
+    "title": "SK하이닉스 1주 하한가 거래에 코인 선물 830억원 청산 - 조선비즈 - Chosunbiz",
+    "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPMUhxQUVmN19WVEtpNEFHTWdjM0t4QlFYMXVESXNQZXZCR3U0eG1KUlZuZHliNUp6MTBwQ3VzMUxTQXd1U0VxbTVQUFhqTU55cTk5Q0MwaTZDRXNlUnhvb05pbGlLMjgyaWNNMnVfNjA4cUROWlMtS1BMNFZpdFgzTtIBlAFBVV95cUxNQ1YzUWdUdUtocng2NW1LRUZkcmZrTm1MeG9TRkZLRU9GdWstdkY3dW1zb2RXS0FpX1ItVFZqaVdxbDZlZEdzNlNoLVNPZHZBNmloNjVjSjlmNUxpWk1EQXJ6UGZ2TDlzSzRjSTZsSXpadkJ6TnZkdFpvVkpFRWZPSVkzSzRjdzRyNFBTd29GcF82bndk?oc=5",
+    "source": "Chosunbiz",
+    "publishedAt": "2026-07-30T11:03:00+09:00"
+   },
+   {
+    "title": "“SK하이닉스 1주가 800억 날렸다”...NXT 이상거래의 충격 - 에너지경제신문",
+    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE82NjZiVTlWSEU5Y1R4ck9UNFVHWkpVZHhVLVFUc3dYVHhWc1pCbW9jdHg0Qkk3NlhpTU1vc01OOEZMTmFyMVQ4dkl6NkxWeUNmVWM3MlowMXN0V1E?oc=5",
+    "source": "에너지경제신문",
+    "publishedAt": "2026-07-30T17:02:52+09:00"
+   },
+   {
+    "title": "하이닉스 '1주 하한가' 반토막…826억 가상자산 파생상품 '우르르' - v.daum.net",
+    "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFA2Tml4blhoa3Boci1qZUZjSzBlTHBQSjhHQjlKU1M2TzB2dFhUdldwa3ZRaVBMaDFKQjA3U1FObTNlQkZRRHpIV1AxWm83alE?oc=5",
+    "source": "v.daum.net",
+    "publishedAt": "2026-07-30T17:29:50+09:00"
+   },
    {
     "title": "\"삼전닉스 오늘 또 왜 이래요?\" 반도체에 대한 끝없는 '의심들' - YTN",
     "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFAzSXdBMW54SUF0NXA2SVJXOXlwcnk0dmhGbDNYSWx1eXZvaHpzVnFDTTZKRjZpdkZYbW5ncnlocU93bXo4YmJ4aDJLaS15NlRMbnFzUk5jTXpsSUNpQ3c?oc=5",
     "source": "YTN",
     "publishedAt": "2026-07-28T09:50:00+09:00"
-   },
-   {
-    "title": "SK하이닉스, 급락에 장중 시총 1천조원 하회…3개월 만에 최소(종합) - 매일경제 마켓",
-    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5uQk5FeUtheEZfbGg2WmFQRUx5N2RMTHJ2T3RzSmc3bUo3emVkdDBrc1dWR29mby1CRnlZYUJ0dHhCdkU2Nk5hNWRqakU3VEpvTGc?oc=5",
-    "source": "매일경제 마켓",
-    "publishedAt": "2026-07-29T16:10:59+09:00"
-   },
-   {
-    "title": "이틀 연속 초유의 폭락‥석 달 전으로 돌아간 삼전·하닉 주가 - MBC 뉴스",
-    "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1RSk1nTXB4d0d4dkxzSmo1TGdsdllPcnhiNlpRQm9hSzJEQkJWSGpKUS1Yakg3WF9uN2ZCc2xhdnZ6MWFYY0l4TF9IcndJbVE1OExDNTU1UURhaVpZcGE1TVJZenNRS3NJWVpOcUdsUDhqTjM3VmZtNQ?oc=5",
-    "source": "MBC 뉴스",
-    "publishedAt": "2026-07-29T19:45:51+09:00"
-   },
-   {
-    "title": "BNK證, SK하이닉스 목표가 148만원까지 낮췄다…\"반등 제한적\" - 연합인포맥스",
-    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBFU2FYRUJHc0I1Tld6T0I0ZjNiUHhMM19TdHZiOC0wNW5NUlNoSUFUUEVOR3NiZXE4OG1xS3h2SjR2NXdTb1NnMTJSYkdveGRUbEtuVmVNalRVQTZybmZZRm5hazRMRlRTdWlRVVQtMFnSAXRBVV95cUxPaFA4VEFYZmxId3NLX3lOdkwtTll0aVZXQUtpYVRzV18tQUExUVBjMjBKTTJRVFdscmRfSzFmNmUzVWhqT2d6MzZCb3ZnVTllQno3ZEZWVktVRUV4RmstMzk3Mm5CeHdob2pGdHNwT1VDRGl1bw?oc=5",
-    "source": "연합인포맥스",
-    "publishedAt": "2026-07-29T15:41:00+09:00"
-   },
-   {
-    "title": "\"SK하이닉스, 3분기 D램값 20% 상승…목표가 470만원으로 상향\"-한국 - 한국경제",
-    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5zblh2TXc0bXlvRUp2c2dhYm5YUG03X3BacTJfSUxqZVdrUFE2WGs4Tk40NDVKWWQ2ZF9LM2JOMXhtSXAydF9jNHc5WUhhWlJqY1RMdUZrNWJIQQ?oc=5",
-    "source": "한국경제",
-    "publishedAt": "2026-07-30T07:40:22+09:00"
    }
   ],
   "035420.KS": [
@@ -361,9 +361,9 @@
     "publishedAt": "2026-07-27T19:13:00+09:00"
    },
    {
-    "title": "6월과 달랐다…엔비디아 투자에 네이버 주가 재평가 - 뉴스토마토",
+    "title": "6월과 달랐다…엔비디아 투자에 네이버 주가 재평가 - newstomato.com",
     "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4xdldTbXMydmhNRGRXb2VHcXFkYnhhR3RoNEpQblFoSEhNVlF5VW1yX0RUV25fSzR0bmwzcGlDMERiRThVbFl4eFd1aFVwRF82Q0kzWmVPWTlCQ3pSNkdfUQ?oc=5",
-    "source": "뉴스토마토",
+    "source": "newstomato.com",
     "publishedAt": "2026-07-27T16:59:09+09:00"
    },
    {
@@ -373,19 +373,37 @@
     "publishedAt": "2026-07-25T10:02:45+09:00"
    },
    {
-    "title": "엔비디아, 네이버에 1.5조원 지분투자…AI팩토리 동맹 강화 - 인베스트조선",
-    "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPdGs1VFJLODkxYnFLeDlMSDRkeDNWdkVfWU1xZ2tLNF8wbDNOV1MyUHFlTGxJazJJQ19kQTBwYnoyQWl4MjV1RUdVdm5WX1Y5M2R1Y2xaUTZsaEt2UTdIamhUTm1kVXRMR3kweWc0cG1MbU5yeWNsX0tqLUlUdDhROFJTUQ?oc=5",
-    "source": "인베스트조선",
-    "publishedAt": "2026-07-27T08:24:00+09:00"
-   },
-   {
     "title": "엔비디아 품은 네이버 주가도 ‘불기둥’ - 한경매거진&북",
     "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1FTnUtWjdVUG1pVTN0SzQwUHNFNWRuR3kwM1k2SzNiSUltV3RvSUpLMElEa2hLU0hoWXFUQzJKbU1ZaTF3b2Uzc1hmcFJGajJ2Rm9sUGl6STUzTTJ4R3lBQ3Y3Nmo4TTR2d1g0eg?oc=5",
     "source": "한경매거진&북",
     "publishedAt": "2026-07-27T11:23:00+09:00"
+   },
+   {
+    "title": "한투증권 \"네이버, 엔비디아 투자로 AI 파트너십 강화\" - 연합뉴스",
+    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9pVXBmZlJZN21wNDcwSmEwQlRyOVZ5V1UyNFkzQjJQTGdxaTFMdW5YSnhKczZ3dFJSbDhPUkZNWG4xZHFzeGlmclBJaXRKMmxxYjlzUGVUbldhbDMxZk1wUtIBYEFVX3lxTE9pVXBmZlJZN21wNDcwSmEwQlRyOVZ5V1UyNFkzQjJQTGdxaTFMdW5YSnhKczZ3dFJSbDhPUkZNWG4xZHFzeGlmclBJaXRKMmxxYjlzUGVUbldhbDMxZk1wUg?oc=5",
+    "source": "연합뉴스",
+    "publishedAt": "2026-07-28T08:33:30+09:00"
    }
   ],
   "012450.KS": [
+   {
+    "title": "한화에어로 주가 장중 11%대 올라, 미국의 이란 공습 재개에 방산주 강세 - 비즈니스포스트",
+    "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9MYUMtWHp5ZGZyd1NUMFI0UmRYU1JnSzUtVm5PMzMyam1Ta2djUE5BYjNMQTNaSUppdFpoVWFraHhuT1FKOE04WnFqd3BqN1VtUzhweFJsdHdoN1ZwZld0UWpCSk90ZUJQU29sd0pqeHYwUmM?oc=5",
+    "source": "비즈니스포스트",
+    "publishedAt": "2026-07-30T11:05:04+09:00"
+   },
+   {
+    "title": "한화에어로스페이스 주가, 7월 30일 장중 881,000원 8.77% 상승 - 톱스타뉴스",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBGUXRKdlJ6RWUyR2J0WWVMN3F5OF9La3I5Z1Z0dG9HN3U0UHhYYUF0Y3FKejYtTWQ3NHpqdUE5OU5LdDBOV0h4R2VSTzJtXzJBSkJ2RTdCbkk3ZndDZFdmc3g1QzE0NWtrVUxGUEgyUzVDdw?oc=5",
+    "source": "톱스타뉴스",
+    "publishedAt": "2026-07-30T10:02:08+09:00"
+   },
+   {
+    "title": "미군 이란 공습 재개에 방산주 급등…한화에어로스페이스 11%↑ - 이코노뉴스",
+    "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9DMXBhN05ibmNjNTYwM2NrVnNycTNRU3o5dUxmNXFfSzZpSWpkNlpMZXA1WE5pcVJBVkJuNk1CekFqbVB3YVMtM01WemxwR2Z3YWRiRHNmNlhzd1hpN29HZ0M1WWNNUG5GRXZXOG8zWQ?oc=5",
+    "source": "이코노뉴스",
+    "publishedAt": "2026-07-30T10:42:32+09:00"
+   },
    {
     "title": "한화에어로 우리사주 보호예수 해제…66만주 거래 가능 - 딜사이트",
     "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1NRjFuSTBLNW5yRnBOS3RSTEZIWnE4aDA5RlZMY1ZvMEFKUmRIN3Z3d3pqUG0xRExvdTZPcUxkc2NvZzFOUFVOZ216SHNWcHM?oc=5",
@@ -393,31 +411,19 @@
     "publishedAt": "2026-07-29T16:32:20+09:00"
    },
    {
-    "title": "한화에어로스페이스 주가, 7월 29일 장중 870,000원 0.57% 하락 - 톱스타뉴스",
-    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5hWlhRM0tjN2VhWl9UcV96Q1lXT0tFemdMY0tDUG52MlI5NmJOU3NOWW5rYzYwaE96VWJvSUF0ZXZsZ0JTZnpXNnl3RGFHMnZISy11R0NmWHBCWFFEUnk1eVV3SFRiZFFiV3BtalFKTFJRZw?oc=5",
-    "source": "톱스타뉴스",
-    "publishedAt": "2026-07-29T10:16:09+09:00"
-   },
-   {
-    "title": "'최후의 만찬', 이번엔 한국 차례인가...한화의 KAI 인수가 던지는 질문 [한방이슈] - YTN",
-    "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBET3ZxMElPYnRTOG1QRzI2V1J1ZGllX2M1cDd6WnFEVUhyaGhwa0Z0OUlZYndPSldmY0NQX3pJQlBOMUQ5WExDb2tscDhtT1JZUGt5SVE5b3pxVkl0dmc?oc=5",
-    "source": "YTN",
-    "publishedAt": "2026-07-27T17:02:00+09:00"
-   },
-   {
-    "title": "“2분기 시장 기대치 하회 전망”…한화에어로스페이스 목표가↓ - mk.co.kr",
-    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE13N3kzMHdJS0xkRWJvMXdlUFVFNE5rMmxsV3g1cUlIbHBzeEpZTWc4OUZXWG0wN0NIX2RqenByT19lUU83T2pMX0Y4ZHlBN2pNX3c?oc=5",
-    "source": "mk.co.kr",
-    "publishedAt": "2026-07-20T16:00:00+09:00"
-   },
-   {
-    "title": "한화에어로스페이스 주가 '장중 급등'...이슈는? - 초이스경제",
-    "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBSTkZfSVZucGo0WGJHUG56aHMzb0Z2UGlmWGoxam5CdmJRbGhIQmpqRXk4eElmTXdRTEZHQm45UmFLTHFjb3FwVFZWZDZLRUxvcjhMSllINDNBRERXcDl4OWNQTU1BVDhYOUxJX2tWONIBc0FVX3lxTE1uMGdialZ6QWNHbk55VHhXdmJ6VFo3OTEtYmZDVllQLVc5VnVVSEVmLUJkZTFZMUZjbXFiaFNyU3gyaGtOYXdROU1jdEx0b0pZdWozY2piRkZSVnhnTGQ5dmVSYjRmc1NmZEJtOVB4NnJ4Rm8?oc=5",
-    "source": "초이스경제",
-    "publishedAt": "2026-07-24T11:52:36+09:00"
+    "title": "[특징주] 방산 관련주, 이란의 탄도미사일 기습 발사.. '강세' - 글로벌이코노믹",
+    "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxONnFkT3p6VXBCZVAySmZaYWRKZXNscUdMcXdEX2RyMkd6Wm03QWN4RElMcU1EUW1Kd1NEWTViUXFMU1JKbG9uVlFrZmxYdTFQV3JBTm5renVsSG8za3draFF3RHo0UW5wcHg1Y24tWHJCenQ5SGJ2U3lkSHhkMndqWE4tY01NS0FX?oc=5",
+    "source": "글로벌이코노믹",
+    "publishedAt": "2026-07-30T10:07:04+09:00"
    }
   ],
   "047810.KS": [
+   {
+    "title": "대신증권 \"한국항공우주산업, 2분기 실적 부진…목표가↓\" - 연합뉴스",
+    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9sOUEwUU5CMXlvLTRYanlaYWktOEZGRFpmUTFTQm5lT3BfSF9lcVV1Q2RBYWw5b05WTGF0SElrUGtvSTNVYjJpbWlqUVlHbWZ5VnlJREc5S1pYN1JnNkRZVtIBYEFVX3lxTE9sOUEwUU5CMXlvLTRYanlaYWktOEZGRFpmUTFTQm5lT3BfSF9lcVV1Q2RBYWw5b05WTGF0SElrUGtvSTNVYjJpbWlqUVlHbWZ5VnlJREc5S1pYN1JnNkRZVg?oc=5",
+    "source": "연합뉴스",
+    "publishedAt": "2026-07-30T08:31:01+09:00"
+   },
    {
     "title": "[모닝 리포트] '어닝쇼크' 한국항공우주 목표가 14만원 하향 - 뉴스핌",
     "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBxUnh0T2FBemhaMVVXSi1zalk4WFBlOWxjeHhKalhBaVRtampSOFM3Vy1Sd0hfUWZUXzBqMmVyWHFzVkFVbXZmWE81Nk55YmpjekN1OFRnNWFhOGxQ?oc=5",
@@ -425,28 +431,22 @@
     "publishedAt": "2026-07-30T08:12:00+09:00"
    },
    {
+    "title": "iM증권 \"KAI 주식 투자의견 매수로 상향, 전투기 KF-21 4분기 첫 수출 기대\" - 비즈니스포스트",
+    "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0wS01xaG5KQ0RETFFfTHdkVTRLdGRYbnlfZGJMUVdzZlZvamZ4YURkTnVqZXJLUUM3aGtwdF81MFpXZjkxMS1GYnZhU0FSQ3ZrbGRKSThYZ25aU3EyYnc0eEU0NlVQUV9ZYmJvd09USmVBZ1k?oc=5",
+    "source": "비즈니스포스트",
+    "publishedAt": "2026-07-30T10:26:26+09:00"
+   },
+   {
     "title": "'최후의 만찬', 이번엔 한국 차례인가...한화의 KAI 인수가 던지는 질문 [한방이슈] - YTN",
     "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBET3ZxMElPYnRTOG1QRzI2V1J1ZGllX2M1cDd6WnFEVUhyaGhwa0Z0OUlZYndPSldmY0NQX3pJQlBOMUQ5WExDb2tscDhtT1JZUGt5SVE5b3pxVkl0dmc?oc=5",
     "source": "YTN",
     "publishedAt": "2026-07-27T17:02:00+09:00"
    },
    {
-    "title": "[공시분석] 피델리티도 ‘찜’했다…한국항공우주, 한화 매수세 속 외인 ‘러브콜’ 이어져 By 알파경제 alphabiz - Investing.com 한국어",
-    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1mQnZ4eThPWWU0cGMyNU9wVzFwMEhrZHpGbFdWYkl4ZzgzZFRqNUJWWGYwa2ZwVFRMUFFCbHFrQ0MyTmRKR2JVa1czaENiSUdrdEE0SlM4S0IwTktjVlkzSkY5LVVCdjZVZkgzRWF0cXM?oc=5",
-    "source": "Investing.com 한국어",
-    "publishedAt": "2026-07-29T09:46:00+09:00"
-   },
-   {
     "title": "대신證, “한국항공우주, 2분기 주춤했으나 하반기 반등 기대⋯목표가 16.5만원↓” - 이투데이",
-    "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9xV3hnWU5MMXZtYm02Mi1lVGJxaUR0RkNLMmg3dTBrOFFHekthQ1J6OHM2R2RUZkZMNVRsdGdDanF1TktuSTR4ZUlUQnlDWVRYa0pteDBsY2ctZ3o5LWc4Q3MzbWNnZ1JOeTJ4QzN2bTNRVURR?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9CMEpRVGFLWUwzX3VwZUVDZXJUWU5WdWxLMnZHOS1FRU1MeThLaFdiMjM0R1N2S08wb2YxdUdjaEdRME50OFg4Z3d1aGJPY1J0eGVCYg?oc=5",
     "source": "이투데이",
     "publishedAt": "2026-07-30T08:06:00+09:00"
-   },
-   {
-    "title": "피델리티도 ‘찜’했다…한국항공우주, 한화 매수세 속 외인 ‘러브콜’ 이어져 : 알파경제TV - 알파경제",
-    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBOU2laR09RZ0l6bGU0ZjN3UVJhQjIxNkZaU3VmR1cwRndoRzRMZWtTYjktNWlNLXA3NG92THM0TGdyMHhMeEM3U2VUMDZJVktjbHc5ank3U0JKbUg4b2FjNGlyQjVPRG5Td1dST3dn?oc=5",
-    "source": "알파경제",
-    "publishedAt": "2026-07-29T17:37:55+09:00"
    }
   ],
   "079550.KS": [
@@ -457,10 +457,10 @@
     "publishedAt": "2026-07-28T16:25:55+09:00"
    },
    {
-    "title": "LIG넥스원 주가 폭등에 고민 커진 여의도…\"전쟁 모멘텀, 멀티플 올려 잡아야\" - 인베스트조선",
-    "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNVVhsTm80MlRnMDZKX2J2RlNLdnI2S0RhSkJxV2hlLWRoWlh4dDdmTHB3dlVNWXE3V3owNVVIT1UxRks0MUx1c2RNQXJCdnoySWFTWXYxNXRNMEc0am9fZGVRUXdILWdJUmIyRkhPVndYTlF1QXdrckFqV3ljUHFvTm1mRQ?oc=5",
-    "source": "인베스트조선",
-    "publishedAt": "2026-03-06T17:00:00+09:00"
+    "title": "LIG디펜스앤에어로스페이스 투자분석 2026. 07. 13 - 주달",
+    "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1jRnpFdWJvRnJzNERDQ3lISFRFbS1Zc3Nkc2FCYVpXdFRlcmthMkFTRzNkbnJoRU4yLWRFNUxfZ01pT0pkQW1Fd0RaV0E0VEU5UnA0ek45VVU5eWtSU0VVYWdhX1p0V0JTYmd5eno5SmdlVWc?oc=5",
+    "source": "주달",
+    "publishedAt": "2026-07-13T16:00:00+09:00"
    },
    {
     "title": "노무라, LIG D&A 목표주가 65만원→120만원 상향 - 더구루",
@@ -475,13 +475,19 @@
     "publishedAt": "2026-06-16T16:00:00+09:00"
    },
    {
-    "title": "LIG디펜스앤에어로스페이스 투자분석 2026. 07. 13 - 주달",
-    "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1jRnpFdWJvRnJzNERDQ3lISFRFbS1Zc3Nkc2FCYVpXdFRlcmthMkFTRzNkbnJoRU4yLWRFNUxfZ01pT0pkQW1Fd0RaV0E0VEU5UnA0ek45VVU5eWtSU0VVYWdhX1p0V0JTYmd5eno5SmdlVWc?oc=5",
-    "source": "주달",
-    "publishedAt": "2026-07-13T16:00:00+09:00"
+    "title": "LIG넥스원 주가 폭등에 고민 커진 여의도…\"전쟁 모멘텀, 멀티플 올려 잡아야\" - 인베스트조선",
+    "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNVVhsTm80MlRnMDZKX2J2RlNLdnI2S0RhSkJxV2hlLWRoWlh4dDdmTHB3dlVNWXE3V3owNVVIT1UxRks0MUx1c2RNQXJCdnoySWFTWXYxNXRNMEc0am9fZGVRUXdILWdJUmIyRkhPVndYTlF1QXdrckFqV3ljUHFvTm1mRQ?oc=5",
+    "source": "인베스트조선",
+    "publishedAt": "2026-03-06T17:00:00+09:00"
    }
   ],
   "272210.KS": [
+   {
+    "title": "한화시스템 주가, 7월 30일 장중 56,400원 4.06% 상승 - 톱스타뉴스",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE45RUdSZmI5TGgyZGgwU0dueU8tNWVLNGVyYlk3X2dsajFBY2RldWNHem1KMU9QblJsZm1IVXJsaXB4RHlrblFCZUFzcEF4Y1ExMElRTFloSldBdldpRHJIT1UzS2VqaDRnWDVqVzU1eHVwUQ?oc=5",
+    "source": "톱스타뉴스",
+    "publishedAt": "2026-07-30T10:12:53+09:00"
+   },
    {
     "title": "“필리조선소 리스크 덜어낸 한화시스템, 2026년 매출 4.5조 시대 연다” - 뉴스퀘스트",
     "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9PbUNJcU5aR05fZjZpYy01QzRBTzFzWkt4akFFUVZQQnQ2akdzNWRmRjJJSzBrUkEzdXVRZWdSaVo3a0RvTkxEdDRVSGt5dWJhQ0Qxby1fSHJadzBlRVlnTGtNNGZrZHpvZ2dJal93WlRwNXPSAXNBVV95cUxPT21DSXFOWkdOX2Y2aWMtNUM0QU8xc1pLeGpBRVFWUEJ0NmpHczVkZkYySUswa1JBM3V1UWVnUmlaN2tEb05MRHQ0VUhreXViYUNEMW8tX0hyWncwZUVZZ0xrTTRma2R6b2dnSWpfd1pUcDVz?oc=5",
@@ -489,16 +495,10 @@
     "publishedAt": "2026-07-30T02:36:07+09:00"
    },
    {
-    "title": "한화시스템 주가, 7월 29일 장중 57,900원대로 약세 - 톱스타뉴스",
-    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1VaEQ0MzBnR2hpVF9kaGs5Z00xSkdOd1BJT2J3YUtxNHNiZ21vZVRzRmJqWlZFa1hYbFRjNVp6Y3V6ZHpaNGJTcGdIMWhWdENlak5DRkZwSU1YQ1drQ3g5enpYdlhsWUE1MTNMQUVycGdKZw?oc=5",
-    "source": "톱스타뉴스",
-    "publishedAt": "2026-07-29T10:11:38+09:00"
-   },
-   {
-    "title": "한화시스템, 2분기 깜짝 실적에도 6%대 약세… 투심 위축 배경은? - 머니투데이 - 머니투데이",
-    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5ucWJpX25mRDJfOFE5ZzJkMExERUJZVmdiS0ptemtEcC14aUwzQkI3b2tHSWJsVVZQNUx5RmlERjRKcXVIU1NEcmQwTVBWT3hhMzUtbDFVVWwzb2JWaVV4WkEySlFhaEN0eW9QWERn0gFuQVVfeXFMTm5xYmlfbmZEMl84UTlnMmQwTERFQllWZ2JLSm16a0RwLXhpTDNCQjdva0dJYmxVVlA1THlGaURGNEpxdUhTU0RyZDBNUFZPeGEzNS1sMVVVbDNvYlZpVXhaQTJKUWFoQ3R5b1BYRGc?oc=5",
-    "source": "머니투데이",
-    "publishedAt": "2026-07-29T10:08:05+09:00"
+    "title": "그룹 조달마다 등장한 한화시스템…역할 커진만큼 투자자 시선도 깐깐 - 인베스트조선",
+    "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQY2UwQk5CZG81ZXpaTkZ0OWZtYTBpQWZzTlNlSldJUGtOc2Z5ci0wTWNrNGdIa0g0SjlxdGV3TUxQM21rZTBYRlZpTUlhNkZOWHY1dm5ldS02dnVOdFQ5dFJXamt5V19hZUlwYWVkTGt2dEdiSkVYVzhYTmstdGtObjJRMA?oc=5",
+    "source": "인베스트조선",
+    "publishedAt": "2026-07-07T16:00:00+09:00"
    },
    {
     "title": "[모닝 리포트] \"한화시스템 영업익 210% 급증에도 목표가 하향\" - 뉴스핌",
@@ -547,18 +547,6 @@
   ],
   "9988.HK": [
    {
-    "title": "Morgan Stanley Cuts Its Alibaba Stock Price Target - Yahoo Finance",
-    "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQeVRSTDNrWG5hRjhKcFdFS3NZTkNZbUNoV2NIUEN6dTR1Vnh6cGVLSGJyaUxJVmtVRS1DRWF2bGl3OXpSRkJhNUs4azBaaHFUbkdacVUzU05LVVJKZ2xLdnExZmpqZks5alc5SjdmTS15LXhNT29SeDlIaUhVQi1UbWdwcmxnTVZVNXNtTW5KQUdMOVlOSVhZeFBoV3BQaDQ?oc=5",
-    "source": "Yahoo Finance",
-    "publishedAt": "2026-07-26T23:56:34+09:00"
-   },
-   {
-    "title": "Alibaba Shares Give Up Qwen Gains as Market Focus Turns to Cloud Margins - TechStock²",
-    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOVzFjc0xDaGhtNG13Q2JlNXBwbVBBNnlicFlXRFNTMjA5QXk4T1ZoZEQxUFlWZmlXQ2JWRk9VQTZPQzdVVEQ1blFKM3Zmb0lQdWs5REpVRVFBOUtIVUxSNUcxVTNYd2JJdjl4UDIxYkgzZUpHNDVoOFBJcndXazltRjJrRHV2RDhuMFVRRnUtLUNxeDVOemtiNA?oc=5",
-    "source": "TechStock²",
-    "publishedAt": "2026-07-27T04:46:18+09:00"
-   },
-   {
     "title": "Alibaba (BABA) Stock May Be Below Fair Value Despite Fresh AI Export Control Risks - simplywall.st",
     "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQWlQ5RGp2S19iaFp2bzlNV3JwNk0xRzdOT04xdHdjOVRrNUJVV256N2NaY3RUMW9HSjIwc1UyejRfcTNBYWtvOU5MZG9kUnlaazdyZno5YlQzaFFKeFBWRmtQYmdiMWY1WHphakY0QWh0T2F4cnhLR0ExNFhQMHdfMVY1aHp5YjZUZTR1eEtPUVlpVXNiUlJRc0YxOXp1MUp3N1JZeTUyaDBUQVViTUpyYmszSnhpQ3JSQVV1QzFRN3JuM0U5WUFwLVJtWHpZZGNz0gHWAUFVX3lxTFB5MTBYRGt1Ym5IZjdkWVlNNkVNTEY2X0dZc292d2EzRkp1UngtZnJ6bHBFTXpYR2JtTGZGTlFURXpKVW9rSXpBeVRMZ3gtdUxBSTFOM293UnBkRmxORnhlMGNMMTdHSjFCeWVqZ21fODZTeWpsUlR3akJkRi13ZS1EdzZyLXU3NDkteE1DanlndHJfX09iOWNnM2pOalFvTE16ZnNrTWk2Y3N5a0tPRlQ1OFJrN2UzSUgzUl9QN0lyWFM4NFlORF9nWUpJdENkMlRkWUNBanc?oc=5",
     "source": "simplywall.st",
@@ -575,9 +563,27 @@
     "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNNHI4anBWQ2lXSGZ6TmZ5Vm43RC1qb0FYRVAxLVJVblBZT2tFeGFKTzk2TVFjUXdXMG1HYS1pUlJ2N1JxYkhST2VqNFVoX0RiX1UxRklkZFpJdnBTZmxEQllmQldPaVJzTnhrVjRYSTA3UTZQY0F4TXB1MTMyTXYzc2xtdmlPQW93Y2xpTWxTbC1JM1VXV1ZPUTRRX042SUZGNGI4SkFlMVhhVjVabEhQZURwTElRVDZ0YTVvQ3QzQXUyeHM?oc=5",
     "source": "TradingView",
     "publishedAt": "2026-07-30T00:00:00+09:00"
+   },
+   {
+    "title": "Alibaba Group Holding Limited (BABA): 12 Strong Buy Stocks with High Upside According to Analysts - Yahoo Finance",
+    "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNVndBS0VFeHdUVHpTc0JrRGRxbWFSLUxLNG9jRXZhbmFqM19QZzlRai13Z0J4amI5Qkw1XzhFNjJuNmNjenZZM2dEZHpZaF9CLW5feTJraDY3T3JwNGhqX2tMTTd5WHZKamt5clg5ZHdJZVZtSkZwanUtNFNkU0I0N0pKTUIxV2oyUUhHM1NDMGtVSDFJc3ZRaFE2aTdRSTlN?oc=5",
+    "source": "Yahoo Finance",
+    "publishedAt": "2026-07-15T16:00:00+09:00"
+   },
+   {
+    "title": "Daiwa Reduces PT on Alibaba Group Holding Limited (BABA) Stock - Yahoo Finance",
+    "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQc1l4V19zWC0tdjB6RzlYaEg1dlUwN2dJcjhwbGdzZ2VoUV9rVzk2ZDBod1NvZzRCRXhXT01wYzdkR2FGMGNBLUhMYTh2bnRMZXoyZFlmc2VDZUx0WGh3c2s0UXViVmNiMmZ1N01FeXQ0MXM4VTRHMzFWbTJ4QWN4dmc5dGpvTm10TVlrT2VVd21OdWJKT1MtaWN0TQ?oc=5",
+    "source": "Yahoo Finance",
+    "publishedAt": "2026-06-27T16:00:00+09:00"
    }
   ],
   "0700.HK": [
+   {
+    "title": "Hong Kong Stock Market Movement | Tencent rises nearly 2%; analysts expect the company to adopt a moderate capital expenditure growth plan going forward, with its gaming business remaining core. - 富途牛牛",
+    "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPSDQ1RnJxV1NESExPamk3UDZiczFKX2VjMHlvSmZCRFh1U184SkhUSnRQOGFMaFFiZHgyOV9ScDk5MVlqN1BMcmhZdHFTUVBvd1p4ZEh1ZVplVlNYWTQyTE14ZFh2TTJpWXhIYUQtM045X2lyMWtOM0t6RWFwOGdXLWFpSmozUy0tc1BXVVBaTnRPRVVzLWN0N1hUUmtFbjRwSXpKNm93Yw?oc=5",
+    "source": "富途牛牛",
+    "publishedAt": "2026-07-30T16:32:53+09:00"
+   },
    {
     "title": "Tencent Holdings (SEHK:700) Valuation Check After Recent Share Price Swings - Yahoo Finance",
     "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPMG9tQkE0ZHNvSVJ3UHZTZHdfbnl5cGNGVHFiYUY3TDRDWjd6dHp1a3hEMnotanNqUzUtbFE0bEJHMkJVSThrdEYyQW1VaURzWm1xekRaQjVCU1l4VHFUSzYxc1BkQUJsOUs0eVM2V2pwMjA1TWNaV2xma3lHQXRYdVNuejBLaWt0S2ZnVXg2Y2J6Sm5Wc2p1QWVXRDFOUWZvQUE?oc=5",
@@ -585,9 +591,9 @@
     "publishedAt": "2026-06-03T16:00:00+09:00"
    },
    {
-    "title": "Tencent Is Eyeing a Major Investment in AI Startup Manus. What That Means for TCEHY Stock Here. - barchart.com",
+    "title": "Tencent Is Eyeing a Major Investment in AI Startup Manus. What That Means for TCEHY Stock Here. - Barchart.com",
     "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOQkx2cm9UVjJZSVZBck9IdkJoRTJNckNLWjJLLTNNUC1Md1o4dUhRU1g5YlN1RWFra0ctLWllYnR2WDVuR2VjdWdPalNiTVFjTzlFRUVHSHR5S1Y1ZFBJdHp4Zk54cUtkYmp6cktZbVRlSUIxU3JQVktMM1ZZb0pHZmM3LTlFRVQwQzNUNE9oWUxvZzRiNURGT21oV0xORVh6OEdoazFpeGR6b29VUnhlOGNWSnRQczFXWUdiVTd5TW5NZ0NEZmdhTTNmQjF5MWdkNlBr?oc=5",
-    "source": "barchart.com",
+    "source": "Barchart.com",
     "publishedAt": "2026-07-14T16:00:00+09:00"
    },
    {
@@ -601,26 +607,20 @@
     "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPU1BnbUs2MmJpTnFVYl9TVnZzSGUzT0lUSDhPMGJnZDJHeXE1Wkg1elZqVW4ybndOeHhmOUsyam94ZExUM090YjBZcXIwN2tsNVEyMU8tcGJydmd2di1NZC13RVR6QTdwTGhJbEJrV0FqSUh4dlY4ZmpsS2c0TzNxRlBSSV9jU0k3eG1sdkFOZkhkY016dWVjVjNTMlRBSGVocVlCRWpkM2VYZ0FLbS1EX3dQRUtFMDZQanRxaGJvZmFRbGRqYmt0Ng?oc=5",
     "source": "Morningstar",
     "publishedAt": "2026-07-27T09:49:28+09:00"
-   },
-   {
-    "title": "Tencent: One Of The Cheapest Mega-Cap Tech Stocks In The World (OTCMKTS:TCEHY) - Seeking Alpha",
-    "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPQ0JMT3BLTDdXVDFqV1dKR1lDVDRRNFl1X3ZMeFNPYmtubTRsZWRWVk04OVRwWGRVMG0tYkttdmx4cHo3LTZGa2I5OXZmRGUzSXZpQnZTa3VJVmlwT2YySFhfSFRRTjh0ODFMaTFxWWp4djRRbnFGdk9rVkN3TEZsWm1VTDZxZTlsaUlweFBCQnZzdzgxbmJlM19JY19zMW9oZ0RCdA?oc=5",
-    "source": "Seeking Alpha",
-    "publishedAt": "2026-06-18T16:00:00+09:00"
    }
   ],
   "9888.HK": [
-   {
-    "title": "Baidu snaps six-day losing streak (BIDU:NASDAQ) - Seeking Alpha",
-    "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9aR0dwT3p1QjZLNTl0SUhhenhlSWZtay0tbmttVFY0SWZ2VGV2amdlamkyd0w5alNkalVSTGxSVkZxNWR5RUx4QUtxY1JHaTlXbnA3Y3hUOEhfS3U0ZXhHUVdhcFpmQU0tam9HUEkzTGZwT3ZsN0JIanIxSQ?oc=5",
-    "source": "Seeking Alpha",
-    "publishedAt": "2026-07-30T05:08:37+09:00"
-   },
    {
     "title": "Baidu (BIDU) In Focus Following Governance Changes As Fair Value Views Split - Yahoo Finance",
     "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNVmt3bnNjUDdyUk0zSjREZE9JRWM1czBJX2dITF9pRHBpWEVvN1NVaEVHakR3WU5EVUZhbEx3RlhqT1R5SEV5dDY5a0NjdDloYWNIQ0Npa21DcVJRWmpxZkoyX3hZaDZaTGtGZDViSlltbDhuZmQtMUMxN0F4UjhhaFE2dXFzZHk1dDBieDQzeW5fQm1TM0doYUNTS1c3cF8wcXpEZA?oc=5",
     "source": "Yahoo Finance",
     "publishedAt": "2026-07-28T17:15:51+09:00"
+   },
+   {
+    "title": "Baidu snaps six-day losing streak (BIDU:NASDAQ) - Seeking Alpha",
+    "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9aR0dwT3p1QjZLNTl0SUhhenhlSWZtay0tbmttVFY0SWZ2VGV2amdlamkyd0w5alNkalVSTGxSVkZxNWR5RUx4QUtxY1JHaTlXbnA3Y3hUOEhfS3U0ZXhHUVdhcFpmQU0tam9HUEkzTGZwT3ZsN0JIanIxSQ?oc=5",
+    "source": "Seeking Alpha",
+    "publishedAt": "2026-07-30T05:08:37+09:00"
    },
    {
     "title": "Baidu (BIDU) Stock Looks Cheap On Sales But Mixed On Broader Checks - simplywall.st",
@@ -629,16 +629,16 @@
     "publishedAt": "2026-07-29T00:36:28+09:00"
    },
    {
+    "title": "Dear Baidu Stock Fans, Mark Your Calendars for June 30 - Barchart.com",
+    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOWWV0RmJTcWk1LUs2X1F1LU5BY29mbnZ2RFNxdUdCWUkxSkVjSkppOXVhdGNSLWRpVzVBREpfSDBJVVJMNDNaMVlEV00yT0l1Ml8xckc1a2ZUVk9idi1GbVVaM2ZXdjZaUzNlbkFFWnktbTZqOVZPMXdxaDl3VjJzNFpWcVhtc1NGaEpqZm9hQk9pMWFsSk9zbzN3aGRDUQ?oc=5",
+    "source": "Barchart.com",
+    "publishedAt": "2026-06-10T16:00:00+09:00"
+   },
+   {
     "title": "Baidu record holders can vote Aug. 26 at its Beijing campus - Stock Titan",
     "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNREZpWGhPUDQyNW5ta1lYU0dzRnVLczJDMDRwZ0MzSE44QVg1YnZfVFhHQXVYN1dwYWlmVHM4VTdfdGVrck52eUk2Z2VIVmFpZjkxWnFzeUl5SzROcUk0Qk83LTN2aXptZEx1MU5HeHVWUXM4RjFWTDROVjVhZE5YcFVUQ3VHUGxpeGt6TlJDVmc5S093Q2xESTI4YlBRRHdHaHNYVms3Y095YV82d2x3ZQ?oc=5",
     "source": "Stock Titan",
     "publishedAt": "2026-07-28T13:39:09+09:00"
-   },
-   {
-    "title": "Dear Baidu Stock Fans, Mark Your Calendars for June 30 - barchart.com",
-    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOWWV0RmJTcWk1LUs2X1F1LU5BY29mbnZ2RFNxdUdCWUkxSkVjSkppOXVhdGNSLWRpVzVBREpfSDBJVVJMNDNaMVlEV00yT0l1Ml8xckc1a2ZUVk9idi1GbVVaM2ZXdjZaUzNlbkFFWnktbTZqOVZPMXdxaDl3VjJzNFpWcVhtc1NGaEpqZm9hQk9pMWFsSk9zbzN3aGRDUQ?oc=5",
-    "source": "barchart.com",
-    "publishedAt": "2026-06-10T16:00:00+09:00"
    }
   ],
   "1810.HK": [
@@ -649,10 +649,10 @@
     "publishedAt": "2026-07-16T16:00:00+09:00"
    },
    {
-    "title": "Smart Share Global Ltd (EM): Xiaomi and affiliates file exit Schedule 13G/A - Stock Titan",
-    "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOMzIyWFJzVzhDU1d6NUJQLWo3TGFYdXMxX19YLTJ2T2Fzc3NVdk9FMGozbkJLRmw3TW5ER1VGNnFlTXIwb0R6a2ZNWkZNaDBJVy1WcXdFUTZaVzRVYUlILUNWU1BiTWZTY1l0TEFXejRMN0tWVEtzTWZkY1RrbmZHdWNJOXBhWDRob0RhYnYtTk03TDN1SnRqZS15RExidzlPMEw5R3g2RnJRM1I5d1RRS0lXSXFteWw3bmhvU2s3N0lCNDZ2LVoyMw?oc=5",
-    "source": "Stock Titan",
-    "publishedAt": "2026-07-29T19:08:19+09:00"
+    "title": "Xiaomi’s Stock Price Plummets to 31.04 HKD, Sliding Down by 2.63% - Smartkarma",
+    "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPcUxSaUQ3a2duZGZ2NWpPTzZQWTlLallUb0lVRkQ5b2JqcDF3ZE11c0lvX2hJQmFJOUdXMjkxeHlIc1hjbmJ3T0NUTEg3QkQzdUNTMVhLV3VicHhiWDZyeF9JbGpjN0VYZlUwRHVhaDlWWjlOTUYxTUo1ZnZSeWV0b2pVQnNYeHNNMGVOdEgwa1lwaVU5b1dnTEV3cm81S3hCSm04TEY0Yjc0RGdSX1E?oc=5",
+    "source": "Smartkarma",
+    "publishedAt": "2026-07-30T17:40:43+09:00"
    },
    {
     "title": "Why is Xiaomi stock surging today? - Investing.com",
@@ -661,10 +661,10 @@
     "publishedAt": "2026-07-27T17:42:34+09:00"
    },
    {
-    "title": "Xiaomi’s Stock Price Skyrockets to 31.88 HKD, Witnessing a Staggering Rise of 8.95% - Smartkarma",
-    "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPekxFcENoQ3lqMVZoYmROVHZFWjRoS045OG0zQ1hrUUpwRkRETEVhMEJvU0E3Ti1HX2kwR0xCZzNuc04tamF1QmJkcFRoQ3pGc3NhZkgweHIxRFA3UjVpUldIa2UxLUh0WF9PTTVxT2t5dWhScFRYRHk4VUU2ODFFSXI1VW5fbUNpYU5wR3JlVXpCTEdYdTJMdEhReHNlWlVhOXk1ak5HdTkzb3BrRklOdEEtRXB2SFNjYjBHNDVFSVAwUGxDeWc?oc=5",
-    "source": "Smartkarma",
-    "publishedAt": "2026-07-29T17:33:21+09:00"
+    "title": "Smart Share Global Ltd (EM): Xiaomi and affiliates file exit Schedule 13G/A - Stock Titan",
+    "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOMzIyWFJzVzhDU1d6NUJQLWo3TGFYdXMxX19YLTJ2T2Fzc3NVdk9FMGozbkJLRmw3TW5ER1VGNnFlTXIwb0R6a2ZNWkZNaDBJVy1WcXdFUTZaVzRVYUlILUNWU1BiTWZTY1l0TEFXejRMN0tWVEtzTWZkY1RrbmZHdWNJOXBhWDRob0RhYnYtTk03TDN1SnRqZS15RExidzlPMEw5R3g2RnJRM1I5d1RRS0lXSXFteWw3bmhvU2s3N0lCNDZ2LVoyMw?oc=5",
+    "source": "Stock Titan",
+    "publishedAt": "2026-07-29T19:08:19+09:00"
    },
    {
     "title": "Hong Kong Stock Market Movement | Xiaomi Group rises as Pengcheng series new models debut tomorrow evening; makes multiple advancements in robotics - Moomoo",
@@ -675,16 +675,10 @@
   ],
   "1211.HK": [
    {
-    "title": "BYD Shares Rally 22% As Tesla Dives 23% - 24/7 Wall St.",
-    "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNeUd1SDlka1o3M1paZHJpeThjV0hJd3NQWXRJaWhfVjAxMXRzWmdUTzR1U09Pb3U4SGNJSE80RS02QkMwZDU4NGZBTnFtOF9qaGMyV241T0F1Y1RhZ0ZIMEtMbWpuR0tMc3hNVmNMcnV4czdocU5oRW9QTDd4V3huZzB2aUF5Yjgz?oc=5",
-    "source": "24/7 Wall St.",
+    "title": "BYD Shares Rally 22% As Tesla Dives 23% - Yahoo Finance",
+    "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPVXZFd1M4Z21TMmgxbW5mbi14WXB1aWgtOWREelpibXZLWmZQM052U0hteWJVVDJXd3VvN0hFd19JT3U1aU1FdE9kMEZLaU5zanNEYmRaQ0xIX3ZtUEQ2Tk5jVE5rbUp6cVdOck9aSkZ0Tlc3cEJzajJuT0JnMHdZX2o5a0hKN1c1dXBibk5ZMy1KcFlJ?oc=5",
+    "source": "Yahoo Finance",
     "publishedAt": "2026-07-28T23:39:22+09:00"
-   },
-   {
-    "title": "Ford Hires BYD’s Europe Lead as It Loses Market Share - eletric-vehicles.com",
-    "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOZDNTVXgwRk1wZ19Iay1rQXktdkEtSHlBLXZBZGRWdWJRTnp2N2ZTOEM4d0w1WFFnTzVIbTV2LUJjWnpaWldCdTRvTHIxcEtKTTVmSWp3X0llY1FGR3VYT0RBSldNQVM3cGdOY1ZhUDJzUUQyRTctUGxGd3ZTeGFvVEs3c2g2R1dKSjI2dnZ5MG8?oc=5",
-    "source": "eletric-vehicles.com",
-    "publishedAt": "2026-07-29T17:40:03+09:00"
    },
    {
     "title": "Ford Stock Steadies After Huge Earnings Miss, But BYD Threat Looms Large - Stocktwits",
@@ -703,20 +697,20 @@
     "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNQlN5M3RQZ25SWmlBVWhsZ0YtUDNPQ0E1emZramVFaXU0VFZ5RTRzV2kyZ0lxalRNYVZyaTZTTXRqYmdaSDhucm9sM245LWhJZ05HMzIxeTBpRU1nOFlENlAwSUZUNU9WOUZjOXFLVmhGR3BieVZ0RVVJdU5feUdNS0VvUk1nWFBzaWZRSkpuLWFobTI0aEQ5X2hfcnJEaGpwTzVqNFRYbDBYYS1FejdJdmN1WFl2eWRuX01WRFZ6VFFkR21MYlhqOF9FSHg?oc=5",
     "source": "MarketBeat",
     "publishedAt": "2026-07-28T01:54:46+09:00"
+   },
+   {
+    "title": "Boyd Gaming (NYSE: BYD) CFO records 12,777-share open-market sale - Stock Titan",
+    "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOdkNmZURkczRMRHpXdGNENjhOanhoUzNIc2UyQlNVRWlER0d0Y3NiZWdHV3pqTFRXcXBnZ2c4dkk0WkdiT2VUQUFCSHpVejAwWnB2WmpGY2VhYkIzLUg2VGRDc19UekVzYnV0RnFNeVVpWThYT0c2Umd0cnZwenY4cWFreXJ0TktHdGF6Q2pjYUFya1ZjR3h4S2EtOUxFaW00d1Y3bHdSTlphTFlMMUE?oc=5",
+    "source": "Stock Titan",
+    "publishedAt": "2026-07-29T06:59:38+09:00"
    }
   ],
   "0981.HK": [
    {
-    "title": "Semiconductor Manufacturing International's Stock Price Dips to 69.10 HKD, Reflecting a 2.19% Decrease: Is It Time to Buy? - Smartkarma",
-    "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOYWRFbmwxTXZmSVkwTHJ6cjV5YzFTaHdoVXdEaEp0V0w0YVRiRjAwRmg2SW9DUmZPTG5Qd0RZS1pnVWVNdmFDWF9rdjFkRkU4c3JjdDVoenVhQUFHeVhERzQ3UDl0RjB1X2dhZ3Y3SDd5aDFmSVdEZVVwU1pfTzVLSW5ibnJLY0FaYjNpWHJSbzN2NnJidm9ucnA0UC0xUno3Y2liMDJ6bXFHZzZ4TWh1bmlpTHpaVzhYdkNZQ3B1UTN1Q0RLSldRemg0V2dMeDI5TFc3S19USXNqc2o3VEdhN01PcnA1d0UzQ0kteWxoOXpiSEVYYVpv?oc=5",
+    "title": "Semiconductor Manufacturing International's Stock Price Plunges to 62.00 HKD, Marking a 7.74% Drop: A Critical Market Update - Smartkarma",
+    "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQVllrNVB6aFhQeVVmcFhqM3pPa3E4U1FDWWZnOXZOcW5HUjhvUHljUklTMElScjd5aUJfbzdvcFdpTDZwTDJJZG9fLXlNRDBDRzJQNHk5V2U0VDlfNzdkemR1VmZVZ3c1eE9ST2p2ZjhLcFNzbnpWdG96M25NN3NYOFhER1BwMXVuWkNLNi1QZVczbVQxS0V2SnJRVmFYaVFZRmQ1YnNvVzFmbEQteVRzbmNhckNCd0x0WldBSXFqOTMzMUxYaEVnckRKT0FWRnp5YV9BVEZFb2JHT1lJWWk1Q1RNdEdTdGVlRmtxZWtEV1VuSHlPaC1xS3ZTMA?oc=5",
     "source": "Smartkarma",
-    "publishedAt": "2026-07-28T17:38:10+09:00"
-   },
-   {
-    "title": "Hong Kong stocks rise as rallies from Alibaba, SMIC, others lift market sentiment - scmp.com",
-    "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNU2x5Vjljei1DbWhmYWtNbEc4LWZYQXZIbDk0YXY3MnFZMFFvS0xydW9lekpVMmpsYTlrcUtpOGd5aGFHMVAxTGxQV3gtVlZ2eVlHcEprR3RoYnVtQzBQZXg5cTZ0Vk13bk9BQnZuSlZoY1JNYlA1UTEyUGFZVWRFbGxUMDRHQVlMZEFVcHJCTVo4WS1ZNk53Wk9vMzlrSVJXSWlxeUQ2WVRnUEpjTmtjVtIBsAFBVV95cUxNRjhNV1VtbzVMNjNvdzcyV0pEaC10NWY1TUdHdXl2U1UzZEJNZU1PSU5HWE9kSUttVUM2MzZTWlRtNmxQMXNKWlR3ckJaVlBQQWhwTnpLeEkyQVBwaFdfaFI4R2NMMlRGR29fY29DQy05TEFmUS1PQVpTVTlvWkhuLVVmMlIySDBkbV8yOXNWNDcwQkxDclBhWEFMVHJDT3BlTmQ1aWlYNzR0UkFkVDNQWQ?oc=5",
-    "source": "scmp.com",
-    "publishedAt": "2026-07-08T16:00:00+09:00"
+    "publishedAt": "2026-07-30T17:40:43+09:00"
    },
    {
     "title": "Hong Kong Stock Market Movement | SMIC (0981.HK) Opens Over 3% Higher as CSRC Approves Registration for Share Issuance to Acquire 49% Stake in SMIC Northern - Moomoo",
@@ -725,16 +719,22 @@
     "publishedAt": "2026-05-21T16:00:00+09:00"
    },
    {
+    "title": "Hong Kong stocks rise as rallies from Alibaba, SMIC, others lift market sentiment - scmp.com",
+    "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNU2x5Vjljei1DbWhmYWtNbEc4LWZYQXZIbDk0YXY3MnFZMFFvS0xydW9lekpVMmpsYTlrcUtpOGd5aGFHMVAxTGxQV3gtVlZ2eVlHcEprR3RoYnVtQzBQZXg5cTZ0Vk13bk9BQnZuSlZoY1JNYlA1UTEyUGFZVWRFbGxUMDRHQVlMZEFVcHJCTVo4WS1ZNk53Wk9vMzlrSVJXSWlxeUQ2WVRnUEpjTmtjVtIBsAFBVV95cUxNRjhNV1VtbzVMNjNvdzcyV0pEaC10NWY1TUdHdXl2U1UzZEJNZU1PSU5HWE9kSUttVUM2MzZTWlRtNmxQMXNKWlR3ckJaVlBQQWhwTnpLeEkyQVBwaFdfaFI4R2NMMlRGR29fY29DQy05TEFmUS1PQVpTVTlvWkhuLVVmMlIySDBkbV8yOXNWNDcwQkxDclBhWEFMVHJDT3BlTmQ1aWlYNzR0UkFkVDNQWQ?oc=5",
+    "source": "scmp.com",
+    "publishedAt": "2026-07-08T16:00:00+09:00"
+   },
+   {
     "title": "A Look At Semiconductor Manufacturing International’s (SEHK:981) Valuation After A Strong Share Price Rally - Yahoo Finance",
     "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOMVg0bnN0Ty1IMDJfY3ZweERQSlZFajRucURnVF8zaUZERXR2MXRPd0laUFA1TVJUZzNJdVp2aHZOam5rUTdRV250MEplejh1NFhRZmRfeDlvVVBkUkh5V2luTUpiaW05RU5hcmRnMXhCZ0NhN1ljVS00NlFlV184ZXVtcjhvSEJsVFNiSEthN1ZlN0hfOHJmYkZqdGVXdk1hcm50S2ZoZldIc3JxUHR0REV2NFNWRUU?oc=5",
     "source": "Yahoo Finance",
     "publishedAt": "2026-05-28T16:00:00+09:00"
    },
    {
-    "title": "\"CXMT's Listing Is Different from SMIC's\"…Which ETF Should You Choose?[Weekend Money] - asiae.co.kr",
-    "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE14Z3Q0SDF2MXB6ZGVLVTRKVHFRUjRKU011Sm1RWnVXUDNPTmdvWlBwMUdqMkZRWVV3YTJUc0c4SGc3UUdOY2EzZ3dKYWNGbmhjS1NicXdDdFBXSTdaMU02Sm5pa0Y?oc=5",
-    "source": "asiae.co.kr",
-    "publishedAt": "2026-07-26T15:25:00+09:00"
+    "title": "SMIC shares fall as soft outlook, memory woes overshadow strong Q4 - Investing.com",
+    "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNSmIzMlNiR3J3bGpqdzU5T0t5VzdlWUF1b01lTmY4SFBQZmxQX29XT0FESmdrQXlkbkxnc2JmSVU1T0J1Q0wyUlN6alBISXZEd2daN1JjUFhwZ29leWgwYm40Y0FsckljeWQ2YldHTklhVmZtVG85ZDdjdlViM3VJOUVHT2hIQ1BQaS02b3JnYWQ1Z0J3Y1BJNmd2Q1VjMC0wUEZXOWlrU0IzLVRNeTBXNEwzUlIzSDZwVnAtNjZ2VQ?oc=5",
+    "source": "Investing.com",
+    "publishedAt": "2026-02-10T17:00:00+09:00"
    }
   ],
   "002230.SZ": [
@@ -771,9 +771,9 @@
   ],
   "688256.SS": [
    {
-    "title": "Chinese AI chipmaker Cambricon aims for US$14b revenue over 3 years - scmp.com",
+    "title": "Chinese AI chipmaker Cambricon aims for US$14b revenue over 3 years - South China Morning Post",
     "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOVjAzTk11b2ZYV2lNNXhGb1I4eVVBeUJMa2MtVmZlNUZYSGdQcG5RN3lEWVN5V1llSW1xSEUycFdObVRsRE1tS0Eyd0FfeUN5WVlYMjJxY2NYSWZiQ1Z0bjktRUJLY29pZnpqR3FvZ1VKX0FzdDctQmNObG45QVhrdFV3UmhGQkUzVF9CRUJJRVVEZ0VaTVhHTUZUV1VRTlN3UE5FYXpLZzhPLUN2NVhDekdidmFMQ0x1d0RQUUhTajR0d9IBwgFBVV95cUxQVmRtSDBGTjFPVWtKcUxGM3ZjZXZmNTZMRHQ4MHZCN0xnSU9YVTBEXzNLSzZwcWdSTC1NalRuZm5YeXBHTG5meXJHdmIzOXlVSmF2cXlTd3FNMWNsWHhQbVRWUXlORXR5eGE3ZlhybDg2VHg0aXFla2NrcTRqNHhjT1NmOTI2UzFLYkdSREFiRTZJOW5WQTNkQ3V2dFY0dGhBNFAyYUlPZ1ZOSkhXVnh6MEZHdDcyc01FSDdwdTZSXzFGUQ?oc=5",
-    "source": "scmp.com",
+    "source": "South China Morning Post",
     "publishedAt": "2026-07-29T15:21:19+09:00"
    },
    {
@@ -783,36 +783,36 @@
     "publishedAt": "2026-07-26T15:02:56+09:00"
    },
    {
-    "title": "Cambricon (688256.SH) plans to launch a restricted stock incentive plan involving 5 million shares, with performance targets including cumulative revenue of no less than RMB 100 billion from 2026 to 2028. - Moomoo",
-    "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNc1NUdWdwVVYwM3BCckRheGFxWmxWNTBlVXlRT0lnUFg1QmdpWmlkMUtvQXJnLWhCV2JFd2ZfaThFSkQ4WmZBUDFXVENTeWFLX3drQmRNeV9VYjRHS2FjVmhmaXh0eE4xbHNTUEFraHF4Q0tRY3REUkM1WDMyamNtazhwWExudXBiSi1EaVVOa1RJQmRRU21MMGljaWk1S1NJbldZSV9PcTJCQQ?oc=5",
-    "source": "Moomoo",
-    "publishedAt": "2026-07-29T00:45:10+09:00"
-   },
-   {
-    "title": "China A-Shares Open Mixed; Cambricon Jumps Over 2% on Ambitious 100 Billion Yuan Revenue Target - finance.biggo.com",
-    "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1XY0tsWTl5dUIzM0NWbkd2RHVFOG5Qc05QeUVraFV1bUZwNFpTblRpSXZTZkNoLXI3NnBYcERDSGJQbmNheEtUVEZ0Xy1aUDZvUXlKNW92dDR2b19Xb1pqUVN0aTFhRVBqQmRGcmlGN1pjYllvTlE?oc=5",
-    "source": "finance.biggo.com",
-    "publishedAt": "2026-07-29T11:05:00+09:00"
+    "title": "Cambricon (688256.SH) plans to launch a restricted stock incentive plan involving 5 million shares, with performance targets including cumulative revenue of no less than RMB 100 billion from 2026 to 2028. - 富途牛牛",
+    "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQNGhITzVaREhiQUFGTzh0ZHdkS3A3S09oRGZwaGM4OHB1Mm92akJkaDhDLVJFWUI1OXpQME9wM1FaYklYOXIzSV9vV2h4OXUzWkFhV0ZXWEVIQWpDZHcxZmJPb2pJbGVCNFhYbnVxbVNaQm9FRGFJWVFFbjMwRlcwbTZxbGttQ0ttM3RMZGhRSVI4Q3hHSGFJOWdHM1g3VHg5OUhTa0dFeWk?oc=5",
+    "source": "富途牛牛",
+    "publishedAt": "2026-07-29T02:53:43+09:00"
    },
    {
     "title": "Cambricon Shares Jump 14% After Its AI Chip Sales Surge in China - Bloomberg.com",
     "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQMGthNGo1a1B3Y3U1bF9qNlpCQ0NRTTVCS0Rfa2RGUDBZV0lZUmZYaURWR1U1S0ZzRTFEZkVQRk1ZWUsyallIdGRwZmVkUjRGX0JFdWtZUXVZWk85M1pEU1A1LThVTGVVNm5XeXR5b0xLdjFzb3RRTGd5TUZ6QjZKTnJnZEpOaWlwOHdmLXFsRkdJUGs3SEQ1UnNyNm9zaG1JOW5WdGxJZk5oeDNGTU9R?oc=5",
     "source": "Bloomberg.com",
     "publishedAt": "2026-04-29T16:00:00+09:00"
+   },
+   {
+    "title": "China A-Shares Open Mixed; Cambricon Jumps Over 2% on Ambitious 100 Billion Yuan Revenue Target - finance.biggo.com",
+    "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1XY0tsWTl5dUIzM0NWbkd2RHVFOG5Qc05QeUVraFV1bUZwNFpTblRpSXZTZkNoLXI3NnBYcERDSGJQbmNheEtUVEZ0Xy1aUDZvUXlKNW92dDR2b19Xb1pqUVN0aTFhRVBqQmRGcmlGN1pjYllvTlE?oc=5",
+    "source": "finance.biggo.com",
+    "publishedAt": "2026-07-29T11:05:00+09:00"
    }
   ],
   "688066.SS": [
+   {
+    "title": "ETFs Investing in Piesat Information Technology Co., Ltd. Class A Stocks - TradingView",
+    "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1VMjVFbXlub0ZtZDhIbGdJR1EzS3locklSNk94SF9OdVBvakR5VFNGQm1yN3BLc2ZJX2QwM0M2S0JJSk9PZ01iRUFURlF2TGNaamNiSlk1X1hnR204YnpQMmJR?oc=5",
+    "source": "TradingView",
+    "publishedAt": "2026-07-30T09:32:00+09:00"
+   },
    {
     "title": "Traffic Control Technology Co., Ltd. (688015.SS) stock price, news, quote and history - Yahoo Finance Singapore",
     "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9ZZFNTeWxydURQWjhEeVA2M3JIczFUamF2M29iR0tGTG1QQ2xFdEU3Uy1jZUhPck9ELWpLVXJSdzNteGdDbkJjd3Y4blBxLXhGc1VFalRDTms?oc=5",
     "source": "Yahoo Finance Singapore",
     "publishedAt": "2020-08-26T04:41:10+09:00"
-   },
-   {
-    "title": "300513 Stock Price and Chart — SZSE:300513 - TradingView",
-    "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE95ME1lQS1hdHcwZGZ3TmpqeEVzMHQtMzJBQWRMM29ZVEVydjBEMTFNZDVfY0EzOVp3ZXkzRFpxU3E0UnR1SjJwYy04NTU2U1ItRWQ4UmVrQjZqS1Zt?oc=5",
-    "source": "TradingView",
-    "publishedAt": "2018-02-20T00:20:44+09:00"
    },
    {
     "title": "China's new tech-focused exchange falls short of promises - Nikkei Asia",
@@ -825,6 +825,12 @@
     "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9zOElKM2tIQ3RBbHdkbllsanpwQ0VZVTNlMTB4ZkZleV9oa0xMMUNIeG04M1ZITTNGWVA5NGo0U0ZNSHFtLXJCVXZ6NTAwS2ZsWFJYRG9yZFU?oc=5",
     "source": "Yahoo! Finance Canada",
     "publishedAt": "2021-01-16T06:56:14+09:00"
+   },
+   {
+    "title": "300513 Stock Price and Chart — SZSE:300513 - TradingView",
+    "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE95ME1lQS1hdHcwZGZ3TmpqeEVzMHQtMzJBQWRMM29ZVEVydjBEMTFNZDVfY0EzOVp3ZXkzRFpxU3E0UnR1SjJwYy04NTU2U1ItRWQ4UmVrQjZqS1Zt?oc=5",
+    "source": "TradingView",
+    "publishedAt": "2018-02-20T00:20:44+09:00"
    }
   ]
  }
