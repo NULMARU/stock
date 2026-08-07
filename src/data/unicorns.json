@@ -1,8 +1,150 @@
 {
- "asOf": "2026-08-01",
+ "asOf": "2026-08-08",
  "methodologyVersion": "1.1.0",
  "evaluated": 57,
  "passed": [
+  {
+   "ticker": "000660.KS",
+   "name": "SK하이닉스",
+   "nameEn": "SK Hynix",
+   "market": "KR",
+   "currency": "KRW",
+   "theme": [
+    "반도체",
+    "HBM"
+   ],
+   "description": "영업이익 1위(2년 연속), HBM 독주 — 가치+성장 겸비(변동성 큼).",
+   "totalScore": 100.0,
+   "grade": "A",
+   "pillars": {
+    "valuation": {
+     "score": 40.0,
+     "max": 40,
+     "checks": [
+      {
+       "label": "PER(트레일링)",
+       "pass": false,
+       "detail": "데이터 없음 (배점 제외 후 정규화)"
+      },
+      {
+       "label": "PER(포워드)",
+       "pass": true,
+       "detail": "PER(포워드) 3.1배 — 만점 기준(≤12배) 충족"
+      },
+      {
+       "label": "PBR",
+       "pass": false,
+       "detail": "데이터 없음 (배점 제외 후 정규화)"
+      },
+      {
+       "label": "PEG",
+       "pass": true,
+       "detail": "PEG 0.2 — 만점 기준(≤1.0) 충족"
+      },
+      {
+       "label": "FCF 수익률",
+       "pass": false,
+       "detail": "데이터 없음 (배점 제외 후 정규화)"
+      }
+     ]
+    },
+    "quality": {
+     "score": 35.0,
+     "max": 35,
+     "checks": [
+      {
+       "label": "ROE",
+       "pass": true,
+       "detail": "ROE 92.7% — 만점 기준(≥15%) 충족"
+      },
+      {
+       "label": "ROA",
+       "pass": true,
+       "detail": "ROA 33.7% — 만점 기준(≥7%) 충족"
+      },
+      {
+       "label": "영업이익률",
+       "pass": true,
+       "detail": "영업이익률 76.3% — 만점 기준(≥15%) 충족"
+      },
+      {
+       "label": "순이익·FCF 흑자",
+       "pass": false,
+       "detail": "데이터 없음 (배점 제외 후 정규화)"
+      },
+      {
+       "label": "부채비율",
+       "pass": true,
+       "detail": "부채비율 7% — 만점 기준(≤50%) 충족"
+      },
+      {
+       "label": "유동비율",
+       "pass": true,
+       "detail": "유동비율 17.5 — 만점 기준(≥1.5) 충족"
+      }
+     ]
+    },
+    "growth": {
+     "score": 25.0,
+     "max": 25,
+     "checks": [
+      {
+       "label": "매출성장률",
+       "pass": true,
+       "detail": "매출성장률 256.8% — 만점 기준(≥10%) 충족"
+      },
+      {
+       "label": "이익성장률",
+       "pass": true,
+       "detail": "이익성장률 1273.6% — 만점 기준(≥10%) 충족"
+      },
+      {
+       "label": "이익 개선 기대(포워드<트레일링 PER)",
+       "pass": false,
+       "detail": "데이터 없음 (배점 제외 후 정규화)"
+      },
+      {
+       "label": "배당수익률",
+       "pass": true,
+       "detail": "배당수익률 20.0% — 만점 기준(≥3%) 충족"
+      }
+     ]
+    }
+   },
+   "metrics": {
+    "trailingPE": null,
+    "forwardPE": 3.12,
+    "priceToBook": null,
+    "peg": 0.21,
+    "fcfYield": null,
+    "roe": 0.9268,
+    "roa": 0.3366,
+    "operatingMargin": 0.7633,
+    "profitMargin": 0.8568,
+    "debtToEquity": 7.08,
+    "currentRatio": 17.54,
+    "revenueGrowth": 2.568,
+    "earningsGrowth": 12.736,
+    "dividendYield": 0.2
+   },
+   "quote": {
+    "price": 1422000.0,
+    "changePct": -4.88,
+    "marketCap": 1009413682888704
+   },
+   "reasons": [
+    "PER(포워드) 3.1배 — 만점 기준(≤12배) 충족",
+    "PEG 0.2 — 만점 기준(≤1.0) 충족",
+    "ROE 92.7% — 만점 기준(≥15%) 충족",
+    "ROA 33.7% — 만점 기준(≥7%) 충족"
+   ],
+   "risks": [
+    "지표 5개 결측 — 배점 제외 후 환산됨"
+   ],
+   "sourceNotes": [
+    "뉴스스페이스"
+   ]
+  },
   {
    "ticker": "138040.KS",
    "name": "메리츠금융지주",
@@ -29,7 +171,7 @@
       {
        "label": "PER(포워드)",
        "pass": true,
-       "detail": "PER(포워드) 6.8배 — 만점 기준(≤12배) 충족"
+       "detail": "PER(포워드) 6.9배 — 만점 기준(≤12배) 충족"
       },
       {
        "label": "PBR",
@@ -108,9 +250,9 @@
    },
    "metrics": {
     "trailingPE": null,
-    "forwardPE": 6.8,
+    "forwardPE": 6.93,
     "priceToBook": null,
-    "peg": 0.4,
+    "peg": 0.41,
     "fcfYield": null,
     "roe": 0.2135,
     "roa": 0.0182,
@@ -123,12 +265,12 @@
     "dividendYield": 0.0103
    },
    "quote": {
-    "price": 124000.0,
-    "changePct": -0.08,
-    "marketCap": 20431998287872
+    "price": 126300.0,
+    "changePct": 0.48,
+    "marketCap": 20810978820096
    },
    "reasons": [
-    "PER(포워드) 6.8배 — 만점 기준(≤12배) 충족",
+    "PER(포워드) 6.9배 — 만점 기준(≤12배) 충족",
     "PEG 0.4 — 만점 기준(≤1.0) 충족",
     "ROE(금융 완화) 21.3% — 만점 기준(≥10%) 충족",
     "ROA(금융 완화) 1.8% — 만점 기준(≥1.0%) 충족"
@@ -138,148 +280,6 @@
    ],
    "sourceNotes": [
     "머니마인드"
-   ]
-  },
-  {
-   "ticker": "000660.KS",
-   "name": "SK하이닉스",
-   "nameEn": "SK Hynix",
-   "market": "KR",
-   "currency": "KRW",
-   "theme": [
-    "반도체",
-    "HBM"
-   ],
-   "description": "영업이익 1위(2년 연속), HBM 독주 — 가치+성장 겸비(변동성 큼).",
-   "totalScore": 93.8,
-   "grade": "A",
-   "pillars": {
-    "valuation": {
-     "score": 40.0,
-     "max": 40,
-     "checks": [
-      {
-       "label": "PER(트레일링)",
-       "pass": false,
-       "detail": "데이터 없음 (배점 제외 후 정규화)"
-      },
-      {
-       "label": "PER(포워드)",
-       "pass": true,
-       "detail": "PER(포워드) 3.8배 — 만점 기준(≤12배) 충족"
-      },
-      {
-       "label": "PBR",
-       "pass": false,
-       "detail": "데이터 없음 (배점 제외 후 정규화)"
-      },
-      {
-       "label": "PEG",
-       "pass": true,
-       "detail": "PEG 0.3 — 만점 기준(≤1.0) 충족"
-      },
-      {
-       "label": "FCF 수익률",
-       "pass": false,
-       "detail": "데이터 없음 (배점 제외 후 정규화)"
-      }
-     ]
-    },
-    "quality": {
-     "score": 35.0,
-     "max": 35,
-     "checks": [
-      {
-       "label": "ROE",
-       "pass": true,
-       "detail": "ROE 92.7% — 만점 기준(≥15%) 충족"
-      },
-      {
-       "label": "ROA",
-       "pass": true,
-       "detail": "ROA 33.7% — 만점 기준(≥7%) 충족"
-      },
-      {
-       "label": "영업이익률",
-       "pass": true,
-       "detail": "영업이익률 76.3% — 만점 기준(≥15%) 충족"
-      },
-      {
-       "label": "순이익·FCF 흑자",
-       "pass": false,
-       "detail": "데이터 없음 (배점 제외 후 정규화)"
-      },
-      {
-       "label": "부채비율",
-       "pass": true,
-       "detail": "부채비율 7% — 만점 기준(≤50%) 충족"
-      },
-      {
-       "label": "유동비율",
-       "pass": true,
-       "detail": "유동비율 17.5 — 만점 기준(≥1.5) 충족"
-      }
-     ]
-    },
-    "growth": {
-     "score": 18.8,
-     "max": 25,
-     "checks": [
-      {
-       "label": "매출성장률",
-       "pass": true,
-       "detail": "매출성장률 256.8% — 만점 기준(≥10%) 충족"
-      },
-      {
-       "label": "이익성장률",
-       "pass": true,
-       "detail": "이익성장률 1273.6% — 만점 기준(≥10%) 충족"
-      },
-      {
-       "label": "이익 개선 기대(포워드<트레일링 PER)",
-       "pass": false,
-       "detail": "데이터 없음 (배점 제외 후 정규화)"
-      },
-      {
-       "label": "배당수익률",
-       "pass": false,
-       "detail": "배당수익률 0.2% — 부분 기준(1.0%) 미달"
-      }
-     ]
-    }
-   },
-   "metrics": {
-    "trailingPE": null,
-    "forwardPE": 3.84,
-    "priceToBook": null,
-    "peg": 0.31,
-    "fcfYield": null,
-    "roe": 0.9268,
-    "roa": 0.3366,
-    "operatingMargin": 0.7633,
-    "profitMargin": 0.8568,
-    "debtToEquity": 7.08,
-    "currentRatio": 17.54,
-    "revenueGrowth": 2.568,
-    "earningsGrowth": 12.736,
-    "dividendYield": 0.0023
-   },
-   "quote": {
-    "price": 1718000.0,
-    "changePct": 29.95,
-    "marketCap": 1219530730766336
-   },
-   "reasons": [
-    "PER(포워드) 3.8배 — 만점 기준(≤12배) 충족",
-    "PEG 0.3 — 만점 기준(≤1.0) 충족",
-    "ROE 92.7% — 만점 기준(≥15%) 충족",
-    "ROA 33.7% — 만점 기준(≥7%) 충족"
-   ],
-   "risks": [
-    "지표 5개 결측 — 배점 제외 후 환산됨"
-   ],
-   "sourceNotes": [
-    "뉴스스페이스"
    ]
   },
   {
@@ -308,7 +308,7 @@
       {
        "label": "PER(포워드)",
        "pass": true,
-       "detail": "PER(포워드) 8.4배 — 만점 기준(≤12배) 충족"
+       "detail": "PER(포워드) 8.8배 — 만점 기준(≤12배) 충족"
       },
       {
        "label": "PBR",
@@ -380,14 +380,14 @@
       {
        "label": "배당수익률",
        "pass": false,
-       "detail": "배당수익률 2.8% — 부분 기준(1.0%)만 충족 (50% 배점)"
+       "detail": "배당수익률 2.7% — 부분 기준(1.0%)만 충족 (50% 배점)"
       }
      ]
     }
    },
    "metrics": {
     "trailingPE": null,
-    "forwardPE": 8.45,
+    "forwardPE": 8.82,
     "priceToBook": null,
     "peg": 0.74,
     "fcfYield": null,
@@ -399,15 +399,15 @@
     "currentRatio": null,
     "revenueGrowth": 0.185,
     "earningsGrowth": 0.195,
-    "dividendYield": 0.0276
+    "dividendYield": 0.0269
    },
    "quote": {
-    "price": 168500.0,
-    "changePct": 0.66,
-    "marketCap": 59161379340288
+    "price": 175800.0,
+    "changePct": 2.51,
+    "marketCap": 61724455600128
    },
    "reasons": [
-    "PER(포워드) 8.4배 — 만점 기준(≤12배) 충족",
+    "PER(포워드) 8.8배 — 만점 기준(≤12배) 충족",
     "PEG 0.7 — 만점 기준(≤1.0) 충족",
     "ROE(금융 완화) 10.2% — 만점 기준(≥10%) 충족",
     "영업이익률 58.9% — 만점 기준(≥15%) 충족"
@@ -441,17 +441,17 @@
       {
        "label": "PER(트레일링)",
        "pass": true,
-       "detail": "PER(트레일링) 8배 — 만점 기준(≤15배) 충족"
+       "detail": "PER(트레일링) 7.8배 — 만점 기준(≤15배) 충족"
       },
       {
        "label": "PER(포워드)",
        "pass": true,
-       "detail": "PER(포워드) 6.4배 — 만점 기준(≤12배) 충족"
+       "detail": "PER(포워드) 6.3배 — 만점 기준(≤12배) 충족"
       },
       {
        "label": "PBR",
        "pass": true,
-       "detail": "PBR 1.2배 — 만점 기준(≤1.5배) 충족"
+       "detail": "PBR 1.1배 — 만점 기준(≤1.5배) 충족"
       },
       {
        "label": "PEG",
@@ -461,7 +461,7 @@
       {
        "label": "FCF 수익률",
        "pass": false,
-       "detail": "FCF 수익률 5.8% — 부분 기준(4.0%)만 충족 (50% 배점)"
+       "detail": "FCF 수익률 5.9% — 부분 기준(4.0%)만 충족 (50% 배점)"
       }
      ]
     },
@@ -518,22 +518,22 @@
       {
        "label": "이익 개선 기대",
        "pass": true,
-       "detail": "포워드 PER 6.4배 < 트레일링 PER 8배"
+       "detail": "포워드 PER 6.3배 < 트레일링 PER 7.8배"
       },
       {
        "label": "배당수익률",
        "pass": true,
-       "detail": "배당수익률 5.3% — 만점 기준(≥3%) 충족"
+       "detail": "배당수익률 5.6% — 만점 기준(≥3%) 충족"
       }
      ]
     }
    },
    "metrics": {
-    "trailingPE": 7.99,
-    "forwardPE": 6.44,
-    "priceToBook": 1.17,
+    "trailingPE": 7.78,
+    "forwardPE": 6.33,
+    "priceToBook": 1.14,
     "peg": 0.16,
-    "fcfYield": 0.0579,
+    "fcfYield": 0.0593,
     "roe": 0.1535,
     "roa": 0.0938,
     "operatingMargin": 0.4471,
@@ -542,17 +542,17 @@
     "currentRatio": 3.17,
     "revenueGrowth": 0.086,
     "earningsGrowth": 0.065,
-    "dividendYield": 0.0529
+    "dividendYield": 0.0564
    },
    "quote": {
-    "price": 23.82,
-    "changePct": -1.49,
-    "marketCap": 1132163497984
+    "price": 23.26,
+    "changePct": 2.47,
+    "marketCap": 1105546706944
    },
    "reasons": [
-    "PER(트레일링) 8배 — 만점 기준(≤15배) 충족",
-    "PER(포워드) 6.4배 — 만점 기준(≤12배) 충족",
-    "PBR 1.2배 — 만점 기준(≤1.5배) 충족",
+    "PER(트레일링) 7.8배 — 만점 기준(≤15배) 충족",
+    "PER(포워드) 6.3배 — 만점 기준(≤12배) 충족",
+    "PBR 1.1배 — 만점 기준(≤1.5배) 충족",
     "PEG 0.2 — 만점 기준(≤1.0) 충족"
    ],
    "risks": [],
@@ -583,12 +583,12 @@
       {
        "label": "PER(트레일링)",
        "pass": true,
-       "detail": "PER(트레일링) 8.7배 — 만점 기준(≤15배) 충족"
+       "detail": "PER(트레일링) 6.6배 — 만점 기준(≤15배) 충족"
       },
       {
        "label": "PER(포워드)",
        "pass": true,
-       "detail": "PER(포워드) 6.5배 — 만점 기준(≤12배) 충족"
+       "detail": "PER(포워드) 6.4배 — 만점 기준(≤12배) 충족"
       },
       {
        "label": "PBR",
@@ -598,12 +598,12 @@
       {
        "label": "PEG",
        "pass": true,
-       "detail": "PEG 0.3 — 만점 기준(≤1.0) 충족"
+       "detail": "PEG 0.2 — 만점 기준(≤1.0) 충족"
       },
       {
        "label": "FCF 수익률",
        "pass": true,
-       "detail": "FCF 수익률 10.6% — 만점 기준(≥8%) 충족"
+       "detail": "FCF 수익률 12.0% — 만점 기준(≥8%) 충족"
       }
      ]
     },
@@ -614,32 +614,32 @@
       {
        "label": "ROE",
        "pass": true,
-       "detail": "ROE 17.2% — 만점 기준(≥15%) 충족"
+       "detail": "ROE 22.4% — 만점 기준(≥15%) 충족"
       },
       {
        "label": "ROA",
        "pass": false,
-       "detail": "ROA 4.1% — 부분 기준(4.0%)만 충족 (50% 배점)"
+       "detail": "ROA 4.3% — 부분 기준(4.0%)만 충족 (50% 배점)"
       },
       {
        "label": "영업이익률",
        "pass": true,
-       "detail": "영업이익률 16.4% — 만점 기준(≥15%) 충족"
+       "detail": "영업이익률 20.7% — 만점 기준(≥15%) 충족"
       },
       {
        "label": "순이익·FCF 흑자",
        "pass": true,
-       "detail": "순이익률 23.4%·FCF 흑자 → 충족"
+       "detail": "순이익률 27.7%·FCF 흑자 → 충족"
       },
       {
        "label": "부채비율",
        "pass": false,
-       "detail": "부채비율 132% — 부분 기준(100%) 미달"
+       "detail": "부채비율 133% — 부분 기준(100%) 미달"
       },
       {
        "label": "유동비율",
        "pass": false,
-       "detail": "유동비율 0.6 — 부분 기준(1) 미달"
+       "detail": "유동비율 0.5 — 부분 기준(1) 미달"
       }
      ]
     },
@@ -650,58 +650,201 @@
       {
        "label": "매출성장률",
        "pass": true,
-       "detail": "매출성장률 30.1% — 만점 기준(≥10%) 충족"
+       "detail": "매출성장률 29.1% — 만점 기준(≥10%) 충족"
       },
       {
        "label": "이익성장률",
-       "pass": true,
-       "detail": "이익성장률 3040.6% — 만점 기준(≥10%) 충족"
+       "pass": false,
+       "detail": "데이터 없음 (배점 제외 후 정규화)"
       },
       {
        "label": "이익 개선 기대",
        "pass": true,
-       "detail": "포워드 PER 6.5배 < 트레일링 PER 8.7배"
+       "detail": "포워드 PER 6.4배 < 트레일링 PER 6.6배"
       },
       {
        "label": "배당수익률",
        "pass": true,
-       "detail": "배당수익률 3.6% — 만점 기준(≥3%) 충족"
+       "detail": "배당수익률 4.1% — 만점 기준(≥3%) 충족"
       }
      ]
     }
    },
    "metrics": {
-    "trailingPE": 8.68,
-    "forwardPE": 6.54,
-    "priceToBook": 1.45,
-    "peg": 0.26,
-    "fcfYield": 0.1057,
-    "roe": 0.1722,
-    "roa": 0.0407,
-    "operatingMargin": 0.1639,
-    "profitMargin": 0.2335,
-    "debtToEquity": 132.33,
-    "currentRatio": 0.59,
-    "revenueGrowth": 0.301,
-    "earningsGrowth": 30.406,
-    "dividendYield": 0.0359
+    "trailingPE": 6.57,
+    "forwardPE": 6.38,
+    "priceToBook": 1.38,
+    "peg": 0.24,
+    "fcfYield": 0.1203,
+    "roe": 0.2235,
+    "roa": 0.0428,
+    "operatingMargin": 0.2067,
+    "profitMargin": 0.2765,
+    "debtToEquity": 132.51,
+    "currentRatio": 0.54,
+    "revenueGrowth": 0.291,
+    "earningsGrowth": null,
+    "dividendYield": 0.0411
    },
    "quote": {
-    "price": 44.77,
-    "changePct": -2.67,
-    "marketCap": 23140679680
+    "price": 42.77,
+    "changePct": -0.09,
+    "marketCap": 22056742912
    },
    "reasons": [
-    "PER(트레일링) 8.7배 — 만점 기준(≤15배) 충족",
-    "PER(포워드) 6.5배 — 만점 기준(≤12배) 충족",
+    "PER(트레일링) 6.6배 — 만점 기준(≤15배) 충족",
+    "PER(포워드) 6.4배 — 만점 기준(≤12배) 충족",
     "PBR 1.4배 — 만점 기준(≤1.5배) 충족",
-    "PEG 0.3 — 만점 기준(≤1.0) 충족"
+    "PEG 0.2 — 만점 기준(≤1.0) 충족"
    ],
    "risks": [
-    "부채비율 132%로 높은 편"
+    "부채비율 133%로 높은 편",
+    "지표 1개 결측 — 배점 제외 후 환산됨"
    ],
    "sourceNotes": [
     "Simply Wall St via Webull"
+   ]
+  },
+  {
+   "ticker": "CVX",
+   "name": "셰브론",
+   "nameEn": "Chevron",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "에너지",
+    "배당"
+   ],
+   "description": "버크셔 상위 5 보유, 에너지 대형 배당주.",
+   "totalScore": 85.0,
+   "grade": "A",
+   "pillars": {
+    "valuation": {
+     "score": 25.0,
+     "max": 40,
+     "checks": [
+      {
+       "label": "PER(트레일링)",
+       "pass": false,
+       "detail": "PER(트레일링) 18배 — 부분 기준(22배)만 충족 (50% 배점)"
+      },
+      {
+       "label": "PER(포워드)",
+       "pass": false,
+       "detail": "PER(포워드) 14.4배 — 부분 기준(18배)만 충족 (50% 배점)"
+      },
+      {
+       "label": "PBR",
+       "pass": false,
+       "detail": "PBR 2배 — 부분 기준(3배)만 충족 (50% 배점)"
+      },
+      {
+       "label": "PEG",
+       "pass": true,
+       "detail": "PEG 0.7 — 만점 기준(≤1.0) 충족"
+      },
+      {
+       "label": "FCF 수익률",
+       "pass": false,
+       "detail": "데이터 없음 (배점 제외 후 정규화)"
+      }
+     ]
+    },
+    "quality": {
+     "score": 35.0,
+     "max": 35,
+     "checks": [
+      {
+       "label": "ROE",
+       "pass": false,
+       "detail": "데이터 없음 (배점 제외 후 정규화)"
+      },
+      {
+       "label": "ROA",
+       "pass": false,
+       "detail": "데이터 없음 (배점 제외 후 정규화)"
+      },
+      {
+       "label": "영업이익률",
+       "pass": true,
+       "detail": "영업이익률 21.9% — 만점 기준(≥15%) 충족"
+      },
+      {
+       "label": "순이익·FCF 흑자",
+       "pass": false,
+       "detail": "데이터 없음 (배점 제외 후 정규화)"
+      },
+      {
+       "label": "부채비율",
+       "pass": true,
+       "detail": "부채비율 24% — 만점 기준(≤50%) 충족"
+      },
+      {
+       "label": "유동비율",
+       "pass": false,
+       "detail": "데이터 없음 (배점 제외 후 정규화)"
+      }
+     ]
+    },
+    "growth": {
+     "score": 25.0,
+     "max": 25,
+     "checks": [
+      {
+       "label": "매출성장률",
+       "pass": true,
+       "detail": "매출성장률 52.6% — 만점 기준(≥10%) 충족"
+      },
+      {
+       "label": "이익성장률",
+       "pass": true,
+       "detail": "이익성장률 322.9% — 만점 기준(≥10%) 충족"
+      },
+      {
+       "label": "이익 개선 기대",
+       "pass": true,
+       "detail": "포워드 PER 14.4배 < 트레일링 PER 18배"
+      },
+      {
+       "label": "배당수익률",
+       "pass": true,
+       "detail": "배당수익률 3.8% — 만점 기준(≥3%) 충족"
+      }
+     ]
+    }
+   },
+   "metrics": {
+    "trailingPE": 17.96,
+    "forwardPE": 14.39,
+    "priceToBook": 2.01,
+    "peg": 0.73,
+    "fcfYield": null,
+    "roe": null,
+    "roa": null,
+    "operatingMargin": 0.2195,
+    "profitMargin": 0.0984,
+    "debtToEquity": 23.99,
+    "currentRatio": null,
+    "revenueGrowth": 0.526,
+    "earningsGrowth": 3.229,
+    "dividendYield": 0.0376
+   },
+   "quote": {
+    "price": 186.56,
+    "changePct": -1.41,
+    "marketCap": 366030716928
+   },
+   "reasons": [
+    "PEG 0.7 — 만점 기준(≤1.0) 충족",
+    "영업이익률 21.9% — 만점 기준(≥15%) 충족",
+    "부채비율 24% — 만점 기준(≤50%) 충족",
+    "매출성장률 52.6% — 만점 기준(≥10%) 충족"
+   ],
+   "risks": [
+    "지표 5개 결측 — 배점 제외 후 환산됨"
+   ],
+   "sourceNotes": [
+    "LevelFields 13F 정리"
    ]
   },
   {
@@ -730,7 +873,7 @@
       {
        "label": "PER(포워드)",
        "pass": true,
-       "detail": "PER(포워드) 7.3배 — 만점 기준(≤12배) 충족"
+       "detail": "PER(포워드) 8배 — 만점 기준(≤12배) 충족"
       },
       {
        "label": "PBR",
@@ -740,7 +883,7 @@
       {
        "label": "PEG",
        "pass": true,
-       "detail": "PEG 0.3 — 만점 기준(≤1.0) 충족 (pegRatio 이상치 → 포워드PER/성장률(상한 50%) 재계산)"
+       "detail": "PEG 0.4 — 만점 기준(≤1.0) 충족 (pegRatio 이상치 → 포워드PER/성장률(상한 50%) 재계산)"
       },
       {
        "label": "FCF 수익률",
@@ -802,16 +945,16 @@
       {
        "label": "배당수익률",
        "pass": false,
-       "detail": "배당수익률 2.9% — 부분 기준(1.0%)만 충족 (50% 배점)"
+       "detail": "배당수익률 2.8% — 부분 기준(1.0%)만 충족 (50% 배점)"
       }
      ]
     }
    },
    "metrics": {
     "trailingPE": null,
-    "forwardPE": 7.32,
+    "forwardPE": 8.0,
     "priceToBook": null,
-    "peg": 0.33,
+    "peg": 0.36,
     "fcfYield": null,
     "roe": 0.0894,
     "roa": 0.0069,
@@ -821,16 +964,16 @@
     "currentRatio": null,
     "revenueGrowth": 0.141,
     "earningsGrowth": 0.221,
-    "dividendYield": 0.0294
+    "dividendYield": 0.0276
    },
    "quote": {
-    "price": 100700.0,
-    "changePct": -0.1,
-    "marketCap": 47416040488960
+    "price": 110000.0,
+    "changePct": 2.42,
+    "marketCap": 51795078414336
    },
    "reasons": [
-    "PER(포워드) 7.3배 — 만점 기준(≤12배) 충족",
-    "PEG 0.3 — 만점 기준(≤1.0) 충족 (pegRatio 이상치 → 포워드PER/성장률(상한 50%) 재계산)",
+    "PER(포워드) 8배 — 만점 기준(≤12배) 충족",
+    "PEG 0.4 — 만점 기준(≤1.0) 충족 (pegRatio 이상치 → 포워드PER/성장률(상한 50%) 재계산)",
     "영업이익률 53.0% — 만점 기준(≥15%) 충족",
     "매출성장률 14.1% — 만점 기준(≥10%) 충족"
    ],
@@ -862,17 +1005,17 @@
       {
        "label": "PER(트레일링)",
        "pass": true,
-       "detail": "PER(트레일링) 9.3배 — 만점 기준(≤15배) 충족"
+       "detail": "PER(트레일링) 9.6배 — 만점 기준(≤15배) 충족"
       },
       {
        "label": "PER(포워드)",
        "pass": true,
-       "detail": "PER(포워드) 7.3배 — 만점 기준(≤12배) 충족"
+       "detail": "PER(포워드) 7.5배 — 만점 기준(≤12배) 충족"
       },
       {
        "label": "PBR",
        "pass": false,
-       "detail": "PBR 2배 — 부분 기준(3배)만 충족 (50% 배점)"
+       "detail": "PBR 2.1배 — 부분 기준(3배)만 충족 (50% 배점)"
       },
       {
        "label": "PEG",
@@ -882,7 +1025,7 @@
       {
        "label": "FCF 수익률",
        "pass": true,
-       "detail": "FCF 수익률 56.8% — 만점 기준(≥8%) 충족"
+       "detail": "FCF 수익률 54.9% — 만점 기준(≥8%) 충족"
       }
      ]
     },
@@ -939,7 +1082,7 @@
       {
        "label": "이익 개선 기대",
        "pass": true,
-       "detail": "포워드 PER 7.3배 < 트레일링 PER 9.3배"
+       "detail": "포워드 PER 7.5배 < 트레일링 PER 9.6배"
       },
       {
        "label": "배당수익률",
@@ -950,11 +1093,11 @@
     }
    },
    "metrics": {
-    "trailingPE": 9.29,
-    "forwardPE": 7.26,
-    "priceToBook": 1.99,
-    "peg": 0.82,
-    "fcfYield": 0.5683,
+    "trailingPE": 9.6,
+    "forwardPE": 7.5,
+    "priceToBook": 2.06,
+    "peg": 0.84,
+    "fcfYield": 0.5485,
     "roe": 0.254,
     "roa": 0.1033,
     "operatingMargin": 0.1842,
@@ -966,15 +1109,15 @@
     "dividendYield": 0.0
    },
    "quote": {
-    "price": 88.56,
-    "changePct": 1.28,
-    "marketCap": 126055989248
+    "price": 91.76,
+    "changePct": 1.0,
+    "marketCap": 130610864128
    },
    "reasons": [
-    "PER(트레일링) 9.3배 — 만점 기준(≤15배) 충족",
-    "PER(포워드) 7.3배 — 만점 기준(≤12배) 충족",
+    "PER(트레일링) 9.6배 — 만점 기준(≤15배) 충족",
+    "PER(포워드) 7.5배 — 만점 기준(≤12배) 충족",
     "PEG 0.8 — 만점 기준(≤1.0) 충족",
-    "FCF 수익률 56.8% — 만점 기준(≥8%) 충족"
+    "FCF 수익률 54.9% — 만점 기준(≥8%) 충족"
    ],
    "risks": [],
    "sourceNotes": [
@@ -1002,17 +1145,17 @@
       {
        "label": "PER(트레일링)",
        "pass": true,
-       "detail": "PER(트레일링) 14.3배 — 만점 기준(≤15배) 충족"
+       "detail": "PER(트레일링) 14.6배 — 만점 기준(≤15배) 충족"
       },
       {
        "label": "PER(포워드)",
        "pass": true,
-       "detail": "PER(포워드) 10.3배 — 만점 기준(≤12배) 충족"
+       "detail": "PER(포워드) 10.5배 — 만점 기준(≤12배) 충족"
       },
       {
        "label": "PBR",
        "pass": true,
-       "detail": "PBR 1.1배 — 만점 기준(≤1.5배) 충족"
+       "detail": "PBR 1.2배 — 만점 기준(≤1.5배) 충족"
       },
       {
        "label": "PEG",
@@ -1053,7 +1196,7 @@
       {
        "label": "PBR(금융 가산)",
        "pass": false,
-       "detail": "PBR(금융 가산) 1.1배 — 부분 기준(1.5배)만 충족 (50% 배점)"
+       "detail": "PBR(금융 가산) 1.2배 — 부분 기준(1.5배)만 충족 (50% 배점)"
       }
      ]
     },
@@ -1074,7 +1217,7 @@
       {
        "label": "이익 개선 기대",
        "pass": true,
-       "detail": "포워드 PER 10.3배 < 트레일링 PER 14.3배"
+       "detail": "포워드 PER 10.5배 < 트레일링 PER 14.6배"
       },
       {
        "label": "배당수익률",
@@ -1085,10 +1228,10 @@
     }
    },
    "metrics": {
-    "trailingPE": 14.27,
-    "forwardPE": 10.33,
-    "priceToBook": 1.15,
-    "peg": 0.68,
+    "trailingPE": 14.56,
+    "forwardPE": 10.48,
+    "priceToBook": 1.18,
+    "peg": 0.74,
     "fcfYield": null,
     "roe": 0.0853,
     "roa": 0.0066,
@@ -1098,17 +1241,17 @@
     "currentRatio": null,
     "revenueGrowth": 0.145,
     "earningsGrowth": 0.61,
-    "dividendYield": 0.0203
+    "dividendYield": 0.02
    },
    "quote": {
-    "price": 132.45,
-    "changePct": 0.1,
-    "marketCap": 222171627520
+    "price": 135.0,
+    "changePct": 0.88,
+    "marketCap": 226449014784
    },
    "reasons": [
-    "PER(트레일링) 14.3배 — 만점 기준(≤15배) 충족",
-    "PER(포워드) 10.3배 — 만점 기준(≤12배) 충족",
-    "PBR 1.1배 — 만점 기준(≤1.5배) 충족",
+    "PER(트레일링) 14.6배 — 만점 기준(≤15배) 충족",
+    "PER(포워드) 10.5배 — 만점 기준(≤12배) 충족",
+    "PBR 1.2배 — 만점 기준(≤1.5배) 충족",
     "PEG 0.7 — 만점 기준(≤1.0) 충족"
    ],
    "risks": [
@@ -1116,6 +1259,146 @@
    ],
    "sourceNotes": [
     "스크리너 빈출"
+   ]
+  },
+  {
+   "ticker": "TTE",
+   "name": "토탈에너지",
+   "nameEn": "TotalEnergies",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "에너지",
+    "배당"
+   ],
+   "description": "유럽 에너지 저평가 2순위.",
+   "totalScore": 83.0,
+   "grade": "A",
+   "pillars": {
+    "valuation": {
+     "score": 36.0,
+     "max": 40,
+     "checks": [
+      {
+       "label": "PER(트레일링)",
+       "pass": true,
+       "detail": "PER(트레일링) 10.7배 — 만점 기준(≤15배) 충족"
+      },
+      {
+       "label": "PER(포워드)",
+       "pass": true,
+       "detail": "PER(포워드) 8.9배 — 만점 기준(≤12배) 충족"
+      },
+      {
+       "label": "PBR",
+       "pass": true,
+       "detail": "PBR 1.5배 — 만점 기준(≤1.5배) 충족"
+      },
+      {
+       "label": "PEG",
+       "pass": true,
+       "detail": "PEG 0.7 — 만점 기준(≤1.0) 충족"
+      },
+      {
+       "label": "FCF 수익률",
+       "pass": false,
+       "detail": "FCF 수익률 7.1% — 부분 기준(4.0%)만 충족 (50% 배점)"
+      }
+     ]
+    },
+    "quality": {
+     "score": 22.0,
+     "max": 35,
+     "checks": [
+      {
+       "label": "ROE",
+       "pass": false,
+       "detail": "ROE 14.5% — 부분 기준(8.0%)만 충족 (50% 배점)"
+      },
+      {
+       "label": "ROA",
+       "pass": false,
+       "detail": "ROA 5.5% — 부분 기준(4.0%)만 충족 (50% 배점)"
+      },
+      {
+       "label": "영업이익률",
+       "pass": false,
+       "detail": "영업이익률 12.8% — 부분 기준(8.0%)만 충족 (50% 배점)"
+      },
+      {
+       "label": "순이익·FCF 흑자",
+       "pass": true,
+       "detail": "순이익률 9.1%·FCF 흑자 → 충족"
+      },
+      {
+       "label": "부채비율",
+       "pass": true,
+       "detail": "부채비율 48% — 만점 기준(≤50%) 충족"
+      },
+      {
+       "label": "유동비율",
+       "pass": false,
+       "detail": "유동비율 1.1 — 부분 기준(1)만 충족 (50% 배점)"
+      }
+     ]
+    },
+    "growth": {
+     "score": 25.0,
+     "max": 25,
+     "checks": [
+      {
+       "label": "매출성장률",
+       "pass": true,
+       "detail": "매출성장률 27.8% — 만점 기준(≥10%) 충족"
+      },
+      {
+       "label": "이익성장률",
+       "pass": true,
+       "detail": "이익성장률 106.0% — 만점 기준(≥10%) 충족"
+      },
+      {
+       "label": "이익 개선 기대",
+       "pass": true,
+       "detail": "포워드 PER 8.9배 < 트레일링 PER 10.7배"
+      },
+      {
+       "label": "배당수익률",
+       "pass": true,
+       "detail": "배당수익률 4.9% — 만점 기준(≥3%) 충족"
+      }
+     ]
+    }
+   },
+   "metrics": {
+    "trailingPE": 10.74,
+    "forwardPE": 8.9,
+    "priceToBook": 1.49,
+    "peg": 0.7,
+    "fcfYield": 0.0711,
+    "roe": 0.1448,
+    "roa": 0.0551,
+    "operatingMargin": 0.1279,
+    "profitMargin": 0.0908,
+    "debtToEquity": 48.05,
+    "currentRatio": 1.06,
+    "revenueGrowth": 0.278,
+    "earningsGrowth": 1.06,
+    "dividendYield": 0.0491
+   },
+   "quote": {
+    "price": 85.83,
+    "changePct": -0.51,
+    "marketCap": 190442651648
+   },
+   "reasons": [
+    "PER(트레일링) 10.7배 — 만점 기준(≤15배) 충족",
+    "PER(포워드) 8.9배 — 만점 기준(≤12배) 충족",
+    "PBR 1.5배 — 만점 기준(≤1.5배) 충족",
+    "PEG 0.7 — 만점 기준(≤1.0) 충족"
+   ],
+   "risks": [],
+   "sourceNotes": [
+    "ValueSense 저평가 에너지 2025"
    ]
   },
   {
@@ -1139,12 +1422,12 @@
       {
        "label": "PER(트레일링)",
        "pass": true,
-       "detail": "PER(트레일링) 7배 — 만점 기준(≤15배) 충족"
+       "detail": "PER(트레일링) 6.8배 — 만점 기준(≤15배) 충족"
       },
       {
        "label": "PER(포워드)",
        "pass": true,
-       "detail": "PER(포워드) 5.4배 — 만점 기준(≤12배) 충족"
+       "detail": "PER(포워드) 5.2배 — 만점 기준(≤12배) 충족"
       },
       {
        "label": "PBR",
@@ -1159,7 +1442,7 @@
       {
        "label": "FCF 수익률",
        "pass": true,
-       "detail": "FCF 수익률 49.7% — 만점 기준(≥8%) 충족"
+       "detail": "FCF 수익률 51.0% — 만점 기준(≥8%) 충족"
       }
      ]
     },
@@ -1211,22 +1494,22 @@
       {
        "label": "이익 개선 기대",
        "pass": true,
-       "detail": "포워드 PER 5.4배 < 트레일링 PER 7배"
+       "detail": "포워드 PER 5.2배 < 트레일링 PER 6.8배"
       },
       {
        "label": "배당수익률",
        "pass": true,
-       "detail": "배당수익률 5.2% — 만점 기준(≥3%) 충족"
+       "detail": "배당수익률 5.3% — 만점 기준(≥3%) 충족"
       }
      ]
     }
    },
    "metrics": {
-    "trailingPE": 6.99,
-    "forwardPE": 5.36,
-    "priceToBook": 0.9,
+    "trailingPE": 6.79,
+    "forwardPE": 5.21,
+    "priceToBook": 0.88,
     "peg": 0.4,
-    "fcfYield": 0.4969,
+    "fcfYield": 0.5099,
     "roe": 0.1128,
     "roa": 0.0098,
     "operatingMargin": 0.4896,
@@ -1235,16 +1518,16 @@
     "currentRatio": 3.67,
     "revenueGrowth": -0.033,
     "earningsGrowth": -0.132,
-    "dividendYield": 0.052
+    "dividendYield": 0.0533
    },
    "quote": {
-    "price": 58.65,
-    "changePct": -0.09,
-    "marketCap": 1062013239296
+    "price": 57.15,
+    "changePct": -0.26,
+    "marketCap": 1034851778560
    },
    "reasons": [
-    "PER(트레일링) 7배 — 만점 기준(≤15배) 충족",
-    "PER(포워드) 5.4배 — 만점 기준(≤12배) 충족",
+    "PER(트레일링) 6.8배 — 만점 기준(≤15배) 충족",
+    "PER(포워드) 5.2배 — 만점 기준(≤12배) 충족",
     "PBR 0.9배 — 만점 기준(≤1.5배) 충족",
     "PEG 0.4 — 만점 기준(≤1.0) 충족"
    ],
@@ -1276,17 +1559,17 @@
       {
        "label": "PER(트레일링)",
        "pass": true,
-       "detail": "PER(트레일링) 7.6배 — 만점 기준(≤15배) 충족"
+       "detail": "PER(트레일링) 7.4배 — 만점 기준(≤15배) 충족"
       },
       {
        "label": "PER(포워드)",
        "pass": true,
-       "detail": "PER(포워드) 6.2배 — 만점 기준(≤12배) 충족"
+       "detail": "PER(포워드) 6배 — 만점 기준(≤12배) 충족"
       },
       {
        "label": "PBR",
        "pass": true,
-       "detail": "PBR 1배 — 만점 기준(≤1.5배) 충족"
+       "detail": "PBR 0.9배 — 만점 기준(≤1.5배) 충족"
       },
       {
        "label": "PEG",
@@ -1296,7 +1579,7 @@
       {
        "label": "FCF 수익률",
        "pass": true,
-       "detail": "FCF 수익률 53.1% — 만점 기준(≥8%) 충족"
+       "detail": "FCF 수익률 54.6% — 만점 기준(≥8%) 충족"
       }
      ]
     },
@@ -1327,7 +1610,7 @@
       {
        "label": "PBR(금융 가산)",
        "pass": true,
-       "detail": "PBR(금융 가산) 1배 — 만점 기준(≤1.0배) 충족"
+       "detail": "PBR(금융 가산) 0.9배 — 만점 기준(≤1.0배) 충족"
       }
      ]
     },
@@ -1348,22 +1631,22 @@
       {
        "label": "이익 개선 기대",
        "pass": true,
-       "detail": "포워드 PER 6.2배 < 트레일링 PER 7.6배"
+       "detail": "포워드 PER 6배 < 트레일링 PER 7.4배"
       },
       {
        "label": "배당수익률",
        "pass": true,
-       "detail": "배당수익률 4.8% — 만점 기준(≥3%) 충족"
+       "detail": "배당수익률 5.1% — 만점 기준(≥3%) 충족"
       }
      ]
     }
    },
    "metrics": {
-    "trailingPE": 7.57,
-    "forwardPE": 6.21,
-    "priceToBook": 0.98,
+    "trailingPE": 7.36,
+    "forwardPE": 6.04,
+    "priceToBook": 0.95,
     "peg": 0.47,
-    "fcfYield": 0.5308,
+    "fcfYield": 0.5459,
     "roe": 0.1128,
     "roa": 0.0098,
     "operatingMargin": 0.4896,
@@ -1372,17 +1655,17 @@
     "currentRatio": 3.67,
     "revenueGrowth": -0.033,
     "earningsGrowth": -0.132,
-    "dividendYield": 0.0484
+    "dividendYield": 0.0505
    },
    "quote": {
-    "price": 54.9,
-    "changePct": -1.61,
-    "marketCap": 994109554688
+    "price": 53.38,
+    "changePct": -0.22,
+    "marketCap": 966585942016
    },
    "reasons": [
-    "PER(트레일링) 7.6배 — 만점 기준(≤15배) 충족",
-    "PER(포워드) 6.2배 — 만점 기준(≤12배) 충족",
-    "PBR 1배 — 만점 기준(≤1.5배) 충족",
+    "PER(트레일링) 7.4배 — 만점 기준(≤15배) 충족",
+    "PER(포워드) 6배 — 만점 기준(≤12배) 충족",
+    "PBR 0.9배 — 만점 기준(≤1.5배) 충족",
     "PEG 0.5 — 만점 기준(≤1.0) 충족"
    ],
    "risks": [
@@ -1475,12 +1758,12 @@
       {
        "label": "매출성장률",
        "pass": true,
-       "detail": "매출성장률 12.7% — 만점 기준(≥10%) 충족"
+       "detail": "매출성장률 12.2% — 만점 기준(≥10%) 충족"
       },
       {
        "label": "이익성장률",
        "pass": true,
-       "detail": "이익성장률 25.9% — 만점 기준(≥10%) 충족"
+       "detail": "이익성장률 26.2% — 만점 기준(≥10%) 충족"
       },
       {
        "label": "이익 개선 기대",
@@ -1496,9 +1779,9 @@
     }
    },
    "metrics": {
-    "trailingPE": 12.11,
-    "forwardPE": 10.48,
-    "priceToBook": 1.5,
+    "trailingPE": 12.1,
+    "forwardPE": 10.47,
+    "priceToBook": 1.49,
     "peg": 2.54,
     "fcfYield": null,
     "roe": 0.1231,
@@ -1507,14 +1790,14 @@
     "profitMargin": 0.335,
     "debtToEquity": null,
     "currentRatio": null,
-    "revenueGrowth": 0.127,
-    "earningsGrowth": 0.259,
-    "dividendYield": 0.0137
+    "revenueGrowth": 0.122,
+    "earningsGrowth": 0.262,
+    "dividendYield": 0.0138
    },
    "quote": {
-    "price": 145.73,
-    "changePct": 0.15,
-    "marketCap": 11067836416
+    "price": 145.6,
+    "changePct": 0.32,
+    "marketCap": 11058325504
    },
    "reasons": [
     "PER(트레일링) 12.1배 — 만점 기준(≤15배) 충족",
@@ -1527,6 +1810,146 @@
    ],
    "sourceNotes": [
     "Simply Wall St via Webull"
+   ]
+  },
+  {
+   "ticker": "SHEL",
+   "name": "셸",
+   "nameEn": "Shell",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "에너지",
+    "배당"
+   ],
+   "description": "FCF 수익률 13.2%, 내재가치 대비 42.9% 할인, D/E 41.3%.",
+   "totalScore": 81.5,
+   "grade": "A",
+   "pillars": {
+    "valuation": {
+     "score": 36.0,
+     "max": 40,
+     "checks": [
+      {
+       "label": "PER(트레일링)",
+       "pass": true,
+       "detail": "PER(트레일링) 9.8배 — 만점 기준(≤15배) 충족"
+      },
+      {
+       "label": "PER(포워드)",
+       "pass": true,
+       "detail": "PER(포워드) 10배 — 만점 기준(≤12배) 충족"
+      },
+      {
+       "label": "PBR",
+       "pass": true,
+       "detail": "PBR 1.4배 — 만점 기준(≤1.5배) 충족"
+      },
+      {
+       "label": "PEG",
+       "pass": false,
+       "detail": "PEG 1.3 — 부분 기준(1.5)만 충족 (50% 배점)"
+      },
+      {
+       "label": "FCF 수익률",
+       "pass": true,
+       "detail": "FCF 수익률 8.8% — 만점 기준(≥8%) 충족"
+      }
+     ]
+    },
+    "quality": {
+     "score": 25.5,
+     "max": 35,
+     "checks": [
+      {
+       "label": "ROE",
+       "pass": false,
+       "detail": "ROE 14.3% — 부분 기준(8.0%)만 충족 (50% 배점)"
+      },
+      {
+       "label": "ROA",
+       "pass": false,
+       "detail": "ROA 6.4% — 부분 기준(4.0%)만 충족 (50% 배점)"
+      },
+      {
+       "label": "영업이익률",
+       "pass": true,
+       "detail": "영업이익률 16.7% — 만점 기준(≥15%) 충족"
+      },
+      {
+       "label": "순이익·FCF 흑자",
+       "pass": true,
+       "detail": "순이익률 8.8%·FCF 흑자 → 충족"
+      },
+      {
+       "label": "부채비율",
+       "pass": true,
+       "detail": "부채비율 40% — 만점 기준(≤50%) 충족"
+      },
+      {
+       "label": "유동비율",
+       "pass": false,
+       "detail": "유동비율 1.4 — 부분 기준(1)만 충족 (50% 배점)"
+      }
+     ]
+    },
+    "growth": {
+     "score": 20.0,
+     "max": 25,
+     "checks": [
+      {
+       "label": "매출성장률",
+       "pass": true,
+       "detail": "매출성장률 44.7% — 만점 기준(≥10%) 충족"
+      },
+      {
+       "label": "이익성장률",
+       "pass": true,
+       "detail": "이익성장률 220.0% — 만점 기준(≥10%) 충족"
+      },
+      {
+       "label": "이익 개선 기대",
+       "pass": false,
+       "detail": "포워드 PER 10배 ≥ 트레일링 PER 9.8배"
+      },
+      {
+       "label": "배당수익률",
+       "pass": true,
+       "detail": "배당수익률 3.5% — 만점 기준(≥3%) 충족"
+      }
+     ]
+    }
+   },
+   "metrics": {
+    "trailingPE": 9.79,
+    "forwardPE": 10.01,
+    "priceToBook": 1.36,
+    "peg": 1.34,
+    "fcfYield": 0.0877,
+    "roe": 0.1434,
+    "roa": 0.064,
+    "operatingMargin": 0.1669,
+    "profitMargin": 0.0876,
+    "debtToEquity": 40.2,
+    "currentRatio": 1.44,
+    "revenueGrowth": 0.447,
+    "earningsGrowth": 2.2,
+    "dividendYield": 0.0349
+   },
+   "quote": {
+    "price": 88.5,
+    "changePct": -1.23,
+    "marketCap": 244653490176
+   },
+   "reasons": [
+    "PER(트레일링) 9.8배 — 만점 기준(≤15배) 충족",
+    "PER(포워드) 10배 — 만점 기준(≤12배) 충족",
+    "PBR 1.4배 — 만점 기준(≤1.5배) 충족",
+    "FCF 수익률 8.8% — 만점 기준(≥8%) 충족"
+   ],
+   "risks": [],
+   "sourceNotes": [
+    "ValueSense 저평가 에너지 2025"
    ]
   },
   {
@@ -1555,7 +1978,7 @@
       {
        "label": "PER(포워드)",
        "pass": true,
-       "detail": "PER(포워드) 4배 — 만점 기준(≤12배) 충족"
+       "detail": "PER(포워드) 3.4배 — 만점 기준(≤12배) 충족"
       },
       {
        "label": "PBR",
@@ -1565,12 +1988,12 @@
       {
        "label": "PEG",
        "pass": true,
-       "detail": "PEG 0.1 — 만점 기준(≤1.0) 충족"
+       "detail": "PEG 0.2 — 만점 기준(≤1.0) 충족"
       },
       {
        "label": "FCF 수익률",
        "pass": false,
-       "detail": "FCF 수익률 3.3% — 부분 기준(4.0%) 미달"
+       "detail": "FCF 수익률 3.7% — 부분 기준(4.0%) 미달"
       }
      ]
     },
@@ -1639,10 +2062,10 @@
    },
    "metrics": {
     "trailingPE": null,
-    "forwardPE": 3.98,
+    "forwardPE": 3.44,
     "priceToBook": null,
-    "peg": 0.15,
-    "fcfYield": 0.0329,
+    "peg": 0.16,
+    "fcfYield": 0.0374,
     "roe": 0.3079,
     "roa": 0.1769,
     "operatingMargin": 0.5219,
@@ -1651,16 +2074,16 @@
     "currentRatio": 7.53,
     "revenueGrowth": 1.299,
     "earningsGrowth": 13.669,
-    "dividendYield": 0.0072
+    "dividendYield": 0.0065
    },
    "quote": {
-    "price": 262500.0,
-    "changePct": 26.81,
-    "marketCap": 1723722847223808
+    "price": 231000.0,
+    "changePct": 0.22,
+    "marketCap": 1516876148506624
    },
    "reasons": [
-    "PER(포워드) 4배 — 만점 기준(≤12배) 충족",
-    "PEG 0.1 — 만점 기준(≤1.0) 충족",
+    "PER(포워드) 3.4배 — 만점 기준(≤12배) 충족",
+    "PEG 0.2 — 만점 기준(≤1.0) 충족",
     "ROE 30.8% — 만점 기준(≥15%) 충족",
     "ROA 17.7% — 만점 기준(≥7%) 충족"
    ],
@@ -1669,146 +2092,6 @@
    ],
    "sourceNotes": [
     "뉴스스페이스"
-   ]
-  },
-  {
-   "ticker": "TTE",
-   "name": "토탈에너지",
-   "nameEn": "TotalEnergies",
-   "market": "US",
-   "currency": "USD",
-   "theme": [
-    "에너지",
-    "배당"
-   ],
-   "description": "유럽 에너지 저평가 2순위.",
-   "totalScore": 80.0,
-   "grade": "A",
-   "pillars": {
-    "valuation": {
-     "score": 33.0,
-     "max": 40,
-     "checks": [
-      {
-       "label": "PER(트레일링)",
-       "pass": true,
-       "detail": "PER(트레일링) 11배 — 만점 기준(≤15배) 충족"
-      },
-      {
-       "label": "PER(포워드)",
-       "pass": true,
-       "detail": "PER(포워드) 9.1배 — 만점 기준(≤12배) 충족"
-      },
-      {
-       "label": "PBR",
-       "pass": false,
-       "detail": "PBR 1.5배 — 부분 기준(3배)만 충족 (50% 배점)"
-      },
-      {
-       "label": "PEG",
-       "pass": true,
-       "detail": "PEG 0.7 — 만점 기준(≤1.0) 충족"
-      },
-      {
-       "label": "FCF 수익률",
-       "pass": false,
-       "detail": "FCF 수익률 6.9% — 부분 기준(4.0%)만 충족 (50% 배점)"
-      }
-     ]
-    },
-    "quality": {
-     "score": 22.0,
-     "max": 35,
-     "checks": [
-      {
-       "label": "ROE",
-       "pass": false,
-       "detail": "ROE 14.5% — 부분 기준(8.0%)만 충족 (50% 배점)"
-      },
-      {
-       "label": "ROA",
-       "pass": false,
-       "detail": "ROA 5.5% — 부분 기준(4.0%)만 충족 (50% 배점)"
-      },
-      {
-       "label": "영업이익률",
-       "pass": false,
-       "detail": "영업이익률 12.8% — 부분 기준(8.0%)만 충족 (50% 배점)"
-      },
-      {
-       "label": "순이익·FCF 흑자",
-       "pass": true,
-       "detail": "순이익률 9.1%·FCF 흑자 → 충족"
-      },
-      {
-       "label": "부채비율",
-       "pass": true,
-       "detail": "부채비율 48% — 만점 기준(≤50%) 충족"
-      },
-      {
-       "label": "유동비율",
-       "pass": false,
-       "detail": "유동비율 1.1 — 부분 기준(1)만 충족 (50% 배점)"
-      }
-     ]
-    },
-    "growth": {
-     "score": 25.0,
-     "max": 25,
-     "checks": [
-      {
-       "label": "매출성장률",
-       "pass": true,
-       "detail": "매출성장률 27.8% — 만점 기준(≥10%) 충족"
-      },
-      {
-       "label": "이익성장률",
-       "pass": true,
-       "detail": "이익성장률 106.0% — 만점 기준(≥10%) 충족"
-      },
-      {
-       "label": "이익 개선 기대",
-       "pass": true,
-       "detail": "포워드 PER 9.1배 < 트레일링 PER 11배"
-      },
-      {
-       "label": "배당수익률",
-       "pass": true,
-       "detail": "배당수익률 4.9% — 만점 기준(≥3%) 충족"
-      }
-     ]
-    }
-   },
-   "metrics": {
-    "trailingPE": 11.0,
-    "forwardPE": 9.11,
-    "priceToBook": 1.52,
-    "peg": 0.72,
-    "fcfYield": 0.0694,
-    "roe": 0.1448,
-    "roa": 0.0551,
-    "operatingMargin": 0.1279,
-    "profitMargin": 0.0908,
-    "debtToEquity": 48.05,
-    "currentRatio": 1.06,
-    "revenueGrowth": 0.278,
-    "earningsGrowth": 1.06,
-    "dividendYield": 0.0489
-   },
-   "quote": {
-    "price": 87.86,
-    "changePct": 0.95,
-    "marketCap": 195074555904
-   },
-   "reasons": [
-    "PER(트레일링) 11배 — 만점 기준(≤15배) 충족",
-    "PER(포워드) 9.1배 — 만점 기준(≤12배) 충족",
-    "PEG 0.7 — 만점 기준(≤1.0) 충족",
-    "순이익률 9.1%·FCF 흑자 → 충족"
-   ],
-   "risks": [],
-   "sourceNotes": [
-    "ValueSense 저평가 에너지 2025"
    ]
   },
   {
@@ -1832,12 +2115,12 @@
       {
        "label": "PER(트레일링)",
        "pass": true,
-       "detail": "PER(트레일링) 6.9배 — 만점 기준(≤15배) 충족"
+       "detail": "PER(트레일링) 6.8배 — 만점 기준(≤15배) 충족"
       },
       {
        "label": "PER(포워드)",
        "pass": true,
-       "detail": "PER(포워드) 6.3배 — 만점 기준(≤12배) 충족"
+       "detail": "PER(포워드) 6.2배 — 만점 기준(≤12배) 충족"
       },
       {
        "label": "PBR",
@@ -1904,21 +2187,21 @@
       {
        "label": "이익 개선 기대",
        "pass": true,
-       "detail": "포워드 PER 6.3배 < 트레일링 PER 6.9배"
+       "detail": "포워드 PER 6.2배 < 트레일링 PER 6.8배"
       },
       {
        "label": "배당수익률",
        "pass": true,
-       "detail": "배당수익률 9.9% — 만점 기준(≥3%) 충족"
+       "detail": "배당수익률 10.3% — 만점 기준(≥3%) 충족"
       }
      ]
     }
    },
    "metrics": {
-    "trailingPE": 6.94,
-    "forwardPE": 6.33,
-    "priceToBook": 0.88,
-    "peg": 1.22,
+    "trailingPE": 6.8,
+    "forwardPE": 6.21,
+    "priceToBook": 0.86,
+    "peg": 1.17,
     "fcfYield": null,
     "roe": 0.1192,
     "roa": 0.0117,
@@ -1928,16 +2211,16 @@
     "currentRatio": null,
     "revenueGrowth": 0.017,
     "earningsGrowth": 0.007,
-    "dividendYield": 0.099
+    "dividendYield": 0.1031
    },
    "quote": {
-    "price": 39.62,
-    "changePct": -2.29,
-    "marketCap": 999210287104
+    "price": 38.8,
+    "changePct": -0.44,
+    "marketCap": 978530009088
    },
    "reasons": [
-    "PER(트레일링) 6.9배 — 만점 기준(≤15배) 충족",
-    "PER(포워드) 6.3배 — 만점 기준(≤12배) 충족",
+    "PER(트레일링) 6.8배 — 만점 기준(≤15배) 충족",
+    "PER(포워드) 6.2배 — 만점 기준(≤12배) 충족",
     "PBR 0.9배 — 만점 기준(≤1.5배) 충족",
     "ROE(금융 완화) 11.9% — 만점 기준(≥10%) 충족"
    ],
@@ -1969,12 +2252,12 @@
       {
        "label": "PER(트레일링)",
        "pass": true,
-       "detail": "PER(트레일링) 6.1배 — 만점 기준(≤15배) 충족"
+       "detail": "PER(트레일링) 5.8배 — 만점 기준(≤15배) 충족"
       },
       {
        "label": "PER(포워드)",
        "pass": true,
-       "detail": "PER(포워드) 5.8배 — 만점 기준(≤12배) 충족"
+       "detail": "PER(포워드) 5.5배 — 만점 기준(≤12배) 충족"
       },
       {
        "label": "PBR",
@@ -1984,7 +2267,7 @@
       {
        "label": "PEG",
        "pass": false,
-       "detail": "PEG 1.1 — 부분 기준(1.5)만 충족 (50% 배점)"
+       "detail": "PEG 1 — 부분 기준(1.5)만 충족 (50% 배점)"
       },
       {
        "label": "FCF 수익률",
@@ -2041,21 +2324,21 @@
       {
        "label": "이익 개선 기대",
        "pass": true,
-       "detail": "포워드 PER 5.8배 < 트레일링 PER 6.1배"
+       "detail": "포워드 PER 5.5배 < 트레일링 PER 5.8배"
       },
       {
        "label": "배당수익률",
        "pass": true,
-       "detail": "배당수익률 4.7% — 만점 기준(≥3%) 충족"
+       "detail": "배당수익률 5.0% — 만점 기준(≥3%) 충족"
       }
      ]
     }
    },
    "metrics": {
-    "trailingPE": 6.1,
-    "forwardPE": 5.75,
-    "priceToBook": 0.59,
-    "peg": 1.1,
+    "trailingPE": 5.82,
+    "forwardPE": 5.48,
+    "priceToBook": 0.56,
+    "peg": 1.04,
     "fcfYield": null,
     "roe": 0.0955,
     "roa": 0.0076,
@@ -2065,16 +2348,16 @@
     "currentRatio": null,
     "revenueGrowth": 0.05,
     "earningsGrowth": 0.0,
-    "dividendYield": 0.0469
+    "dividendYield": 0.0495
    },
    "quote": {
-    "price": 9.21,
-    "changePct": -1.6,
-    "marketCap": 2409339551744
+    "price": 8.79,
+    "changePct": -0.79,
+    "marketCap": 2299467399168
    },
    "reasons": [
-    "PER(트레일링) 6.1배 — 만점 기준(≤15배) 충족",
-    "PER(포워드) 5.8배 — 만점 기준(≤12배) 충족",
+    "PER(트레일링) 5.8배 — 만점 기준(≤15배) 충족",
+    "PER(포워드) 5.5배 — 만점 기준(≤12배) 충족",
     "PBR 0.6배 — 만점 기준(≤1.5배) 충족",
     "영업이익률 68.3% — 만점 기준(≥15%) 충족"
    ],
@@ -2106,12 +2389,12 @@
       {
        "label": "PER(트레일링)",
        "pass": true,
-       "detail": "PER(트레일링) 6.4배 — 만점 기준(≤15배) 충족"
+       "detail": "PER(트레일링) 6.1배 — 만점 기준(≤15배) 충족"
       },
       {
        "label": "PER(포워드)",
        "pass": true,
-       "detail": "PER(포워드) 6배 — 만점 기준(≤12배) 충족"
+       "detail": "PER(포워드) 5.7배 — 만점 기준(≤12배) 충족"
       },
       {
        "label": "PBR",
@@ -2121,7 +2404,7 @@
       {
        "label": "PEG",
        "pass": false,
-       "detail": "PEG 1.2 — 부분 기준(1.5)만 충족 (50% 배점)"
+       "detail": "PEG 1.1 — 부분 기준(1.5)만 충족 (50% 배점)"
       },
       {
        "label": "FCF 수익률",
@@ -2178,21 +2461,21 @@
       {
        "label": "이익 개선 기대",
        "pass": true,
-       "detail": "포워드 PER 6배 < 트레일링 PER 6.4배"
+       "detail": "포워드 PER 5.7배 < 트레일링 PER 6.1배"
       },
       {
        "label": "배당수익률",
        "pass": true,
-       "detail": "배당수익률 4.6% — 만점 기준(≥3%) 충족"
+       "detail": "배당수익률 4.9% — 만점 기준(≥3%) 충족"
       }
      ]
     }
    },
    "metrics": {
-    "trailingPE": 6.42,
-    "forwardPE": 5.98,
-    "priceToBook": 0.59,
-    "peg": 1.2,
+    "trailingPE": 6.1,
+    "forwardPE": 5.67,
+    "priceToBook": 0.56,
+    "peg": 1.13,
     "fcfYield": null,
     "roe": 0.0889,
     "roa": 0.007,
@@ -2202,16 +2485,16 @@
     "currentRatio": null,
     "revenueGrowth": 0.034,
     "earningsGrowth": 0.043,
-    "dividendYield": 0.0458
+    "dividendYield": 0.0486
    },
    "quote": {
-    "price": 7.51,
-    "changePct": -1.7,
-    "marketCap": 2676611088384
+    "price": 7.14,
+    "changePct": -0.83,
+    "marketCap": 2544740597760
    },
    "reasons": [
-    "PER(트레일링) 6.4배 — 만점 기준(≤15배) 충족",
-    "PER(포워드) 6배 — 만점 기준(≤12배) 충족",
+    "PER(트레일링) 6.1배 — 만점 기준(≤15배) 충족",
+    "PER(포워드) 5.7배 — 만점 기준(≤12배) 충족",
     "PBR 0.6배 — 만점 기준(≤1.5배) 충족",
     "영업이익률 65.7% — 만점 기준(≥15%) 충족"
    ],
@@ -2243,12 +2526,12 @@
       {
        "label": "PER(트레일링)",
        "pass": true,
-       "detail": "PER(트레일링) 14.3배 — 만점 기준(≤15배) 충족"
+       "detail": "PER(트레일링) 14.6배 — 만점 기준(≤15배) 충족"
       },
       {
        "label": "PER(포워드)",
        "pass": true,
-       "detail": "PER(포워드) 11.7배 — 만점 기준(≤12배) 충족"
+       "detail": "PER(포워드) 11.9배 — 만점 기준(≤12배) 충족"
       },
       {
        "label": "PBR",
@@ -2258,7 +2541,7 @@
       {
        "label": "PEG",
        "pass": false,
-       "detail": "PEG 1 — 부분 기준(1.5)만 충족 (50% 배점)"
+       "detail": "PEG 1.1 — 부분 기준(1.5)만 충족 (50% 배점)"
       },
       {
        "label": "FCF 수익률",
@@ -2305,31 +2588,31 @@
       {
        "label": "매출성장률",
        "pass": true,
-       "detail": "매출성장률 21.4% — 만점 기준(≥10%) 충족"
+       "detail": "매출성장률 16.8% — 만점 기준(≥10%) 충족"
       },
       {
        "label": "이익성장률",
        "pass": true,
-       "detail": "이익성장률 36.0% — 만점 기준(≥10%) 충족"
+       "detail": "이익성장률 34.1% — 만점 기준(≥10%) 충족"
       },
       {
        "label": "이익 개선 기대",
        "pass": true,
-       "detail": "포워드 PER 11.7배 < 트레일링 PER 14.3배"
+       "detail": "포워드 PER 11.9배 < 트레일링 PER 14.6배"
       },
       {
        "label": "배당수익률",
        "pass": false,
-       "detail": "배당수익률 2.1% — 부분 기준(1.0%)만 충족 (50% 배점)"
+       "detail": "배당수익률 2.0% — 부분 기준(1.0%)만 충족 (50% 배점)"
       }
      ]
     }
    },
    "metrics": {
-    "trailingPE": 14.31,
-    "forwardPE": 11.74,
-    "priceToBook": 1.57,
-    "peg": 1.04,
+    "trailingPE": 14.59,
+    "forwardPE": 11.93,
+    "priceToBook": 1.61,
+    "peg": 1.07,
     "fcfYield": null,
     "roe": 0.112,
     "roa": 0.0097,
@@ -2337,18 +2620,18 @@
     "profitMargin": 0.2952,
     "debtToEquity": null,
     "currentRatio": null,
-    "revenueGrowth": 0.214,
-    "earningsGrowth": 0.36,
-    "dividendYield": 0.0207
+    "revenueGrowth": 0.168,
+    "earningsGrowth": 0.341,
+    "dividendYield": 0.0203
    },
    "quote": {
-    "price": 61.95,
-    "changePct": 0.36,
-    "marketCap": 439633805312
+    "price": 63.17,
+    "changePct": 0.27,
+    "marketCap": 441731907584
    },
    "reasons": [
-    "PER(트레일링) 14.3배 — 만점 기준(≤15배) 충족",
-    "PER(포워드) 11.7배 — 만점 기준(≤12배) 충족",
+    "PER(트레일링) 14.6배 — 만점 기준(≤15배) 충족",
+    "PER(포워드) 11.9배 — 만점 기준(≤12배) 충족",
     "ROE(금융 완화) 11.2% — 만점 기준(≥10%) 충족",
     "영업이익률 38.3% — 만점 기준(≥15%) 충족"
    ],
@@ -2386,7 +2669,7 @@
       {
        "label": "PER(포워드)",
        "pass": true,
-       "detail": "PER(포워드) 6.8배 — 만점 기준(≤12배) 충족"
+       "detail": "PER(포워드) 6.4배 — 만점 기준(≤12배) 충족"
       },
       {
        "label": "PBR",
@@ -2458,17 +2741,17 @@
       {
        "label": "배당수익률",
        "pass": true,
-       "detail": "배당수익률 4.2% — 만점 기준(≥3%) 충족"
+       "detail": "배당수익률 3.9% — 만점 기준(≥3%) 충족"
       }
      ]
     }
    },
    "metrics": {
     "trailingPE": null,
-    "forwardPE": 6.75,
+    "forwardPE": 6.36,
     "priceToBook": null,
-    "peg": 0.14,
-    "fcfYield": -0.7079,
+    "peg": 0.13,
+    "fcfYield": -0.6708,
     "roe": 0.123,
     "roa": 0.0232,
     "operatingMargin": 0.129,
@@ -2477,15 +2760,15 @@
     "currentRatio": 43.72,
     "revenueGrowth": 0.045,
     "earningsGrowth": 2.222,
-    "dividendYield": 0.0422
+    "dividendYield": 0.039
    },
    "quote": {
-    "price": 13770.0,
-    "changePct": 2.0,
-    "marketCap": 1689786122240
+    "price": 14530.0,
+    "changePct": -0.68,
+    "marketCap": 1783049486336
    },
    "reasons": [
-    "PER(포워드) 6.8배 — 만점 기준(≤12배) 충족",
+    "PER(포워드) 6.4배 — 만점 기준(≤12배) 충족",
     "PEG 0.1 — 만점 기준(≤1.0) 충족",
     "ROE(금융 완화) 12.3% — 만점 기준(≥10%) 충족",
     "ROA(금융 완화) 2.3% — 만점 기준(≥1.0%) 충족"
@@ -2519,22 +2802,22 @@
       {
        "label": "PER(트레일링)",
        "pass": true,
-       "detail": "PER(트레일링) 14.4배 — 만점 기준(≤15배) 충족"
+       "detail": "PER(트레일링) 14.3배 — 만점 기준(≤15배) 충족"
       },
       {
        "label": "PER(포워드)",
        "pass": true,
-       "detail": "PER(포워드) 10.2배 — 만점 기준(≤12배) 충족"
+       "detail": "PER(포워드) 9.9배 — 만점 기준(≤12배) 충족"
       },
       {
        "label": "PBR",
        "pass": false,
-       "detail": "PBR 6.7배 — 부분 기준(3배) 미달"
+       "detail": "PBR 5.9배 — 부분 기준(3배) 미달"
       },
       {
        "label": "PEG",
        "pass": false,
-       "detail": "PEG 1.6 — 부분 기준(1.5) 미달"
+       "detail": "PEG 2.4 — 부분 기준(1.5) 미달"
       },
       {
        "label": "FCF 수익률",
@@ -2596,7 +2879,7 @@
       {
        "label": "이익 개선 기대",
        "pass": true,
-       "detail": "포워드 PER 10.2배 < 트레일링 PER 14.4배"
+       "detail": "포워드 PER 9.9배 < 트레일링 PER 14.3배"
       },
       {
        "label": "배당수익률",
@@ -2607,11 +2890,11 @@
     }
    },
    "metrics": {
-    "trailingPE": 14.39,
-    "forwardPE": 10.15,
-    "priceToBook": 6.65,
-    "peg": 1.64,
-    "fcfYield": 0.0608,
+    "trailingPE": 14.26,
+    "forwardPE": 9.88,
+    "priceToBook": 5.92,
+    "peg": 2.44,
+    "fcfYield": 0.0614,
     "roe": 0.466,
     "roa": 0.1072,
     "operatingMargin": 0.3442,
@@ -2620,16 +2903,16 @@
     "currentRatio": 1.53,
     "revenueGrowth": 0.057,
     "earningsGrowth": 1.531,
-    "dividendYield": 0.0389
+    "dividendYield": 0.0393
    },
    "quote": {
-    "price": 65.31,
-    "changePct": 0.69,
-    "marketCap": 133367668736
+    "price": 64.72,
+    "changePct": 0.89,
+    "marketCap": 132204494848
    },
    "reasons": [
-    "PER(트레일링) 14.4배 — 만점 기준(≤15배) 충족",
-    "PER(포워드) 10.2배 — 만점 기준(≤12배) 충족",
+    "PER(트레일링) 14.3배 — 만점 기준(≤15배) 충족",
+    "PER(포워드) 9.9배 — 만점 기준(≤12배) 충족",
     "ROE 46.6% — 만점 기준(≥15%) 충족",
     "ROA 10.7% — 만점 기준(≥7%) 충족"
    ],
@@ -2641,143 +2924,142 @@
    ]
   },
   {
-   "ticker": "SHEL",
-   "name": "셸",
-   "nameEn": "Shell",
+   "ticker": "OXY",
+   "name": "옥시덴탈",
+   "nameEn": "Occidental Petroleum",
    "market": "US",
    "currency": "USD",
    "theme": [
-    "에너지",
-    "배당"
+    "에너지"
    ],
-   "description": "FCF 수익률 13.2%, 내재가치 대비 42.9% 할인, D/E 41.3%.",
-   "totalScore": 67.0,
+   "description": "버크셔 지분 28%, OxyChem 매각 대금으로 부채 감축.",
+   "totalScore": 68.0,
    "grade": "B",
    "pillars": {
     "valuation": {
-     "score": 32.0,
+     "score": 20.0,
      "max": 40,
      "checks": [
       {
        "label": "PER(트레일링)",
-       "pass": true,
-       "detail": "PER(트레일링) 10.2배 — 만점 기준(≤15배) 충족"
+       "pass": false,
+       "detail": "PER(트레일링) 16.5배 — 부분 기준(22배)만 충족 (50% 배점)"
       },
       {
        "label": "PER(포워드)",
-       "pass": true,
-       "detail": "PER(포워드) 10.7배 — 만점 기준(≤12배) 충족"
+       "pass": false,
+       "detail": "PER(포워드) 14.1배 — 부분 기준(18배)만 충족 (50% 배점)"
       },
       {
        "label": "PBR",
-       "pass": true,
-       "detail": "PBR 1.5배 — 만점 기준(≤1.5배) 충족"
+       "pass": false,
+       "detail": "PBR 1.8배 — 부분 기준(3배)만 충족 (50% 배점)"
       },
       {
        "label": "PEG",
        "pass": false,
-       "detail": "PEG 1.3 — 부분 기준(1.5)만 충족 (50% 배점)"
+       "detail": "PEG 1 — 부분 기준(1.5)만 충족 (50% 배점)"
       },
       {
        "label": "FCF 수익률",
        "pass": false,
-       "detail": "FCF 수익률 6.1% — 부분 기준(4.0%)만 충족 (50% 배점)"
+       "detail": "FCF 수익률 6.8% — 부분 기준(4.0%)만 충족 (50% 배점)"
       }
      ]
     },
     "quality": {
-     "score": 22.0,
+     "score": 25.5,
      "max": 35,
      "checks": [
       {
        "label": "ROE",
        "pass": false,
-       "detail": "ROE 10.7% — 부분 기준(8.0%)만 충족 (50% 배점)"
+       "detail": "ROE 10.6% — 부분 기준(8.0%)만 충족 (50% 배점)"
       },
       {
        "label": "ROA",
        "pass": false,
-       "detail": "ROA 5.0% — 부분 기준(4.0%)만 충족 (50% 배점)"
+       "detail": "ROA 4.7% — 부분 기준(4.0%)만 충족 (50% 배점)"
       },
       {
        "label": "영업이익률",
-       "pass": false,
-       "detail": "영업이익률 14.9% — 부분 기준(8.0%)만 충족 (50% 배점)"
+       "pass": true,
+       "detail": "영업이익률 45.4% — 만점 기준(≥15%) 충족"
       },
       {
        "label": "순이익·FCF 흑자",
        "pass": true,
-       "detail": "순이익률 7.0%·FCF 흑자 → 충족"
+       "detail": "순이익률 30.3%·FCF 흑자 → 충족"
       },
       {
        "label": "부채비율",
        "pass": true,
-       "detail": "부채비율 43% — 만점 기준(≤50%) 충족"
+       "detail": "부채비율 35% — 만점 기준(≤50%) 충족"
       },
       {
        "label": "유동비율",
        "pass": false,
-       "detail": "유동비율 1.3 — 부분 기준(1)만 충족 (50% 배점)"
+       "detail": "유동비율 1.4 — 부분 기준(1)만 충족 (50% 배점)"
       }
      ]
     },
     "growth": {
-     "score": 13.0,
+     "score": 22.5,
      "max": 25,
      "checks": [
       {
        "label": "매출성장률",
-       "pass": false,
-       "detail": "매출성장률 0.7% — 부분 기준(3.0%) 미달"
+       "pass": true,
+       "detail": "매출성장률 53.4% — 만점 기준(≥10%) 충족"
       },
       {
        "label": "이익성장률",
        "pass": true,
-       "detail": "이익성장률 26.6% — 만점 기준(≥10%) 충족"
+       "detail": "이익성장률 964.9% — 만점 기준(≥10%) 충족"
       },
       {
        "label": "이익 개선 기대",
-       "pass": false,
-       "detail": "포워드 PER 10.7배 ≥ 트레일링 PER 10.2배"
+       "pass": true,
+       "detail": "포워드 PER 14.1배 < 트레일링 PER 16.5배"
       },
       {
        "label": "배당수익률",
-       "pass": true,
-       "detail": "배당수익률 3.5% — 만점 기준(≥3%) 충족"
+       "pass": false,
+       "detail": "배당수익률 1.9% — 부분 기준(1.0%)만 충족 (50% 배점)"
       }
      ]
     }
    },
    "metrics": {
-    "trailingPE": 10.17,
-    "forwardPE": 10.69,
-    "priceToBook": 1.49,
-    "peg": 1.29,
-    "fcfYield": 0.0614,
-    "roe": 0.107,
-    "roa": 0.0499,
-    "operatingMargin": 0.1487,
-    "profitMargin": 0.0701,
-    "debtToEquity": 43.32,
-    "currentRatio": 1.27,
-    "revenueGrowth": 0.007,
-    "earningsGrowth": 0.266,
-    "dividendYield": 0.0354
+    "trailingPE": 16.49,
+    "forwardPE": 14.08,
+    "priceToBook": 1.81,
+    "peg": 1.02,
+    "fcfYield": 0.0678,
+    "roe": 0.1063,
+    "roa": 0.0468,
+    "operatingMargin": 0.4544,
+    "profitMargin": 0.3032,
+    "debtToEquity": 34.51,
+    "currentRatio": 1.41,
+    "revenueGrowth": 0.534,
+    "earningsGrowth": 9.649,
+    "dividendYield": 0.0186
    },
    "quote": {
-    "price": 91.98,
-    "changePct": 1.62,
-    "marketCap": 254490148864
+    "price": 55.91,
+    "changePct": -0.23,
+    "marketCap": 55889727488
    },
    "reasons": [
-    "PER(트레일링) 10.2배 — 만점 기준(≤15배) 충족",
-    "PER(포워드) 10.7배 — 만점 기준(≤12배) 충족",
-    "PBR 1.5배 — 만점 기준(≤1.5배) 충족",
-    "순이익률 7.0%·FCF 흑자 → 충족"
+    "영업이익률 45.4% — 만점 기준(≥15%) 충족",
+    "순이익률 30.3%·FCF 흑자 → 충족",
+    "부채비율 35% — 만점 기준(≤50%) 충족",
+    "매출성장률 53.4% — 만점 기준(≥10%) 충족"
    ],
    "risks": [],
    "sourceNotes": [
-    "ValueSense 저평가 에너지 2025"
+    "Morningstar/MarketWatch"
    ]
   },
   {
@@ -2806,7 +3088,7 @@
       {
        "label": "PER(포워드)",
        "pass": true,
-       "detail": "PER(포워드) 4.6배 — 만점 기준(≤12배) 충족"
+       "detail": "PER(포워드) 4.4배 — 만점 기준(≤12배) 충족"
       },
       {
        "label": "PBR",
@@ -2890,7 +3172,7 @@
    },
    "metrics": {
     "trailingPE": null,
-    "forwardPE": 4.63,
+    "forwardPE": 4.44,
     "priceToBook": null,
     "peg": 0.21,
     "fcfYield": 0.1446,
@@ -2910,7 +3192,7 @@
     "marketCap": 7443327746048
    },
    "reasons": [
-    "PER(포워드) 4.6배 — 만점 기준(≤12배) 충족",
+    "PER(포워드) 4.4배 — 만점 기준(≤12배) 충족",
     "PEG 0.2 — 만점 기준(≤1.0) 충족",
     "FCF 수익률 14.5% — 만점 기준(≥8%) 충족",
     "순이익률 0.5%·FCF 흑자 → 충족"
@@ -2944,12 +3226,12 @@
       {
        "label": "PER(트레일링)",
        "pass": false,
-       "detail": "PER(트레일링) 17배 — 부분 기준(22배)만 충족 (50% 배점)"
+       "detail": "PER(트레일링) 17.1배 — 부분 기준(22배)만 충족 (50% 배점)"
       },
       {
        "label": "PER(포워드)",
        "pass": false,
-       "detail": "PER(포워드) 12.6배 — 부분 기준(18배)만 충족 (50% 배점)"
+       "detail": "PER(포워드) 12.7배 — 부분 기준(18배)만 충족 (50% 배점)"
       },
       {
        "label": "PBR",
@@ -3021,7 +3303,7 @@
       {
        "label": "이익 개선 기대",
        "pass": true,
-       "detail": "포워드 PER 12.6배 < 트레일링 PER 17배"
+       "detail": "포워드 PER 12.7배 < 트레일링 PER 17.1배"
       },
       {
        "label": "배당수익률",
@@ -3032,11 +3314,11 @@
     }
    },
    "metrics": {
-    "trailingPE": 16.98,
-    "forwardPE": 12.56,
-    "priceToBook": 3.28,
-    "peg": 1.38,
-    "fcfYield": 0.0304,
+    "trailingPE": 17.08,
+    "forwardPE": 12.67,
+    "priceToBook": 3.3,
+    "peg": 1.42,
+    "fcfYield": 0.0302,
     "roe": 0.2051,
     "roa": 0.0792,
     "operatingMargin": 0.3429,
@@ -3045,12 +3327,12 @@
     "currentRatio": 1.43,
     "revenueGrowth": 0.091,
     "earningsGrowth": 0.229,
-    "dividendYield": 0.0112
+    "dividendYield": 0.0111
    },
    "quote": {
-    "price": 475.2,
-    "changePct": 0.72,
-    "marketCap": 4277574041600
+    "price": 478.8,
+    "changePct": -0.08,
+    "marketCap": 4309979758592
    },
    "reasons": [
     "ROE 20.5% — 만점 기준(≥15%) 충족",
