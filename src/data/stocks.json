@@ -28,7 +28,7 @@
    "volume": 104730601
   },
   "metrics": {
-   "trailingPE": 34.3,
+   "trailingPE": 34.24,
    "forwardPE": 17.37,
    "priceToBook": 27.75,
    "priceToSales": 21.4,
@@ -38,7 +38,7 @@
    "debtToEquity": 6.55,
    "revenueGrowth": 0.852,
    "earningsGrowth": 2.145,
-   "dividendYield": 0.0046,
+   "dividendYield": 0.0045,
    "beta": 2.21,
    "totalRevenue": 253491003392
   },
@@ -49,17 +49,17 @@
      {
       "label": "PER ≤ 15배",
       "pass": false,
-      "detail": "PER 34.3배 (저평가 기준 15배)"
+      "detail": "PER 34.2배 (저평가 기준 15배)"
      },
      {
       "label": "PER ≤ 30배",
       "pass": false,
-      "detail": "PER 34.3배 (적정 기준 30배)"
+      "detail": "PER 34.2배 (적정 기준 30배)"
      },
      {
       "label": "PER 그룹 중앙값 이하",
       "pass": true,
-      "detail": "PER 34.3배 vs 그룹 중앙값 34.3배"
+      "detail": "PER 34.2배 vs 그룹 중앙값 34.2배"
      },
      {
       "label": "PBR ≤ 3배",
@@ -99,7 +99,7 @@
      {
       "label": "이익 개선 기대",
       "pass": true,
-      "detail": "forward PER 17.4배 ≤ 현재 PER 34.3배 → 이익 증가 예상"
+      "detail": "forward PER 17.4배 ≤ 현재 PER 34.2배 → 이익 증가 예상"
      }
     ]
    },
@@ -196,7 +196,7 @@
    "total": 20.0
   },
   "insights": [
-   "PER이 34.3배로, 이 회사가 1년에 버는 이익의 34배 가격에 거래돼요. 같은 그룹 중앙값(34.3배)과 비슷한 수준이에요.",
+   "PER이 34.2배로, 이 회사가 1년에 버는 이익의 34배 가격에 거래돼요. 같은 그룹 중앙값(34.2배)과 비슷한 수준이에요.",
    "매출이 1년 전보다 85% 늘었어요. 성장 속도가 빠른 편이에요.",
    "ROE가 114%예요. 주주가 맡긴 100원으로 1년에 114원을 벌었다는 뜻으로, 자본 효율이 좋은 편이에요.",
    "부채비율이 7%로, 빚 부담이 크지 않은 안정적인 편이에요. 보유 현금이 총부채보다 많은 실질 무차입 구조예요.",
@@ -461,13 +461,13 @@
    }
   ],
   "sectorAvg": {
-   "pe": 34.3,
+   "pe": 34.24,
    "ps": 21.4
   },
   "riskFlags": [
    "고변동성"
   ],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -500,7 +500,7 @@
    "volume": 24137816
   },
   "metrics": {
-   "trailingPE": 27.87,
+   "trailingPE": 27.85,
    "forwardPE": 21.3,
    "priceToBook": 8.39,
    "priceToSales": 11.19,
@@ -933,11 +933,11 @@
    }
   ],
   "sectorAvg": {
-   "pe": 27.87,
+   "pe": 27.85,
    "ps": 11.19
   },
   "riskFlags": [],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -966,7 +966,7 @@
    "volume": 19720908
   },
   "metrics": {
-   "trailingPE": 17.78,
+   "trailingPE": 17.76,
    "forwardPE": 24.05,
    "priceToBook": 6.96,
    "priceToSales": 9.72,
@@ -1399,11 +1399,11 @@
    }
   ],
   "sectorAvg": {
-   "pe": 27.87,
+   "pe": 27.85,
    "ps": 11.19
   },
   "riskFlags": [],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -1434,7 +1434,7 @@
    "volume": 38841743
   },
   "metrics": {
-   "trailingPE": 301.45,
+   "trailingPE": 304.24,
    "forwardPE": 148.06,
    "priceToBook": 14.94,
    "priceToSales": 12.52,
@@ -1455,7 +1455,7 @@
      {
       "label": "과열 캡",
       "pass": false,
-      "detail": "PER 301배 > 200배 → 과열 단일 판정, 점수 상한 1점"
+      "detail": "PER 304배 > 200배 → 과열 단일 판정, 점수 상한 1점"
      }
     ]
    },
@@ -1485,7 +1485,7 @@
      {
       "label": "이익 개선 기대",
       "pass": true,
-      "detail": "forward PER 148.1배 ≤ 현재 PER 301.4배 → 이익 증가 예상"
+      "detail": "forward PER 148.1배 ≤ 현재 PER 304.2배 → 이익 증가 예상"
      }
     ]
    },
@@ -1582,7 +1582,7 @@
    "total": 9.0
   },
   "insights": [
-   "PER이 301배로, 1년 이익의 301배 가격이에요. 이익 대비 아주 비싼 '과열' 구간으로 볼 수 있어요.",
+   "PER이 304배로, 1년 이익의 304배 가격이에요. 이익 대비 아주 비싼 '과열' 구간으로 볼 수 있어요.",
    "매출이 1년 전보다 26% 늘었어요. 성장 속도가 빠른 편이에요.",
    "ROE가 5%예요. 자본 대비 이익 효율이 낮은 편이에요.",
    "부채비율이 18%로, 빚 부담이 크지 않은 안정적인 편이에요. 보유 현금이 총부채보다 많은 실질 무차입 구조예요.",
@@ -1847,13 +1847,13 @@
    }
   ],
   "sectorAvg": {
-   "pe": 301.45,
+   "pe": 304.24,
    "ps": 12.52
   },
   "riskFlags": [
    "고PER (100배 이상)"
   ],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -2316,13 +2316,13 @@
    }
   ],
   "sectorAvg": {
-   "pe": 27.87,
+   "pe": 27.85,
    "ps": 11.19
   },
   "riskFlags": [
    "고PER (100배 이상)"
   ],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -2693,7 +2693,7 @@
    "신규 상장 (유통물량 적음)",
    "적자 기업"
   ],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -3164,7 +3164,7 @@
    "적자 기업",
    "고변동성"
   ],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -3633,7 +3633,7 @@
    "적자 기업",
    "고변동성"
   ],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -4102,7 +4102,7 @@
   "riskFlags": [
    "적자 기업"
   ],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -4564,7 +4564,7 @@
    "ps": 4.23
   },
   "riskFlags": [],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -4605,7 +4605,7 @@
    "debtToEquity": 7.08,
    "revenueGrowth": 2.568,
    "earningsGrowth": 12.736,
-   "dividendYield": 0.2,
+   "dividendYield": 0.11,
    "beta": 2.41,
    "totalRevenue": 189170676924416
   },
@@ -5026,7 +5026,7 @@
   "riskFlags": [
    "고변동성"
   ],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -5056,7 +5056,7 @@
   },
   "metrics": {
    "trailingPE": null,
-   "forwardPE": 14.04,
+   "forwardPE": 13.93,
    "priceToBook": null,
    "priceToSales": 2.52,
    "roe": 0.0572,
@@ -5065,7 +5065,7 @@
    "debtToEquity": 17.17,
    "revenueGrowth": 0.163,
    "earningsGrowth": -0.322,
-   "dividendYield": 0.0116,
+   "dividendYield": 0.0125,
    "beta": 1.19,
    "totalRevenue": 12489284648960
   },
@@ -5483,7 +5483,7 @@
    "ps": 2.52
   },
   "riskFlags": [],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -5523,7 +5523,7 @@
    "debtToEquity": 91.24,
    "revenueGrowth": 0.049,
    "earningsGrowth": 2.849,
-   "dividendYield": 0.0066,
+   "dividendYield": 0.0064,
    "beta": 0.8,
    "totalRevenue": 26969703972864
   },
@@ -5941,7 +5941,7 @@
    "ps": 2.09
   },
   "riskFlags": [],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -5972,7 +5972,7 @@
   },
   "metrics": {
    "trailingPE": null,
-   "forwardPE": 33.61,
+   "forwardPE": 33.89,
    "priceToBook": null,
    "priceToSales": 3.68,
    "roe": 0.1092,
@@ -5981,7 +5981,7 @@
    "debtToEquity": 144.35,
    "revenueGrowth": 0.563,
    "earningsGrowth": 0.399,
-   "dividendYield": 0.0033,
+   "dividendYield": 0.0032,
    "beta": 0.64,
    "totalRevenue": 4089810255872
   },
@@ -6399,7 +6399,7 @@
    "ps": 3.68
   },
   "riskFlags": [],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -6430,7 +6430,7 @@
   },
   "metrics": {
    "trailingPE": null,
-   "forwardPE": 30.44,
+   "forwardPE": 30.72,
    "priceToBook": null,
    "priceToSales": 3.54,
    "roe": 0.2073,
@@ -6439,7 +6439,7 @@
    "debtToEquity": 99.02,
    "revenueGrowth": 0.287,
    "earningsGrowth": 0.695,
-   "dividendYield": 0.0042,
+   "dividendYield": 0.004,
    "beta": 0.78,
    "totalRevenue": 4567170285568
   },
@@ -6857,7 +6857,7 @@
    "ps": 3.54
   },
   "riskFlags": [],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -7314,7 +7314,7 @@
    "ps": 3.5
   },
   "riskFlags": [],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -7513,7 +7513,7 @@
   "insights": [
    "현재 주가는 52주 최저~최고 범위의 17% 지점이에요. 52주 저점 근처라 악재 반영 또는 저평가 구간일 수 있어요. 최근 3개월 수익률은 -55.5%예요.",
    "일부 재무 지표는 데이터가 부족해요. 지표 카드에서 'N/A' 표시를 확인해 주세요.",
-   "이 데이터는 2026-08-08 기준이에요. 지표는 시시각각 바뀌니 최신 값을 확인해 보세요."
+   "이 데이터는 2026-08-09 기준이에요. 지표는 시시각각 바뀌니 최신 값을 확인해 보세요."
   ],
   "priceHistory": [
    {
@@ -7772,7 +7772,7 @@
   "riskFlags": [
    "소형주"
   ],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -7802,7 +7802,7 @@
    "volume": 58264625
   },
   "metrics": {
-   "trailingPE": 19.4,
+   "trailingPE": 19.37,
    "forwardPE": 13.42,
    "priceToBook": 1.87,
    "priceToSales": 2.32,
@@ -8231,11 +8231,11 @@
    }
   ],
   "sectorAvg": {
-   "pe": 18.24,
+   "pe": 18.21,
    "ps": 2.32
   },
   "riskFlags": [],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -8264,7 +8264,7 @@
    "volume": 16320039
   },
   "metrics": {
-   "trailingPE": 17.08,
+   "trailingPE": 17.06,
    "forwardPE": 12.67,
    "priceToBook": 3.3,
    "priceToSales": 5.61,
@@ -8693,11 +8693,11 @@
    }
   ],
   "sectorAvg": {
-   "pe": 18.24,
+   "pe": 18.21,
    "ps": 2.32
   },
   "riskFlags": [],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -8728,7 +8728,7 @@
   },
   "metrics": {
    "trailingPE": null,
-   "forwardPE": 12.94,
+   "forwardPE": 12.96,
    "priceToBook": 0.93,
    "priceToSales": 2.25,
    "roe": 0.0032,
@@ -9155,11 +9155,11 @@
    }
   ],
   "sectorAvg": {
-   "pe": 18.24,
+   "pe": 18.21,
    "ps": 2.32
   },
   "riskFlags": [],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -9622,7 +9622,7 @@
    "ps": 1.57
   },
   "riskFlags": [],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -9653,7 +9653,7 @@
   },
   "metrics": {
    "trailingPE": 25.98,
-   "forwardPE": 14.36,
+   "forwardPE": 14.35,
    "priceToBook": 3.04,
    "priceToSales": 1.05,
    "roe": 0.1115,
@@ -9723,7 +9723,7 @@
      {
       "label": "이익 개선 기대",
       "pass": true,
-      "detail": "forward PER 14.4배 ≤ 현재 PER 26배 → 이익 증가 예상"
+      "detail": "forward PER 14.3배 ≤ 현재 PER 26배 → 이익 증가 예상"
      }
     ]
    },
@@ -10085,7 +10085,7 @@
    "ps": 1.05
   },
   "riskFlags": [],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -10548,7 +10548,7 @@
    "ps": 75.45
   },
   "riskFlags": [],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -11009,7 +11009,7 @@
    "고PER (100배 이상)",
    "중국 A주 조회 전용"
   ],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -11033,7 +11033,7 @@
    "price": 1199.93,
    "changePct": 2.72,
    "fiftyTwoWeekHigh": 1620.0,
-   "fiftyTwoWeekLow": 449.66,
+   "fiftyTwoWeekLow": 463.5,
    "marketCap": 753907662848,
    "volume": 15948922
   },
@@ -11451,7 +11451,7 @@
    "고PER (100배 이상)",
    "중국 A주 조회 전용"
   ],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  },
  {
@@ -11911,7 +11911,7 @@
    "중국 A주 조회 전용",
    "소형주"
   ],
-  "asOf": "2026-08-08",
+  "asOf": "2026-08-09",
   "methodologyVersion": "1.0.0"
  }
 ]
