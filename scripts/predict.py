@@ -11,6 +11,10 @@
     ② trend     추세: 20일/50일 이동평균 정배열·가격 위치
     ③ drift     변동성 조정 드리프트: 60일 평균 수익률을 ATR(14)로 스케일
 
+    (참고) quant(RSI+MACD+볼린저 %B 다수결) 요소는 2026-08-20 백테스트에서
+    미채택 판정 — 코드는 남아 있으나 모델 가중치에 quant가 없으면 앙상블에
+    참여하지 않는다. 검증: scripts/backtest_quant.py
+
 파일:
     scripts/prediction_model.json    가중치·버전·갱신 이력
     scripts/prediction_history.json  종목별 예측 로그 (daily 최근 120일,
@@ -209,6 +213,14 @@ def add_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["atr"] = tr.ewm(alpha=1 / 14, min_periods=14, adjust=False).mean()
     # 60일 평균 일수익률
     df["mu60"] = df["ret"].rolling(60).mean()
+    # MACD(12,26,9) 히스토그램 — quant 요소용
+    ema12 = c.ewm(span=12, adjust=False).mean()
+    ema26 = c.ewm(span=26, adjust=False).mean()
+    macd = ema12 - ema26
+    df["macd_hist"] = macd - macd.ewm(span=9, adjust=False).mean()
+    # 볼린저 %B(20,2) — quant 요소용
+    bb_std = c.rolling(20).std(ddof=0)
+    df["pctb"] = (c - (df["sma20"] - 2 * bb_std)) / (4 * bb_std)
     return df
 
 
@@ -255,6 +267,47 @@ def comp_drift(mu60: float, atr_pct: float) -> tuple[str, float, str]:
 
 SIGN = {"up": 1, "flat": 0, "down": -1}
 
+QUANT_FLAT_THRESHOLD = 0.15  # quant 3지표 합성 스코어의 flat 임계값
+
+
+def comp_quant(rsi_v: float, macd_hist: float, pctb: float,
+               atr: float) -> tuple[str, float, str]:
+    """퀀트 표준 지표 다수결: RSI(14) + MACD(12,26,9) 히스토그램 + 볼린저 %B(20,2).
+
+    트리 앙상블·시계열 딥러닝 등 최신 머신러닝 퀀트 모델이 표준 피처로 쓰는
+    3개 지표를 각각 up/down/flat으로 투표해 합성한다.
+      - RSI(14): < 30 과매도 → up, > 70 과매수 → down
+      - MACD 히스토그램: 양수 → up, 음수 → down (강도는 ATR 대비 크기)
+      - 볼린저 %B: < 0 하단 이탈 → up(반등 기대), > 1 상단 이탈 → down
+    """
+    votes: list[tuple[int, float]] = []
+    # ① RSI(14)
+    if rsi_v < 30.0:
+        votes.append((1, min(1.0, (30.0 - rsi_v) / 20.0)))
+    elif rsi_v > 70.0:
+        votes.append((-1, min(1.0, (rsi_v - 70.0) / 20.0)))
+    else:
+        votes.append((0, 0.0))
+    # ② MACD 히스토그램 (가격 스케일 제거를 위해 ATR로 정규화)
+    scale = 0.3 * atr if atr > 0 else 1e-9
+    m_s = min(1.0, abs(macd_hist) / scale)
+    votes.append((1, m_s) if macd_hist > 0 else (-1, m_s))
+    # ③ 볼린저 %B
+    if pctb < 0.0:
+        votes.append((1, min(1.0, -pctb / 0.5)))
+    elif pctb > 1.0:
+        votes.append((-1, min(1.0, (pctb - 1.0) / 0.5)))
+    else:
+        votes.append((0, 0.0))
+
+    score = sum(s * w for s, w in votes) / len(votes)
+    info = f"RSI {rsi_v:.0f}·MACD hist {macd_hist:+.4g}·%B {pctb:+.2f}"
+    if score > QUANT_FLAT_THRESHOLD:
+        return "up", min(1.0, abs(score)), f"{info} — 퀀트 지표 다수 상방"
+    if score < -QUANT_FLAT_THRESHOLD:
+        return "down", min(1.0, abs(score)), f"{info} — 퀀트 지표 다수 하방"
+    return "flat", 0.2, f"{info} — 퀀트 지표 혼조"
+
 
 def predict_at(df: pd.DataFrame, i: int, weights: dict[str, float]) -> dict | None:
     """i번째 거래일 종가 기준 익일 예측. 데이터 부족 시 None."""
@@ -275,6 +328,13 @@ def predict_at(df: pd.DataFrame, i: int, weights: dict[str, float]) -> dict | No
         ("trend",) + comp_trend(close, float(row["sma20"]), float(row["sma50"])),
         ("drift",) + comp_drift(float(row["mu60"]), atr_pct),
     ]
+    # quant 요소는 모델 가중치에 포함된 경우에만 앙상블에 참여
+    if weights.get("quant", 0.0) > 0 and not pd.isna(row["macd_hist"]) \
+            and not pd.isna(row["pctb"]):
+        comps.append(("quant",) + comp_quant(float(row["rsi"]),
+                                             float(row["macd_hist"]),
+                                             float(row["pctb"]),
+                                             float(row["atr"])))
     score = sum(weights.get(name, 0.0) * SIGN[sig] * strength
                 for name, sig, strength, _ in comps)
     score = max(-1.0, min(1.0, score))
@@ -402,9 +462,14 @@ def update_weights(model: dict, history: dict) -> dict:
         return model
 
     rates: dict[str, float] = {}
-    for comp in ("reversal", "trend", "drift"):
-        hits = [is_hit(e.get("signals", {}).get(comp, "flat"),
-                       e["actualReturnPct"]) for e in recent]
+    for comp in model.get("weights", DEFAULT_WEIGHTS):
+        # 채택 전 과거 예측에는 해당 신호가 없을 수 있으므로 신호가 있는 표본만 집계
+        pairs = [(e["signals"][comp], e["actualReturnPct"]) for e in recent
+                 if comp in e.get("signals", {})]
+        if len(pairs) < WEIGHT_MIN_SAMPLES:
+            rates[comp] = 1.0 / 3.0  # 표본 부족 — 중립 적중률로 대체
+            continue
+        hits = [is_hit(sig, actual) for sig, actual in pairs]
         rates[comp] = sum(hits) / len(hits)
     clamped = {c: min(0.60, max(0.15, v)) for c, v in rates.items()}
     total = sum(clamped.values())
@@ -779,10 +844,52 @@ def run_backtest() -> int:
     return 0
 
 
+# quant 컴포넌트 검증 섹션 — --backtest로 문서를 재생성해도 유지되도록 상수로 분리.
+# 2026-08-20 3신호 vs 4신호 워크포워드 비교 결과 '미채택' 판정 (부정적 결과도 기록).
+QUANT_MD_SECTION = """
+## 5. quant 컴포넌트 검증 결과 (2026-08-20, 미채택)
+
+트리 앙상블·시계열 딥러닝 등 최신 머신러닝 퀀트 모델이 표준 피처로 쓰는
+3개 기술 지표를 묶은 4번째 요소 **quant**를 설계하고 채택 여부를 백테스트로
+검증했다.
+
+| 지표 | 신호 규칙 |
+|---|---|
+| RSI(14) | < 30 과매도 → up · > 70 과매수 → down (강도 = 임계 이탈폭/20) |
+| MACD(12,26,9) 히스토그램 | 양수 → up · 음수 → down (강도 = ATR 대비 크기) |
+| 볼린저 %B(20,2) | < 0 하단 이탈 → up(반등 기대) · > 1 상단 이탈 → down |
+
+3개 지표의 부호×강도를 평균낸 스코어가 +0.15 초과 → up, −0.15 미만 → down,
+아니면 flat (기존 요소들과 동일한 signal/strength 인터페이스).
+
+### 검증 방법
+
+`scripts/backtest_quant.py` — 각 종목의 최근 120거래일에 대해 해당 시점까지의
+데이터만으로 예측을 만드는 워크포워드 방식(룩어헤드 없음, 인과적 지표 계산).
+가중치는 현재 모델 값 고정: 3신호는 현재 가중치를 합 1로 정규화,
+4신호는 quant에 0.15를 배정하고 나머지 3요소를 비례 축소(×0.85).
+
+### 검증 결과 (25종목, 표본 3,000건)
+
+| 앙상블 | 익일 방향 적중률 |
+|---|---|
+| 기존 3신호 (reversal/trend/drift) | 41.90% (1257/3000) |
+| 4신호 (3신호 + quant 0.15) | 39.97% (1199/3000) |
+| quant 단독 (참고) | 31.23% |
+
+차이 **−1.93%p**로 채택 기준(4신호 ≥ 3신호 + 1%p)에 미달 → **미채택**.
+quant 단독 적중률(31.2%)은 3클래스 무작위 기준선(약 33~40%)에도 못 미쳐,
+이 유니버스의 최근 1년 구간에서는 RSI·MACD·볼린저 다수결이 익일 방향에
+유효한 엣지를 제공하지 못했다. quant 코드는 `--backtest`·검증 전용으로 남겨
+두고(가중치에 quant가 없으면 앙상블에 참여하지 않음), 운영 경로는 기존
+3신호를 유지한다. 원시 결과는 `scripts/backtest_quant_result.json`에 보관.
+"""
+
+
 # 장기 전망 방법론 섹션 — --backtest로 문서를 재생성해도 유지되도록 상수로 분리.
 # 스팟체크 결과 표는 검증 실행 후 갱신한다.
 LT_MD_SECTION = """
-## 5. 1년 장기 전망 (longTerm)
+## 6. 1년 장기 전망 (longTerm)
 
 매일 실행 시 각 종목에 **1년 뒤 전망**(`entries[ticker].longTerm`)을 3기둥
 가중 앙상블로 생성한다. 입력은 yfinance `info`(애널리스트 목표가·forwardEPS 등,
@@ -918,7 +1025,7 @@ def write_methodology_md(overall, hits, total, comp_rates, per_ticker, weights):
 유용성은 더 낮아진다. 이 예측은 **투자 조언이 아니라** '왜 그런 신호가
 나왔는지'를 components로 설명하는 학습용 도구다. 백테스트는 과거 데이터
 기준이며 미래 수익을 보장하지 않는다.
-""" + LT_MD_SECTION
+""" + QUANT_MD_SECTION + LT_MD_SECTION
     MD_PATH.write_text(md, encoding="utf-8")
     print(f"[저장] {MD_PATH.relative_to(ROOT)}")
 

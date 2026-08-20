@@ -6,6 +6,7 @@ import type { Market, NewsData, StockEntry, UnicornData, UserAddedStock } from '
 import stocksData from '@/data/stocks.json'
 import newsJsonData from '@/data/news.json'
 import unicornsJsonData from '@/data/unicorns.json'
+import predictionsJsonData from '@/data/predictions.json'
 import { StockCard } from '@/components/StockCard'
 import { AddedStockCard } from '@/components/AddedStockCard'
 import { UnicornPanel } from '@/components/UnicornPanel'
@@ -49,6 +50,15 @@ interface ImprovementReport {
   notes: string[]
 }
 
+/** 카드 미니 차트에 전달할 1년 전망 최소 형태 */
+interface PredictionsSlice {
+  entries: Record<
+    string,
+    { longTerm?: { targetCentral: number } | null }
+  >
+}
+const bundledPredictions = predictionsJsonData as unknown as PredictionsSlice
+
 type MarketFilter = 'ALL' | 'US' | 'KR' | 'CN' | 'UNICORN'
 
 const MARKET_TABS: { value: MarketFilter; label: string }[] = [
@@ -77,6 +87,7 @@ export default function HomePage() {
   const newsLive = useLiveData<NewsData>('news.json', bundledNews)
   const unicornsLive = useLiveData<UnicornData>('unicorns.json', bundledUnicorns)
   const improveLive = useLiveData<ImprovementReport | null>('improvements.json', null)
+  const predictionsLive = useLiveData<PredictionsSlice>('predictions.json', bundledPredictions)
   const stocks = stocksLive.data
 
   // '새 데이터 수집 요청' 다이얼로그
@@ -365,6 +376,10 @@ export default function HomePage() {
                     stock={item.stock}
                     editMode={editMode}
                     onHide={() => hideTicker(item.stock.ticker)}
+                    forecastCentral={
+                      predictionsLive.data?.entries?.[item.stock.ticker]?.longTerm
+                        ?.targetCentral ?? null
+                    }
                   />
                 ) : (
                   <AddedStockCard

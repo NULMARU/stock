@@ -38,10 +38,12 @@ interface StockCardProps {
   /** 편집 모드 — '숨기기' 버튼 표시 */
   editMode?: boolean
   onHide?: () => void
+  /** 1년 뒤 전망 중심가 — 미니 차트에 푸른 점선으로 이어 그림 */
+  forecastCentral?: number | null
 }
 
 /** 홈 종목 카드 — 이름/티커/가격·등락/5축 미니 바/초보 적합도/리스크 플래그/뉴스 받기 */
-export function StockCard({ stock, editMode = false, onHide }: StockCardProps) {
+export function StockCard({ stock, editMode = false, onHide, forecastCentral }: StockCardProps) {
   const fit = BEGINNER_FIT[stock.beginnerFit]
   const { newsChecked } = useUserStore()
   const isChecked = newsChecked.some((t) => t.toUpperCase() === stock.ticker.toUpperCase())
@@ -94,7 +96,11 @@ export function StockCard({ stock, editMode = false, onHide }: StockCardProps) {
               {formatChange(stock.quote.changePct)}
             </span>
           </div>
-          <Sparkline points={stock.priceHistory} className="shrink-0" />
+          <Sparkline
+            points={stock.priceHistory}
+            forecastCentral={forecastCentral}
+            className="shrink-0"
+          />
         </div>
 
         {/* 52주 범위 게이지 (스파크라인 아래) — 데이터 없으면 자동 숨김 */}

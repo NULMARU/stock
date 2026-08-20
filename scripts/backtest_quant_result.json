@@ -1,0 +1,200 @@
+{
+ "date": "2026-08-20T23:27:41+09:00",
+ "backtestDays": 120,
+ "tickers": 25,
+ "samples": 3000,
+ "weights3": {
+  "reversal": 0.4746,
+  "trend": 0.2373,
+  "drift": 0.2881
+ },
+ "weights4": {
+  "reversal": 0.4034,
+  "trend": 0.2017,
+  "drift": 0.2449,
+  "quant": 0.15
+ },
+ "hitRate3": 0.419,
+ "hitRate4": 0.3997,
+ "hitRateQuantOnly": 0.3123,
+ "diffPp": -1.93,
+ "adoptThresholdPp": 1.0,
+ "adopted": false,
+ "perTicker": [
+  {
+   "ticker": "NVDA",
+   "samples": 120,
+   "hitRate3": 0.3167,
+   "hitRate4": 0.2417,
+   "quantOnly": 0.3083
+  },
+  {
+   "ticker": "MSFT",
+   "samples": 120,
+   "hitRate3": 0.375,
+   "hitRate4": 0.3667,
+   "quantOnly": 0.4333
+  },
+  {
+   "ticker": "GOOGL",
+   "samples": 120,
+   "hitRate3": 0.4167,
+   "hitRate4": 0.3833,
+   "quantOnly": 0.4
+  },
+  {
+   "ticker": "TSLA",
+   "samples": 120,
+   "hitRate3": 0.375,
+   "hitRate4": 0.35,
+   "quantOnly": 0.3083
+  },
+  {
+   "ticker": "PLTR",
+   "samples": 120,
+   "hitRate3": 0.3917,
+   "hitRate4": 0.3833,
+   "quantOnly": 0.3417
+  },
+  {
+   "ticker": "RKLB",
+   "samples": 120,
+   "hitRate3": 0.3667,
+   "hitRate4": 0.35,
+   "quantOnly": 0.3667
+  },
+  {
+   "ticker": "ASTS",
+   "samples": 120,
+   "hitRate3": 0.4,
+   "hitRate4": 0.3917,
+   "quantOnly": 0.2667
+  },
+  {
+   "ticker": "LUNR",
+   "samples": 120,
+   "hitRate3": 0.425,
+   "hitRate4": 0.4,
+   "quantOnly": 0.3083
+  },
+  {
+   "ticker": "005930.KS",
+   "samples": 120,
+   "hitRate3": 0.3917,
+   "hitRate4": 0.375,
+   "quantOnly": 0.3167
+  },
+  {
+   "ticker": "000660.KS",
+   "samples": 120,
+   "hitRate3": 0.3833,
+   "hitRate4": 0.3917,
+   "quantOnly": 0.3583
+  },
+  {
+   "ticker": "035420.KS",
+   "samples": 120,
+   "hitRate3": 0.4333,
+   "hitRate4": 0.4083,
+   "quantOnly": 0.2917
+  },
+  {
+   "ticker": "012450.KS",
+   "samples": 120,
+   "hitRate3": 0.5167,
+   "hitRate4": 0.4833,
+   "quantOnly": 0.2917
+  },
+  {
+   "ticker": "047810.KS",
+   "samples": 120,
+   "hitRate3": 0.4167,
+   "hitRate4": 0.4083,
+   "quantOnly": 0.2167
+  },
+  {
+   "ticker": "079550.KS",
+   "samples": 120,
+   "hitRate3": 0.4083,
+   "hitRate4": 0.3917,
+   "quantOnly": 0.2167
+  },
+  {
+   "ticker": "272210.KS",
+   "samples": 120,
+   "hitRate3": 0.5,
+   "hitRate4": 0.4917,
+   "quantOnly": 0.2667
+  },
+  {
+   "ticker": "099320.KQ",
+   "samples": 120,
+   "hitRate3": 0.4583,
+   "hitRate4": 0.4583,
+   "quantOnly": 0.225
+  },
+  {
+   "ticker": "9988.HK",
+   "samples": 120,
+   "hitRate3": 0.3333,
+   "hitRate4": 0.325,
+   "quantOnly": 0.425
+  },
+  {
+   "ticker": "0700.HK",
+   "samples": 120,
+   "hitRate3": 0.475,
+   "hitRate4": 0.4667,
+   "quantOnly": 0.2417
+  },
+  {
+   "ticker": "9888.HK",
+   "samples": 120,
+   "hitRate3": 0.425,
+   "hitRate4": 0.3833,
+   "quantOnly": 0.3583
+  },
+  {
+   "ticker": "1810.HK",
+   "samples": 120,
+   "hitRate3": 0.4917,
+   "hitRate4": 0.4667,
+   "quantOnly": 0.325
+  },
+  {
+   "ticker": "1211.HK",
+   "samples": 120,
+   "hitRate3": 0.3917,
+   "hitRate4": 0.3583,
+   "quantOnly": 0.3417
+  },
+  {
+   "ticker": "0981.HK",
+   "samples": 120,
+   "hitRate3": 0.4833,
+   "hitRate4": 0.4667,
+   "quantOnly": 0.3
+  },
+  {
+   "ticker": "002230.SZ",
+   "samples": 120,
+   "hitRate3": 0.4167,
+   "hitRate4": 0.3833,
+   "quantOnly": 0.4
+  },
+  {
+   "ticker": "688256.SS",
+   "samples": 120,
+   "hitRate3": 0.4083,
+   "hitRate4": 0.4083,
+   "quantOnly": 0.35
+  },
+  {
+   "ticker": "688066.SS",
+   "samples": 120,
+   "hitRate3": 0.475,
+   "hitRate4": 0.4583,
+   "quantOnly": 0.15
+  }
+ ]
+}
