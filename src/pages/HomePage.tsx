@@ -31,11 +31,23 @@ import {
 } from '@/components/ui/select'
 import { useLiveData } from '@/lib/liveData'
 import { useUserStore } from '@/lib/userStore'
+import { getUsageInsight, trackRefreshClick } from '@/lib/analytics'
 import { cn } from '@/lib/utils'
 
 const bundledStocks = stocksData as StockEntry[]
 const bundledNews = newsJsonData as NewsData
 const bundledUnicorns = unicornsJsonData as UnicornData
+
+/** 주간 자기개선 리포트 (scripts/auto_improve.py 생성) */
+interface ImprovementReport {
+  asOf: string
+  hitRate20: number | null
+  hitRateAll: number | null
+  hitRateDeltaWoW: number | null
+  evaluated: number
+  weightChanges: string[]
+  notes: string[]
+}
 
 type MarketFilter = 'ALL' | 'US' | 'KR' | 'CN' | 'UNICORN'
 
@@ -64,6 +76,7 @@ export default function HomePage() {
   const stocksLive = useLiveData<StockEntry[]>('stocks.json', bundledStocks)
   const newsLive = useLiveData<NewsData>('news.json', bundledNews)
   const unicornsLive = useLiveData<UnicornData>('unicorns.json', bundledUnicorns)
+  const improveLive = useLiveData<ImprovementReport | null>('improvements.json', null)
   const stocks = stocksLive.data
 
   // '새 데이터 수집 요청' 다이얼로그
@@ -74,10 +87,12 @@ export default function HomePage() {
 
   // 전체 갱신 — stocks + news + unicorns 모두 캐시버스팅 재조회
   const handleRefreshAll = async () => {
+    trackRefreshClick()
     const [freshStocks] = await Promise.all([
       stocksLive.refresh(),
       newsLive.refresh(),
       unicornsLive.refresh(),
+      improveLive.refresh(),
     ])
     const asOfLabel = freshStocks?.[0]?.asOf ?? stocksLive.data[0]?.asOf
     toast.success(
@@ -226,6 +241,49 @@ export default function HomePage() {
           </div>
         </div>
       </header>
+
+      {/* 나의 사용 인사이트 + 모델 자기개선 현황 (로컬 사용 통계 + 주간 리포트) */}
+      {(() => {
+        const insight = getUsageInsight()
+        const report = improveLive.data
+        const chips: string[] = []
+        if (insight.launches > 1) {
+          chips.push(
+            `총 ${insight.launches}회 실행` +
+              (insight.daysUsed > 1 ? ` · ${insight.daysUsed}일째 사용 중` : ''),
+          )
+        }
+        if (insight.topTicker && insight.topTickerViews > 1) {
+          chips.push(`가장 많이 본 종목: ${insight.topTicker} (${insight.topTickerViews}회)`)
+        }
+        if (report?.hitRate20 != null) {
+          const pct = Math.round(report.hitRate20 * 100)
+          const delta = report.hitRateDeltaWoW
+          chips.push(
+            `예측 적중률(최근): ${pct}%` +
+              (delta != null && delta !== 0
+                ? ` (${delta > 0 ? '▲' : '▼'}${Math.abs(Math.round(delta * 100))}%p WoW)`
+                : ''),
+          )
+        }
+        if (report && report.weightChanges.length > 0) {
+          chips.push(`모델 자동조정 ${report.weightChanges.length}건`)
+        }
+        if (chips.length === 0) return null
+        return (
+          <div className="mb-5 flex flex-wrap items-center gap-2 rounded-xl border border-border bg-muted/40 px-3 py-2">
+            <span className="text-xs font-semibold text-muted-foreground">📊 나의 학습 현황</span>
+            {chips.map((c) => (
+              <span
+                key={c}
+                className="rounded-full bg-background px-2.5 py-0.5 text-xs text-foreground/80"
+              >
+                {c}
+              </span>
+            ))}
+          </div>
+        )
+      })()}
 
       {/* 시장 탭 + 검색 + 편집 토글 */}
       <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">

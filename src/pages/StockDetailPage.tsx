@@ -1,4 +1,4 @@
-import { lazy, Suspense, useMemo, useState } from "react"
+import { lazy, Suspense, useEffect, useMemo, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import {
   AlertTriangle,
@@ -33,6 +33,7 @@ import {
 } from "@/lib/format"
 import { formatRelativeTime, getNewsForTicker } from "@/lib/news"
 import { useLiveData } from "@/lib/liveData"
+import { trackStockView } from "@/lib/analytics"
 import { cn } from "@/lib/utils"
 import type { BeginnerFit, NewsData, StockEntry } from "@/types/stock"
 
@@ -78,6 +79,11 @@ interface MetricSpec {
 
 export default function StockDetailPage() {
   const { ticker } = useParams<{ ticker: string }>()
+
+  // 사용 패턴 수집: 종목 상세 조회 기록 (로컬 전용)
+  useEffect(() => {
+    if (ticker) trackStockView(ticker)
+  }, [ticker])
 
   // 런타임 라이브 데이터 (실패 시 번들 fallback 유지)
   const stocksLive = useLiveData<StockEntry[]>("stocks.json", bundledStocks)

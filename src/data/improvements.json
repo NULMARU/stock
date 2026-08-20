@@ -1,0 +1,27 @@
+{
+  "asOf": "2026-08-20T22:37:37+09:00",
+  "weekStart": "2026-08-13",
+  "hitRate7": 0.41333333333333333,
+  "hitRatePrev7": 0.44,
+  "hitRateDeltaWoW": -0.026666666666666672,
+  "hitRate20": 0.65,
+  "hitRateAll": 0.4065,
+  "evaluated": 433,
+  "weights": {
+    "reversal": 0.4746,
+    "trend": 0.2373,
+    "drift": 0.2881
+  },
+  "weightChanges": [
+    "reversal 48%→47%",
+    "trend 28%→24%",
+    "drift 24%→29%"
+  ],
+  "notes": [
+    "신호별 적중률을 반영해 가중치 자동 조정: reversal 48%→47%, trend 28%→24%, drift 24%→29%",
+    "이번 주 가장 약한 신호: trend (적중률 23%)",
+    "적중률 최고 종목: ASTS (100%)",
+    "개선 필요 종목: 0981.HK (0%)",
+    "주간 적중률 41% (전주 대비 -3%p)"
+  ]
+}

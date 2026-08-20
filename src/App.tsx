@@ -1,4 +1,5 @@
-import { Link, NavLink, Route, Routes } from 'react-router'
+import { useEffect } from 'react'
+import { Link, NavLink, Route, Routes, useLocation } from 'react-router'
 import HomePage from '@/pages/HomePage'
 import StockDetailPage from '@/pages/StockDetailPage'
 import GlossaryPage from '@/pages/GlossaryPage'
@@ -6,6 +7,7 @@ import NewsPage from '@/pages/NewsPage'
 import { Toaster } from '@/components/ui/sonner'
 import TickerBar from '@/components/TickerBar'
 import { cn } from '@/lib/utils'
+import { trackLaunch, trackTabView } from '@/lib/analytics'
 
 const NAV_ITEMS = [
   { to: '/', label: '종목', end: true },
@@ -14,6 +16,18 @@ const NAV_ITEMS = [
 ] as const
 
 export default function App() {
+  const location = useLocation()
+
+  // 사용 패턴 수집: 앱 실행 1회 + 탭 이동마다 기록 (로컬 전용)
+  useEffect(() => {
+    trackLaunch()
+  }, [])
+  useEffect(() => {
+    const path = location.pathname
+    const tab = path === '/' ? 'home' : path.split('/')[1] || 'home'
+    trackTabView(tab)
+  }, [location.pathname])
+
   return (
     <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
