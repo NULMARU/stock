@@ -22,6 +22,7 @@ import { MetricCard } from "@/components/MetricCard"
 import { PredictionPanel } from "@/components/PredictionPanel"
 import stocksData from "@/data/stocks.json"
 import rawNewsData from "@/data/news.json"
+import predictionsData from "@/data/predictions.json"
 import {
   changeArrow,
   changeColorClass,
@@ -39,6 +40,20 @@ import type { BeginnerFit, NewsData, StockEntry } from "@/types/stock"
 
 const bundledStocks = stocksData as StockEntry[]
 const bundledNews = rawNewsData as NewsData
+
+/** 차트에 전달할 1년 전망 최소 형태 (PredictionPanel의 LongTermForecast 부분집합) */
+interface ForecastSlice {
+  longTerm?: {
+    forDate: string
+    targetCentral: number
+    targetLow: number
+    targetHigh: number
+  } | null
+}
+interface PredictionsSlice {
+  entries: Record<string, ForecastSlice>
+}
+const bundledPredictions = predictionsData as unknown as PredictionsSlice
 
 // recharts 기반 차트는 무거워 초기 번들에서 분리 — 상세 페이지 진입 시 별도 청크로 지연 로딩
 // (PriceChart.tsx는 default export를 제공하므로 그대로 lazy 래핑)
@@ -88,6 +103,10 @@ export default function StockDetailPage() {
   // 런타임 라이브 데이터 (실패 시 번들 fallback 유지)
   const stocksLive = useLiveData<StockEntry[]>("stocks.json", bundledStocks)
   const newsLive = useLiveData<NewsData>("news.json", bundledNews)
+  const predictionsLive = useLiveData<PredictionsSlice>(
+    "predictions.json",
+    bundledPredictions,
+  )
   const stocks = stocksLive.data
 
   const [glossaryTermId, setGlossaryTermId] = useState<string | null>(null)
@@ -548,12 +567,12 @@ export default function StockDetailPage() {
         </div>
       </section>
 
-      {/* ── 1년 주가 차트 ─────────────────────────────────── */}
+      {/* ── 주가 차트 + 1년 전망 ─────────────────────────── */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-lg">1년 주가 차트</CardTitle>
+          <CardTitle className="text-lg">주가 차트</CardTitle>
           <p className="text-sm text-muted-foreground">
-            점선은 52주 최고(빨강)·최저(파랑) 가격이에요
+            기간을 골라 보세요. 푸른 점선은 1년 뒤 전망, 점선은 52주 최고(빨강)·최저(파랑)예요
           </p>
         </CardHeader>
         <CardContent>
@@ -567,6 +586,9 @@ export default function StockDetailPage() {
               fiftyTwoWeekHigh={quote.fiftyTwoWeekHigh}
               fiftyTwoWeekLow={quote.fiftyTwoWeekLow}
               currency={stock.currency}
+              forecast={
+                predictionsLive.data?.entries?.[stock.ticker]?.longTerm ?? null
+              }
             />
           </Suspense>
         </CardContent>
