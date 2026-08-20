@@ -189,6 +189,44 @@ export interface UserAddedStock {
   note?: string;
 }
 
+/** 1년 뒤 전망 3기둥 중 하나 (predictions.json entries[ticker].longTerm.pillars) */
+export interface LongTermForecastPillar {
+  /** 기둥 이름 (예: "성장 지속") */
+  name: string;
+  /** 이 기둥만 따를 때의 1년 뒤 목표가, 산출 불가 시 null */
+  target: number | null;
+  /** 앙상블 가중치 — 0~1 소수 */
+  weight: number;
+  /** 판정 근거 설명 */
+  detail: string;
+}
+
+export type LongTermConfidence = "high" | "medium" | "low";
+
+/**
+ * 1년 뒤 전망 1건 (predictions.json entries[ticker].longTerm)
+ * 데이터가 없으면 필드 자체가 생략되거나 null — UI에서는 섹션 숨김.
+ */
+export interface LongTermForecast {
+  /** 전망 대상일 YYYY-MM-DD (약 1년 뒤) */
+  forDate: string;
+  /** 중앙 목표가 (3기둥 가중 평균) */
+  targetCentral: number;
+  /** 밴드 하단 목표가 */
+  targetLow: number;
+  /** 밴드 상단 목표가 */
+  targetHigh: number;
+  /** 기대 수익률, 퍼센트 단위 (예: 18.5 = +18.5%) */
+  expectedReturnPct: number;
+  /** 밴드 하단 수익률, 퍼센트 단위 */
+  bandLowPct: number;
+  /** 밴드 상단 수익률, 퍼센트 단위 */
+  bandHighPct: number;
+  confidence: LongTermConfidence;
+  /** 전망 근거 3기둥 */
+  pillars: LongTermForecastPillar[];
+}
+
 export type GlossaryGroup = "가치평가" | "실적재무" | "주주환원" | "시장수급";
 
 export interface GlossaryTerm {

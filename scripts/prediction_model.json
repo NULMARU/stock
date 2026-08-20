@@ -1,9 +1,352 @@
 {
- "version": "predict-v1.0",
+ "version": "predict-v1.1",
  "weights": {
-  "reversal": 0.34,
-  "trend": 0.33,
-  "drift": 0.33
+  "reversal": 0.4746,
+  "trend": 0.2373,
+  "drift": 0.2881
  },
- "updateHistory": []
+ "updateHistory": [
+  {
+   "date": "2026-07-24T07:31:31+09:00",
+   "samples": 25,
+   "componentHitRates": {
+    "reversal": 0.12,
+    "trend": 0.24,
+    "drift": 0.04
+   },
+   "weights": {
+    "reversal": 0.2778,
+    "trend": 0.4444,
+    "drift": 0.2778
+   }
+  },
+  {
+   "date": "2026-07-25T07:31:52+09:00",
+   "samples": 50,
+   "componentHitRates": {
+    "reversal": 0.24,
+    "trend": 0.34,
+    "drift": 0.14
+   },
+   "weights": {
+    "reversal": 0.3288,
+    "trend": 0.4658,
+    "drift": 0.2055
+   }
+  },
+  {
+   "date": "2026-07-26T07:31:33+09:00",
+   "samples": 50,
+   "componentHitRates": {
+    "reversal": 0.24,
+    "trend": 0.34,
+    "drift": 0.14
+   },
+   "weights": {
+    "reversal": 0.3288,
+    "trend": 0.4658,
+    "drift": 0.2055
+   }
+  },
+  {
+   "date": "2026-07-27T07:31:34+09:00",
+   "samples": 50,
+   "componentHitRates": {
+    "reversal": 0.24,
+    "trend": 0.34,
+    "drift": 0.14
+   },
+   "weights": {
+    "reversal": 0.3288,
+    "trend": 0.4658,
+    "drift": 0.2055
+   }
+  },
+  {
+   "date": "2026-07-28T07:31:35+09:00",
+   "samples": 60,
+   "componentHitRates": {
+    "reversal": 0.3667,
+    "trend": 0.3,
+    "drift": 0.1667
+   },
+   "weights": {
+    "reversal": 0.44,
+    "trend": 0.36,
+    "drift": 0.2
+   }
+  },
+  {
+   "date": "2026-07-29T07:31:35+09:00",
+   "samples": 60,
+   "componentHitRates": {
+    "reversal": 0.3667,
+    "trend": 0.3667,
+    "drift": 0.1833
+   },
+   "weights": {
+    "reversal": 0.4,
+    "trend": 0.4,
+    "drift": 0.2
+   }
+  },
+  {
+   "date": "2026-07-30T07:31:36+09:00",
+   "samples": 60,
+   "componentHitRates": {
+    "reversal": 0.3,
+    "trend": 0.4833,
+    "drift": 0.1667
+   },
+   "weights": {
+    "reversal": 0.3158,
+    "trend": 0.5088,
+    "drift": 0.1754
+   }
+  },
+  {
+   "date": "2026-07-31T07:31:36+09:00",
+   "samples": 60,
+   "componentHitRates": {
+    "reversal": 0.3333,
+    "trend": 0.4833,
+    "drift": 0.1167
+   },
+   "weights": {
+    "reversal": 0.3448,
+    "trend": 0.5,
+    "drift": 0.1552
+   }
+  },
+  {
+   "date": "2026-08-01T07:31:36+09:00",
+   "samples": 60,
+   "componentHitRates": {
+    "reversal": 0.5,
+    "trend": 0.25,
+    "drift": 0.0833
+   },
+   "weights": {
+    "reversal": 0.5556,
+    "trend": 0.2778,
+    "drift": 0.1667
+   }
+  },
+  {
+   "date": "2026-08-02T07:31:37+09:00",
+   "samples": 60,
+   "componentHitRates": {
+    "reversal": 0.5,
+    "trend": 0.25,
+    "drift": 0.0833
+   },
+   "weights": {
+    "reversal": 0.5556,
+    "trend": 0.2778,
+    "drift": 0.1667
+   }
+  },
+  {
+   "date": "2026-08-03T07:31:36+09:00",
+   "samples": 60,
+   "componentHitRates": {
+    "reversal": 0.5,
+    "trend": 0.25,
+    "drift": 0.0833
+   },
+   "weights": {
+    "reversal": 0.5556,
+    "trend": 0.2778,
+    "drift": 0.1667
+   }
+  },
+  {
+   "date": "2026-08-04T07:31:07+09:00",
+   "samples": 60,
+   "componentHitRates": {
+    "reversal": 0.4833,
+    "trend": 0.2167,
+    "drift": 0.0667
+   },
+   "weights": {
+    "reversal": 0.5686,
+    "trend": 0.2549,
+    "drift": 0.1765
+   }
+  },
+  {
+   "date": "2026-08-05T07:31:09+09:00",
+   "samples": 60,
+   "componentHitRates": {
+    "reversal": 0.3833,
+    "trend": 0.2,
+    "drift": 0.1
+   },
+   "weights": {
+    "reversal": 0.5227,
+    "trend": 0.2727,
+    "drift": 0.2045
+   }
+  },
+  {
+   "date": "2026-08-06T07:31:31+09:00",
+   "samples": 60,
+   "componentHitRates": {
+    "reversal": 0.3833,
+    "trend": 0.2167,
+    "drift": 0.1667
+   },
+   "weights": {
+    "reversal": 0.5,
+    "trend": 0.2826,
+    "drift": 0.2174
+   }
+  },
+  {
+   "date": "2026-08-07T07:31:33+09:00",
+   "samples": 60,
+   "componentHitRates": {
+    "reversal": 0.5,
+    "trend": 0.2,
+    "drift": 0.1833
+   },
+   "weights": {
+    "reversal": 0.566,
+    "trend": 0.2264,
+    "drift": 0.2075
+   }
+  },
+  {
+   "date": "2026-08-08T07:31:19+09:00",
+   "samples": 60,
+   "componentHitRates": {
+    "reversal": 0.5167,
+    "trend": 0.2667,
+    "drift": 0.2167
+   },
+   "weights": {
+    "reversal": 0.5167,
+    "trend": 0.2667,
+    "drift": 0.2167
+   }
+  },
+  {
+   "date": "2026-08-09T07:31:20+09:00",
+   "samples": 60,
+   "componentHitRates": {
+    "reversal": 0.5167,
+    "trend": 0.2667,
+    "drift": 0.2167
+   },
+   "weights": {
+    "reversal": 0.5167,
+    "trend": 0.2667,
+    "drift": 0.2167
+   }
+  },
+  {
+   "date": "2026-08-10T07:31:21+09:00",
+   "samples": 60,
+   "componentHitRates": {
+    "reversal": 0.5167,
+    "trend": 0.2667,
+    "drift": 0.2167
+   },
+   "weights": {
+    "reversal": 0.5167,
+    "trend": 0.2667,
+    "drift": 0.2167
+   }
+  },
+  {
+   "date": "2026-08-11T07:31:25+09:00",
+   "samples": 60,
+   "componentHitRates": {
+    "reversal": 0.4333,
+    "trend": 0.3167,
+    "drift": 0.25
+   },
+   "weights": {
+    "reversal": 0.4333,
+    "trend": 0.3167,
+    "drift": 0.25
+   }
+  },
+  {
+   "date": "2026-08-12T07:31:30+09:00",
+   "samples": 60,
+   "componentHitRates": {
+    "reversal": 0.5333,
+    "trend": 0.3,
+    "drift": 0.3167
+   },
+   "weights": {
+    "reversal": 0.4638,
+    "trend": 0.2609,
+    "drift": 0.2754
+   }
+  },
+  {
+   "date": "2026-08-13T07:31:34+09:00",
+   "samples": 60,
+   "componentHitRates": {
+    "reversal": 0.4333,
+    "trend": 0.25,
+    "drift": 0.2167
+   },
+   "weights": {
+    "reversal": 0.4815,
+    "trend": 0.2778,
+    "drift": 0.2407
+   }
+  },
+  {
+   "date": "2026-08-14T07:31:08+09:00",
+   "samples": 60,
+   "componentHitRates": {
+    "reversal": 0.3333,
+    "trend": 0.2167,
+    "drift": 0.2333
+   },
+   "weights": {
+    "reversal": 0.4255,
+    "trend": 0.2766,
+    "drift": 0.2979
+   }
+  },
+  {
+   "date": "2026-08-15T07:31:10+09:00",
+   "samples": 60,
+   "componentHitRates": {
+    "reversal": 0.35,
+    "trend": 0.2333,
+    "drift": 0.2667
+   },
+   "weights": {
+    "reversal": 0.4118,
+    "trend": 0.2745,
+    "drift": 0.3137
+   }
+  },
+  {
+   "date": "2026-08-20T21:50:52+09:00",
+   "samples": 60,
+   "componentHitRates": {
+    "reversal": 0.4667,
+    "trend": 0.2333,
+    "drift": 0.2833
+   },
+   "weights": {
+    "reversal": 0.4746,
+    "trend": 0.2373,
+    "drift": 0.2881
+   }
+  }
+ ],
+ "componentHitRates": {
+  "reversal": 0.4667,
+  "trend": 0.2333,
+  "drift": 0.2833
+ },
+ "updatedAt": "2026-08-20T21:50:52+09:00"
 }

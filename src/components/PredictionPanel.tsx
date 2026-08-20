@@ -8,15 +8,21 @@
  * 모든 수치는 통계적 추정 — 투자 조언 아님 (최하단 고지).
  */
 
-import { Activity, CheckCircle2, Info, XCircle } from "lucide-react"
+import { Activity, CheckCircle2, Info, Target, XCircle } from "lucide-react"
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import rawPredictions from "@/data/predictions.json"
 import { changeColorClass, formatChangePct, formatPrice } from "@/lib/format"
 import { useLiveData } from "@/lib/liveData"
 import { cn } from "@/lib/utils"
-import type { Currency } from "@/types/stock"
+import type { Currency, LongTermConfidence, LongTermForecast } from "@/types/stock"
 
 // ── predictions.json 스키마 (데이터 파이프라인 생성물) ─────────────
 export type PredictionDirection = "up" | "down" | "flat"
@@ -57,6 +63,8 @@ export interface PredictionEntry {
   /** 예측 근거 3요소 */
   components: PredictionComponent[]
   lastFeedback: PredictionFeedback | null
+  /** 1년 뒤 전망 — 없으면 생략/null (장기 전망 섹션 숨김) */
+  longTerm?: LongTermForecast | null
 }
 
 export interface PredictionsModel {
@@ -129,6 +137,196 @@ function signalBadgeClass(signal: string): string {
   return "border-border bg-secondary text-secondary-foreground"
 }
 
+/** 신뢰도 배지 스타일 — high 세이지 / medium 앰버 / low 회색 */
+const CONFIDENCE_META: Record<
+  LongTermConfidence,
+  { label: string; badgeClass: string }
+> = {
+  high: {
+    label: "신뢰도 높음",
+    badgeClass: "border-[#6B7F5E]/40 bg-[#6B7F5E]/10 text-[#4F6B4B]",
+  },
+  medium: {
+    label: "보통",
+    badgeClass: "border-amber-600/40 bg-amber-500/10 text-amber-700",
+  },
+  low: {
+    label: "낮음",
+    badgeClass: "border-border bg-muted text-muted-foreground",
+  },
+}
+
+/** 가중치(0~1 또는 0~100 혼용 방어) → 퍼센트 정수 */
+const weightPct = (w: number) => Math.round(asPercent(w))
+
+interface LongTermSectionProps {
+  forecast: LongTermForecast
+  /** 현재가(기준 종가) — 밴드 바 위치 마커용 */
+  currentPrice: number
+  currency: Currency
+}
+
+/**
+ * 1년 뒤 전망 섹션 — predictions.json entries[ticker].longTerm 렌더.
+ * 중앙 목표가·기대수익률, 밴드 가로 바(현재가 마커), 신뢰도 배지,
+ * 3기둥 아코디언, 불확실성 고지.
+ */
+function LongTermSection({ forecast, currentPrice, currency }: LongTermSectionProps) {
+  const conf = CONFIDENCE_META[forecast.confidence] ?? CONFIDENCE_META.low
+  const { targetLow, targetHigh, targetCentral } = forecast
+
+  // 밴드 바 스케일: 밴드와 현재가를 모두 포함하는 범위, 양 끝에 4% 여백
+  const rawMin = Math.min(targetLow, currentPrice)
+  const rawMax = Math.max(targetHigh, currentPrice)
+  const span = rawMax - rawMin > 0 ? rawMax - rawMin : Math.max(rawMax, 1)
+  const pad = span * 0.04
+  const min = rawMin - pad
+  const max = rawMax + pad
+  const toPct = (v: number) =>
+    Math.min(100, Math.max(0, ((v - min) / (max - min)) * 100))
+
+  const bandLeft = toPct(targetLow)
+  const bandRight = toPct(targetHigh)
+  const centralPos = toPct(targetCentral)
+  const currentPos = toPct(currentPrice)
+
+  const bandAria = `1년 뒤 목표가 밴드 ${formatPrice(targetLow, currency)}에서 ${formatPrice(targetHigh, currency)}, 중앙 목표가 ${formatPrice(targetCentral, currency)}, 현재가 ${formatPrice(currentPrice, currency)}`
+
+  return (
+    <Card>
+      <CardHeader>
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <CardTitle className="flex items-center gap-2 text-lg">
+              <Target className="h-5 w-5 text-[#C2571B]" aria-hidden />
+              1년 뒤 전망
+            </CardTitle>
+            <p className="mt-1 text-sm text-muted-foreground">
+              {forecast.forDate}의 주가 범위를 세 가지 관점으로 추정했어요
+            </p>
+          </div>
+          <Badge
+            variant="outline"
+            className={cn("px-2.5 py-1 text-sm font-semibold", conf.badgeClass)}
+          >
+            {conf.label}
+          </Badge>
+        </div>
+      </CardHeader>
+
+      <CardContent className="space-y-4">
+        {/* 중앙 목표가 + 기대수익률 */}
+        <dl className="grid grid-cols-2 gap-3">
+          <div className="rounded-lg bg-muted/50 px-3 py-2">
+            <dt className="text-xs text-muted-foreground">중앙 목표가</dt>
+            <dd className="mt-0.5 text-base font-bold text-foreground">
+              {formatPrice(targetCentral, currency)}
+            </dd>
+          </div>
+          <div className="rounded-lg bg-muted/50 px-3 py-2">
+            <dt className="text-xs text-muted-foreground">기대 수익률</dt>
+            <dd
+              className={cn(
+                "mt-0.5 text-base font-bold",
+                changeColorClass(forecast.expectedReturnPct),
+              )}
+            >
+              {formatChangePct(forecast.expectedReturnPct)}
+            </dd>
+          </div>
+        </dl>
+
+        {/* 목표가 밴드 가로 바 — 현재가 위치 마커 포함 (RangeGauge 스타일 참고, 직접 구현) */}
+        <div className="space-y-1" role="img" aria-label={bandAria}>
+          <div className="relative h-2 rounded-full bg-muted">
+            {/* 밴드 구간 (저~고) */}
+            <div
+              className="absolute top-0 h-full rounded-full bg-[#C2571B]/20"
+              style={{
+                left: `${bandLeft.toFixed(2)}%`,
+                width: `${Math.max(bandRight - bandLeft, 1).toFixed(2)}%`,
+              }}
+            />
+            {/* 중앙 목표가 틱 */}
+            <span
+              className="absolute top-1/2 h-3.5 w-0.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#C2571B]"
+              style={{ left: `${centralPos.toFixed(2)}%` }}
+            />
+            {/* 현재가 마커 */}
+            <span
+              className="absolute top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-foreground ring-2 ring-card"
+              style={{ left: `${currentPos.toFixed(2)}%` }}
+            />
+          </div>
+          <div className="flex items-center justify-between text-[10px] leading-none tabular-nums text-muted-foreground">
+            <span>
+              낮음 {formatPrice(targetLow, currency)} ({formatChangePct(forecast.bandLowPct)})
+            </span>
+            <span>
+              높음 {formatPrice(targetHigh, currency)} ({formatChangePct(forecast.bandHighPct)})
+            </span>
+          </div>
+          <div className="flex items-center gap-3 pt-1 text-[10px] leading-none text-muted-foreground">
+            <span className="inline-flex items-center gap-1">
+              <span className="h-2 w-2 rounded-full bg-foreground" aria-hidden />
+              현재가
+            </span>
+            <span className="inline-flex items-center gap-1">
+              <span className="h-2.5 w-0.5 rounded-full bg-[#C2571B]" aria-hidden />
+              중앙 목표가
+            </span>
+          </div>
+        </div>
+
+        {/* 3기둥 아코디언 — 이름·목표가·가중치·근거 */}
+        {forecast.pillars.length > 0 && (
+          <div className="space-y-2">
+            <h3 className="text-sm font-semibold text-foreground">
+              전망 근거 {forecast.pillars.length}기둥
+            </h3>
+            <Accordion type="single" collapsible className="w-full">
+              {forecast.pillars.map((p, i) => (
+                <AccordionItem key={i} value={`pillar-${i}`}>
+                  <AccordionTrigger className="px-3 text-sm">
+                    <span className="flex flex-wrap items-center gap-2 text-left">
+                      <span className="font-medium text-foreground">{p.name}</span>
+                      <Badge
+                        variant="outline"
+                        className="border-border bg-secondary text-secondary-foreground"
+                      >
+                        가중치 {weightPct(p.weight)}%
+                      </Badge>
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-3">
+                    <p className="text-sm text-foreground">
+                      목표가{" "}
+                      <span className="font-semibold">
+                        {p.target != null
+                          ? formatPrice(p.target, currency)
+                          : "산출 불가"}
+                      </span>
+                    </p>
+                    <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                      {p.detail}
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        )}
+
+        {/* 고지 */}
+        <p className="flex items-start gap-2 rounded-lg bg-muted/60 px-3 py-2 text-xs leading-relaxed text-muted-foreground">
+          <Info className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden />
+          1년 전망은 불확실성이 매우 커요. 참고용으로만 보세요.
+        </p>
+      </CardContent>
+    </Card>
+  )
+}
+
 export interface PredictionPanelProps {
   ticker: string
   currency: Currency
@@ -155,8 +353,10 @@ export function PredictionPanel({ ticker, currency }: PredictionPanelProps) {
   const probPct = Math.round(asPercent(entry.probability))
   const hitRate20 = data.model.hitRate20
   const fb = entry.lastFeedback
+  const longTerm = entry.longTerm ?? null
 
   return (
+    <>
     <Card>
       <CardHeader>
         <div className="flex flex-wrap items-start justify-between gap-3">
@@ -299,5 +499,17 @@ export function PredictionPanel({ ticker, currency }: PredictionPanelProps) {
         </p>
       </CardContent>
     </Card>
+
+    {/* 1년 뒤 전망 — longTerm 데이터가 있을 때만, 단기 예측 카드 아래 */}
+    {longTerm && (
+      <div className="mt-4">
+        <LongTermSection
+          forecast={longTerm}
+          currentPrice={entry.close}
+          currency={currency}
+        />
+      </div>
+    )}
+    </>
   )
 }
