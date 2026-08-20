@@ -17,6 +17,7 @@ fetch_news.py를 실행해 src/data/news.json을 갱신한 뒤,
 from __future__ import annotations
 
 import json
+import shutil
 import subprocess
 import sys
 from datetime import datetime, timedelta, timezone
@@ -24,6 +25,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent  # git 레포 루트
 NEWS_JSON = ROOT / "src" / "data" / "news.json"
+PUBLIC_NEWS_JSON = ROOT / "public" / "data" / "news.json"  # 앱이 런타임에 실제 읽는 파일
 KST = timezone(timedelta(hours=9))
 NO_GIT = "--no-git" in sys.argv
 
@@ -32,10 +34,10 @@ def run(cmd: list[str], **kwargs) -> subprocess.CompletedProcess:
     return subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, **kwargs)
 
 
-def git_commit_push(pathspec: str, message: str) -> bool:
+def git_commit_push(pathspecs: list[str], message: str) -> bool:
     """변경이 있으면 커밋·푸시. 푸시 성공 여부를 반환."""
-    run(["git", "add", pathspec])
-    diff = run(["git", "diff", "--cached", "--quiet", "--", pathspec])
+    run(["git", "add", *pathspecs])
+    diff = run(["git", "diff", "--cached", "--quiet", "--", *pathspecs])
     if diff.returncode == 0:
         print("[git] 변경 없음 — 커밋 생략")
         return False
@@ -78,12 +80,17 @@ def main() -> int:
     tickers = sum(1 for v in entries.values() if v)
     articles = sum(len(v) for v in entries.values())
 
+    # 앱 런타임이 읽는 public/data에도 동일본 반영 (배포 사이트 갱신의 핵심)
+    PUBLIC_NEWS_JSON.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(NEWS_JSON, PUBLIC_NEWS_JSON)
+    print(f"[sync] {PUBLIC_NEWS_JSON.relative_to(ROOT)} 동기화 완료")
+
     pushed = False
     if NO_GIT:
         print("[git] --no-git: 커밋/푸시 생략")
     else:
         pushed = git_commit_push(
-            "src/data/news.json",
+            ["src/data/news.json", "public/data/news.json"],
             f"news: auto update {now.strftime('%Y-%m-%d %H:%M KST')}")
 
     summary = (f"뉴스 갱신: {tickers}개 종목 {articles}건 수집"

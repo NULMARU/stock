@@ -5,7 +5,7 @@
  * - 그 외: network-first
  * - 활성화: 구버전 캐시 정리
  */
-const VERSION = 'v1';
+const VERSION = 'v2';
 const SHELL_CACHE = `stocklab-shell-${VERSION}`;
 const DATA_CACHE = `stocklab-data-${VERSION}`;
 const ASSET_CACHE = `stocklab-asset-${VERSION}`;

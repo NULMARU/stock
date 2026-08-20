@@ -16,6 +16,7 @@ refresh_data.py를 실행해 src/data/stocks.json을 갱신한 뒤,
 from __future__ import annotations
 
 import json
+import shutil
 import subprocess
 import sys
 from datetime import datetime, timedelta, timezone
@@ -23,6 +24,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent  # git 레포 루트
 STOCKS_JSON = ROOT / "src" / "data" / "stocks.json"
+PUBLIC_STOCKS_JSON = ROOT / "public" / "data" / "stocks.json"  # 앱이 런타임에 실제 읽는 파일
 KST = timezone(timedelta(hours=9))
 NO_GIT = "--no-git" in sys.argv
 
@@ -31,10 +33,10 @@ def run(cmd: list[str], **kwargs) -> subprocess.CompletedProcess:
     return subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, **kwargs)
 
 
-def git_commit_push(pathspec: str, message: str) -> bool:
+def git_commit_push(pathspecs: list[str], message: str) -> bool:
     """변경이 있으면 커밋·푸시. 푸시 성공 여부를 반환."""
-    run(["git", "add", pathspec])
-    diff = run(["git", "diff", "--cached", "--quiet", "--", pathspec])
+    run(["git", "add", *pathspecs])
+    diff = run(["git", "diff", "--cached", "--quiet", "--", *pathspecs])
     if diff.returncode == 0:
         print("[git] 변경 없음 — 커밋 생략")
         return False
@@ -75,12 +77,17 @@ def main() -> int:
     as_of = (stocks[0].get("asOf") if stocks else None) \
         or now.date().isoformat()
 
+    # 앱 런타임이 읽는 public/data에도 동일본 반영 (배포 사이트 갱신의 핵심)
+    PUBLIC_STOCKS_JSON.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(STOCKS_JSON, PUBLIC_STOCKS_JSON)
+    print(f"[sync] {PUBLIC_STOCKS_JSON.relative_to(ROOT)} 동기화 완료")
+
     pushed = False
     if NO_GIT:
         print("[git] --no-git: 커밋/푸시 생략")
     else:
         pushed = git_commit_push(
-            "src/data/stocks.json",
+            ["src/data/stocks.json", "public/data/stocks.json"],
             f"data: auto refresh {now.strftime('%Y-%m-%d %H:%M KST')}")
 
     summary = (f"시세 갱신: {len(stocks)}개 종목"
