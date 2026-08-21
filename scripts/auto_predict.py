@@ -40,13 +40,10 @@ def run(cmd: list[str], **kwargs) -> subprocess.CompletedProcess:
 
 
 def git_commit_push(message: str) -> bool:
-    """pull --rebase → add → 변경 있으면 commit → push. 푸시 성공 여부 반환."""
-    pull = run(["git", "pull", "--rebase", "origin", "main"])
-    if pull.returncode != 0:
-        run(["git", "rebase", "--abort"])
-        print(f"[git] pull --rebase 실패 — rebase 중단, 커밋/푸시 생략: "
-              f"{pull.stderr.strip()}")
-        return False
+    """add → 변경 있으면 commit → pull --rebase --autostash → push.
+
+    predict.py 출력(추적 파일)이 미커밋 상태여도 autostash가 자동으로
+    stash→rebase→pop 하므로 pull이 막히지 않는다. 푸시 성공 여부 반환."""
     run(["git", "add", *PATHSPECS])
     diff = run(["git", "diff", "--cached", "--quiet", "--", *PATHSPECS])
     if diff.returncode == 0:
@@ -55,6 +52,12 @@ def git_commit_push(message: str) -> bool:
     commit = run(["git", "commit", "-m", message])
     if commit.returncode != 0:
         print(f"[git] 커밋 실패: {commit.stderr.strip()}")
+        return False
+    pull = run(["git", "pull", "--rebase", "--autostash", "origin", "main"])
+    if pull.returncode != 0:
+        run(["git", "rebase", "--abort"])
+        print(f"[git] pull --rebase 실패 — rebase 중단, 푸시 생략: "
+              f"{pull.stderr.strip()}")
         return False
     push = run(["git", "push", "origin", "main"])
     if push.returncode != 0:

@@ -45,7 +45,7 @@ def git_commit_push(pathspecs: list[str], message: str) -> bool:
         print(f"[git] 커밋 실패: {commit.stderr.strip()}")
         return False
     # GitHub Actions 등 다른 경로의 푸시와 충돌 방지: 푸시 전 리베이스
-    pull = run(["git", "pull", "--rebase", "origin", "main"])
+    pull = run(["git", "pull", "--rebase", "--autostash", "origin", "main"])
     if pull.returncode != 0:
         run(["git", "rebase", "--abort"])
         print(f"[git] pull --rebase 실패 — rebase 중단, 푸시 생략: {pull.stderr.strip()}")
