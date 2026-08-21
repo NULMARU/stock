@@ -94,23 +94,39 @@ export default function HomePage() {
   const [requestOpen, setRequestOpen] = useState(false)
 
   const refreshingAll =
-    stocksLive.refreshing || newsLive.refreshing || unicornsLive.refreshing
+    stocksLive.refreshing ||
+    newsLive.refreshing ||
+    unicornsLive.refreshing ||
+    predictionsLive.refreshing
 
-  // 전체 갱신 — stocks + news + unicorns 모두 캐시버스팅 재조회
+  // 전체 갱신 — stocks + news + unicorns + predictions + improvements 모두 캐시버스팅 재조회
   const handleRefreshAll = async () => {
     trackRefreshClick()
+    const prevAsOf = stocksLive.data[0]?.asOf
     const [freshStocks] = await Promise.all([
       stocksLive.refresh(),
       newsLive.refresh(),
       unicornsLive.refresh(),
+      predictionsLive.refresh(),
       improveLive.refresh(),
     ])
-    const asOfLabel = freshStocks?.[0]?.asOf ?? stocksLive.data[0]?.asOf
-    toast.success(
-      asOfLabel
-        ? `최신 게시 데이터로 갱신했어요 (기준일: ${asOfLabel})`
-        : '최신 게시 데이터로 갱신했어요',
-    )
+    if (!freshStocks) {
+      toast.error('네트워크 오류로 갱신하지 못했어요. 잠시 후 다시 시도해 주세요.')
+      return
+    }
+    const asOfLabel = freshStocks[0]?.asOf
+    if (asOfLabel && prevAsOf && asOfLabel === prevAsOf) {
+      // 서버 게시 데이터가 아직 그대로 — "갱신된 것처럼" 보이는 오해 방지
+      toast.info(
+        `이미 최신 게시 데이터예요 (기준일: ${asOfLabel}). 새 수집은 매일 아침 06:47(KST)에 자동 실행돼요.`,
+      )
+    } else {
+      toast.success(
+        asOfLabel
+          ? `최신 게시 데이터로 갱신했어요 (기준일: ${asOfLabel})`
+          : '최신 게시 데이터로 갱신했어요',
+      )
+    }
   }
 
   const {
