@@ -1,5 +1,5 @@
 {
- "asOf": "2026-08-22T07:28:55+09:00",
+ "asOf": "2026-08-22T07:31:07+09:00",
  "methodologyVersion": "predict-v1.1",
  "model": {
   "weights": {
@@ -13,7 +13,7 @@
  },
  "entries": {
   "NVDA": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "up",
    "probability": 0.58,
@@ -79,7 +79,7 @@
    }
   },
   "MSFT": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "up",
    "probability": 0.714,
@@ -145,7 +145,7 @@
    }
   },
   "GOOGL": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "down",
    "probability": 0.548,
@@ -211,7 +211,7 @@
    }
   },
   "TSLA": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "down",
    "probability": 0.591,
@@ -277,7 +277,7 @@
    }
   },
   "PLTR": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "up",
    "probability": 0.73,
@@ -343,7 +343,7 @@
    }
   },
   "RKLB": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "flat",
    "probability": 0.521,
@@ -409,7 +409,7 @@
    }
   },
   "ASTS": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "down",
    "probability": 0.56,
@@ -475,7 +475,7 @@
    }
   },
   "LUNR": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "down",
    "probability": 0.574,
@@ -541,7 +541,7 @@
    }
   },
   "005930.KS": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "down",
    "probability": 0.562,
@@ -607,7 +607,7 @@
    }
   },
   "000660.KS": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "down",
    "probability": 0.669,
@@ -673,7 +673,7 @@
    }
   },
   "035420.KS": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "up",
    "probability": 0.63,
@@ -739,7 +739,7 @@
    }
   },
   "012450.KS": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "up",
    "probability": 0.664,
@@ -805,7 +805,7 @@
    }
   },
   "047810.KS": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "up",
    "probability": 0.567,
@@ -871,7 +871,7 @@
    }
   },
   "079550.KS": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "up",
    "probability": 0.567,
@@ -937,7 +937,7 @@
    }
   },
   "272210.KS": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "up",
    "probability": 0.712,
@@ -1003,7 +1003,7 @@
    }
   },
   "099320.KQ": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "flat",
    "probability": 0.501,
@@ -1069,7 +1069,7 @@
    }
   },
   "9988.HK": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "up",
    "probability": 0.644,
@@ -1135,7 +1135,7 @@
    }
   },
   "0700.HK": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "flat",
    "probability": 0.5,
@@ -1201,7 +1201,7 @@
    }
   },
   "9888.HK": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "down",
    "probability": 0.565,
@@ -1267,7 +1267,7 @@
    }
   },
   "1810.HK": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "down",
    "probability": 0.567,
@@ -1333,7 +1333,7 @@
    }
   },
   "1211.HK": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "up",
    "probability": 0.567,
@@ -1399,7 +1399,7 @@
    }
   },
   "0981.HK": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "flat",
    "probability": 0.5,
@@ -1465,7 +1465,7 @@
    }
   },
   "002230.SZ": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "flat",
    "probability": 0.537,
@@ -1531,7 +1531,7 @@
    }
   },
   "688256.SS": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "down",
    "probability": 0.575,
@@ -1597,7 +1597,7 @@
    }
   },
   "688066.SS": {
-   "predictedAt": "2026-08-22T07:28:55+09:00",
+   "predictedAt": "2026-08-22T07:31:07+09:00",
    "forDate": "2026-08-24",
    "direction": "flat",
    "probability": 0.531,
