@@ -52,7 +52,8 @@ export default function TickerBar() {
 
   const newsLive = useLiveData<NewsData>('news.json', bundledNews)
 
-  // 전 종목 entries → publishedAt 최신순 → 제목 기준 중복 제거 → 상위 3개
+  // 전 종목 entries → publishedAt 최신순 → 제목 기준 중복 제거 →
+  // 한국어 2개 + 영문 1개 순으로 선택 (부족하면 최신순으로 채움)
   const hotNews = useMemo(() => {
     const all = Object.values(newsLive.data.entries ?? {}).flat()
     const sorted = [...all].sort((a, b) => {
@@ -64,13 +65,24 @@ export default function TickerBar() {
       return tb - ta
     })
     const seen = new Set<string>()
-    const picked: typeof sorted = []
+    const deduped: typeof sorted = []
     for (const item of sorted) {
       const key = item.title.trim()
       if (!key || seen.has(key)) continue
       seen.add(key)
-      picked.push(item)
-      if (picked.length >= 3) break
+      deduped.push(item)
+    }
+    const isKorean = (t: string) => /[\uAC00-\uD7A3]/.test(t)
+    const korean = deduped.filter((it) => isKorean(it.title))
+    const english = deduped.filter((it) => !isKorean(it.title))
+    // 1·2번 한국어, 3번 영문 — 부족한 쪽은 다른 쪽 최신으로 채워 항상 최대 3개
+    const picked = [...korean.slice(0, 2), ...english.slice(0, 1)]
+    if (picked.length < 3) {
+      const extraPool = korean.length < 2 ? english.slice(1) : korean.slice(2)
+      for (const item of extraPool) {
+        if (picked.length >= 3) break
+        picked.push(item)
+      }
     }
     return picked
   }, [newsLive.data])
@@ -139,6 +151,11 @@ export default function TickerBar() {
                     <span className="mt-px inline-flex shrink-0 items-center rounded bg-primary/10 px-1.5 py-0.5 text-[10px] font-semibold leading-4 text-primary">
                       {item.source}
                     </span>
+                    {!/[\uAC00-\uD7A3]/.test(item.title) && (
+                      <span className="mt-px inline-flex shrink-0 items-center rounded bg-muted px-1 py-0.5 text-[9px] font-semibold leading-4 text-muted-foreground">
+                        EN
+                      </span>
+                    )}
                     <span className="min-w-0 flex-1 text-[12.5px] font-medium leading-5 text-foreground/85 line-clamp-2 group-hover:text-primary group-hover:underline group-hover:underline-offset-2 sm:text-[13px]">
                       {item.title}
                     </span>
