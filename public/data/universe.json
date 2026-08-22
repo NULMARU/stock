@@ -1,0 +1,1136 @@
+{
+ "asOf": "2026-08-22",
+ "entries": [
+  {
+   "ticker": "AMD",
+   "name": "AMD",
+   "nameEn": "Advanced Micro Devices, Inc.",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "AI반도체"
+   ],
+   "quote": {
+    "price": 473.25,
+    "changePct": 0.81,
+    "marketCap": 772568776704
+   }
+  },
+  {
+   "ticker": "AVGO",
+   "name": "브로드컴",
+   "nameEn": "Broadcom Inc.",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "AI반도체"
+   ],
+   "quote": {
+    "price": 368.45,
+    "changePct": 1.21,
+    "marketCap": 1752930451456
+   }
+  },
+  {
+   "ticker": "MRVL",
+   "name": "마벨테크놀로지",
+   "nameEn": "Marvell Technology, Inc.",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "AI반도체"
+   ],
+   "quote": {
+    "price": 237.04,
+    "changePct": -5.57,
+    "marketCap": 212753924096
+   }
+  },
+  {
+   "ticker": "MU",
+   "name": "마이크론",
+   "nameEn": "Micron Technology, Inc.",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "AI반도체",
+    "메모리"
+   ],
+   "quote": {
+    "price": 966.78,
+    "changePct": -0.77,
+    "marketCap": 1091874717696
+   }
+  },
+  {
+   "ticker": "TSM",
+   "name": "TSMC",
+   "nameEn": "Taiwan Semiconductor Manufacturing Company Limited",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "AI반도체",
+    "파운드리"
+   ],
+   "quote": {
+    "price": 418.95,
+    "changePct": 0.71,
+    "marketCap": 2172873342976
+   }
+  },
+  {
+   "ticker": "ASML",
+   "name": "ASML",
+   "nameEn": "ASML Holding N.V.",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "AI반도체",
+    "장비"
+   ],
+   "quote": {
+    "price": 1763.76,
+    "changePct": 0.77,
+    "marketCap": 677460246528
+   }
+  },
+  {
+   "ticker": "ARM",
+   "name": "Arm홀딩스",
+   "nameEn": "Arm Holdings plc",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "AI반도체"
+   ],
+   "quote": {
+    "price": 243.32,
+    "changePct": -2.95,
+    "marketCap": 259865427968
+   }
+  },
+  {
+   "ticker": "QCOM",
+   "name": "퀄컴",
+   "nameEn": "QUALCOMM Incorporated",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "AI반도체",
+    "통신칩"
+   ],
+   "quote": {
+    "price": 160.75,
+    "changePct": 0.01,
+    "marketCap": 168825110528
+   }
+  },
+  {
+   "ticker": "INTC",
+   "name": "인텔",
+   "nameEn": "Intel Corporation",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "AI반도체",
+    "파운드리"
+   ],
+   "quote": {
+    "price": 90.07,
+    "changePct": -2.24,
+    "marketCap": 476119498752
+   }
+  },
+  {
+   "ticker": "AMZN",
+   "name": "아마존",
+   "nameEn": "Amazon.com, Inc.",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "AI플랫폼",
+    "클라우드"
+   ],
+   "quote": {
+    "price": 258.63,
+    "changePct": -0.57,
+    "marketCap": 2789664358400
+   }
+  },
+  {
+   "ticker": "META",
+   "name": "메타",
+   "nameEn": "Meta Platforms, Inc.",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "AI플랫폼"
+   ],
+   "quote": {
+    "price": 549.9,
+    "changePct": 0.75,
+    "marketCap": 1400873680896
+   }
+  },
+  {
+   "ticker": "ORCL",
+   "name": "오라클",
+   "nameEn": "Oracle Corporation",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "AI플랫폼",
+    "클라우드"
+   ],
+   "quote": {
+    "price": 146.47,
+    "changePct": 3.1,
+    "marketCap": 421902581760
+   }
+  },
+  {
+   "ticker": "CRM",
+   "name": "세일즈포스",
+   "nameEn": "Salesforce, Inc.",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "AI소프트웨어"
+   ],
+   "quote": {
+    "price": 209.17,
+    "changePct": 1.82,
+    "marketCap": 171310235648
+   }
+  },
+  {
+   "ticker": "SNOW",
+   "name": "스노우플레이크",
+   "nameEn": "Snowflake Inc.",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "AI소프트웨어",
+    "데이터"
+   ],
+   "quote": {
+    "price": 332.78,
+    "changePct": 3.58,
+    "marketCap": 115341549568
+   }
+  },
+  {
+   "ticker": "LMT",
+   "name": "록히드마틴",
+   "nameEn": "Lockheed Martin Corporation",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "방위",
+    "우주"
+   ],
+   "quote": {
+    "price": 563.57,
+    "changePct": -1.38,
+    "marketCap": 130066743296
+   }
+  },
+  {
+   "ticker": "RTX",
+   "name": "RTX",
+   "nameEn": "RTX Corporation",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "방위"
+   ],
+   "quote": {
+    "price": 209.91,
+    "changePct": -1.12,
+    "marketCap": 282907901952
+   }
+  },
+  {
+   "ticker": "NOC",
+   "name": "노스롭그루먼",
+   "nameEn": "Northrop Grumman Corporation",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "방위",
+    "우주"
+   ],
+   "quote": {
+    "price": 551.03,
+    "changePct": -2.28,
+    "marketCap": 78280990720
+   }
+  },
+  {
+   "ticker": "GD",
+   "name": "제너럴다이내믹스",
+   "nameEn": "General Dynamics Corporation",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "방위"
+   ],
+   "quote": {
+    "price": 384.29,
+    "changePct": -0.46,
+    "marketCap": 103972421632
+   }
+  },
+  {
+   "ticker": "HII",
+   "name": "헌팅턴잉걸스",
+   "nameEn": "Huntington Ingalls Industries, Inc.",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "방위",
+    "함정"
+   ],
+   "quote": {
+    "price": 298.2,
+    "changePct": -1.06,
+    "marketCap": 11750452224
+   }
+  },
+  {
+   "ticker": "KTOS",
+   "name": "크라토스",
+   "nameEn": "Kratos Defense & Security Solutions, Inc.",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "방위",
+    "드론"
+   ],
+   "quote": {
+    "price": 57.17,
+    "changePct": 1.76,
+    "marketCap": 10732027904
+   }
+  },
+  {
+   "ticker": "AVAV",
+   "name": "에어로바이런먼트",
+   "nameEn": "AeroVironment, Inc.",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "방위",
+    "드론"
+   ],
+   "quote": {
+    "price": 160.22,
+    "changePct": 0.27,
+    "marketCap": 8142799360
+   }
+  },
+  {
+   "ticker": "BA",
+   "name": "보잉",
+   "nameEn": "The Boeing Company",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "방위",
+    "우주"
+   ],
+   "quote": {
+    "price": 214.2,
+    "changePct": -0.42,
+    "marketCap": 169297264640
+   }
+  },
+  {
+   "ticker": "IRDM",
+   "name": "이리듐",
+   "nameEn": "Iridium Communications Inc.",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "우주-위성통신"
+   ],
+   "quote": {
+    "price": 48.98,
+    "changePct": 1.09,
+    "marketCap": 5189939712
+   }
+  },
+  {
+   "ticker": "VSAT",
+   "name": "비아샛",
+   "nameEn": "Viasat, Inc.",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "우주-위성통신"
+   ],
+   "quote": {
+    "price": 74.72,
+    "changePct": 0.93,
+    "marketCap": 10293113856
+   }
+  },
+  {
+   "ticker": "GSAT",
+   "name": "글로벌스타",
+   "nameEn": "Globalstar, Inc.",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "우주-위성통신"
+   ],
+   "quote": {
+    "price": 82.36,
+    "changePct": 0.44,
+    "marketCap": 10670840832
+   }
+  },
+  {
+   "ticker": "SPCE",
+   "name": "버진갤럭틱",
+   "nameEn": "Virgin Galactic Holdings, Inc.",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "우주-관광"
+   ],
+   "quote": {
+    "price": 3.08,
+    "changePct": 0.0,
+    "marketCap": 466915360
+   }
+  },
+  {
+   "ticker": "PL",
+   "name": "플래닛랩스",
+   "nameEn": "Planet Labs PBC",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "우주-위성응용"
+   ],
+   "quote": {
+    "price": 22.29,
+    "changePct": 0.54,
+    "marketCap": 7944212480
+   }
+  },
+  {
+   "ticker": "BKSY",
+   "name": "블랙스카이",
+   "nameEn": "BlackSky Technology Inc.",
+   "market": "US",
+   "currency": "USD",
+   "theme": [
+    "우주-위성응용"
+   ],
+   "quote": {
+    "price": 27.75,
+    "changePct": 3.82,
+    "marketCap": 1135664512
+   }
+  },
+  {
+   "ticker": "042700.KQ",
+   "name": "한미반도체",
+   "nameEn": "042700.KQ,0P0000APDA,644491",
+   "market": "KR",
+   "currency": "KRW",
+   "theme": [
+    "AI반도체",
+    "장비"
+   ],
+   "quote": {
+    "price": 151000.0,
+    "changePct": -1.63,
+    "marketCap": null
+   }
+  },
+  {
+   "ticker": "039030.KQ",
+   "name": "이오테크닉스",
+   "nameEn": "EO Technics Co., Ltd.",
+   "market": "KR",
+   "currency": "KRW",
+   "theme": [
+    "반도체장비"
+   ],
+   "quote": {
+    "price": 404500.0,
+    "changePct": -2.53,
+    "marketCap": 4983257825280
+   }
+  },
+  {
+   "ticker": "000990.KS",
+   "name": "DB하이텍",
+   "nameEn": "DB HiTek CO., LTD.",
+   "market": "KR",
+   "currency": "KRW",
+   "theme": [
+    "반도체",
+    "파운드리"
+   ],
+   "quote": {
+    "price": 89700.0,
+    "changePct": -7.43,
+    "marketCap": 3776059015168
+   }
+  },
+  {
+   "ticker": "036930.KQ",
+   "name": "주성엔지니어링",
+   "nameEn": "JUSUNG ENGINEERING Co.,Ltd.",
+   "market": "KR",
+   "currency": "KRW",
+   "theme": [
+    "반도체장비"
+   ],
+   "quote": {
+    "price": 168600.0,
+    "changePct": -4.91,
+    "marketCap": 7703994826752
+   }
+  },
+  {
+   "ticker": "058470.KQ",
+   "name": "리노공업",
+   "nameEn": "LEENO Industrial Inc.",
+   "market": "KR",
+   "currency": "KRW",
+   "theme": [
+    "반도체",
+    "테스트"
+   ],
+   "quote": {
+    "price": 65700.0,
+    "changePct": -5.47,
+    "marketCap": 4986341163008
+   }
+  },
+  {
+   "ticker": "095340.KQ",
+   "name": "ISC",
+   "nameEn": "ISC Co., Ltd.",
+   "market": "KR",
+   "currency": "KRW",
+   "theme": [
+    "반도체",
+    "테스트"
+   ],
+   "quote": {
+    "price": 154300.0,
+    "changePct": -8.54,
+    "marketCap": 3166050713600
+   }
+  },
+  {
+   "ticker": "084370.KQ",
+   "name": "유진테크",
+   "nameEn": "Eugene Technology Co.,Ltd.",
+   "market": "KR",
+   "currency": "KRW",
+   "theme": [
+    "반도체장비"
+   ],
+   "quote": {
+    "price": 128500.0,
+    "changePct": -4.53,
+    "marketCap": 2907267137536
+   }
+  },
+  {
+   "ticker": "403870.KQ",
+   "name": "HPSP",
+   "nameEn": "HPSP Co., Ltd.",
+   "market": "KR",
+   "currency": "KRW",
+   "theme": [
+    "반도체장비"
+   ],
+   "quote": {
+    "price": 44900.0,
+    "changePct": -6.46,
+    "marketCap": 3648900825088
+   }
+  },
+  {
+   "ticker": "240810.KQ",
+   "name": "원익IPS",
+   "nameEn": "Wonik IPS Co., Ltd.",
+   "market": "KR",
+   "currency": "KRW",
+   "theme": [
+    "반도체장비"
+   ],
+   "quote": {
+    "price": 107900.0,
+    "changePct": -5.27,
+    "marketCap": 5249948975104
+   }
+  },
+  {
+   "ticker": "166090.KQ",
+   "name": "하나머티리얼즈",
+   "nameEn": "Hana Materials Inc.",
+   "market": "KR",
+   "currency": "KRW",
+   "theme": [
+    "반도체소재"
+   ],
+   "quote": {
+    "price": 53400.0,
+    "changePct": -4.3,
+    "marketCap": 1030056706048
+   }
+  },
+  {
+   "ticker": "067310.KQ",
+   "name": "하나마이크론",
+   "nameEn": "HANA Micron Inc.",
+   "market": "KR",
+   "currency": "KRW",
+   "theme": [
+    "반도체",
+    "후공정"
+   ],
+   "quote": {
+    "price": 35000.0,
+    "changePct": -5.15,
+    "marketCap": 2326247768064
+   }
+  },
+  {
+   "ticker": "083450.KQ",
+   "name": "GST",
+   "nameEn": "Global Standard Technology, Limited",
+   "market": "KR",
+   "currency": "KRW",
+   "theme": [
+    "반도체장비"
+   ],
+   "quote": {
+    "price": 43000.0,
+    "changePct": -6.22,
+    "marketCap": 769138229248
+   }
+  },
+  {
+   "ticker": "064350.KS",
+   "name": "현대로템",
+   "nameEn": "Hyundai Rotem Company",
+   "market": "KR",
+   "currency": "KRW",
+   "theme": [
+    "방위"
+   ],
+   "quote": {
+    "price": 130100.0,
+    "changePct": -5.17,
+    "marketCap": 14199412490240
+   }
+  },
+  {
+   "ticker": "000880.KS",
+   "name": "한화",
+   "nameEn": "Hanwha Corporation",
+   "market": "KR",
+   "currency": "KRW",
+   "theme": [
+    "방위",
+    "지주"
+   ],
+   "quote": {
+    "price": 83800.0,
+    "changePct": 0.0,
+    "marketCap": 7443327746048
+   }
+  },
+  {
+   "ticker": "103140.KQ",
+   "name": "풍산",
+   "nameEn": "103140.KQ,0P0000N5XK,353740",
+   "market": "KR",
+   "currency": "KRW",
+   "theme": [
+    "방위",
+    "탄약"
+   ],
+   "quote": {
+    "price": 61700.0,
+    "changePct": -0.8,
+    "marketCap": null
+   }
+  },
+  {
+   "ticker": "003570.KS",
+   "name": "SNT중공업",
+   "nameEn": "Snt Dynamics Co.,Ltd.",
+   "market": "KR",
+   "currency": "KRW",
+   "theme": [
+    "방위"
+   ],
+   "quote": {
+    "price": 29400.0,
+    "changePct": -5.92,
+    "marketCap": 732592668672
+   }
+  },
+  {
+   "ticker": "042660.KS",
+   "name": "한화오션",
+   "nameEn": "Hanwha Ocean Co., Ltd.",
+   "market": "KR",
+   "currency": "KRW",
+   "theme": [
+    "방위",
+    "함정"
+   ],
+   "quote": {
+    "price": 84200.0,
+    "changePct": -4.86,
+    "marketCap": 25795326115840
+   }
+  },
+  {
+   "ticker": "189300.KQ",
+   "name": "인텔리안테크",
+   "nameEn": "Intellian Technologies, Inc.",
+   "market": "KR",
+   "currency": "KRW",
+   "theme": [
+    "우주-위성통신"
+   ],
+   "quote": {
+    "price": 62900.0,
+    "changePct": -8.04,
+    "marketCap": 642916876288
+   }
+  },
+  {
+   "ticker": "211270.KQ",
+   "name": "AP위성",
+   "nameEn": "Asia Pacific Satellite Inc.",
+   "market": "KR",
+   "currency": "KRW",
+   "theme": [
+    "우주-위성통신"
+   ],
+   "quote": {
+    "price": 7610.0,
+    "changePct": -6.97,
+    "marketCap": 108314353664
+   }
+  },
+  {
+   "ticker": "462350.KQ",
+   "name": "이노스페이스",
+   "nameEn": "INNOSPACE",
+   "market": "KR",
+   "currency": "KRW",
+   "theme": [
+    "우주-발사체"
+   ],
+   "quote": {
+    "price": 5920.0,
+    "changePct": -5.73,
+    "marketCap": 199069892608
+   }
+  },
+  {
+   "ticker": "274090.KQ",
+   "name": "켄코아에어로스페이스",
+   "nameEn": "Kencoa Aerospace Corporation",
+   "market": "KR",
+   "currency": "KRW",
+   "theme": [
+    "우주",
+    "항공부품"
+   ],
+   "quote": {
+    "price": 9890.0,
+    "changePct": -9.27,
+    "marketCap": 135722475520
+   }
+  },
+  {
+   "ticker": "035720.KS",
+   "name": "카카오",
+   "nameEn": "Kakao Corp.",
+   "market": "KR",
+   "currency": "KRW",
+   "theme": [
+    "AI플랫폼"
+   ],
+   "quote": {
+    "price": 35800.0,
+    "changePct": -7.49,
+    "marketCap": 15776482328576
+   }
+  },
+  {
+   "ticker": "304100.KQ",
+   "name": "솔트룩스",
+   "nameEn": "Saltlux Inc.",
+   "market": "KR",
+   "currency": "KRW",
+   "theme": [
+    "AI소프트웨어"
+   ],
+   "quote": {
+    "price": 15370.0,
+    "changePct": -0.97,
+    "marketCap": 193567555584
+   }
+  },
+  {
+   "ticker": "601138.SS",
+   "name": "폭스콘산업인터넷(FII)",
+   "nameEn": "Foxconn Industrial Internet Co., Ltd.",
+   "market": "CN",
+   "currency": "CNY",
+   "theme": [
+    "AI서버"
+   ],
+   "quote": {
+    "price": 62.84,
+    "changePct": 1.14,
+    "marketCap": 1247002755072
+   }
+  },
+  {
+   "ticker": "300308.SZ",
+   "name": "중지쉬촹",
+   "nameEn": "Zhongji Innolight Co., Ltd.",
+   "market": "CN",
+   "currency": "CNY",
+   "theme": [
+    "AI광모듈"
+   ],
+   "quote": {
+    "price": 943.0,
+    "changePct": 4.29,
+    "marketCap": 1103059746816
+   }
+  },
+  {
+   "ticker": "300502.SZ",
+   "name": "신이성(이옵토링크)",
+   "nameEn": "Eoptolink Technology Inc., Ltd.",
+   "market": "CN",
+   "currency": "CNY",
+   "theme": [
+    "AI광모듈"
+   ],
+   "quote": {
+    "price": 442.0,
+    "changePct": 6.76,
+    "marketCap": 616261419008
+   }
+  },
+  {
+   "ticker": "688008.SS",
+   "name": "몬타주테크놀로지",
+   "nameEn": "Montage Technology Co., Ltd.",
+   "market": "CN",
+   "currency": "CNY",
+   "theme": [
+    "AI반도체"
+   ],
+   "quote": {
+    "price": 200.55,
+    "changePct": 0.72,
+    "marketCap": 244778893312
+   }
+  },
+  {
+   "ticker": "603501.SS",
+   "name": "윌반도체(옴니비전)",
+   "nameEn": "OmniVision Integrated Circuits Group, Inc.",
+   "market": "CN",
+   "currency": "CNY",
+   "theme": [
+    "반도체"
+   ],
+   "quote": {
+    "price": 85.82,
+    "changePct": -0.2,
+    "marketCap": 107936194560
+   }
+  },
+  {
+   "ticker": "688012.SS",
+   "name": "중미반도체(AMEC)",
+   "nameEn": "Advanced Micro-Fabrication Equipment Inc. China",
+   "market": "CN",
+   "currency": "CNY",
+   "theme": [
+    "반도체장비"
+   ],
+   "quote": {
+    "price": 362.5,
+    "changePct": -0.82,
+    "marketCap": 347217854464
+   }
+  },
+  {
+   "ticker": "688041.SS",
+   "name": "하이곤정보기술",
+   "nameEn": "Hygon Information Technology Co., Ltd.",
+   "market": "CN",
+   "currency": "CNY",
+   "theme": [
+    "AI반도체"
+   ],
+   "quote": {
+    "price": 246.21,
+    "changePct": -0.05,
+    "marketCap": 572275294208
+   }
+  },
+  {
+   "ticker": "002415.SZ",
+   "name": "하이크비전",
+   "nameEn": "Hangzhou Hikvision Digital Technology Co., Ltd.",
+   "market": "CN",
+   "currency": "CNY",
+   "theme": [
+    "AI응용",
+    "보안"
+   ],
+   "quote": {
+    "price": 34.4,
+    "changePct": 0.97,
+    "marketCap": 315271610368
+   }
+  },
+  {
+   "ticker": "9618.HK",
+   "name": "징둥",
+   "nameEn": "JD.com, Inc.",
+   "market": "CN",
+   "currency": "HKD",
+   "theme": [
+    "AI응용",
+    "전자상거래"
+   ],
+   "quote": {
+    "price": 115.2,
+    "changePct": 0.61,
+    "marketCap": 314685063168
+   }
+  },
+  {
+   "ticker": "9999.HK",
+   "name": "넷이즈",
+   "nameEn": "NetEase, Inc.",
+   "market": "CN",
+   "currency": "HKD",
+   "theme": [
+    "AI응용",
+    "게임"
+   ],
+   "quote": {
+    "price": 202.0,
+    "changePct": 4.45,
+    "marketCap": 646652690432
+   }
+  },
+  {
+   "ticker": "3690.HK",
+   "name": "메이투안",
+   "nameEn": "Meituan",
+   "market": "CN",
+   "currency": "HKD",
+   "theme": [
+    "AI응용",
+    "플랫폼"
+   ],
+   "quote": {
+    "price": 85.0,
+    "changePct": -0.99,
+    "marketCap": 524606472192
+   }
+  },
+  {
+   "ticker": "1024.HK",
+   "name": "콰이쇼우",
+   "nameEn": "Kuaishou Technology",
+   "market": "CN",
+   "currency": "HKD",
+   "theme": [
+    "AI응용",
+    "영상"
+   ],
+   "quote": {
+    "price": 34.42,
+    "changePct": 2.32,
+    "marketCap": 148924317696
+   }
+  },
+  {
+   "ticker": "PDD",
+   "name": "PDD홀딩스",
+   "nameEn": "PDD Holdings Inc.",
+   "market": "CN",
+   "currency": "USD",
+   "theme": [
+    "AI응용",
+    "전자상거래"
+   ],
+   "quote": {
+    "price": 88.38,
+    "changePct": -1.27,
+    "marketCap": 125799776256
+   }
+  },
+  {
+   "ticker": "600760.SS",
+   "name": "중항심비(심양비기)",
+   "nameEn": "AVIC Shenyang Aircraft Company Limited",
+   "market": "CN",
+   "currency": "CNY",
+   "theme": [
+    "방위",
+    "전투기"
+   ],
+   "quote": {
+    "price": 44.05,
+    "changePct": 1.26,
+    "marketCap": 124878635008
+   }
+  },
+  {
+   "ticker": "000768.SZ",
+   "name": "중항서비(서안비기)",
+   "nameEn": "AVIC Xi'an Aircraft Industry Group Company Ltd.",
+   "market": "CN",
+   "currency": "CNY",
+   "theme": [
+    "방위",
+    "수송기"
+   ],
+   "quote": {
+    "price": 20.96,
+    "changePct": 0.1,
+    "marketCap": 58281582592
+   }
+  },
+  {
+   "ticker": "600150.SS",
+   "name": "중국선박(CSSC)",
+   "nameEn": "China CSSC Holdings Limited",
+   "market": "CN",
+   "currency": "CNY",
+   "theme": [
+    "방위",
+    "조선"
+   ],
+   "quote": {
+    "price": 33.68,
+    "changePct": 2.09,
+    "marketCap": 253462921216
+   }
+  },
+  {
+   "ticker": "600893.SS",
+   "name": "항발동력(AECC)",
+   "nameEn": "AECC Aviation Power Co.,Ltd",
+   "market": "CN",
+   "currency": "CNY",
+   "theme": [
+    "방위",
+    "엔진"
+   ],
+   "quote": {
+    "price": 36.32,
+    "changePct": 1.51,
+    "marketCap": 96814374912
+   }
+  },
+  {
+   "ticker": "002179.SZ",
+   "name": "중항광전",
+   "nameEn": "Jonhon Optronic Technology Co., Ltd.",
+   "market": "CN",
+   "currency": "CNY",
+   "theme": [
+    "방위",
+    "커넥터"
+   ],
+   "quote": {
+    "price": 34.42,
+    "changePct": 0.67,
+    "marketCap": 72290476032
+   }
+  },
+  {
+   "ticker": "600038.SS",
+   "name": "중직고펀(중국헬기)",
+   "nameEn": "Avicopter Plc",
+   "market": "CN",
+   "currency": "CNY",
+   "theme": [
+    "방위",
+    "헬기"
+   ],
+   "quote": {
+    "price": 26.53,
+    "changePct": 0.08,
+    "marketCap": 21751767040
+   }
+  },
+  {
+   "ticker": "688297.SS",
+   "name": "중무인기(AVIC드론)",
+   "nameEn": "AVIC (Chengdu)UAS Co., Ltd.",
+   "market": "CN",
+   "currency": "CNY",
+   "theme": [
+    "방위",
+    "드론"
+   ],
+   "quote": {
+    "price": 38.8,
+    "changePct": -0.23,
+    "marketCap": 26190000128
+   }
+  },
+  {
+   "ticker": "601698.SS",
+   "name": "중국위퉁(중국위성통신)",
+   "nameEn": "China Satellite Communications Co., Ltd.",
+   "market": "CN",
+   "currency": "CNY",
+   "theme": [
+    "우주-위성통신"
+   ],
+   "quote": {
+    "price": 24.43,
+    "changePct": 0.29,
+    "marketCap": 103201742848
+   }
+  },
+  {
+   "ticker": "600118.SS",
+   "name": "중국위성",
+   "nameEn": "China Spacesat Co.,Ltd.",
+   "market": "CN",
+   "currency": "CNY",
+   "theme": [
+    "우주-위성제조"
+   ],
+   "quote": {
+    "price": 62.1,
+    "changePct": 1.07,
+    "marketCap": 73432571904
+   }
+  }
+ ]
+}

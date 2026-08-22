@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import type { FormEvent } from 'react'
-import { ExternalLink, Pencil, Plus, RefreshCw, RotateCcw, Satellite } from 'lucide-react'
+import { ChevronDown, ChevronRight, ExternalLink, Pencil, Plus, RefreshCw, RotateCcw, Satellite, X } from 'lucide-react'
 import { toast } from 'sonner'
 import type { Market, NewsData, StockEntry, UnicornData, UserAddedStock } from '@/types/stock'
 import stocksData from '@/data/stocks.json'
@@ -33,6 +33,7 @@ import {
 import { useLiveData } from '@/lib/liveData'
 import { useUserStore } from '@/lib/userStore'
 import { getUsageInsight, trackRefreshClick } from '@/lib/analytics'
+import { searchMatches } from '@/lib/hangulSearch'
 import { cn } from '@/lib/utils'
 
 const bundledStocks = stocksData as StockEntry[]
@@ -81,6 +82,8 @@ export default function HomePage() {
   const [theme, setTheme] = useState<string | null>(null)
   const [query, setQuery] = useState('')
   const [editMode, setEditMode] = useState(false)
+  // '나의 학습 현황' 스트립 접힘/펼침 — 기본값은 접힘 (페이지 재방문 시 다시 접힘)
+  const [insightOpen, setInsightOpen] = useState(false)
 
   // 런타임 라이브 데이터 (실패 시 번들 fallback 유지)
   const stocksLive = useLiveData<StockEntry[]>('stocks.json', bundledStocks)
@@ -170,11 +173,11 @@ export default function HomePage() {
 
   // 숨긴 기본 종목을 제외하고, 추가 종목과 병합해 필터링
   const filtered = useMemo<ListItem[]>(() => {
-    const q = query.trim().toLowerCase()
+    // 검색 매칭은 초성검색 유틸로 위임 (초성/완성형/영문/티커 모두 지원)
     const matchCommon = (market_: string, themeList: string[], haystack: string) => {
       if (market !== 'ALL' && market_ !== market) return false
       if (theme && !themeList.includes(theme)) return false
-      if (q && !haystack.toLowerCase().includes(q)) return false
+      if (!searchMatches(haystack, query)) return false
       return true
     }
 
@@ -298,23 +301,47 @@ export default function HomePage() {
         }
         if (chips.length === 0) return null
         return (
-          <div className="mb-5 flex flex-wrap items-center gap-2 rounded-xl border border-border bg-muted/40 px-3 py-2">
-            <span className="text-xs font-semibold text-muted-foreground">📊 나의 학습 현황</span>
-            {chips.map((c) => (
-              <span
-                key={c}
-                className="rounded-full bg-background px-2.5 py-0.5 text-xs text-foreground/80"
-              >
-                {c}
-              </span>
-            ))}
+          <div className="mb-5 rounded-xl border border-border bg-muted/40 px-3 py-2">
+            {/* 기본은 접힌 상태 — 라벨 + 펼치기 아이콘만 한 줄로 표시 */}
+            <button
+              type="button"
+              onClick={() => setInsightOpen((v) => !v)}
+              aria-expanded={insightOpen}
+              className="flex w-full items-center gap-1.5 text-left text-xs font-semibold text-muted-foreground"
+            >
+              {insightOpen ? (
+                <ChevronDown className="h-3.5 w-3.5 shrink-0" aria-hidden />
+              ) : (
+                <ChevronRight className="h-3.5 w-3.5 shrink-0" aria-hidden />
+              )}
+              📊 나의 학습 현황
+            </button>
+            {insightOpen && (
+              <div className="mt-2 flex flex-wrap items-center gap-2">
+                {chips.map((c) => (
+                  <span
+                    key={c}
+                    className="rounded-full bg-background px-2.5 py-0.5 text-xs text-foreground/80"
+                  >
+                    {c}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
         )
       })()}
 
       {/* 시장 탭 + 검색 + 편집 토글 */}
       <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <Tabs value={market} onValueChange={(v) => setMarket(v as MarketFilter)}>
+        {/* 탭 전환 시 검색어는 함께 리셋 — 다른 시장에서 이전 검색어가 남아 결과가 비는 것을 방지 */}
+        <Tabs
+          value={market}
+          onValueChange={(v) => {
+            setMarket(v as MarketFilter)
+            setQuery('')
+          }}
+        >
           <TabsList className="bg-muted">
             {MARKET_TABS.map(({ value, label }) => (
               <TabsTrigger
@@ -328,13 +355,26 @@ export default function HomePage() {
           </TabsList>
         </Tabs>
         <div className="flex items-center gap-2">
-          <Input
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="종목명·영문명·티커 검색 (예: 엔비디아, NVIDIA, 005930)"
-            className="w-full bg-card sm:max-w-xs"
-            aria-label="종목 검색"
-          />
+          {/* 검색창 + 초기화(X) 버튼 — 검색어가 있을 때만 표시 */}
+          <div className="relative w-full sm:max-w-xs">
+            <Input
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="종목명·영문명·티커·초성 검색 (예: 엔비디아, NVIDIA, 005930, ㅅㅅㅈㅈ)"
+              className="w-full bg-card pr-8"
+              aria-label="종목 검색"
+            />
+            {query && (
+              <button
+                type="button"
+                onClick={() => setQuery('')}
+                aria-label="검색어 지우기"
+                className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full p-0.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+              >
+                <X className="h-3.5 w-3.5" aria-hidden />
+              </button>
+            )}
+          </div>
           {editMode && (
             <Button
               type="button"
