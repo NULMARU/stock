@@ -20,6 +20,9 @@ import { ChecklistPanel } from "@/components/ChecklistPanel"
 import { GlossaryTermModal } from "@/components/GlossaryTermModal"
 import { MetricCard } from "@/components/MetricCard"
 import { PredictionPanel } from "@/components/PredictionPanel"
+import { WhatIfCalculator } from "@/components/WhatIfCalculator"
+import { CompareTable } from "@/components/CompareTable"
+import { MyJudgmentPanel } from "@/components/MyJudgmentPanel"
 import stocksData from "@/data/stocks.json"
 import rawNewsData from "@/data/news.json"
 import predictionsData from "@/data/predictions.json"
@@ -539,6 +542,12 @@ export default function StockDetailPage() {
       {/* ── 단기 방향 예측 (오늘 데이터가 있는 종목만 표시) ── */}
       <PredictionPanel ticker={stock.ticker} currency={stock.currency} />
 
+      {/* ── 나의 판단 일기 (내 예측 vs 실제 채점) ─────────── */}
+      <MyJudgmentPanel ticker={stock.ticker} />
+
+      {/* ── 같은 테마 종목 비교 ──────────────────────────── */}
+      <CompareTable currentTicker={stock.ticker} />
+
       {/* ── 5축 체크리스트 ────────────────────────────────── */}
       <section>
         <ChecklistPanel scores={stock.scores} />
@@ -593,6 +602,9 @@ export default function StockDetailPage() {
           </Suspense>
         </CardContent>
       </Card>
+
+      {/* ── "1년 전에 샀다면?" 체험 계산기 ────────────────── */}
+      <WhatIfCalculator stock={stock} />
 
       {/* ── 기업 소개 ─────────────────────────────────────── */}
       <Card>

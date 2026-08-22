@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import type { FormEvent } from 'react'
 import { ChevronDown, ChevronRight, ExternalLink, Pencil, Plus, RefreshCw, RotateCcw, Satellite, X } from 'lucide-react'
 import { toast } from 'sonner'
@@ -10,6 +10,7 @@ import predictionsJsonData from '@/data/predictions.json'
 import { StockCard } from '@/components/StockCard'
 import { AddedStockCard } from '@/components/AddedStockCard'
 import { UnicornPanel } from '@/components/UnicornPanel'
+import { UniverseSearchPanel } from '@/components/UniverseSearchPanel'
 import { ThemeFilter } from '@/components/ThemeFilter'
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
@@ -33,6 +34,8 @@ import {
 import { useLiveData } from '@/lib/liveData'
 import { useUserStore } from '@/lib/userStore'
 import { getUsageInsight, trackRefreshClick } from '@/lib/analytics'
+import { getMissionState } from '@/lib/mission'
+import type { MissionKey, MissionState } from '@/lib/mission'
 import { searchMatches } from '@/lib/hangulSearch'
 import { cn } from '@/lib/utils'
 
@@ -60,7 +63,7 @@ interface PredictionsSlice {
 }
 const bundledPredictions = predictionsJsonData as unknown as PredictionsSlice
 
-type MarketFilter = 'ALL' | 'US' | 'KR' | 'CN' | 'UNICORN'
+type MarketFilter = 'ALL' | 'US' | 'KR' | 'CN' | 'UNICORN' | 'SEARCH'
 
 const MARKET_TABS: { value: MarketFilter; label: string }[] = [
   { value: 'ALL', label: '전체' },
@@ -68,6 +71,7 @@ const MARKET_TABS: { value: MarketFilter; label: string }[] = [
   { value: 'KR', label: '한국' },
   { value: 'CN', label: '중국' },
   { value: 'UNICORN', label: '멋주' },
+  { value: 'SEARCH', label: '검색' },
 ]
 
 const DATA_REQUEST_URL =
@@ -84,6 +88,16 @@ export default function HomePage() {
   const [editMode, setEditMode] = useState(false)
   // '나의 학습 현황' 스트립 접힘/펼침 — 기본값은 접힘 (페이지 재방문 시 다시 접힘)
   const [insightOpen, setInsightOpen] = useState(false)
+
+  // 오늘의 학습 미션 + 연속 학습일 상태 (로컬 전용)
+  // 탭을 오가며 다른 페이지에서 미션이 완료될 수 있으므로, 홈으로 돌아올 때마다 갱신
+  const [mission, setMission] = useState<MissionState>(() => getMissionState())
+  useEffect(() => {
+    const refresh = () => setMission(getMissionState())
+    refresh()
+    window.addEventListener('focus', refresh)
+    return () => window.removeEventListener('focus', refresh)
+  }, [])
 
   // 런타임 라이브 데이터 (실패 시 번들 fallback 유지)
   const stocksLive = useLiveData<StockEntry[]>('stocks.json', bundledStocks)
@@ -272,7 +286,7 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* 나의 사용 인사이트 + 모델 자기개선 현황 (로컬 사용 통계 + 주간 리포트) */}
+      {/* 나의 사용 인사이트 + 오늘의 미션 + 모델 자기개선 현황 */}
       {(() => {
         const insight = getUsageInsight()
         const report = improveLive.data
@@ -299,10 +313,16 @@ export default function HomePage() {
         if (report && report.weightChanges.length > 0) {
           chips.push(`모델 자동조정 ${report.weightChanges.length}건`)
         }
-        if (chips.length === 0) return null
+        // 오늘의 미션 3종 — 완료 여부는 mission 상태에서 읽음
+        const MISSION_ITEMS: { key: MissionKey; label: string }[] = [
+          { key: 'term', label: '용어 1개 읽기' },
+          { key: 'quiz', label: '퀴즈 1회 완료' },
+          { key: 'news', label: '뉴스 1건 읽기' },
+        ]
+        const doneCount = MISSION_ITEMS.filter((m) => mission.done[m.key]).length
         return (
           <div className="mb-5 rounded-xl border border-border bg-muted/40 px-3 py-2">
-            {/* 기본은 접힌 상태 — 라벨 + 펼치기 아이콘만 한 줄로 표시 */}
+            {/* 기본은 접힌 상태 — 라벨 + 스트릭 배지 + 미션 진행도 + 펼치기 아이콘만 한 줄로 표시 */}
             <button
               type="button"
               onClick={() => setInsightOpen((v) => !v)}
@@ -315,17 +335,60 @@ export default function HomePage() {
                 <ChevronRight className="h-3.5 w-3.5 shrink-0" aria-hidden />
               )}
               📊 나의 학습 현황
+              {mission.streak >= 1 && (
+                <span className="ml-1 rounded-full bg-[#C2571B]/10 px-2 py-0.5 text-[11px] font-bold text-[#C2571B]">
+                  🔥 {mission.streak}일째
+                </span>
+              )}
+              <span className="ml-auto rounded-full bg-background px-2 py-0.5 text-[11px] font-medium text-foreground/70">
+                오늘의 미션 {doneCount}/3
+              </span>
             </button>
             {insightOpen && (
-              <div className="mt-2 flex flex-wrap items-center gap-2">
-                {chips.map((c) => (
-                  <span
-                    key={c}
-                    className="rounded-full bg-background px-2.5 py-0.5 text-xs text-foreground/80"
-                  >
-                    {c}
-                  </span>
-                ))}
+              <div className="mt-2 space-y-2.5">
+                {/* 오늘의 미션 체크리스트 */}
+                <ul className="space-y-1.5" aria-label="오늘의 미션">
+                  {MISSION_ITEMS.map((m) => {
+                    const done = mission.done[m.key]
+                    return (
+                      <li
+                        key={m.key}
+                        className="flex items-center gap-2 text-xs text-foreground/80"
+                      >
+                        <span
+                          aria-hidden
+                          className={
+                            done
+                              ? 'flex h-4 w-4 items-center justify-center rounded-full bg-[#C2571B] text-[10px] font-bold text-white'
+                              : 'flex h-4 w-4 items-center justify-center rounded-full border border-muted-foreground/40 text-[10px] text-muted-foreground/40'
+                          }
+                        >
+                          {done ? '✓' : '○'}
+                        </span>
+                        <span className={done ? 'line-through opacity-60' : ''}>
+                          {m.label}
+                        </span>
+                      </li>
+                    )
+                  })}
+                </ul>
+                {mission.completed && (
+                  <p className="text-xs font-semibold text-[#C2571B]">
+                    오늘의 학습 완료! 🔥 {mission.streak}일 연속이에요
+                  </p>
+                )}
+                {chips.length > 0 && (
+                  <div className="flex flex-wrap items-center gap-2">
+                    {chips.map((c) => (
+                      <span
+                        key={c}
+                        className="rounded-full bg-background px-2.5 py-0.5 text-xs text-foreground/80"
+                      >
+                        {c}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -354,6 +417,8 @@ export default function HomePage() {
             ))}
           </TabsList>
         </Tabs>
+        {/* 검색 탭에서는 종목 필터용 입력/편집 버튼을 숨김 — 패널이 자체 검색 UI를 제공 */}
+        {market !== 'SEARCH' && (
         <div className="flex items-center gap-2">
           {/* 검색창 + 초기화(X) 버튼 — 검색어가 있을 때만 표시 */}
           <div className="relative w-full sm:max-w-xs">
@@ -399,11 +464,15 @@ export default function HomePage() {
             편집
           </Button>
         </div>
+        )}
       </div>
 
       {/* 멋주 탭 — 3축 알고리즘 평가 통과 종목 */}
       {market === 'UNICORN' ? (
         <UnicornPanel data={unicornsLive.data} />
+      ) : market === 'SEARCH' ? (
+        /* 검색 탭 — 전체 상장종목 유니버스 검색 패널 (종목 그리드/필터 영역 대체) */
+        <UniverseSearchPanel />
       ) : (
         <>
           {/* 테마 필터 — '전체테마' 고정 버튼 + 테마 콤보박스 */}

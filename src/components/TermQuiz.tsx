@@ -15,6 +15,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { GlossaryTermModal } from "@/components/GlossaryTermModal"
+import { completeMission } from "@/lib/mission"
 import type { GlossaryTerm } from "@/types/stock"
 import glossaryData from "@/data/glossary.json"
 
@@ -168,6 +169,8 @@ export function TermQuiz() {
 
   const next = () => {
     if (isLast) {
+      // 일일 미션: 퀴즈 3문제를 끝까지 풀면 '퀴즈 1회 완료' 처리
+      completeMission("quiz")
       setFinished(true)
     } else {
       setCurrent((c) => c + 1)

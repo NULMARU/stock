@@ -4,7 +4,6 @@ import HomePage from '@/pages/HomePage'
 import StockDetailPage from '@/pages/StockDetailPage'
 import GlossaryPage from '@/pages/GlossaryPage'
 import NewsPage from '@/pages/NewsPage'
-import SearchPage from '@/pages/SearchPage'
 import { Toaster } from '@/components/ui/sonner'
 import TickerBar from '@/components/TickerBar'
 import { cn } from '@/lib/utils'
@@ -12,7 +11,6 @@ import { trackLaunch, trackTabView } from '@/lib/analytics'
 
 const NAV_ITEMS = [
   { to: '/', label: '종목', end: true },
-  { to: '/search', label: '검색', end: false },
   { to: '/news', label: '뉴스', end: false },
   { to: '/glossary', label: '용어', end: false },
 ] as const
@@ -73,7 +71,6 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/stock/:ticker" element={<StockDetailPage />} />
-          <Route path="/search" element={<SearchPage />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/glossary" element={<GlossaryPage />} />
         </Routes>

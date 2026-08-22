@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import { Link } from 'react-router'
 import { Bell, Clock, ExternalLink, Newspaper } from 'lucide-react'
 import type { NewsData, StockEntry } from '@/types/stock'
@@ -11,6 +11,7 @@ import { formatAsOf, formatRelativeTime, getNewsForTickers } from '@/lib/news'
 import { useLiveData } from '@/lib/liveData'
 import { MARKET_BADGE_CLASS, MARKET_LABEL } from '@/lib/format'
 import { useUserStore } from '@/lib/userStore'
+import { completeMission } from '@/lib/mission'
 import { cn } from '@/lib/utils'
 
 const bundledStocks = stocksData as StockEntry[]
@@ -40,6 +41,11 @@ export default function NewsPage() {
   )
 
   const asOfLabel = formatAsOf(newsLive.data.asOf)
+
+  // 일일 미션: 뉴스 탭 방문만으로 '뉴스 1건 읽기' 완료 처리
+  useEffect(() => {
+    completeMission('news')
+  }, [])
 
   return (
     <div className="mx-auto w-full max-w-3xl px-4 pb-16 pt-8 sm:px-6">
@@ -102,11 +108,12 @@ export default function NewsPage() {
                     )}
                   </div>
 
-                  {/* 제목 — 외부 링크 */}
+                  {/* 제목 — 외부 링크 (클릭도 뉴스 읽기 미션으로 인정) */}
                   <a
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => completeMission('news')}
                     className="group flex items-start gap-1.5 text-sm font-medium leading-snug text-foreground hover:text-primary"
                   >
                     <span className="group-hover:underline">{item.title}</span>

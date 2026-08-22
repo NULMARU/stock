@@ -1,10 +1,11 @@
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { Search, Compass, ChevronRight } from "lucide-react"
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { GlossaryTermModal } from "@/components/GlossaryTermModal"
 import { TermQuiz } from "@/components/TermQuiz"
+import { completeMission } from "@/lib/mission"
 import type { GlossaryGroup, GlossaryTerm } from "@/types/stock"
 import glossaryData from "@/data/glossary.json"
 
@@ -33,7 +34,14 @@ export default function GlossaryPage() {
     )
   }, [query])
 
+  // 일일 미션: 용어 탭 방문만으로 '용어 1개 읽기' 완료 처리
+  useEffect(() => {
+    completeMission("term")
+  }, [])
+
   const openTerm = (id: string) => {
+    // 용어 모달 열람도 '용어 읽기' 완료로 인정 (중복 호출 안전)
+    completeMission("term")
     setSelectedId(id)
     setModalOpen(true)
   }
