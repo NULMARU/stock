@@ -1,5 +1,5 @@
 {
- "asOf": "2026-08-22T07:31:07+09:00",
+ "asOf": "2026-08-23T07:31:14+09:00",
  "methodologyVersion": "predict-v1.1",
  "model": {
   "weights": {
@@ -13,7 +13,7 @@
  },
  "entries": {
   "NVDA": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "up",
    "probability": 0.58,
@@ -48,26 +48,26 @@
     "returnPct": -0.982
    },
    "longTerm": {
-    "forDate": "2027-08-22",
-    "targetCentral": 281.07,
+    "forDate": "2027-08-23",
+    "targetCentral": 281.48,
     "targetLow": 165.67,
     "targetHigh": 441.91,
-    "expectedReturnPct": 30.9,
+    "expectedReturnPct": 31.09,
     "bandLowPct": -22.84,
     "bandHighPct": 105.81,
     "confidence": "high",
     "pillars": [
      {
       "name": "애널리스트 컨센서스",
-      "target": 304.12,
+      "target": 304.73,
       "weight": 0.5,
-      "detail": "애널리스트 58명의 평균 목표가, 목표가 범위 180.00~500.00 — 집단 추정이지만 낙관 편향이 알려져 있음"
+      "detail": "애널리스트 59명의 평균 목표가, 목표가 범위 180.00~500.00 — 집단 추정이지만 낙관 편향이 알려져 있음"
      },
      {
       "name": "밸류에이션 모델",
-      "target": 269.85,
+      "target": 270.2,
       "weight": 0.3,
-      "detail": "forward EPS 13.01 × 정당 PE 20.7배 (forwardPE 16.5배→16.5배; 이익성장률 214.5%→25.0배) — 성장 대비 적정 주수익비율 환산"
+      "detail": "forward EPS 13.03 × 정당 PE 20.7배 (forwardPE 16.5배→16.5배; 이익성장률 214.5%→25.0배) — 성장 대비 적정 주수익비율 환산"
      },
      {
       "name": "몬테카를로 확률 밴드",
@@ -79,7 +79,7 @@
    }
   },
   "MSFT": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "up",
    "probability": 0.714,
@@ -114,20 +114,20 @@
     "returnPct": 0.434
    },
    "longTerm": {
-    "forDate": "2027-08-22",
-    "targetCentral": 533.05,
+    "forDate": "2027-08-23",
+    "targetCentral": 533.0,
     "targetLow": 346.15,
     "targetHigh": 763.3,
-    "expectedReturnPct": 10.31,
+    "expectedReturnPct": 10.3,
     "bandLowPct": -28.37,
     "bandHighPct": 57.95,
     "confidence": "high",
     "pillars": [
      {
       "name": "애널리스트 컨센서스",
-      "target": 569.56,
+      "target": 569.45,
       "weight": 0.5,
-      "detail": "애널리스트 53명의 평균 목표가, 목표가 범위 400.00~870.00 — 집단 추정이지만 낙관 편향이 알려져 있음"
+      "detail": "애널리스트 52명의 평균 목표가, 목표가 범위 400.00~870.00 — 집단 추정이지만 낙관 편향이 알려져 있음"
      },
      {
       "name": "밸류에이션 모델",
@@ -145,7 +145,7 @@
    }
   },
   "GOOGL": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "down",
    "probability": 0.548,
@@ -180,7 +180,7 @@
     "returnPct": 1.218
    },
    "longTerm": {
-    "forDate": "2027-08-22",
+    "forDate": "2027-08-23",
     "targetCentral": 430.54,
     "targetLow": 351.69,
     "targetHigh": 670.24,
@@ -211,7 +211,7 @@
    }
   },
   "TSLA": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "down",
    "probability": 0.591,
@@ -246,26 +246,26 @@
     "returnPct": 5.137
    },
    "longTerm": {
-    "forDate": "2027-08-22",
-    "targetCentral": 277.95,
+    "forDate": "2027-08-23",
+    "targetCentral": 275.23,
     "targetLow": 157.59,
     "targetHigh": 611.11,
-    "expectedReturnPct": -23.4,
+    "expectedReturnPct": -24.15,
     "bandLowPct": -56.57,
     "bandHighPct": 68.42,
     "confidence": "medium",
     "pillars": [
      {
       "name": "애널리스트 컨센서스",
-      "target": 395.34,
+      "target": 390.09,
       "weight": 0.5,
-      "detail": "애널리스트 40명의 평균 목표가, 목표가 범위 125.00~600.00 — 집단 추정이지만 낙관 편향이 알려져 있음"
+      "detail": "애널리스트 39명의 평균 목표가, 목표가 범위 125.00~600.00 — 집단 추정이지만 낙관 편향이 알려져 있음"
      },
      {
       "name": "밸류에이션 모델",
-      "target": 39.15,
+      "target": 38.85,
       "weight": 0.3,
-      "detail": "forward EPS 2.17 × 정당 PE 18.0배 (forwardPE 166.8배→28.0배; 이익성장률 -3.0%→8.0배) — 성장 대비 적정 주수익비율 환산"
+      "detail": "forward EPS 2.16 × 정당 PE 18.0배 (forwardPE 168.1배→28.0배; 이익성장률 -3.0%→8.0배) — 성장 대비 적정 주수익비율 환산"
      },
      {
       "name": "몬테카를로 확률 밴드",
@@ -277,7 +277,7 @@
    }
   },
   "PLTR": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "up",
    "probability": 0.73,
@@ -312,7 +312,7 @@
     "returnPct": 3.438
    },
    "longTerm": {
-    "forDate": "2027-08-22",
+    "forDate": "2027-08-23",
     "targetCentral": 148.1,
     "targetLow": 80.59,
     "targetHigh": 305.76,
@@ -343,14 +343,14 @@
    }
   },
   "RKLB": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "flat",
    "probability": 0.521,
    "expectedReturnPct": -0.33,
    "band": {
     "low": -8.28,
-    "high": 7.62
+    "high": 7.63
    },
    "close": 72.57,
    "components": [
@@ -378,7 +378,7 @@
     "returnPct": -0.521
    },
    "longTerm": {
-    "forDate": "2027-08-22",
+    "forDate": "2027-08-23",
     "targetCentral": 71.69,
     "targetLow": 43.22,
     "targetHigh": 198.88,
@@ -409,7 +409,7 @@
    }
   },
   "ASTS": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "down",
    "probability": 0.56,
@@ -444,7 +444,7 @@
     "returnPct": 5.518
    },
    "longTerm": {
-    "forDate": "2027-08-22",
+    "forDate": "2027-08-23",
     "targetCentral": 71.17,
     "targetLow": 27.84,
     "targetHigh": 162.1,
@@ -475,7 +475,7 @@
    }
   },
   "LUNR": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "down",
    "probability": 0.574,
@@ -510,7 +510,7 @@
     "returnPct": 2.175
    },
    "longTerm": {
-    "forDate": "2027-08-22",
+    "forDate": "2027-08-23",
     "targetCentral": 26.66,
     "targetLow": 8.07,
     "targetHigh": 61.93,
@@ -541,7 +541,7 @@
    }
   },
   "005930.KS": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "down",
    "probability": 0.562,
@@ -576,10 +576,10 @@
     "returnPct": 3.875
    },
    "longTerm": {
-    "forDate": "2027-08-22",
+    "forDate": "2027-08-23",
     "targetCentral": 591383.0,
     "targetLow": 280596.39,
-    "targetHigh": 1515661.88,
+    "targetHigh": 1515661.87,
     "expectedReturnPct": 110.08,
     "bandLowPct": -0.32,
     "bandHighPct": 300.0,
@@ -599,15 +599,15 @@
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 894472.65,
+      "target": 894472.66,
       "weight": 0.2857,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +145.3%, 연간 변동성 74%, 1년 뒤 20/50/80 백분위 480,232.83/894,472.65/1,684,066.64"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +145.3%, 연간 변동성 74%, 1년 뒤 20/50/80 백분위 480,232.85/894,472.66/1,684,066.64"
      }
     ]
    }
   },
   "000660.KS": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "down",
    "probability": 0.669,
@@ -642,10 +642,10 @@
     "returnPct": 2.306
    },
    "longTerm": {
-    "forDate": "2027-08-22",
-    "targetCentral": 4715012.08,
-    "targetLow": 1970717.22,
-    "targetHigh": 16304119.7,
+    "forDate": "2027-08-23",
+    "targetCentral": 4715011.83,
+    "targetLow": 1970717.13,
+    "targetHigh": 16304117.74,
     "expectedReturnPct": 150.0,
     "bandLowPct": 13.91,
     "bandHighPct": 300.0,
@@ -665,15 +665,15 @@
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 8587757.88,
+      "target": 8587756.98,
       "weight": 0.2857,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +204.0%, 연간 변동성 91%, 1년 뒤 20/50/80 백분위 4,017,626.32/8,587,757.88/18,599,547.52"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +204.0%, 연간 변동성 91%, 1년 뒤 20/50/80 백분위 4,017,626.00/8,587,756.98/18,599,545.09"
      }
     ]
    }
   },
   "035420.KS": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "up",
    "probability": 0.63,
@@ -708,7 +708,7 @@
     "returnPct": 1.139
    },
    "longTerm": {
-    "forDate": "2027-08-22",
+    "forDate": "2027-08-23",
     "targetCentral": 270668.24,
     "targetLow": 150322.36,
     "targetHigh": 393618.84,
@@ -739,7 +739,7 @@
    }
   },
   "012450.KS": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "up",
    "probability": 0.664,
@@ -774,7 +774,7 @@
     "returnPct": -7.027
    },
    "longTerm": {
-    "forDate": "2027-08-22",
+    "forDate": "2027-08-23",
     "targetCentral": 1489411.55,
     "targetLow": 941111.07,
     "targetHigh": 2375674.22,
@@ -805,7 +805,7 @@
    }
   },
   "047810.KS": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "up",
    "probability": 0.567,
@@ -840,7 +840,7 @@
     "returnPct": -3.489
    },
    "longTerm": {
-    "forDate": "2027-08-22",
+    "forDate": "2027-08-23",
     "targetCentral": 171247.49,
     "targetLow": 77222.81,
     "targetHigh": 298414.7,
@@ -871,7 +871,7 @@
    }
   },
   "079550.KS": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "up",
    "probability": 0.567,
@@ -906,7 +906,7 @@
     "returnPct": -11.69
    },
    "longTerm": {
-    "forDate": "2027-08-22",
+    "forDate": "2027-08-23",
     "targetCentral": 941925.48,
     "targetLow": 428308.44,
     "targetHigh": 1689688.49,
@@ -937,7 +937,7 @@
    }
   },
   "272210.KS": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "up",
    "probability": 0.712,
@@ -972,7 +972,7 @@
     "returnPct": -6.64
    },
    "longTerm": {
-    "forDate": "2027-08-22",
+    "forDate": "2027-08-23",
     "targetCentral": 100215.04,
     "targetLow": 40539.48,
     "targetHigh": 181133.27,
@@ -1003,7 +1003,7 @@
    }
   },
   "099320.KQ": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "flat",
    "probability": 0.501,
@@ -1038,7 +1038,7 @@
     "returnPct": -7.835
    },
    "longTerm": {
-    "forDate": "2027-08-22",
+    "forDate": "2027-08-23",
     "targetCentral": 141850.21,
     "targetLow": 74178.93,
     "targetHigh": 219322.49,
@@ -1069,7 +1069,7 @@
    }
   },
   "9988.HK": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "up",
    "probability": 0.644,
@@ -1104,26 +1104,26 @@
     "returnPct": -2.536
    },
    "longTerm": {
-    "forDate": "2027-08-22",
-    "targetCentral": 143.1,
+    "forDate": "2027-08-23",
+    "targetCentral": 142.51,
     "targetLow": 77.54,
-    "targetHigh": 225.2,
-    "expectedReturnPct": 16.34,
+    "targetHigh": 223.15,
+    "expectedReturnPct": 15.86,
     "bandLowPct": -36.96,
-    "bandHighPct": 83.09,
+    "bandHighPct": 81.42,
     "confidence": "medium",
     "pillars": [
      {
       "name": "애널리스트 컨센서스",
-      "target": 180.66,
+      "target": 179.64,
       "weight": 0.5,
-      "detail": "애널리스트 24명의 평균 목표가, 목표가 범위 92.67~236.95 — 집단 추정이지만 낙관 편향이 알려져 있음"
+      "detail": "애널리스트 24명의 평균 목표가, 목표가 범위 92.67~232.84 — 집단 추정이지만 낙관 편향이 알려져 있음"
      },
      {
       "name": "밸류에이션 모델",
-      "target": 99.25,
+      "target": 98.99,
       "weight": 0.3,
-      "detail": "forward EPS 9.44 × 정당 PE 10.5배 (forwardPE 13.0배→13.0배; 이익성장률 -79.4%→8.0배) — 성장 대비 적정 주수익비율 환산"
+      "detail": "forward EPS 9.37 × 정당 PE 10.6배 (forwardPE 13.1배→13.1배; 이익성장률 -79.4%→8.0배) — 성장 대비 적정 주수익비율 환산"
      },
      {
       "name": "몬테카를로 확률 밴드",
@@ -1135,7 +1135,7 @@
    }
   },
   "0700.HK": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "flat",
    "probability": 0.5,
@@ -1170,26 +1170,26 @@
     "returnPct": 1.241
    },
    "longTerm": {
-    "forDate": "2027-08-22",
-    "targetCentral": 511.36,
+    "forDate": "2027-08-23",
+    "targetCentral": 510.71,
     "targetLow": 323.32,
     "targetHigh": 693.12,
-    "expectedReturnPct": 11.9,
+    "expectedReturnPct": 11.75,
     "bandLowPct": -29.25,
     "bandHighPct": 51.67,
     "confidence": "medium",
     "pillars": [
      {
       "name": "애널리스트 컨센서스",
-      "target": 665.99,
+      "target": 664.57,
       "weight": 0.5,
       "detail": "애널리스트 42명의 평균 목표가, 목표가 범위 426.52~882.08 — 집단 추정이지만 낙관 편향이 알려져 있음"
      },
      {
       "name": "밸류에이션 모델",
-      "target": 373.08,
+      "target": 373.27,
       "weight": 0.3,
-      "detail": "forward EPS 36.14 × 정당 PE 10.3배 (forwardPE 12.6배→12.6배; 이익성장률 1.8%→8.0배) — 성장 대비 적정 주수익비율 환산"
+      "detail": "forward EPS 36.19 × 정당 PE 10.3배 (forwardPE 12.6배→12.6배; 이익성장률 1.8%→8.0배) — 성장 대비 적정 주수익비율 환산"
      },
      {
       "name": "몬테카를로 확률 밴드",
@@ -1201,7 +1201,7 @@
    }
   },
   "9888.HK": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "down",
    "probability": 0.565,
@@ -1236,26 +1236,26 @@
     "returnPct": 1.139
    },
    "longTerm": {
-    "forDate": "2027-08-22",
-    "targetCentral": 118.75,
+    "forDate": "2027-08-23",
+    "targetCentral": 117.89,
     "targetLow": 78.56,
     "targetHigh": 183.17,
-    "expectedReturnPct": 27.42,
+    "expectedReturnPct": 26.49,
     "bandLowPct": -15.71,
     "bandHighPct": 96.53,
     "confidence": "medium",
     "pillars": [
      {
       "name": "애널리스트 컨센서스",
-      "target": 156.02,
+      "target": 154.28,
       "weight": 0.5,
       "detail": "애널리스트 17명의 평균 목표가, 목표가 범위 110.03~197.07 — 집단 추정이지만 낙관 편향이 알려져 있음"
      },
      {
       "name": "밸류에이션 모델",
-      "target": 76.54,
+      "target": 76.57,
       "weight": 0.3,
-      "detail": "forward EPS 7.48 × 정당 PE 10.2배 (forwardPE 12.5배→12.5배; 이익성장률 -71.7%→8.0배) — 성장 대비 적정 주수익비율 환산"
+      "detail": "forward EPS 7.49 × 정당 PE 10.2배 (forwardPE 12.4배→12.4배; 이익성장률 -71.7%→8.0배) — 성장 대비 적정 주수익비율 환산"
      },
      {
       "name": "몬테카를로 확률 밴드",
@@ -1267,7 +1267,7 @@
    }
   },
   "1810.HK": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "down",
    "probability": 0.567,
@@ -1302,24 +1302,24 @@
     "returnPct": 4.539
    },
    "longTerm": {
-    "forDate": "2027-08-22",
-    "targetCentral": 27.63,
+    "forDate": "2027-08-23",
+    "targetCentral": 27.41,
     "targetLow": 13.96,
     "targetHigh": 52.38,
-    "expectedReturnPct": -4.78,
+    "expectedReturnPct": -5.56,
     "bandLowPct": -51.9,
     "bandHighPct": 80.49,
     "confidence": "medium",
     "pillars": [
      {
       "name": "애널리스트 컨센서스",
-      "target": 36.96,
+      "target": 36.5,
       "weight": 0.5,
       "detail": "애널리스트 29명의 평균 목표가, 목표가 범위 19.18~80.01 — 집단 추정이지만 낙관 편향이 알려져 있음"
      },
      {
       "name": "밸류에이션 모델",
-      "target": 20.74,
+      "target": 20.75,
       "weight": 0.3,
       "detail": "forward EPS 1.56 × 정당 PE 13.3배 (forwardPE 18.6배→18.6배; 이익성장률 -19.9%→8.0배) — 성장 대비 적정 주수익비율 환산"
      },
@@ -1333,7 +1333,7 @@
    }
   },
   "1211.HK": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "up",
    "probability": 0.567,
@@ -1368,7 +1368,7 @@
     "returnPct": 1.471
    },
    "longTerm": {
-    "forDate": "2027-08-22",
+    "forDate": "2027-08-23",
     "targetCentral": 98.6,
     "targetLow": 66.1,
     "targetHigh": 133.45,
@@ -1399,7 +1399,7 @@
    }
   },
   "0981.HK": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "flat",
    "probability": 0.5,
@@ -1434,24 +1434,24 @@
     "returnPct": 0.555
    },
    "longTerm": {
-    "forDate": "2027-08-22",
-    "targetCentral": 77.86,
+    "forDate": "2027-08-23",
+    "targetCentral": 77.85,
     "targetLow": 36.83,
     "targetHigh": 167.71,
-    "expectedReturnPct": 7.39,
+    "expectedReturnPct": 7.38,
     "bandLowPct": -49.2,
     "bandHighPct": 131.33,
     "confidence": "medium",
     "pillars": [
      {
       "name": "애널리스트 컨센서스",
-      "target": 94.13,
+      "target": 94.14,
       "weight": 0.5,
-      "detail": "애널리스트 21명의 평균 목표가, 목표가 범위 34.96~152.85 — 집단 추정이지만 낙관 편향이 알려져 있음"
+      "detail": "애널리스트 21명의 평균 목표가, 목표가 범위 34.97~152.85 — 집단 추정이지만 낙관 편향이 알려져 있음"
      },
      {
       "name": "밸류에이션 모델",
-      "target": 46.89,
+      "target": 46.86,
       "weight": 0.3,
       "detail": "forward EPS 1.77 × 정당 PE 26.5배 (forwardPE 41.0배→28.0배; 이익성장률 258.7%→25.0배) — 성장 대비 적정 주수익비율 환산"
      },
@@ -1465,7 +1465,7 @@
    }
   },
   "002230.SZ": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "flat",
    "probability": 0.537,
@@ -1500,7 +1500,7 @@
     "returnPct": -1.804
    },
    "longTerm": {
-    "forDate": "2027-08-22",
+    "forDate": "2027-08-23",
     "targetCentral": 44.16,
     "targetLow": 37.79,
     "targetHigh": 61.24,
@@ -1531,7 +1531,7 @@
    }
   },
   "688256.SS": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "down",
    "probability": 0.575,
@@ -1566,7 +1566,7 @@
     "returnPct": 2.386
    },
    "longTerm": {
-    "forDate": "2027-08-22",
+    "forDate": "2027-08-23",
     "targetCentral": 1171.95,
     "targetLow": 904.58,
     "targetHigh": 2522.42,
@@ -1597,7 +1597,7 @@
    }
   },
   "688066.SS": {
-   "predictedAt": "2026-08-22T07:31:07+09:00",
+   "predictedAt": "2026-08-23T07:31:14+09:00",
    "forDate": "2026-08-24",
    "direction": "flat",
    "probability": 0.531,
@@ -1632,7 +1632,7 @@
     "returnPct": 0.357
    },
    "longTerm": {
-    "forDate": "2027-08-22",
+    "forDate": "2027-08-23",
     "targetCentral": 1.69,
     "targetLow": 0.51,
     "targetHigh": 5.71,
