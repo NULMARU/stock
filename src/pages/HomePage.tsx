@@ -207,17 +207,36 @@ export default function HomePage() {
     return [...baseItems, ...addedItems]
   }, [market, theme, query, stocks, hiddenTickers, addedStocks])
 
-  // 필터링 후 정렬: 뉴스 체크 종목을 최신 체크 순으로 맨 위에, 나머지는 기존 순서 유지
+  // 필터링 후 정렬:
+  // 1) 검색 탭에서 '관심 등록'한 추가 종목 — 최상단 (최근 추가 순)
+  // 2) 뉴스 체크 종목 — 최신 체크 순
+  // 3) 나머지 — 기존 순서 유지
   const { sorted, checkedCount } = useMemo<{ sorted: ListItem[]; checkedCount: number }>(() => {
     const checkedAtOf = (ticker: string) => newsCheckedAt[ticker.toUpperCase()]
     const isChecked = (ticker: string) =>
       newsChecked.some((t) => t.toUpperCase() === ticker.toUpperCase())
+    // addedStocks 배열은 추가 순으로 쌓이므로, 최근 추가가 위로 오게 인덱스 역순 부여
+    const addedOrder = new Map(
+      addedStocks.map((s, i) => [s.ticker.toUpperCase(), addedStocks.length - i]),
+    )
+    const addedItems = filtered
+      .filter((item) => item.kind === 'added')
+      .sort(
+        (a, b) =>
+          (addedOrder.get(b.stock.ticker.toUpperCase()) ?? 0) -
+          (addedOrder.get(a.stock.ticker.toUpperCase()) ?? 0),
+      )
     const checkedItems = filtered
-      .filter((item) => isChecked(item.stock.ticker))
+      .filter((item) => item.kind !== 'added' && isChecked(item.stock.ticker))
       .sort((a, b) => (checkedAtOf(b.stock.ticker) ?? 0) - (checkedAtOf(a.stock.ticker) ?? 0))
-    const uncheckedItems = filtered.filter((item) => !isChecked(item.stock.ticker))
-    return { sorted: [...checkedItems, ...uncheckedItems], checkedCount: checkedItems.length }
-  }, [filtered, newsChecked, newsCheckedAt])
+    const restItems = filtered.filter(
+      (item) => item.kind !== 'added' && !isChecked(item.stock.ticker),
+    )
+    return {
+      sorted: [...addedItems, ...checkedItems, ...restItems],
+      checkedCount: checkedItems.length + addedItems.filter((i) => isChecked(i.stock.ticker)).length,
+    }
+  }, [filtered, newsChecked, newsCheckedAt, addedStocks])
 
   const asOf = stocks[0]?.asOf
 
