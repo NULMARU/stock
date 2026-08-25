@@ -1,60 +1,60 @@
 {
- "asOf": "2026-08-25T07:31:10+09:00",
+ "asOf": "2026-08-26T07:31:22+09:00",
  "methodologyVersion": "predict-v1.1",
  "model": {
   "weights": {
-   "reversal": 0.3519,
-   "trend": 0.2963,
-   "drift": 0.3519
+   "reversal": 0.4085,
+   "trend": 0.2676,
+   "drift": 0.3239
   },
   "hitRate20": 0.55,
-  "hitRateAll": 0.4053,
-  "evaluated": 491
+  "hitRateAll": 0.4128,
+  "evaluated": 516
  },
  "entries": {
   "NVDA": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
-   "direction": "up",
-   "probability": 0.609,
-   "expectedReturnPct": 0.67,
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
+   "direction": "flat",
+   "probability": 0.5,
+   "expectedReturnPct": 0.0,
    "band": {
-    "low": -2.4,
-    "high": 3.74
+    "low": -3.0,
+    "high": 3.0
    },
-   "close": 208.48,
+   "close": 213.05,
    "components": [
     {
      "name": "reversal",
-     "signal": "up",
-     "detail": "RSI 45·5일 -7.3% — 단기 과매도, 반등 기대"
+     "signal": "flat",
+     "detail": "RSI 50·5일 -3.0% — 반전 신호 약함"
     },
     {
      "name": "trend",
      "signal": "flat",
-     "detail": "20일선 214 vs 50일선 208, 종가 208 — 추세 혼조"
+     "detail": "20일선 215 vs 50일선 208, 종가 213 — 추세 혼조"
     },
     {
      "name": "drift",
      "signal": "flat",
-     "detail": "60일 평균 -0.01%/일, ATR 대비 -0.00 — 드리프트 미미"
+     "detail": "60일 평균 +0.05%/일, ATR 대비 +0.02 — 드리프트 미미"
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
+    "date": "2026-08-25",
     "predicted": "up",
-    "actual": "down",
-    "hit": false,
-    "returnPct": -2.906
+    "actual": "up",
+    "hit": true,
+    "returnPct": 2.192
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 277.35,
-    "targetLow": 160.46,
-    "targetHigh": 429.21,
-    "expectedReturnPct": 33.04,
-    "bandLowPct": -23.03,
-    "bandHighPct": 105.88,
+    "forDate": "2027-08-26",
+    "targetCentral": 279.52,
+    "targetLow": 162.74,
+    "targetHigh": 435.23,
+    "expectedReturnPct": 31.2,
+    "bandLowPct": -23.61,
+    "bandHighPct": 104.28,
     "confidence": "high",
     "pillars": [
      {
@@ -65,62 +65,62 @@
      },
      {
       "name": "밸류에이션 모델",
-      "target": 267.25,
+      "target": 269.54,
       "weight": 0.3,
-      "detail": "forward EPS 13.04 × 정당 PE 20.5배 (forwardPE 16.0배→16.0배; 이익성장률 214.5%→25.0배) — 성장 대비 적정 주수익비율 환산"
+      "detail": "forward EPS 13.04 × 정당 PE 20.7배 (forwardPE 16.3배→16.3배; 이익성장률 214.5%→25.0배) — 성장 대비 적정 주수익비율 환산"
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 224.06,
+      "target": 231.44,
       "weight": 0.2,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +15.0%, 연간 변동성 37%, 1년 뒤 20/50/80 백분위 164.58/224.06/306.66"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +16.1%, 연간 변동성 37%, 1년 뒤 20/50/80 백분위 169.94/231.44/316.89"
      }
     ]
    }
   },
   "MSFT": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
    "direction": "up",
-   "probability": 0.724,
-   "expectedReturnPct": 1.11,
+   "probability": 0.634,
+   "expectedReturnPct": 0.64,
    "band": {
-    "low": -1.37,
-    "high": 3.58
+    "low": -1.75,
+    "high": 3.03
    },
-   "close": 487.31,
+   "close": 491.71,
    "components": [
     {
      "name": "reversal",
      "signal": "flat",
-     "detail": "RSI 65·5일 +1.6% — 반전 신호 약함"
+     "detail": "RSI 66·5일 +2.3% — 반전 신호 약함"
     },
     {
      "name": "trend",
      "signal": "up",
-     "detail": "20일선 477 vs 50일선 421, 종가 487 — 정배열·20일선 상회, 상승 추세"
+     "detail": "20일선 482 vs 50일선 423, 종가 492 — 정배열·20일선 상회, 상승 추세"
     },
     {
      "name": "drift",
-     "signal": "up",
-     "detail": "60일 평균 +0.26%/일, ATR 대비 +0.11 — 상방 드리프트"
+     "signal": "flat",
+     "detail": "60일 평균 +0.19%/일, ATR 대비 +0.08 — 드리프트 미미"
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
+    "date": "2026-08-25",
     "predicted": "up",
     "actual": "up",
     "hit": true,
-    "returnPct": 0.842
+    "returnPct": 0.903
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 535.62,
-    "targetLow": 349.5,
-    "targetHigh": 770.88,
-    "expectedReturnPct": 9.91,
-    "bandLowPct": -28.28,
-    "bandHighPct": 58.19,
+    "forDate": "2027-08-26",
+    "targetCentral": 538.31,
+    "targetLow": 352.88,
+    "targetHigh": 778.55,
+    "expectedReturnPct": 9.48,
+    "bandLowPct": -28.24,
+    "bandHighPct": 58.34,
     "confidence": "high",
     "pillars": [
      {
@@ -131,62 +131,62 @@
      },
      {
       "name": "밸류에이션 모델",
-      "target": 538.32,
+      "target": 540.52,
       "weight": 0.3,
-      "detail": "forward EPS 23.57 × 정당 PE 22.8배 (forwardPE 20.7배→20.7배; 이익성장률 31.7%→25.0배) — 성장 대비 적정 주수익비율 환산"
+      "detail": "forward EPS 23.57 × 정당 PE 22.9배 (forwardPE 20.9배→20.9배; 이익성장률 31.7%→25.0배) — 성장 대비 적정 주수익비율 환산"
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 446.99,
+      "target": 457.14,
       "weight": 0.2,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 -2.6%, 연간 변동성 32%, 1년 뒤 20/50/80 백분위 342.07/446.99/586.78"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 -1.3%, 연간 변동성 32%, 1년 뒤 20/50/80 백분위 349.81/457.14/600.17"
      }
     ]
    }
   },
   "GOOGL": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
    "direction": "flat",
-   "probability": 0.525,
-   "expectedReturnPct": -0.13,
+   "probability": 0.528,
+   "expectedReturnPct": -0.15,
    "band": {
-    "low": -2.81,
-    "high": 2.55
+    "low": -2.74,
+    "high": 2.45
    },
-   "close": 348.06,
+   "close": 346.96,
    "components": [
     {
      "name": "reversal",
      "signal": "flat",
-     "detail": "RSI 50·5일 +1.2% — 반전 신호 약함"
+     "detail": "RSI 49·5일 +0.8% — 반전 신호 약함"
     },
     {
      "name": "trend",
      "signal": "down",
-     "detail": "20일선 349 vs 50일선 352, 종가 348 — 역배열·20일선 하회, 하락 추세"
+     "detail": "20일선 350 vs 50일선 351, 종가 347 — 역배열·20일선 하회, 하락 추세"
     },
     {
      "name": "drift",
      "signal": "flat",
-     "detail": "60일 평균 -0.16%/일, ATR 대비 -0.06 — 드리프트 미미"
+     "detail": "60일 평균 -0.12%/일, ATR 대비 -0.05 — 드리프트 미미"
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
-    "predicted": "down",
-    "actual": "up",
-    "hit": false,
-    "returnPct": 0.94
+    "date": "2026-08-25",
+    "predicted": "flat",
+    "actual": "flat",
+    "hit": true,
+    "returnPct": -0.316
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 431.81,
-    "targetLow": 353.0,
-    "targetHigh": 673.16,
-    "expectedReturnPct": 24.06,
-    "bandLowPct": 1.42,
-    "bandHighPct": 93.4,
+    "forDate": "2027-08-26",
+    "targetCentral": 431.67,
+    "targetLow": 353.06,
+    "targetHigh": 673.21,
+    "expectedReturnPct": 24.42,
+    "bandLowPct": 1.76,
+    "bandHighPct": 94.03,
     "confidence": "medium",
     "pillars": [
      {
@@ -197,62 +197,62 @@
      },
      {
       "name": "밸류에이션 모델",
-      "target": 359.17,
+      "target": 358.62,
       "weight": 0.3,
-      "detail": "forward EPS 14.81 × 정당 PE 24.3배 (forwardPE 23.5배→23.5배; 이익성장률 294.0%→25.0배) — 성장 대비 적정 주수익비율 환산"
+      "detail": "forward EPS 14.81 × 정당 PE 24.2배 (forwardPE 23.4배→23.4배; 이익성장률 294.0%→25.0배) — 성장 대비 적정 주수익비율 환산"
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 550.13,
+      "target": 550.25,
       "weight": 0.2,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +51.9%, 연간 변동성 32%, 1년 뒤 20/50/80 백분위 419.49/550.13/724.84"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +52.3%, 연간 변동성 32%, 1년 뒤 20/50/80 백분위 419.61/550.25/724.95"
      }
     ]
    }
   },
   "TSLA": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
-   "direction": "down",
-   "probability": 0.558,
-   "expectedReturnPct": -0.46,
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
+   "direction": "flat",
+   "probability": 0.5,
+   "expectedReturnPct": 0.0,
    "band": {
-    "low": -4.46,
-    "high": 3.53
+    "low": -3.86,
+    "high": 3.86
    },
-   "close": 348.95,
+   "close": 350.25,
    "components": [
     {
      "name": "reversal",
      "signal": "flat",
-     "detail": "RSI 51·5일 +2.8% — 반전 신호 약함"
+     "detail": "RSI 52·5일 +4.0% — 반전 신호 약함"
     },
     {
      "name": "trend",
      "signal": "flat",
-     "detail": "20일선 330 vs 50일선 365, 종가 349 — 추세 혼조"
+     "detail": "20일선 332 vs 50일선 364, 종가 350 — 추세 혼조"
     },
     {
      "name": "drift",
-     "signal": "down",
-     "detail": "60일 평균 -0.33%/일, ATR 대비 -0.08 — 하방 드리프트"
+     "signal": "flat",
+     "detail": "60일 평균 -0.30%/일, ATR 대비 -0.08 — 드리프트 미미"
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
+    "date": "2026-08-25",
     "predicted": "down",
-    "actual": "down",
-    "hit": true,
-    "returnPct": -3.833
+    "actual": "flat",
+    "hit": false,
+    "returnPct": 0.373
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 268.81,
-    "targetLow": 148.54,
-    "targetHigh": 582.39,
-    "expectedReturnPct": -22.97,
-    "bandLowPct": -57.43,
-    "bandHighPct": 66.9,
+    "forDate": "2027-08-26",
+    "targetCentral": 268.37,
+    "targetLow": 147.95,
+    "targetHigh": 580.33,
+    "expectedReturnPct": -23.38,
+    "bandLowPct": -57.76,
+    "bandHighPct": 65.69,
     "confidence": "medium",
     "pillars": [
      {
@@ -265,60 +265,60 @@
       "name": "밸류에이션 모델",
       "target": 38.85,
       "weight": 0.3,
-      "detail": "forward EPS 2.16 × 정당 PE 18.0배 (forwardPE 161.7배→28.0배; 이익성장률 -3.0%→8.0배) — 성장 대비 적정 주수익비율 환산"
+      "detail": "forward EPS 2.16 × 정당 PE 18.0배 (forwardPE 162.3배→28.0배; 이익성장률 -3.0%→8.0배) — 성장 대비 적정 주수익비율 환산"
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 310.54,
+      "target": 308.35,
       "weight": 0.2,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +0.7%, 연간 변동성 47%, 1년 뒤 20/50/80 백분위 209.67/310.54/463.07"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 -0.4%, 연간 변동성 47%, 1년 뒤 20/50/80 백분위 208.23/308.35/459.72"
      }
     ]
    }
   },
   "PLTR": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
    "direction": "up",
-   "probability": 0.722,
-   "expectedReturnPct": 1.96,
+   "probability": 0.634,
+   "expectedReturnPct": 1.2,
    "band": {
-    "low": -2.45,
-    "high": 6.38
+    "low": -3.29,
+    "high": 5.69
    },
-   "close": 175.89,
+   "close": 172.73,
    "components": [
     {
      "name": "reversal",
      "signal": "flat",
-     "detail": "RSI 65·5일 +1.9% — 반전 신호 약함"
+     "detail": "RSI 62·5일 +0.7% — 반전 신호 약함"
     },
     {
      "name": "trend",
      "signal": "up",
-     "detail": "20일선 159 vs 50일선 140, 종가 176 — 정배열·20일선 상회, 상승 추세"
+     "detail": "20일선 162 vs 50일선 141, 종가 173 — 정배열·20일선 상회, 상승 추세"
     },
     {
      "name": "drift",
-     "signal": "up",
-     "detail": "60일 평균 +0.47%/일, ATR 대비 +0.11 — 상방 드리프트"
+     "signal": "flat",
+     "detail": "60일 평균 +0.28%/일, ATR 대비 +0.06 — 드리프트 미미"
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
+    "date": "2026-08-25",
     "predicted": "up",
     "actual": "down",
     "hit": false,
-    "returnPct": -2.251
+    "returnPct": -1.797
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 146.91,
-    "targetLow": 79.14,
-    "targetHigh": 299.55,
-    "expectedReturnPct": -16.48,
-    "bandLowPct": -55.0,
-    "bandHighPct": 70.31,
+    "forDate": "2027-08-26",
+    "targetCentral": 145.01,
+    "targetLow": 76.88,
+    "targetHigh": 289.54,
+    "expectedReturnPct": -16.05,
+    "bandLowPct": -55.49,
+    "bandHighPct": 67.63,
     "confidence": "medium",
     "pillars": [
      {
@@ -331,60 +331,60 @@
       "name": "밸류에이션 모델",
       "target": 61.33,
       "weight": 0.3,
-      "detail": "forward EPS 2.31 × 정당 PE 26.5배 (forwardPE 76.0배→28.0배; 이익성장률 215.4%→25.0배) — 성장 대비 적정 주수익비율 환산"
+      "detail": "forward EPS 2.31 × 정당 PE 26.5배 (forwardPE 74.6배→28.0배; 이익성장률 215.4%→25.0배) — 성장 대비 적정 주수익비율 환산"
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 163.34,
+      "target": 153.87,
       "weight": 0.2,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +11.3%, 연간 변동성 58%, 1년 뒤 20/50/80 백분위 100.14/163.34/268.70"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +7.2%, 연간 변동성 58%, 1년 뒤 20/50/80 백분위 94.34/153.87/253.08"
      }
     ]
    }
   },
   "RKLB": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
-   "direction": "down",
-   "probability": 0.566,
-   "expectedReturnPct": -1.1,
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
+   "direction": "flat",
+   "probability": 0.515,
+   "expectedReturnPct": -0.25,
    "band": {
-    "low": -9.41,
-    "high": 7.21
+    "low": -8.5,
+    "high": 8.0
    },
-   "close": 68.28,
+   "close": 66.91,
    "components": [
     {
      "name": "reversal",
      "signal": "up",
-     "detail": "RSI 38·5일 -16.8% — 단기 과매도, 반등 기대"
+     "detail": "RSI 37·5일 -15.5% — 단기 과매도, 반등 기대"
     },
     {
      "name": "trend",
      "signal": "down",
-     "detail": "20일선 74 vs 50일선 81, 종가 68 — 역배열·20일선 하회, 하락 추세"
+     "detail": "20일선 74 vs 50일선 80, 종가 67 — 역배열·20일선 하회, 하락 추세"
     },
     {
      "name": "drift",
      "signal": "down",
-     "detail": "60일 평균 -1.11%/일, ATR 대비 -0.13 — 하방 드리프트"
+     "detail": "60일 평균 -1.09%/일, ATR 대비 -0.13 — 하방 드리프트"
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
-    "predicted": "flat",
+    "date": "2026-08-25",
+    "predicted": "down",
     "actual": "down",
-    "hit": false,
-    "returnPct": -5.912
+    "hit": true,
+    "returnPct": -2.006
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 69.19,
-    "targetLow": 41.33,
-    "targetHigh": 177.98,
-    "expectedReturnPct": 1.33,
-    "bandLowPct": -39.47,
-    "bandHighPct": 160.66,
+    "forDate": "2027-08-26",
+    "targetCentral": 68.47,
+    "targetLow": 40.78,
+    "targetHigh": 171.99,
+    "expectedReturnPct": 2.34,
+    "bandLowPct": -39.05,
+    "bandHighPct": 157.04,
     "confidence": "medium",
     "pillars": [
      {
@@ -397,60 +397,60 @@
       "name": "밸류에이션 모델",
       "target": 1.4,
       "weight": 0.3,
-      "detail": "forward EPS 0.05 × 정당 PE 28.0배 (forwardPE 1365.6배→28.0배) — 성장 대비 적정 주수익비율 환산"
+      "detail": "forward EPS 0.05 × 정당 PE 28.0배 (forwardPE 1338.2배→28.0배) — 성장 대비 적정 주수익비율 환산"
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 61.5,
+      "target": 57.92,
       "weight": 0.2,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +37.2%, 연간 변동성 95%, 1년 뒤 20/50/80 백분위 27.81/61.50/137.88"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +33.2%, 연간 변동성 95%, 1년 뒤 20/50/80 백분위 26.19/57.92/129.86"
      }
     ]
    }
   },
   "ASTS": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
    "direction": "down",
-   "probability": 0.554,
-   "expectedReturnPct": -0.93,
+   "probability": 0.56,
+   "expectedReturnPct": -1.01,
    "band": {
-    "low": -9.52,
-    "high": 7.66
+    "low": -9.41,
+    "high": 7.39
    },
-   "close": 62.35,
+   "close": 62.01,
    "components": [
     {
      "name": "reversal",
      "signal": "up",
-     "detail": "RSI 43·5일 -12.4% — 단기 과매도, 반등 기대"
+     "detail": "RSI 43·5일 -7.5% — 단기 과매도, 반등 기대"
     },
     {
      "name": "trend",
      "signal": "down",
-     "detail": "20일선 66 vs 50일선 70, 종가 62 — 역배열·20일선 하회, 하락 추세"
+     "detail": "20일선 67 vs 50일선 69, 종가 62 — 역배열·20일선 하회, 하락 추세"
     },
     {
      "name": "drift",
      "signal": "down",
-     "detail": "60일 평균 -1.00%/일, ATR 대비 -0.12 — 하방 드리프트"
+     "detail": "60일 평균 -0.76%/일, ATR 대비 -0.09 — 하방 드리프트"
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
+    "date": "2026-08-25",
     "predicted": "down",
     "actual": "down",
     "hit": true,
-    "returnPct": -9.177
+    "returnPct": -0.545
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 67.74,
-    "targetLow": 26.33,
-    "targetHigh": 137.85,
-    "expectedReturnPct": 8.65,
-    "bandLowPct": -57.78,
-    "bandHighPct": 121.09,
+    "forDate": "2027-08-26",
+    "targetCentral": 67.51,
+    "targetLow": 26.23,
+    "targetHigh": 136.24,
+    "expectedReturnPct": 8.88,
+    "bandLowPct": -57.7,
+    "bandHighPct": 119.71,
     "confidence": "medium",
     "pillars": [
      {
@@ -467,29 +467,29 @@
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 40.89,
+      "target": 40.1,
       "weight": 0.2857,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +22.2%, 연간 변동성 111%, 1년 뒤 20/50/80 백분위 16.18/40.89/104.97"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +20.8%, 연간 변동성 111%, 1년 뒤 20/50/80 백분위 15.87/40.10/102.95"
      }
     ]
    }
   },
   "LUNR": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
    "direction": "up",
-   "probability": 0.566,
-   "expectedReturnPct": 1.25,
+   "probability": 0.604,
+   "expectedReturnPct": 1.91,
    "band": {
-    "low": -8.2,
-    "high": 10.71
+    "low": -7.25,
+    "high": 11.08
    },
-   "close": 16.66,
+   "close": 16.6,
    "components": [
     {
      "name": "reversal",
      "signal": "up",
-     "detail": "RSI 48·5일 -18.3% — 단기 과매도, 반등 기대"
+     "detail": "RSI 48·5일 -14.0% — 단기 과매도, 반등 기대"
     },
     {
      "name": "trend",
@@ -499,24 +499,24 @@
     {
      "name": "drift",
      "signal": "down",
-     "detail": "60일 평균 -1.48%/일, ATR 대비 -0.16 — 하방 드리프트"
+     "detail": "60일 평균 -1.41%/일, ATR 대비 -0.15 — 하방 드리프트"
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
-    "predicted": "down",
-    "actual": "down",
-    "hit": true,
-    "returnPct": -9.061
+    "date": "2026-08-25",
+    "predicted": "up",
+    "actual": "flat",
+    "hit": false,
+    "returnPct": -0.36
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 25.7,
-    "targetLow": 7.63,
-    "targetHigh": 55.33,
-    "expectedReturnPct": 54.24,
+    "forDate": "2027-08-26",
+    "targetCentral": 25.64,
+    "targetLow": 7.6,
+    "targetHigh": 54.89,
+    "expectedReturnPct": 54.43,
     "bandLowPct": -54.22,
-    "bandHighPct": 232.1,
+    "bandHighPct": 230.69,
     "confidence": "medium",
     "pillars": [
      {
@@ -533,55 +533,55 @@
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 16.81,
+      "target": 16.6,
       "weight": 0.2857,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +63.7%, 연간 변동성 109%, 1년 뒤 20/50/80 백분위 6.74/16.81/42.62"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +62.7%, 연간 변동성 109%, 1년 뒤 20/50/80 백분위 6.65/16.60/42.07"
      }
     ]
    }
   },
   "005930.KS": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
-   "direction": "up",
-   "probability": 0.585,
-   "expectedReturnPct": 1.43,
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
+   "direction": "flat",
+   "probability": 0.5,
+   "expectedReturnPct": 0.0,
    "band": {
-    "low": -7.02,
-    "high": 9.89
+    "low": -8.21,
+    "high": 8.21
    },
    "close": 257000.0,
    "components": [
     {
      "name": "reversal",
-     "signal": "up",
-     "detail": "RSI 49·5일 -6.4% — 단기 과매도, 반등 기대"
+     "signal": "flat",
+     "detail": "RSI 49·5일 -4.3% — 반전 신호 약함"
     },
     {
      "name": "trend",
      "signal": "flat",
-     "detail": "20일선 246,600 vs 50일선 281,037, 종가 257,000 — 추세 혼조"
+     "detail": "20일선 246,750 vs 50일선 279,734, 종가 257,000 — 추세 혼조"
     },
     {
      "name": "drift",
      "signal": "flat",
-     "detail": "60일 평균 -0.06%/일, ATR 대비 -0.01 — 드리프트 미미"
+     "detail": "60일 평균 -0.02%/일, ATR 대비 -0.00 — 드리프트 미미"
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
-    "predicted": "down",
-    "actual": "down",
-    "hit": true,
-    "returnPct": -8.703
+    "date": "2026-08-25",
+    "predicted": "up",
+    "actual": "flat",
+    "hit": false,
+    "returnPct": 0.0
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 545114.02,
-    "targetLow": 247351.12,
-    "targetHigh": 1316638.5,
-    "expectedReturnPct": 112.11,
-    "bandLowPct": -3.75,
+    "forDate": "2027-08-26",
+    "targetCentral": 544198.75,
+    "targetLow": 247003.46,
+    "targetHigh": 1310602.64,
+    "expectedReturnPct": 111.75,
+    "bandLowPct": -3.89,
     "bandHighPct": 300.0,
     "confidence": "medium",
     "pillars": [
@@ -599,55 +599,55 @@
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 732523.13,
+      "target": 729319.55,
       "weight": 0.2857,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +135.1%, 연간 변동성 75%, 1년 뒤 20/50/80 백분위 390,636.62/732,523.13/1,388,665.05"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +134.5%, 연간 변동성 75%, 1년 뒤 20/50/80 백분위 389,429.92/729,319.55/1,380,779.97"
      }
     ]
    }
   },
   "000660.KS": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
    "direction": "flat",
    "probability": 0.5,
    "expectedReturnPct": 0.0,
    "band": {
-    "low": -10.07,
-    "high": 10.07
+    "low": -9.87,
+    "high": 9.87
    },
-   "close": 1671000.0,
+   "close": 1678000.0,
    "components": [
     {
      "name": "reversal",
      "signal": "flat",
-     "detail": "RSI 49·5일 +1.6% — 반전 신호 약함"
+     "detail": "RSI 49·5일 +1.0% — 반전 신호 약함"
     },
     {
      "name": "trend",
      "signal": "flat",
-     "detail": "20일선 1,568,850 vs 50일선 2,001,560, 종가 1,671,000 — 추세 혼조"
+     "detail": "20일선 1,561,950 vs 50일선 1,992,120, 종가 1,678,000 — 추세 혼조"
     },
     {
      "name": "drift",
      "signal": "flat",
-     "detail": "60일 평균 -0.17%/일, ATR 대비 -0.02 — 드리프트 미미"
+     "detail": "60일 평균 -0.20%/일, ATR 대비 -0.02 — 드리프트 미미"
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
-    "predicted": "down",
-    "actual": "down",
+    "date": "2026-08-25",
+    "predicted": "flat",
+    "actual": "flat",
     "hit": true,
-    "returnPct": -3.41
+    "returnPct": 0.419
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 4425721.33,
-    "targetLow": 1806106.13,
-    "targetHigh": 14738022.38,
+    "forDate": "2027-08-26",
+    "targetCentral": 4430560.64,
+    "targetLow": 1811668.1,
+    "targetHigh": 14735998.84,
     "expectedReturnPct": 150.0,
-    "bandLowPct": 8.09,
+    "bandLowPct": 7.97,
     "bandHighPct": 300.0,
     "confidence": "medium",
     "pillars": [
@@ -665,63 +665,63 @@
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 7579415.9,
+      "target": 7596354.33,
       "weight": 0.2857,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +195.2%, 연간 변동성 91%, 1년 뒤 20/50/80 백분위 3,538,738.44/7,579,415.90/16,449,417.95"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +194.8%, 연간 변동성 91%, 1년 뒤 20/50/80 백분위 3,552,239.91/7,596,354.33/16,459,771.88"
      }
     ]
    }
   },
   "035420.KS": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
    "direction": "up",
-   "probability": 0.648,
-   "expectedReturnPct": 1.71,
+   "probability": 0.611,
+   "expectedReturnPct": 1.31,
    "band": {
-    "low": -4.06,
-    "high": 7.48
+    "low": -4.56,
+    "high": 7.18
    },
-   "close": 223500.0,
+   "close": 220500.0,
    "components": [
     {
      "name": "reversal",
      "signal": "flat",
-     "detail": "RSI 55·5일 -2.0% — 반전 신호 약함"
+     "detail": "RSI 53·5일 +1.6% — 반전 신호 약함"
     },
     {
      "name": "trend",
      "signal": "up",
-     "detail": "20일선 216,185 vs 50일선 210,022, 종가 223,500 — 정배열·20일선 상회, 상승 추세"
+     "detail": "20일선 215,960 vs 50일선 209,492, 종가 220,500 — 정배열·20일선 상회, 상승 추세"
     },
     {
      "name": "drift",
      "signal": "flat",
-     "detail": "60일 평균 +0.34%/일, ATR 대비 +0.06 — 드리프트 미미"
+     "detail": "60일 평균 +0.26%/일, ATR 대비 +0.04 — 드리프트 미미"
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
+    "date": "2026-08-25",
     "predicted": "up",
-    "actual": "up",
-    "hit": true,
-    "returnPct": 0.676
+    "actual": "down",
+    "hit": false,
+    "returnPct": -1.342
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 270750.69,
-    "targetLow": 150335.85,
-    "targetHigh": 394163.96,
-    "expectedReturnPct": 21.14,
-    "bandLowPct": -32.74,
-    "bandHighPct": 76.36,
+    "forDate": "2027-08-26",
+    "targetCentral": 268422.0,
+    "targetLow": 149186.32,
+    "targetHigh": 388749.34,
+    "expectedReturnPct": 21.73,
+    "bandLowPct": -32.34,
+    "bandHighPct": 76.3,
     "confidence": "medium",
     "pillars": [
      {
       "name": "애널리스트 컨센서스",
-      "target": 304346.16,
+      "target": 303074.06,
       "weight": 0.7143,
-      "detail": "애널리스트 26명의 평균 목표가, 목표가 범위 210,000.00~400,000.00 — 집단 추정이지만 낙관 편향이 알려져 있음"
+      "detail": "애널리스트 27명의 평균 목표가, 목표가 범위 210,000.00~400,000.00 — 집단 추정이지만 낙관 편향이 알려져 있음"
      },
      {
       "name": "밸류에이션 모델",
@@ -731,56 +731,56 @@
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 186756.12,
+      "target": 181785.8,
       "weight": 0.2857,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +0.2%, 연간 변동성 57%, 1년 뒤 20/50/80 백분위 115,480.88/186,756.12/304,546.99"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 -1.2%, 연간 변동성 57%, 1년 뒤 20/50/80 백분위 112,504.11/181,785.80/296,182.78"
      }
     ]
    }
   },
   "012450.KS": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
    "direction": "up",
-   "probability": 0.643,
-   "expectedReturnPct": 1.95,
+   "probability": 0.622,
+   "expectedReturnPct": 1.63,
    "band": {
-    "low": -4.86,
-    "high": 8.75
+    "low": -5.02,
+    "high": 8.28
    },
-   "close": 1105000.0,
+   "close": 1102000.0,
    "components": [
     {
      "name": "reversal",
      "signal": "flat",
-     "detail": "RSI 54·5일 -4.7% — 반전 신호 약함"
+     "detail": "RSI 53·5일 -3.8% — 반전 신호 약함"
     },
     {
      "name": "trend",
      "signal": "up",
-     "detail": "20일선 1,043,900 vs 50일선 1,041,020, 종가 1,105,000 — 정배열·20일선 상회, 상승 추세"
+     "detail": "20일선 1,054,050 vs 50일선 1,041,500, 종가 1,102,000 — 정배열·20일선 상회, 상승 추세"
     },
     {
      "name": "drift",
      "signal": "flat",
-     "detail": "60일 평균 -0.09%/일, ATR 대비 -0.01 — 드리프트 미미"
+     "detail": "60일 평균 -0.03%/일, ATR 대비 -0.01 — 드리프트 미미"
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
+    "date": "2026-08-25",
     "predicted": "up",
-    "actual": "up",
-    "hit": true,
-    "returnPct": 1.843
+    "actual": "flat",
+    "hit": false,
+    "returnPct": -0.271
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 1475431.42,
-    "targetLow": 930727.8,
-    "targetHigh": 2317590.11,
-    "expectedReturnPct": 33.52,
-    "bandLowPct": -15.77,
-    "bandHighPct": 109.74,
+    "forDate": "2027-08-26",
+    "targetCentral": 1473662.38,
+    "targetLow": 929734.66,
+    "targetHigh": 2308640.61,
+    "expectedReturnPct": 33.73,
+    "bandLowPct": -15.63,
+    "bandHighPct": 109.5,
     "confidence": "medium",
     "pillars": [
      {
@@ -797,56 +797,56 @@
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 1108302.28,
+      "target": 1102110.31,
       "weight": 0.2857,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +22.0%, 연간 변동성 63%, 1년 뒤 20/50/80 백분위 653,914.56/1,108,302.28/1,895,670.70"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +21.6%, 연간 변동성 63%, 1년 뒤 20/50/80 백분위 650,968.32/1,102,110.31/1,882,996.72"
      }
     ]
    }
   },
   "047810.KS": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
    "direction": "flat",
-   "probability": 0.528,
-   "expectedReturnPct": 0.4,
+   "probability": 0.532,
+   "expectedReturnPct": -0.44,
    "band": {
-    "low": -6.84,
-    "high": 7.65
+    "low": -7.46,
+    "high": 6.57
    },
-   "close": 130700.0,
+   "close": 130900.0,
    "components": [
     {
      "name": "reversal",
      "signal": "up",
-     "detail": "RSI 43·5일 -10.7% — 단기 과매도, 반등 기대"
+     "detail": "RSI 43·5일 -6.5% — 단기 과매도, 반등 기대"
     },
     {
      "name": "trend",
      "signal": "down",
-     "detail": "20일선 138,455 vs 50일선 144,822, 종가 130,700 — 역배열·20일선 하회, 하락 추세"
+     "detail": "20일선 137,690 vs 50일선 144,622, 종가 130,900 — 역배열·20일선 하회, 하락 추세"
     },
     {
      "name": "drift",
      "signal": "flat",
-     "detail": "60일 평균 -0.25%/일, ATR 대비 -0.03 — 드리프트 미미"
+     "detail": "60일 평균 -0.27%/일, ATR 대비 -0.04 — 드리프트 미미"
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
-    "predicted": "up",
-    "actual": "up",
+    "date": "2026-08-25",
+    "predicted": "flat",
+    "actual": "flat",
     "hit": true,
-    "returnPct": 0.538
+    "returnPct": 0.153
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 169293.55,
-    "targetLow": 75783.49,
-    "targetHigh": 290197.93,
-    "expectedReturnPct": 29.53,
-    "bandLowPct": -42.02,
-    "bandHighPct": 122.03,
+    "forDate": "2027-08-26",
+    "targetCentral": 169404.78,
+    "targetLow": 75919.03,
+    "targetHigh": 290352.3,
+    "expectedReturnPct": 29.42,
+    "bandLowPct": -42.0,
+    "bandHighPct": 121.81,
     "confidence": "high",
     "pillars": [
      {
@@ -863,56 +863,56 @@
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 142411.92,
+      "target": 142801.25,
       "weight": 0.2857,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +34.5%, 연간 변동성 69%, 1년 뒤 20/50/80 백분위 79,746.82/142,411.92/256,885.61"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +34.6%, 연간 변동성 69%, 1년 뒤 20/50/80 백분위 80,061.19/142,801.25/257,272.50"
      }
     ]
    }
   },
   "079550.KS": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
-   "direction": "flat",
-   "probability": 0.528,
-   "expectedReturnPct": 0.54,
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
+   "direction": "up",
+   "probability": 0.561,
+   "expectedReturnPct": 1.14,
    "band": {
-    "low": -9.15,
-    "high": 10.23
+    "low": -8.19,
+    "high": 10.48
    },
-   "close": 717000.0,
+   "close": 718000.0,
    "components": [
     {
      "name": "reversal",
      "signal": "up",
-     "detail": "RSI 46·5일 -12.0% — 단기 과매도, 반등 기대"
+     "detail": "RSI 46·5일 -9.7% — 단기 과매도, 반등 기대"
     },
     {
      "name": "trend",
      "signal": "down",
-     "detail": "20일선 745,350 vs 50일선 763,960, 종가 717,000 — 역배열·20일선 하회, 하락 추세"
+     "detail": "20일선 746,450 vs 50일선 762,880, 종가 718,000 — 역배열·20일선 하회, 하락 추세"
     },
     {
      "name": "drift",
      "signal": "flat",
-     "detail": "60일 평균 -0.12%/일, ATR 대비 -0.01 — 드리프트 미미"
+     "detail": "60일 평균 -0.08%/일, ATR 대비 -0.01 — 드리프트 미미"
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
-    "predicted": "up",
-    "actual": "up",
+    "date": "2026-08-25",
+    "predicted": "flat",
+    "actual": "flat",
     "hit": true,
-    "returnPct": 3.165
+    "returnPct": 0.139
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 944236.78,
-    "targetLow": 429565.53,
-    "targetHigh": 1702860.64,
-    "expectedReturnPct": 31.69,
+    "forDate": "2027-08-26",
+    "targetCentral": 944828.86,
+    "targetLow": 430160.72,
+    "targetHigh": 1703656.97,
+    "expectedReturnPct": 31.59,
     "bandLowPct": -40.09,
-    "bandHighPct": 137.5,
+    "bandHighPct": 137.28,
     "confidence": "medium",
     "pillars": [
      {
@@ -929,56 +929,56 @@
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 664677.67,
+      "target": 666750.05,
       "weight": 0.2857,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +33.8%, 연간 변동성 88%, 1년 뒤 20/50/80 백분위 317,695.59/664,677.67/1,408,517.12"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +33.8%, 연간 변동성 88%, 1년 뒤 20/50/80 백분위 319,175.09/666,750.05/1,410,706.71"
      }
     ]
    }
   },
   "272210.KS": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
    "direction": "up",
-   "probability": 0.676,
-   "expectedReturnPct": 2.77,
+   "probability": 0.675,
+   "expectedReturnPct": 2.65,
    "band": {
-    "low": -5.09,
-    "high": 10.62
+    "low": -4.9,
+    "high": 10.19
    },
-   "close": 70100.0,
+   "close": 72700.0,
    "components": [
     {
      "name": "reversal",
      "signal": "up",
-     "detail": "RSI 47·5일 -12.7% — 단기 과매도, 반등 기대"
+     "detail": "RSI 50·5일 -9.0% — 단기 과매도, 반등 기대"
     },
     {
      "name": "trend",
      "signal": "flat",
-     "detail": "20일선 69,930 vs 50일선 74,224, 종가 70,100 — 추세 혼조"
+     "detail": "20일선 70,415 vs 50일선 73,758, 종가 72,700 — 추세 혼조"
     },
     {
      "name": "drift",
      "signal": "flat",
-     "detail": "60일 평균 -0.57%/일, ATR 대비 -0.07 — 드리프트 미미"
+     "detail": "60일 평균 -0.45%/일, ATR 대비 -0.06 — 드리프트 미미"
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
+    "date": "2026-08-25",
     "predicted": "up",
-    "actual": "flat",
-    "hit": false,
-    "returnPct": -0.284
+    "actual": "up",
+    "hit": true,
+    "returnPct": 3.709
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 99377.96,
-    "targetLow": 40063.12,
-    "targetHigh": 176564.12,
-    "expectedReturnPct": 41.77,
-    "bandLowPct": -42.85,
-    "bandHighPct": 151.87,
+    "forDate": "2027-08-26",
+    "targetCentral": 100706.23,
+    "targetLow": 40815.56,
+    "targetHigh": 183849.75,
+    "expectedReturnPct": 38.52,
+    "bandLowPct": -43.86,
+    "bandHighPct": 152.89,
     "confidence": "medium",
     "pillars": [
      {
@@ -995,56 +995,56 @@
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 60320.14,
+      "target": 64969.31,
       "weight": 0.2857,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +29.2%, 연간 변동성 91%, 1년 뒤 20/50/80 백분위 28,093.26/60,320.14/131,240.73"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +32.9%, 연간 변동성 91%, 1년 뒤 20/50/80 백분위 30,288.58/64,969.31/141,213.48"
      }
     ]
    }
   },
   "099320.KQ": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
    "direction": "down",
-   "probability": 0.547,
-   "expectedReturnPct": -0.87,
+   "probability": 0.58,
+   "expectedReturnPct": -1.42,
    "band": {
-    "low": -10.01,
-    "high": 8.28
+    "low": -10.33,
+    "high": 7.49
    },
-   "close": 71100.0,
+   "close": 71900.0,
    "components": [
     {
      "name": "reversal",
      "signal": "up",
-     "detail": "RSI 43·5일 -12.7% — 단기 과매도, 반등 기대"
+     "detail": "RSI 44·5일 -7.1% — 단기 과매도, 반등 기대"
     },
     {
      "name": "trend",
      "signal": "down",
-     "detail": "20일선 73,305 vs 50일선 82,888, 종가 71,100 — 역배열·20일선 하회, 하락 추세"
+     "detail": "20일선 73,140 vs 50일선 81,970, 종가 71,900 — 역배열·20일선 하회, 하락 추세"
     },
     {
      "name": "drift",
      "signal": "down",
-     "detail": "60일 평균 -0.98%/일, ATR 대비 -0.11 — 하방 드리프트"
+     "detail": "60일 평균 -0.90%/일, ATR 대비 -0.10 — 하방 드리프트"
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
-    "predicted": "flat",
+    "date": "2026-08-25",
+    "predicted": "down",
     "actual": "up",
     "hit": false,
-    "returnPct": 2.45
+    "returnPct": 1.125
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 140223.75,
-    "targetLow": 73537.52,
-    "targetHigh": 211402.92,
-    "expectedReturnPct": 97.22,
-    "bandLowPct": 3.43,
-    "bandHighPct": 197.33,
+    "forDate": "2027-08-26",
+    "targetCentral": 140735.68,
+    "targetLow": 73768.53,
+    "targetHigh": 213555.45,
+    "expectedReturnPct": 95.74,
+    "bandLowPct": 2.6,
+    "bandHighPct": 197.02,
     "confidence": "medium",
     "pillars": [
      {
@@ -1061,161 +1061,161 @@
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 59227.59,
+      "target": 60635.52,
       "weight": 0.3636,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +31.1%, 연간 변동성 97%, 1년 뒤 20/50/80 백분위 26,394.14/59,227.59/134,777.84"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +32.1%, 연간 변동성 96%, 1년 뒤 20/50/80 백분위 27,065.75/60,635.52/137,752.56"
      }
     ]
    }
   },
   "9988.HK": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
    "direction": "up",
-   "probability": 0.624,
-   "expectedReturnPct": 1.23,
+   "probability": 0.7,
+   "expectedReturnPct": 1.88,
    "band": {
-    "low": -3.72,
-    "high": 6.17
+    "low": -2.82,
+    "high": 6.58
    },
-   "close": 112.5,
+   "close": 114.2,
    "components": [
     {
      "name": "reversal",
      "signal": "up",
-     "detail": "RSI 42·5일 -7.9% — 단기 과매도, 반등 기대"
+     "detail": "RSI 44·5일 -9.9% — 단기 과매도, 반등 기대"
     },
     {
      "name": "trend",
      "signal": "flat",
-     "detail": "20일선 122 vs 50일선 112, 종가 112 — 추세 혼조"
+     "detail": "20일선 122 vs 50일선 112, 종가 114 — 추세 혼조"
     },
     {
      "name": "drift",
      "signal": "flat",
-     "detail": "60일 평균 -0.08%/일, ATR 대비 -0.02 — 드리프트 미미"
+     "detail": "60일 평균 -0.04%/일, ATR 대비 -0.01 — 드리프트 미미"
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
+    "date": "2026-08-25",
     "predicted": "up",
-    "actual": "down",
-    "hit": false,
-    "returnPct": -8.537
+    "actual": "up",
+    "hit": true,
+    "returnPct": 1.511
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 135.08,
-    "targetLow": 70.22,
-    "targetHigh": 199.36,
-    "expectedReturnPct": 20.07,
-    "bandLowPct": -37.58,
-    "bandHighPct": 77.21,
+    "forDate": "2027-08-26",
+    "targetCentral": 135.93,
+    "targetLow": 71.03,
+    "targetHigh": 201.98,
+    "expectedReturnPct": 19.03,
+    "bandLowPct": -37.8,
+    "bandHighPct": 76.86,
     "confidence": "medium",
     "pillars": [
      {
       "name": "애널리스트 컨센서스",
-      "target": 178.51,
+      "target": 178.61,
       "weight": 0.5,
-      "detail": "애널리스트 23명의 평균 목표가, 목표가 범위 92.67~232.86 — 집단 추정이지만 낙관 편향이 알려져 있음"
+      "detail": "애널리스트 23명의 평균 목표가, 목표가 범위 92.73~233.00 — 집단 추정이지만 낙관 편향이 알려져 있음"
      },
      {
       "name": "밸류에이션 모델",
-      "target": 93.66,
+      "target": 94.43,
       "weight": 0.3,
-      "detail": "forward EPS 9.35 × 정당 PE 10.0배 (forwardPE 12.0배→12.0배; 이익성장률 -79.4%→8.0배) — 성장 대비 적정 주수익비율 환산"
+      "detail": "forward EPS 9.33 × 정당 PE 10.1배 (forwardPE 12.2배→12.2배; 이익성장률 -79.4%→8.0배) — 성장 대비 적정 주수익비율 환산"
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 88.65,
+      "target": 91.47,
       "weight": 0.2,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 -10.4%, 연간 변동성 49%, 1년 뒤 20/50/80 백분위 58.76/88.65/134.72"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 -8.8%, 연간 변동성 49%, 1년 뒤 20/50/80 백분위 60.66/91.47/138.90"
      }
     ]
    }
   },
   "0700.HK": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
    "direction": "flat",
    "probability": 0.5,
    "expectedReturnPct": 0.0,
    "band": {
-    "low": -3.22,
-    "high": 3.22
+    "low": -3.08,
+    "high": 3.08
    },
-   "close": 440.0,
+   "close": 442.0,
    "components": [
     {
      "name": "reversal",
      "signal": "flat",
-     "detail": "RSI 42·5일 -1.4% — 반전 신호 약함"
+     "detail": "RSI 43·5일 -0.1% — 반전 신호 약함"
     },
     {
      "name": "trend",
      "signal": "flat",
-     "detail": "20일선 463 vs 50일선 454, 종가 440 — 추세 혼조"
+     "detail": "20일선 463 vs 50일선 454, 종가 442 — 추세 혼조"
     },
     {
      "name": "drift",
      "signal": "flat",
-     "detail": "60일 평균 +0.10%/일, ATR 대비 +0.03 — 드리프트 미미"
+     "detail": "60일 평균 +0.09%/일, ATR 대비 +0.03 — 드리프트 미미"
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
+    "date": "2026-08-25",
     "predicted": "flat",
-    "actual": "down",
-    "hit": false,
-    "returnPct": -3.72
+    "actual": "flat",
+    "hit": true,
+    "returnPct": 0.455
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 500.92,
-    "targetLow": 311.14,
-    "targetHigh": 666.11,
-    "expectedReturnPct": 13.85,
-    "bandLowPct": -29.29,
-    "bandHighPct": 51.39,
+    "forDate": "2027-08-26",
+    "targetCentral": 502.06,
+    "targetLow": 312.41,
+    "targetHigh": 668.64,
+    "expectedReturnPct": 13.59,
+    "bandLowPct": -29.32,
+    "bandHighPct": 51.28,
     "confidence": "medium",
     "pillars": [
      {
       "name": "애널리스트 컨센서스",
-      "target": 664.59,
+      "target": 664.99,
       "weight": 0.5,
-      "detail": "애널리스트 42명의 평균 목표가, 목표가 범위 426.56~882.16 — 집단 추정이지만 낙관 편향이 알려져 있음"
+      "detail": "애널리스트 42명의 평균 목표가, 목표가 범위 426.81~882.69 — 집단 추정이지만 낙관 편향이 알려져 있음"
      },
      {
       "name": "밸류에이션 모델",
-      "target": 364.75,
+      "target": 365.74,
       "weight": 0.3,
       "detail": "forward EPS 36.19 × 정당 PE 10.1배 (forwardPE 12.2배→12.2배; 이익성장률 1.8%→8.0배) — 성장 대비 적정 주수익비율 환산"
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 296.0,
+      "target": 299.21,
       "weight": 0.2,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 -33.3%, 연간 변동성 33%, 1년 뒤 20/50/80 백분위 224.79/296.00/391.62"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 -32.7%, 연간 변동성 33%, 1년 뒤 20/50/80 백분위 227.35/299.21/395.65"
      }
     ]
    }
   },
   "9888.HK": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
-   "direction": "down",
-   "probability": 0.547,
-   "expectedReturnPct": -0.45,
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
+   "direction": "flat",
+   "probability": 0.509,
+   "expectedReturnPct": -0.08,
    "band": {
-    "low": -5.24,
-    "high": 4.34
+    "low": -4.7,
+    "high": 4.54
    },
-   "close": 89.7,
+   "close": 89.75,
    "components": [
     {
      "name": "reversal",
      "signal": "up",
-     "detail": "RSI 31·5일 -10.6% — 단기 과매도, 반등 기대"
+     "detail": "RSI 31·5일 -11.2% — 단기 과매도, 반등 기대"
     },
     {
      "name": "trend",
@@ -1225,31 +1225,31 @@
     {
      "name": "drift",
      "signal": "down",
-     "detail": "60일 평균 -0.51%/일, ATR 대비 -0.11 — 하방 드리프트"
+     "detail": "60일 평균 -0.57%/일, ATR 대비 -0.12 — 하방 드리프트"
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
+    "date": "2026-08-25",
     "predicted": "down",
-    "actual": "down",
-    "hit": true,
-    "returnPct": -3.755
+    "actual": "flat",
+    "hit": false,
+    "returnPct": 0.056
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 114.94,
-    "targetLow": 75.37,
-    "targetHigh": 171.48,
-    "expectedReturnPct": 28.14,
-    "bandLowPct": -15.97,
-    "bandHighPct": 91.17,
+    "forDate": "2027-08-26",
+    "targetCentral": 115.01,
+    "targetLow": 75.47,
+    "targetHigh": 171.57,
+    "expectedReturnPct": 28.15,
+    "bandLowPct": -15.91,
+    "bandHighPct": 91.16,
     "confidence": "medium",
     "pillars": [
      {
       "name": "애널리스트 컨센서스",
-      "target": 154.23,
+      "target": 154.32,
       "weight": 0.5,
-      "detail": "애널리스트 16명의 평균 목표가, 목표가 범위 110.04~197.09 — 집단 추정이지만 낙관 편향이 알려져 있음"
+      "detail": "애널리스트 16명의 평균 목표가, 목표가 범위 110.11~197.21 — 집단 추정이지만 낙관 편향이 알려져 있음"
      },
      {
       "name": "밸류에이션 모델",
@@ -1259,29 +1259,29 @@
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 76.73,
+      "target": 76.87,
       "weight": 0.2,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 -1.5%, 연간 변동성 50%, 1년 뒤 20/50/80 백분위 50.33/76.73/117.85"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 -1.4%, 연간 변동성 50%, 1년 뒤 20/50/80 백분위 50.46/76.87/117.95"
      }
     ]
    }
   },
   "1810.HK": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
-   "direction": "flat",
-   "probability": 0.535,
-   "expectedReturnPct": 0.32,
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
+   "direction": "up",
+   "probability": 0.544,
+   "expectedReturnPct": 0.39,
    "band": {
-    "low": -4.24,
-    "high": 4.88
+    "low": -4.07,
+    "high": 4.85
    },
-   "close": 27.82,
+   "close": 27.76,
    "components": [
     {
      "name": "reversal",
      "signal": "down",
-     "detail": "RSI 53·5일 +7.5% — 단기 과열, 조정 경계"
+     "detail": "RSI 53·5일 +6.0% — 단기 과열, 조정 경계"
     },
     {
      "name": "trend",
@@ -1291,195 +1291,195 @@
     {
      "name": "drift",
      "signal": "flat",
-     "detail": "60일 평균 +0.01%/일, ATR 대비 +0.00 — 드리프트 미미"
+     "detail": "60일 평균 +0.04%/일, ATR 대비 +0.01 — 드리프트 미미"
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
-    "predicted": "down",
-    "actual": "down",
+    "date": "2026-08-25",
+    "predicted": "flat",
+    "actual": "flat",
     "hit": true,
-    "returnPct": -4.135
+    "returnPct": -0.216
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 26.86,
-    "targetLow": 13.41,
+    "forDate": "2027-08-26",
+    "targetCentral": 26.83,
+    "targetLow": 13.42,
     "targetHigh": 50.88,
-    "expectedReturnPct": -3.44,
-    "bandLowPct": -51.78,
-    "bandHighPct": 82.89,
+    "expectedReturnPct": -3.33,
+    "bandLowPct": -51.66,
+    "bandHighPct": 83.28,
     "confidence": "medium",
     "pillars": [
      {
       "name": "애널리스트 컨센서스",
-      "target": 36.5,
+      "target": 36.51,
       "weight": 0.5,
-      "detail": "애널리스트 29명의 평균 목표가, 목표가 범위 19.18~80.01 — 집단 추정이지만 낙관 편향이 알려져 있음"
+      "detail": "애널리스트 29명의 평균 목표가, 목표가 범위 19.19~80.06 — 집단 추정이지만 낙관 편향이 알려져 있음"
      },
      {
       "name": "밸류에이션 모델",
-      "target": 20.14,
+      "target": 20.04,
       "weight": 0.3,
-      "detail": "forward EPS 1.56 × 정당 PE 12.9배 (forwardPE 17.8배→17.8배; 이익성장률 -19.9%→8.0배) — 성장 대비 적정 주수익비율 환산"
+      "detail": "forward EPS 1.54 × 정당 PE 13.0배 (forwardPE 18.0배→18.0배; 이익성장률 -19.9%→8.0배) — 성장 대비 적정 주수익비율 환산"
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 12.85,
+      "target": 12.84,
       "weight": 0.2,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 -67.5%, 연간 변동성 41%, 1년 뒤 20/50/80 백분위 9.10/12.85/18.26"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 -67.5%, 연간 변동성 41%, 1년 뒤 20/50/80 백분위 9.10/12.84/18.23"
      }
     ]
    }
   },
   "1211.HK": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
    "direction": "up",
-   "probability": 0.648,
-   "expectedReturnPct": 0.89,
+   "probability": 0.634,
+   "expectedReturnPct": 0.83,
    "band": {
-    "low": -2.12,
+    "low": -2.26,
     "high": 3.91
    },
-   "close": 92.8,
+   "close": 93.6,
    "components": [
     {
      "name": "reversal",
      "signal": "flat",
-     "detail": "RSI 58·5일 +3.1% — 반전 신호 약함"
+     "detail": "RSI 60·5일 +4.0% — 반전 신호 약함"
     },
     {
      "name": "trend",
      "signal": "up",
-     "detail": "20일선 91 vs 50일선 87, 종가 93 — 정배열·20일선 상회, 상승 추세"
+     "detail": "20일선 92 vs 50일선 87, 종가 94 — 정배열·20일선 상회, 상승 추세"
     },
     {
      "name": "drift",
      "signal": "flat",
-     "detail": "60일 평균 +0.09%/일, ATR 대비 +0.03 — 드리프트 미미"
+     "detail": "60일 평균 +0.08%/일, ATR 대비 +0.03 — 드리프트 미미"
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
+    "date": "2026-08-25",
     "predicted": "up",
-    "actual": "flat",
-    "hit": false,
-    "returnPct": -0.376
+    "actual": "up",
+    "hit": true,
+    "returnPct": 0.862
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 97.89,
-    "targetLow": 65.08,
-    "targetHigh": 130.69,
-    "expectedReturnPct": 5.48,
-    "bandLowPct": -29.88,
-    "bandHighPct": 40.83,
+    "forDate": "2027-08-26",
+    "targetCentral": 98.3,
+    "targetLow": 65.52,
+    "targetHigh": 131.72,
+    "expectedReturnPct": 5.02,
+    "bandLowPct": -30.0,
+    "bandHighPct": 40.73,
     "confidence": "medium",
     "pillars": [
      {
       "name": "애널리스트 컨센서스",
-      "target": 125.51,
+      "target": 125.58,
       "weight": 0.5,
-      "detail": "애널리스트 27명의 평균 목표가, 목표가 범위 87.91~150.41 — 집단 추정이지만 낙관 편향이 알려져 있음"
+      "detail": "애널리스트 27명의 평균 목표가, 목표가 범위 87.96~150.50 — 집단 추정이지만 낙관 편향이 알려져 있음"
      },
      {
       "name": "밸류에이션 모델",
-      "target": 71.61,
+      "target": 72.01,
       "weight": 0.3,
-      "detail": "forward EPS 6.30 × 정당 PE 11.4배 (forwardPE 14.7배→14.7배; 이익성장률 -56.9%→8.0배) — 성장 대비 적정 주수익비율 환산"
+      "detail": "forward EPS 6.30 × 정당 PE 11.4배 (forwardPE 14.9배→14.9배; 이익성장률 -56.9%→8.0배) — 성장 대비 적정 주수익비율 환산"
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 68.25,
+      "target": 69.53,
       "weight": 0.2,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 -22.4%, 연간 변동성 38%, 1년 뒤 20/50/80 백분위 49.60/68.25/94.43"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 -21.4%, 연간 변동성 38%, 1년 뒤 20/50/80 백분위 50.56/69.53/96.14"
      }
     ]
    }
   },
   "0981.HK": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
-   "direction": "flat",
-   "probability": 0.528,
-   "expectedReturnPct": 0.38,
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
+   "direction": "up",
+   "probability": 0.57,
+   "expectedReturnPct": 0.91,
    "band": {
-    "low": -6.42,
-    "high": 7.18
+    "low": -5.58,
+    "high": 7.41
    },
-   "close": 66.75,
+   "close": 67.85,
    "components": [
     {
      "name": "reversal",
      "signal": "up",
-     "detail": "RSI 44·5일 -11.2% — 단기 과매도, 반등 기대"
+     "detail": "RSI 46·5일 -10.5% — 단기 과매도, 반등 기대"
     },
     {
      "name": "trend",
      "signal": "down",
-     "detail": "20일선 68 vs 50일선 73, 종가 67 — 역배열·20일선 하회, 하락 추세"
+     "detail": "20일선 68 vs 50일선 73, 종가 68 — 역배열·20일선 하회, 하락 추세"
     },
     {
      "name": "drift",
      "signal": "flat",
-     "detail": "60일 평균 -0.36%/일, ATR 대비 -0.05 — 드리프트 미미"
+     "detail": "60일 평균 -0.21%/일, ATR 대비 -0.03 — 드리프트 미미"
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
+    "date": "2026-08-25",
     "predicted": "flat",
-    "actual": "down",
+    "actual": "up",
     "hit": false,
-    "returnPct": -7.931
+    "returnPct": 1.648
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 73.84,
-    "targetLow": 32.09,
-    "targetHigh": 145.24,
-    "expectedReturnPct": 10.62,
-    "bandLowPct": -51.92,
-    "bandHighPct": 117.58,
+    "forDate": "2027-08-26",
+    "targetCentral": 74.35,
+    "targetLow": 32.61,
+    "targetHigh": 147.49,
+    "expectedReturnPct": 9.59,
+    "bandLowPct": -51.94,
+    "bandHighPct": 117.37,
     "confidence": "medium",
     "pillars": [
      {
       "name": "애널리스트 컨센서스",
-      "target": 94.32,
+      "target": 94.6,
       "weight": 0.5,
-      "detail": "애널리스트 21명의 평균 목표가, 목표가 범위 34.95~152.78 — 집단 추정이지만 낙관 편향이 알려져 있음"
+      "detail": "애널리스트 22명의 평균 목표가, 목표가 범위 34.96~152.82 — 집단 추정이지만 낙관 편향이 알려져 있음"
      },
      {
       "name": "밸류에이션 모델",
-      "target": 46.86,
+      "target": 46.68,
       "weight": 0.3,
-      "detail": "forward EPS 1.77 × 정당 PE 26.5배 (forwardPE 37.7배→28.0배; 이익성장률 258.7%→25.0배) — 성장 대비 적정 주수익비율 환산"
+      "detail": "forward EPS 1.76 × 정당 PE 26.5배 (forwardPE 38.4배→28.0배; 이익성장률 258.7%→25.0배) — 성장 대비 적정 주수익비율 환산"
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 63.12,
+      "target": 65.25,
       "weight": 0.2,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +14.9%, 연간 변동성 61%, 1년 뒤 20/50/80 백분위 37.82/63.12/106.28"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +16.5%, 연간 변동성 61%, 1년 뒤 20/50/80 백분위 39.14/65.25/109.77"
      }
     ]
    }
   },
   "002230.SZ": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
-   "direction": "up",
-   "probability": 0.542,
-   "expectedReturnPct": 0.27,
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
+   "direction": "down",
+   "probability": 0.572,
+   "expectedReturnPct": -0.44,
    "band": {
-    "low": -2.94,
-    "high": 3.48
+    "low": -3.5,
+    "high": 2.62
    },
-   "close": 38.93,
+   "close": 39.35,
    "components": [
     {
      "name": "reversal",
-     "signal": "up",
-     "detail": "RSI 34·5일 -7.2% — 단기 과매도, 반등 기대"
+     "signal": "flat",
+     "detail": "RSI 37·5일 -4.4% — 반전 신호 약함"
     },
     {
      "name": "trend",
@@ -1489,129 +1489,129 @@
     {
      "name": "drift",
      "signal": "down",
-     "detail": "60일 평균 -0.32%/일, ATR 대비 -0.10 — 하방 드리프트"
+     "detail": "60일 평균 -0.34%/일, ATR 대비 -0.11 — 하방 드리프트"
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
-    "predicted": "flat",
-    "actual": "down",
-    "hit": false,
-    "returnPct": -0.663
+    "date": "2026-08-25",
+    "predicted": "up",
+    "actual": "up",
+    "hit": true,
+    "returnPct": 1.079
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 41.71,
-    "targetLow": 27.95,
-    "targetHigh": 60.39,
-    "expectedReturnPct": 7.13,
-    "bandLowPct": -28.19,
-    "bandHighPct": 55.11,
+    "forDate": "2027-08-26",
+    "targetCentral": 39.64,
+    "targetLow": 28.16,
+    "targetHigh": 59.08,
+    "expectedReturnPct": 0.74,
+    "bandLowPct": -28.44,
+    "bandHighPct": 50.14,
     "confidence": "medium",
     "pillars": [
      {
       "name": "애널리스트 컨센서스",
-      "target": 63.57,
+      "target": 59.19,
       "weight": 0.5,
-      "detail": "애널리스트 10명의 평균 목표가, 목표가 범위 39.00~78.58 — 집단 추정이지만 낙관 편향이 알려져 있음"
+      "detail": "애널리스트 10명의 평균 목표가, 목표가 범위 39.00~75.00 — 집단 추정이지만 낙관 편향이 알려져 있음"
      },
      {
       "name": "밸류에이션 모델",
       "target": 15.32,
       "weight": 0.3,
-      "detail": "forward EPS 0.55 × 정당 PE 28.0배 (forwardPE 71.2배→28.0배) — 성장 대비 적정 주수익비율 환산"
+      "detail": "forward EPS 0.55 × 정당 PE 28.0배 (forwardPE 71.9배→28.0배) — 성장 대비 적정 주수익비율 환산"
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 26.63,
+      "target": 27.26,
       "weight": 0.2,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 -30.4%, 연간 변동성 36%, 1년 뒤 20/50/80 백분위 19.68/26.63/36.21"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 -29.2%, 연간 변동성 36%, 1년 뒤 20/50/80 백분위 20.16/27.26/37.05"
      }
     ]
    }
   },
   "688256.SS": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
-   "direction": "flat",
-   "probability": 0.528,
-   "expectedReturnPct": 0.49,
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
+   "direction": "up",
+   "probability": 0.57,
+   "expectedReturnPct": 1.18,
    "band": {
-    "low": -8.3,
-    "high": 9.27
+    "low": -7.18,
+    "high": 9.54
    },
-   "close": 969.05,
+   "close": 1010.48,
    "components": [
     {
      "name": "reversal",
      "signal": "up",
-     "detail": "RSI 36·5일 -16.2% — 단기 과매도, 반등 기대"
+     "detail": "RSI 40·5일 -13.1% — 단기 과매도, 반등 기대"
     },
     {
      "name": "trend",
      "signal": "down",
-     "detail": "20일선 1,097 vs 50일선 1,266, 종가 969 — 역배열·20일선 하회, 하락 추세"
+     "detail": "20일선 1,091 vs 50일선 1,259, 종가 1,010 — 역배열·20일선 하회, 하락 추세"
     },
     {
      "name": "drift",
      "signal": "flat",
-     "detail": "60일 평균 -0.37%/일, ATR 대비 -0.04 — 드리프트 미미"
+     "detail": "60일 평균 -0.20%/일, ATR 대비 -0.02 — 드리프트 미미"
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
-    "predicted": "down",
-    "actual": "down",
-    "hit": true,
-    "returnPct": -6.372
+    "date": "2026-08-25",
+    "predicted": "flat",
+    "actual": "up",
+    "hit": false,
+    "returnPct": 4.275
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 1091.91,
-    "targetLow": 830.26,
-    "targetHigh": 1980.49,
-    "expectedReturnPct": 12.68,
-    "bandLowPct": -14.32,
-    "bandHighPct": 104.37,
+    "forDate": "2027-08-26",
+    "targetCentral": 1162.57,
+    "targetLow": 844.59,
+    "targetHigh": 2065.01,
+    "expectedReturnPct": 15.05,
+    "bandLowPct": -16.42,
+    "bandHighPct": 104.36,
     "confidence": "medium",
     "pillars": [
      {
       "name": "애널리스트 컨센서스",
-      "target": 1564.45,
+      "target": 1678.08,
       "weight": 0.5,
-      "detail": "애널리스트 5명의 평균 목표가, 목표가 범위 1,340.00~2,060.00 — 집단 추정이지만 낙관 편향이 알려져 있음"
+      "detail": "애널리스트 6명의 평균 목표가, 목표가 범위 1,340.00~2,060.00 — 집단 추정이지만 낙관 편향이 알려져 있음"
      },
      {
       "name": "밸류에이션 모델",
       "target": 514.92,
       "weight": 0.3,
-      "detail": "forward EPS 19.43 × 정당 PE 26.5배 (forwardPE 49.9배→28.0배; 이익성장률 86.6%→25.0배) — 성장 대비 적정 주수익비율 환산"
+      "detail": "forward EPS 19.43 × 정당 PE 26.5배 (forwardPE 52.0배→28.0배; 이익성장률 86.6%→25.0배) — 성장 대비 적정 주수익비율 환산"
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 776.06,
+      "target": 845.25,
       "weight": 0.2,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +4.5%, 연간 변동성 70%, 1년 뒤 20/50/80 백분위 430.93/776.06/1,411.93"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 +8.8%, 연간 변동성 70%, 1년 뒤 20/50/80 백분위 469.41/845.25/1,537.58"
      }
     ]
    }
   },
   "688066.SS": {
-   "predictedAt": "2026-08-25T07:31:10+09:00",
-   "forDate": "2026-08-25",
+   "predictedAt": "2026-08-26T07:31:22+09:00",
+   "forDate": "2026-08-26",
    "direction": "flat",
-   "probability": 0.532,
-   "expectedReturnPct": -0.59,
+   "probability": 0.512,
+   "expectedReturnPct": 0.21,
    "band": {
-    "low": -9.78,
-    "high": 8.6
+    "low": -8.5,
+    "high": 8.93
    },
-   "close": 7.96,
+   "close": 8.13,
    "components": [
     {
      "name": "reversal",
      "signal": "up",
-     "detail": "RSI 38·5일 -17.5% — 단기 과매도, 반등 기대"
+     "detail": "RSI 40·5일 -12.9% — 단기 과매도, 반등 기대"
     },
     {
      "name": "trend",
@@ -1625,20 +1625,20 @@
     }
    ],
    "lastFeedback": {
-    "date": "2026-08-24",
+    "date": "2026-08-25",
     "predicted": "flat",
-    "actual": "down",
+    "actual": "up",
     "hit": false,
-    "returnPct": -5.687
+    "returnPct": 2.136
    },
    "longTerm": {
-    "forDate": "2027-08-25",
-    "targetCentral": 1.17,
-    "targetLow": 0.36,
-    "targetHigh": 3.85,
+    "forDate": "2027-08-26",
+    "targetCentral": 1.23,
+    "targetLow": 0.38,
+    "targetHigh": 4.04,
     "expectedReturnPct": -60.0,
     "bandLowPct": -80.0,
-    "bandHighPct": -51.6,
+    "bandHighPct": -50.25,
     "confidence": "low",
     "pillars": [
      {
@@ -1655,9 +1655,9 @@
      },
      {
       "name": "몬테카를로 확률 밴드",
-      "target": 1.17,
+      "target": 1.23,
       "weight": 1.0,
-      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 -145.4%, 연간 변동성 94%, 1년 뒤 20/50/80 백분위 0.53/1.17/2.59"
+      "detail": "최근 1년 일간 로그수익률로 GBM 10,000회 시뮬레이션 — 연간 드리프트 -142.6%, 연간 변동성 93%, 1년 뒤 20/50/80 백분위 0.56/1.23/2.72"
      }
     ]
    }
