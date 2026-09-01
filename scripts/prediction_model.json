@@ -1,9 +1,9 @@
 {
  "version": "predict-v1.1",
  "weights": {
-  "reversal": 0.4179,
-  "trend": 0.2985,
-  "drift": 0.2836
+  "reversal": 0.52,
+  "trend": 0.3,
+  "drift": 0.18
  },
  "updateHistory": [
   {
@@ -439,12 +439,26 @@
     "trend": 0.2985,
     "drift": 0.2836
    }
+  },
+  {
+   "date": "2026-09-02T07:31:10+09:00",
+   "samples": 60,
+   "componentHitRates": {
+    "reversal": 0.4333,
+    "trend": 0.25,
+    "drift": 0.1333
+   },
+   "weights": {
+    "reversal": 0.52,
+    "trend": 0.3,
+    "drift": 0.18
+   }
   }
  ],
  "componentHitRates": {
-  "reversal": 0.4667,
-  "trend": 0.3333,
-  "drift": 0.3167
+  "reversal": 0.4333,
+  "trend": 0.25,
+  "drift": 0.1333
  },
- "updatedAt": "2026-08-27T07:31:31+09:00"
+ "updatedAt": "2026-09-02T07:31:10+09:00"
 }

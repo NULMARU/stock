@@ -405,6 +405,23 @@
      "trend": "flat",
      "drift": "flat"
     },
+    "actualReturnPct": 8.738,
+    "hit": false,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 217.44,
+    "forDate": "2026-09-02",
+    "direction": "flat",
+    "probability": 0.5,
+    "expectedReturnPct": 0.0,
+    "signals": {
+     "reversal": "flat",
+     "trend": "flat",
+     "drift": "flat"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -465,6 +482,13 @@
     "targetLow": 160.46,
     "targetHigh": 429.58,
     "close": 209.66
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 303.39,
+    "targetLow": 169.25,
+    "targetHigh": 464.64,
+    "close": 217.44
    }
   ]
  },
@@ -874,6 +898,23 @@
      "trend": "up",
      "drift": "flat"
     },
+    "actualReturnPct": 1.751,
+    "hit": true,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 501.02,
+    "forDate": "2026-09-02",
+    "direction": "up",
+    "probability": 0.704,
+    "expectedReturnPct": 0.95,
+    "signals": {
+     "reversal": "flat",
+     "trend": "up",
+     "drift": "up"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -934,6 +975,13 @@
     "targetLow": 354.34,
     "targetHigh": 781.85,
     "close": 496.37
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 542.61,
+    "targetLow": 357.61,
+    "targetHigh": 789.75,
+    "close": 501.02
    }
   ]
  },
@@ -1343,6 +1391,23 @@
      "trend": "down",
      "drift": "flat"
     },
+    "actualReturnPct": -0.395,
+    "hit": true,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 335.02,
+    "forDate": "2026-09-02",
+    "direction": "down",
+    "probability": 0.604,
+    "expectedReturnPct": -0.52,
+    "signals": {
+     "reversal": "flat",
+     "trend": "down",
+     "drift": "flat"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -1403,6 +1468,13 @@
     "targetLow": 347.43,
     "targetHigh": 660.86,
     "close": 342.0
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 420.2,
+    "targetLow": 336.7,
+    "targetHigh": 636.74,
+    "close": 335.02
    }
   ]
  },
@@ -1812,6 +1884,23 @@
      "trend": "flat",
      "drift": "flat"
     },
+    "actualReturnPct": 2.6,
+    "hit": false,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 356.09,
+    "forDate": "2026-09-02",
+    "direction": "flat",
+    "probability": 0.5,
+    "expectedReturnPct": 0.0,
+    "signals": {
+     "reversal": "flat",
+     "trend": "flat",
+     "drift": "flat"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -1872,6 +1961,13 @@
     "targetLow": 146.27,
     "targetHigh": 574.91,
     "close": 345.82
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 274.69,
+    "targetLow": 156.39,
+    "targetHigh": 610.15,
+    "close": 356.09
    }
   ]
  },
@@ -2281,6 +2377,23 @@
      "trend": "up",
      "drift": "flat"
     },
+    "actualReturnPct": 4.749,
+    "hit": true,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 179.92,
+    "forDate": "2026-09-02",
+    "direction": "up",
+    "probability": 0.701,
+    "expectedReturnPct": 1.66,
+    "signals": {
+     "reversal": "flat",
+     "trend": "up",
+     "drift": "up"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -2341,6 +2454,13 @@
     "targetLow": 79.99,
     "targetHigh": 303.22,
     "close": 177.5
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 148.4,
+    "targetLow": 80.85,
+    "targetHigh": 307.73,
+    "close": 179.92
    }
   ]
  },
@@ -2750,6 +2870,23 @@
      "trend": "down",
      "drift": "down"
     },
+    "actualReturnPct": 2.04,
+    "hit": false,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 62.54,
+    "forDate": "2026-09-02",
+    "direction": "down",
+    "probability": 0.546,
+    "expectedReturnPct": -0.66,
+    "signals": {
+     "reversal": "up",
+     "trend": "down",
+     "drift": "down"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -2810,6 +2947,13 @@
     "targetLow": 40.96,
     "targetHigh": 173.74,
     "close": 66.18
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 66.77,
+    "targetLow": 39.51,
+    "targetHigh": 157.52,
+    "close": 62.54
    }
   ]
  },
@@ -3219,6 +3363,23 @@
      "trend": "down",
      "drift": "down"
     },
+    "actualReturnPct": 2.605,
+    "hit": false,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 55.8,
+    "forDate": "2026-09-02",
+    "direction": "up",
+    "probability": 0.581,
+    "expectedReturnPct": 1.31,
+    "signals": {
+     "reversal": "up",
+     "trend": "down",
+     "drift": "down"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -3279,6 +3440,13 @@
     "targetLow": 26.11,
     "targetHigh": 134.15,
     "close": 59.88
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 65.63,
+    "targetLow": 25.41,
+    "targetHigh": 122.8,
+    "close": 55.8
    }
   ]
  },
@@ -3688,6 +3856,23 @@
      "trend": "down",
      "drift": "down"
     },
+    "actualReturnPct": 0.435,
+    "hit": true,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 14.72,
+    "forDate": "2026-09-02",
+    "direction": "up",
+    "probability": 0.719,
+    "expectedReturnPct": 3.81,
+    "signals": {
+     "reversal": "up",
+     "trend": "flat",
+     "drift": "down"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -3748,6 +3933,13 @@
     "targetLow": 7.46,
     "targetHigh": 52.66,
     "close": 16.11
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 24.7,
+    "targetLow": 7.18,
+    "targetHigh": 48.29,
+    "close": 14.72
    }
   ]
  },
@@ -4123,6 +4315,23 @@
      "trend": "flat",
      "drift": "flat"
     },
+    "actualReturnPct": 1.721,
+    "hit": false,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 261000.0,
+    "forDate": "2026-09-02",
+    "direction": "flat",
+    "probability": 0.5,
+    "expectedReturnPct": 0.0,
+    "signals": {
+     "reversal": "flat",
+     "trend": "flat",
+     "drift": "flat"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -4183,6 +4392,13 @@
     "targetLow": 254817.22,
     "targetHigh": 1362142.7,
     "close": 261500.0
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 563844.12,
+    "targetLow": 260433.45,
+    "targetHigh": 1399711.47,
+    "close": 261000.0
    }
   ]
  },
@@ -4558,6 +4774,23 @@
      "trend": "flat",
      "drift": "flat"
     },
+    "actualReturnPct": 2.466,
+    "hit": false,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 1693000.0,
+    "forDate": "2026-09-02",
+    "direction": "flat",
+    "probability": 0.5,
+    "expectedReturnPct": 0.0,
+    "signals": {
+     "reversal": "flat",
+     "trend": "flat",
+     "drift": "flat"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -4618,6 +4851,13 @@
     "targetLow": 1816682.92,
     "targetHigh": 14786076.9,
     "close": 1688000.0
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 4537128.18,
+    "targetLow": 2018984.29,
+    "targetHigh": 15114398.15,
+    "close": 1693000.0
    }
   ]
  },
@@ -4993,6 +5233,23 @@
      "trend": "up",
      "drift": "flat"
     },
+    "actualReturnPct": -1.591,
+    "hit": false,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 215000.0,
+    "forDate": "2026-09-02",
+    "direction": "flat",
+    "probability": 0.5,
+    "expectedReturnPct": 0.0,
+    "signals": {
+     "reversal": "flat",
+     "trend": "flat",
+     "drift": "flat"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -5053,6 +5310,13 @@
     "targetLow": 149945.55,
     "targetHigh": 391814.71,
     "close": 220000.0
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 268194.04,
+    "targetLow": 148985.98,
+    "targetHigh": 387948.53,
+    "close": 215000.0
    }
   ]
  },
@@ -5428,6 +5692,23 @@
      "trend": "up",
      "drift": "flat"
     },
+    "actualReturnPct": 5.796,
+    "hit": true,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 1058000.0,
+    "forDate": "2026-09-02",
+    "direction": "flat",
+    "probability": 0.5,
+    "expectedReturnPct": 0.0,
+    "signals": {
+     "reversal": "flat",
+     "trend": "flat",
+     "drift": "flat"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -5488,6 +5769,13 @@
     "targetLow": 923612.45,
     "targetHigh": 2279010.68,
     "close": 1087000.0
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 1473596.33,
+    "targetLow": 904452.41,
+    "targetHigh": 2346981.79,
+    "close": 1058000.0
    }
   ]
  },
@@ -5863,6 +6151,23 @@
      "trend": "down",
      "drift": "flat"
     },
+    "actualReturnPct": 4.164,
+    "hit": false,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 127200.0,
+    "forDate": "2026-09-02",
+    "direction": "down",
+    "probability": 0.65,
+    "expectedReturnPct": -2.08,
+    "signals": {
+     "reversal": "flat",
+     "trend": "down",
+     "drift": "flat"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -5923,6 +6228,13 @@
     "targetLow": 76478.94,
     "targetHigh": 293597.27,
     "close": 132100.0
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 167329.57,
+    "targetLow": 74325.86,
+    "targetHigh": 282002.99,
+    "close": 127200.0
    }
   ]
  },
@@ -6298,6 +6610,23 @@
      "trend": "down",
      "drift": "flat"
     },
+    "actualReturnPct": 4.93,
+    "hit": true,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 685000.0,
+    "forDate": "2026-09-02",
+    "direction": "flat",
+    "probability": 0.5,
+    "expectedReturnPct": 0.0,
+    "signals": {
+     "reversal": "flat",
+     "trend": "flat",
+     "drift": "flat"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -6358,6 +6687,13 @@
     "targetLow": 427433.28,
     "targetHigh": 1678547.59,
     "close": 710000.0
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 937362.33,
+    "targetLow": 425628.68,
+    "targetHigh": 1665553.39,
+    "close": 685000.0
    }
   ]
  },
@@ -6733,6 +7069,23 @@
      "trend": "flat",
      "drift": "flat"
     },
+    "actualReturnPct": 6.131,
+    "hit": false,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 70600.0,
+    "forDate": "2026-09-02",
+    "direction": "flat",
+    "probability": 0.5,
+    "expectedReturnPct": 0.0,
+    "signals": {
+     "reversal": "flat",
+     "trend": "flat",
+     "drift": "flat"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -6793,6 +7146,13 @@
     "targetLow": 41348.71,
     "targetHigh": 189085.14,
     "close": 73400.0
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 99413.9,
+    "targetLow": 40562.62,
+    "targetHigh": 182115.03,
+    "close": 70600.0
    }
   ]
  },
@@ -7168,6 +7528,23 @@
      "trend": "down",
      "drift": "down"
     },
+    "actualReturnPct": 3.199,
+    "hit": false,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 71400.0,
+    "forDate": "2026-09-02",
+    "direction": "down",
+    "probability": 0.681,
+    "expectedReturnPct": -2.74,
+    "signals": {
+     "reversal": "flat",
+     "trend": "down",
+     "drift": "down"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -7228,6 +7605,13 @@
     "targetLow": 73822.62,
     "targetHigh": 214169.79,
     "close": 71900.0
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 140939.4,
+    "targetLow": 73846.66,
+    "targetHigh": 214572.88,
+    "close": 71400.0
    }
   ]
  },
@@ -7603,6 +7987,23 @@
      "trend": "flat",
      "drift": "flat"
     },
+    "actualReturnPct": -0.943,
+    "hit": false,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 110.4,
+    "forDate": "2026-09-02",
+    "direction": "flat",
+    "probability": 0.5,
+    "expectedReturnPct": 0.0,
+    "signals": {
+     "reversal": "flat",
+     "trend": "flat",
+     "drift": "flat"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -7663,6 +8064,13 @@
     "targetLow": 72.79,
     "targetHigh": 208.04,
     "close": 116.6
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 132.12,
+    "targetLow": 69.61,
+    "targetHigh": 173.97,
+    "close": 110.4
    }
   ]
  },
@@ -8038,6 +8446,23 @@
      "trend": "flat",
      "drift": "flat"
     },
+    "actualReturnPct": 0.539,
+    "hit": false,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 441.4,
+    "forDate": "2026-09-02",
+    "direction": "flat",
+    "probability": 0.5,
+    "expectedReturnPct": 0.0,
+    "signals": {
+     "reversal": "flat",
+     "trend": "flat",
+     "drift": "flat"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -8098,6 +8523,13 @@
     "targetLow": 314.75,
     "targetHigh": 674.04,
     "close": 445.4
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 502.8,
+    "targetLow": 313.69,
+    "targetHigh": 671.97,
+    "close": 441.4
    }
   ]
  },
@@ -8473,6 +8905,23 @@
      "trend": "down",
      "drift": "down"
     },
+    "actualReturnPct": 5.336,
+    "hit": false,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 93.7,
+    "forDate": "2026-09-02",
+    "direction": "down",
+    "probability": 0.688,
+    "expectedReturnPct": -1.57,
+    "signals": {
+     "reversal": "flat",
+     "trend": "down",
+     "drift": "down"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -8533,6 +8982,13 @@
     "targetLow": 76.39,
     "targetHigh": 174.86,
     "close": 90.9
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 115.86,
+    "targetLow": 76.88,
+    "targetHigh": 176.65,
+    "close": 93.7
    }
   ]
  },
@@ -8908,6 +9364,23 @@
      "trend": "up",
      "drift": "flat"
     },
+    "actualReturnPct": -3.443,
+    "hit": false,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 27.56,
+    "forDate": "2026-09-02",
+    "direction": "up",
+    "probability": 0.607,
+    "expectedReturnPct": 0.89,
+    "signals": {
+     "reversal": "flat",
+     "trend": "up",
+     "drift": "flat"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -8968,6 +9441,13 @@
     "targetLow": 13.61,
     "targetHigh": 51.44,
     "close": 28.46
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 26.74,
+    "targetLow": 13.32,
+    "targetHigh": 50.65,
+    "close": 27.56
    }
   ]
  },
@@ -9343,6 +9823,23 @@
      "trend": "up",
      "drift": "flat"
     },
+    "actualReturnPct": -1.458,
+    "hit": false,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 88.25,
+    "forDate": "2026-09-02",
+    "direction": "up",
+    "probability": 0.601,
+    "expectedReturnPct": 0.72,
+    "signals": {
+     "reversal": "up",
+     "trend": "flat",
+     "drift": "flat"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -9403,6 +9900,13 @@
     "targetLow": 64.72,
     "targetHigh": 129.61,
     "close": 92.6
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 113.32,
+    "targetLow": 64.52,
+    "targetHigh": 128.83,
+    "close": 88.25
    }
   ]
  },
@@ -9778,6 +10282,23 @@
      "trend": "flat",
      "drift": "flat"
     },
+    "actualReturnPct": 2.296,
+    "hit": false,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 68.85,
+    "forDate": "2026-09-02",
+    "direction": "down",
+    "probability": 0.641,
+    "expectedReturnPct": -1.62,
+    "signals": {
+     "reversal": "flat",
+     "trend": "down",
+     "drift": "flat"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -9838,6 +10359,13 @@
     "targetLow": 33.93,
     "targetHigh": 153.67,
     "close": 69.7
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 73.57,
+    "targetLow": 31.87,
+    "targetHigh": 142.31,
+    "close": 68.85
    }
   ]
  },
@@ -10213,6 +10741,23 @@
      "trend": "flat",
      "drift": "down"
     },
+    "actualReturnPct": 0.277,
+    "hit": false,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 40.22,
+    "forDate": "2026-09-02",
+    "direction": "flat",
+    "probability": 0.5,
+    "expectedReturnPct": 0.0,
+    "signals": {
+     "reversal": "flat",
+     "trend": "flat",
+     "drift": "flat"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -10273,6 +10818,13 @@
     "targetLow": 28.32,
     "targetHigh": 59.5,
     "close": 39.66
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 39.79,
+    "targetLow": 28.4,
+    "targetHigh": 59.64,
+    "close": 40.22
    }
   ]
  },
@@ -10648,6 +11200,23 @@
      "trend": "down",
      "drift": "flat"
     },
+    "actualReturnPct": 2.745,
+    "hit": false,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 1109.0,
+    "forDate": "2026-09-02",
+    "direction": "down",
+    "probability": 0.75,
+    "expectedReturnPct": -3.38,
+    "signals": {
+     "reversal": "down",
+     "trend": "flat",
+     "drift": "flat"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -10708,6 +11277,13 @@
     "targetLow": 856.22,
     "targetHigh": 2130.54,
     "close": 1020.0
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 1191.2,
+    "targetLow": 878.93,
+    "targetHigh": 2212.37,
+    "close": 1109.0
    }
   ]
  },
@@ -11083,6 +11659,23 @@
      "trend": "down",
      "drift": "down"
     },
+    "actualReturnPct": -1.221,
+    "hit": true,
+    "settledDate": "2026-08-27"
+   },
+   {
+    "predictedAt": "2026-09-02T07:31:10+09:00",
+    "baseDate": "2026-09-01",
+    "baseClose": 8.2,
+    "forDate": "2026-09-02",
+    "direction": "down",
+    "probability": 0.65,
+    "expectedReturnPct": -2.27,
+    "signals": {
+     "reversal": "flat",
+     "trend": "down",
+     "drift": "flat"
+    },
     "actualReturnPct": null,
     "hit": null
    }
@@ -11143,6 +11736,13 @@
     "targetLow": 0.34,
     "targetHigh": 3.56,
     "close": 8.19
+   },
+   {
+    "date": "2026-09-02",
+    "targetCentral": 1.12,
+    "targetLow": 0.36,
+    "targetHigh": 3.54,
+    "close": 8.2
    }
   ]
  }
