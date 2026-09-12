@@ -1,26 +1,17 @@
 {
-  "asOf": "2026-08-23T07:23:06+09:00",
-  "weekStart": "2026-08-16",
-  "hitRate7": 0.41379310344827586,
-  "hitRatePrev7": 0.384,
-  "hitRateDeltaWoW": 0.02979310344827585,
-  "hitRate20": 0.25,
-  "hitRateAll": 0.3991,
-  "evaluated": 466,
+  "asOf": "2026-09-13T07:23:22+09:00",
+  "weekStart": "2026-09-06",
+  "hitRate7": null,
+  "hitRatePrev7": 0.5066666666666667,
+  "hitRateDeltaWoW": null,
+  "hitRate20": 0.4,
+  "hitRateAll": 0.415,
+  "evaluated": 641,
   "weights": {
-    "reversal": 0.4231,
-    "trend": 0.2885,
-    "drift": 0.2885
+    "reversal": 0.4333,
+    "trend": 0.35,
+    "drift": 0.2167
   },
-  "weightChanges": [
-    "reversal 47%→42%",
-    "trend 24%→29%"
-  ],
-  "notes": [
-    "신호별 적중률을 반영해 가중치 자동 조정: reversal 47%→42%, trend 24%→29%",
-    "이번 주 가장 약한 신호: trend (적중률 25%)",
-    "적중률 최고 종목: 035420.KS (100%)",
-    "개선 필요 종목: 0981.HK (0%)",
-    "주간 적중률 41% (전주 대비 +3%p)"
-  ]
+  "weightChanges": [],
+  "notes": []
 }
