@@ -1,5 +1,5 @@
 import { it, expect } from "vitest";
-import { addUpdateGuard, prepareAppUpdate, updateURL } from "./appUpdates";
+import { addUpdateGuard, prepareAppUpdate, updateURL, navigateAppUpdate } from "./appUpdates";
 it("preserves hash route and existing query when bypassing an old HTML response", () => {
   const url = new URL(
     updateURL(
@@ -34,4 +34,21 @@ it("waits for saving before refresh", async () => {
   } finally {
     remove();
   }
+});
+
+it("reloads instead of navigating to an identical hash URL", () => {
+  let reloaded = false,
+    replaced = false;
+  const navigation = {
+    href: "https://nulmaru.github.io/stock/?appVersion=v2#/lab",
+    reload: () => {
+      reloaded = true;
+    },
+    replace: () => {
+      replaced = true;
+    },
+  };
+  navigateAppUpdate(navigation, "v2");
+  expect(reloaded).toBe(true);
+  expect(replaced).toBe(false);
 });

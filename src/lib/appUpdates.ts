@@ -15,3 +15,13 @@ export function updateURL(href: string, version: string) {
   url.searchParams.set("appVersion", version);
   return url.toString();
 }
+
+export function navigateAppUpdate(
+  navigation: Pick<Location, "href" | "reload" | "replace">,
+  version: string,
+) {
+  const target = updateURL(navigation.href, version);
+  // Replacing an identical URL with a hash may be treated as an in-page navigation.
+  if (target === navigation.href) navigation.reload();
+  else navigation.replace(target);
+}

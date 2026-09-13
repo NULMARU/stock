@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { prepareAppUpdate, updateURL } from "@/lib/appUpdates";
+import { prepareAppUpdate, navigateAppUpdate } from "@/lib/appUpdates";
 const CURRENT = import.meta.env.VITE_APP_BUILD_ID ?? "development";
 export default function AppUpdateNotice() {
   const [available, setAvailable] = useState(false),
@@ -17,8 +17,7 @@ export default function AppUpdateNotice() {
       if (alive) setAvailable(true);
     };
     const controllerChanged = () => {
-      if (requested.current)
-        location.replace(updateURL(location.href, latest.current));
+      if (requested.current) navigateAppUpdate(location, latest.current);
     };
     navigator.serviceWorker?.addEventListener(
       "controllerchange",
@@ -118,10 +117,9 @@ export default function AppUpdateNotice() {
       if (waiting) {
         waiting.postMessage({ type: "ACTIVATE_UPDATE" });
         setTimeout(() => {
-          if (requested.current)
-            location.replace(updateURL(location.href, latest.current));
+          if (requested.current) navigateAppUpdate(location, latest.current);
         }, 5000);
-      } else location.replace(updateURL(location.href, latest.current));
+      } else navigateAppUpdate(location, latest.current);
     } catch {
       setMessage(
         "저장을 확인하지 못했습니다. 입력을 보관한 뒤 다시 시도하세요.",
