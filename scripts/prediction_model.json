@@ -509,6 +509,20 @@
     "trend": 0.3265,
     "drift": 0.1837
    }
+  },
+  {
+   "date": "2026-09-14T07:31:13+09:00",
+   "samples": 60,
+   "componentHitRates": {
+    "reversal": 0.4,
+    "trend": 0.2667,
+    "drift": 0.1167
+   },
+   "weights": {
+    "reversal": 0.4898,
+    "trend": 0.3265,
+    "drift": 0.1837
+   }
   }
  ],
  "componentHitRates": {
@@ -516,5 +530,5 @@
   "trend": 0.2667,
   "drift": 0.1167
  },
- "updatedAt": "2026-09-13T07:31:28+09:00"
+ "updatedAt": "2026-09-14T07:31:13+09:00"
 }

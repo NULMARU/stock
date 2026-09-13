@@ -478,7 +478,7 @@
     "settledDate": "2026-09-08"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 218.29,
     "forDate": "2026-09-14",
@@ -581,6 +581,13 @@
    },
    {
     "date": "2026-09-13",
+    "targetCentral": 304.24,
+    "targetLow": 166.75,
+    "targetHigh": 458.48,
+    "close": 218.29
+   },
+   {
+    "date": "2026-09-14",
     "targetCentral": 304.24,
     "targetLow": 166.75,
     "targetHigh": 458.48,
@@ -1067,7 +1074,7 @@
     "settledDate": "2026-09-08"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 495.63,
     "forDate": "2026-09-14",
@@ -1170,6 +1177,13 @@
    },
    {
     "date": "2026-09-13",
+    "targetCentral": 540.6,
+    "targetLow": 352.48,
+    "targetHigh": 779.22,
+    "close": 495.63
+   },
+   {
+    "date": "2026-09-14",
     "targetCentral": 540.6,
     "targetLow": 352.48,
     "targetHigh": 779.22,
@@ -1656,7 +1670,7 @@
     "settledDate": "2026-09-08"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 338.5,
     "forDate": "2026-09-14",
@@ -1759,6 +1773,13 @@
    },
    {
     "date": "2026-09-13",
+    "targetCentral": 410.84,
+    "targetLow": 321.9,
+    "targetHigh": 594.38,
+    "close": 338.5
+   },
+   {
+    "date": "2026-09-14",
     "targetCentral": 410.84,
     "targetLow": 321.9,
     "targetHigh": 594.38,
@@ -2245,7 +2266,7 @@
     "settledDate": "2026-09-08"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 365.44,
     "forDate": "2026-09-14",
@@ -2348,6 +2369,13 @@
    },
    {
     "date": "2026-09-13",
+    "targetCentral": 266.25,
+    "targetLow": 144.86,
+    "targetHigh": 571.19,
+    "close": 365.44
+   },
+   {
+    "date": "2026-09-14",
     "targetCentral": 266.25,
     "targetLow": 144.86,
     "targetHigh": 571.19,
@@ -2834,7 +2862,7 @@
     "settledDate": "2026-09-08"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 167.23,
     "forDate": "2026-09-14",
@@ -2937,6 +2965,13 @@
    },
    {
     "date": "2026-09-13",
+    "targetCentral": 143.25,
+    "targetLow": 71.88,
+    "targetHigh": 270.76,
+    "close": 167.23
+   },
+   {
+    "date": "2026-09-14",
     "targetCentral": 143.25,
     "targetLow": 71.88,
     "targetHigh": 270.76,
@@ -3423,7 +3458,7 @@
     "settledDate": "2026-09-08"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 62.95,
     "forDate": "2026-09-14",
@@ -3527,6 +3562,13 @@
    {
     "date": "2026-09-13",
     "targetCentral": 65.27,
+    "targetLow": 39.26,
+    "targetHigh": 151.98,
+    "close": 62.95
+   },
+   {
+    "date": "2026-09-14",
+    "targetCentral": 64.45,
     "targetLow": 39.26,
     "targetHigh": 151.98,
     "close": 62.95
@@ -4012,7 +4054,7 @@
     "settledDate": "2026-09-08"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 59.86,
     "forDate": "2026-09-14",
@@ -4115,6 +4157,13 @@
    },
    {
     "date": "2026-09-13",
+    "targetCentral": 70.78,
+    "targetLow": 27.28,
+    "targetHigh": 154.01,
+    "close": 59.86
+   },
+   {
+    "date": "2026-09-14",
     "targetCentral": 70.78,
     "targetLow": 27.28,
     "targetHigh": 154.01,
@@ -4601,7 +4650,7 @@
     "settledDate": "2026-09-08"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 14.35,
     "forDate": "2026-09-14",
@@ -4704,6 +4753,13 @@
    },
    {
     "date": "2026-09-13",
+    "targetCentral": 24.65,
+    "targetLow": 8.07,
+    "targetHigh": 46.81,
+    "close": 14.35
+   },
+   {
+    "date": "2026-09-14",
     "targetCentral": 24.65,
     "targetLow": 8.07,
     "targetHigh": 46.81,
@@ -5156,7 +5212,7 @@
     "settledDate": "2026-09-07"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 259500.0,
     "forDate": "2026-09-14",
@@ -5262,6 +5318,13 @@
     "targetCentral": 547055.68,
     "targetLow": 284806.03,
     "targetHigh": 1305313.33,
+    "close": 259500.0
+   },
+   {
+    "date": "2026-09-14",
+    "targetCentral": 546063.62,
+    "targetLow": 284806.03,
+    "targetHigh": 1305313.32,
     "close": 259500.0
    }
   ]
@@ -5711,7 +5774,7 @@
     "settledDate": "2026-09-07"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 1812000.0,
     "forDate": "2026-09-14",
@@ -5817,6 +5880,13 @@
     "targetCentral": 4405473.87,
     "targetLow": 1946685.56,
     "targetHigh": 14516806.38,
+    "close": 1812000.0
+   },
+   {
+    "date": "2026-09-14",
+    "targetCentral": 4405473.72,
+    "targetLow": 1946685.52,
+    "targetHigh": 14516804.98,
     "close": 1812000.0
    }
   ]
@@ -6266,7 +6336,7 @@
     "settledDate": "2026-09-07"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 206500.0,
     "forDate": "2026-09-14",
@@ -6369,6 +6439,13 @@
    },
    {
     "date": "2026-09-13",
+    "targetCentral": 259383.03,
+    "targetLow": 142370.17,
+    "targetHigh": 359538.88,
+    "close": 206500.0
+   },
+   {
+    "date": "2026-09-14",
     "targetCentral": 259383.03,
     "targetLow": 142370.17,
     "targetHigh": 359538.88,
@@ -6821,7 +6898,7 @@
     "settledDate": "2026-09-07"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 1081000.0,
     "forDate": "2026-09-14",
@@ -6924,6 +7001,13 @@
    },
    {
     "date": "2026-09-13",
+    "targetCentral": 1459635.15,
+    "targetLow": 893267.02,
+    "targetHigh": 2289165.79,
+    "close": 1081000.0
+   },
+   {
+    "date": "2026-09-14",
     "targetCentral": 1459635.15,
     "targetLow": 893267.02,
     "targetHigh": 2289165.79,
@@ -7376,7 +7460,7 @@
     "settledDate": "2026-09-07"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 130500.0,
     "forDate": "2026-09-14",
@@ -7479,6 +7563,13 @@
    },
    {
     "date": "2026-09-13",
+    "targetCentral": 167556.45,
+    "targetLow": 73334.53,
+    "targetHigh": 275717.56,
+    "close": 130500.0
+   },
+   {
+    "date": "2026-09-14",
     "targetCentral": 167556.45,
     "targetLow": 73334.53,
     "targetHigh": 275717.56,
@@ -7931,7 +8022,7 @@
     "settledDate": "2026-09-07"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 678000.0,
     "forDate": "2026-09-14",
@@ -8034,6 +8125,13 @@
    },
    {
     "date": "2026-09-13",
+    "targetCentral": 946510.14,
+    "targetLow": 526494.61,
+    "targetHigh": 1624821.03,
+    "close": 678000.0
+   },
+   {
+    "date": "2026-09-14",
     "targetCentral": 946510.14,
     "targetLow": 526494.61,
     "targetHigh": 1624821.03,
@@ -8486,7 +8584,7 @@
     "settledDate": "2026-09-07"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 70900.0,
     "forDate": "2026-09-14",
@@ -8589,6 +8687,13 @@
    },
    {
     "date": "2026-09-13",
+    "targetCentral": 90637.83,
+    "targetLow": 39986.74,
+    "targetHigh": 176116.2,
+    "close": 70900.0
+   },
+   {
+    "date": "2026-09-14",
     "targetCentral": 90637.83,
     "targetLow": 39986.74,
     "targetHigh": 176116.2,
@@ -9041,7 +9146,7 @@
     "settledDate": "2026-09-07"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 70300.0,
     "forDate": "2026-09-14",
@@ -9144,6 +9249,13 @@
    },
    {
     "date": "2026-09-13",
+    "targetCentral": 137455.47,
+    "targetLow": 72498.27,
+    "targetHigh": 197323.82,
+    "close": 70300.0
+   },
+   {
+    "date": "2026-09-14",
     "targetCentral": 137455.47,
     "targetLow": 72498.27,
     "targetHigh": 197323.82,
@@ -9596,7 +9708,7 @@
     "settledDate": "2026-09-07"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 107.5,
     "forDate": "2026-09-14",
@@ -9700,6 +9812,13 @@
    {
     "date": "2026-09-13",
     "targetCentral": 130.38,
+    "targetLow": 67.72,
+    "targetHigh": 166.36,
+    "close": 107.5
+   },
+   {
+    "date": "2026-09-14",
+    "targetCentral": 130.4,
     "targetLow": 67.72,
     "targetHigh": 166.36,
     "close": 107.5
@@ -10151,7 +10270,7 @@
     "settledDate": "2026-09-07"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 428.4,
     "forDate": "2026-09-14",
@@ -10254,6 +10373,13 @@
    },
    {
     "date": "2026-09-13",
+    "targetCentral": 495.36,
+    "targetLow": 304.52,
+    "targetHigh": 650.51,
+    "close": 428.4
+   },
+   {
+    "date": "2026-09-14",
     "targetCentral": 495.36,
     "targetLow": 304.52,
     "targetHigh": 650.51,
@@ -10706,7 +10832,7 @@
     "settledDate": "2026-09-07"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 89.1,
     "forDate": "2026-09-14",
@@ -10809,6 +10935,13 @@
    },
    {
     "date": "2026-09-13",
+    "targetCentral": 110.93,
+    "targetLow": 72.41,
+    "targetHigh": 159.81,
+    "close": 89.1
+   },
+   {
+    "date": "2026-09-14",
     "targetCentral": 110.93,
     "targetLow": 72.41,
     "targetHigh": 159.81,
@@ -11261,7 +11394,7 @@
     "settledDate": "2026-09-07"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 26.36,
     "forDate": "2026-09-14",
@@ -11364,6 +11497,13 @@
    },
    {
     "date": "2026-09-13",
+    "targetCentral": 26.25,
+    "targetLow": 14.76,
+    "targetHigh": 49.7,
+    "close": 26.36
+   },
+   {
+    "date": "2026-09-14",
     "targetCentral": 26.25,
     "targetLow": 14.76,
     "targetHigh": 49.7,
@@ -11816,7 +11956,7 @@
     "settledDate": "2026-09-07"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 79.85,
     "forDate": "2026-09-14",
@@ -11920,6 +12060,13 @@
    {
     "date": "2026-09-13",
     "targetCentral": 110.78,
+    "targetLow": 64.87,
+    "targetHigh": 120.3,
+    "close": 79.85
+   },
+   {
+    "date": "2026-09-14",
+    "targetCentral": 110.5,
     "targetLow": 64.87,
     "targetHigh": 120.3,
     "close": 79.85
@@ -12371,7 +12518,7 @@
     "settledDate": "2026-09-07"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 63.15,
     "forDate": "2026-09-14",
@@ -12477,6 +12624,13 @@
     "targetCentral": 71.83,
     "targetLow": 29.82,
     "targetHigh": 131.7,
+    "close": 63.15
+   },
+   {
+    "date": "2026-09-14",
+    "targetCentral": 71.83,
+    "targetLow": 29.82,
+    "targetHigh": 131.69,
     "close": 63.15
    }
   ]
@@ -12926,7 +13080,7 @@
     "settledDate": "2026-09-07"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 39.15,
     "forDate": "2026-09-14",
@@ -13029,6 +13183,13 @@
    },
    {
     "date": "2026-09-13",
+    "targetCentral": 37.54,
+    "targetLow": 28.39,
+    "targetHigh": 58.9,
+    "close": 39.15
+   },
+   {
+    "date": "2026-09-14",
     "targetCentral": 37.54,
     "targetLow": 28.39,
     "targetHigh": 58.9,
@@ -13481,7 +13642,7 @@
     "settledDate": "2026-09-07"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 1040.0,
     "forDate": "2026-09-14",
@@ -13584,6 +13745,13 @@
    },
    {
     "date": "2026-09-13",
+    "targetCentral": 1172.43,
+    "targetLow": 874.2,
+    "targetHigh": 2074.82,
+    "close": 1040.0
+   },
+   {
+    "date": "2026-09-14",
     "targetCentral": 1172.43,
     "targetLow": 874.2,
     "targetHigh": 2074.82,
@@ -14036,7 +14204,7 @@
     "settledDate": "2026-09-07"
    },
    {
-    "predictedAt": "2026-09-13T07:31:28+09:00",
+    "predictedAt": "2026-09-14T07:31:13+09:00",
     "baseDate": "2026-09-11",
     "baseClose": 9.26,
     "forDate": "2026-09-14",
@@ -14139,6 +14307,13 @@
    },
    {
     "date": "2026-09-13",
+    "targetCentral": 1.48,
+    "targetLow": 0.49,
+    "targetHigh": 4.53,
+    "close": 9.26
+   },
+   {
+    "date": "2026-09-14",
     "targetCentral": 1.48,
     "targetLow": 0.49,
     "targetHigh": 4.53,
