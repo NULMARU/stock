@@ -1,0 +1,106 @@
+import { beforeEach, describe, expect, it } from 'vitest';
+import {
+  marginLeadVsBase,
+  physicalAIActivationQuarter,
+  useSimStore,
+} from '../ui/store';
+import type { SerializableState, ScenarioId } from '../ui/urlState';
+import { decodeState, encodeState } from '../ui/urlState';
+import { simulateLite } from '../liteEngine';
+import { DEFAULT_LITE_PARAMS } from '../liteMapping';
+import { DEFAULT_CONFIG } from '../defaults';
+import { LITE_SCENARIO_BY_ID } from '../scenarios';
+
+const state = () => useSimStore.getState();
+const serializable = (): SerializableState => {
+  const current = state();
+  return {
+    params: current.params,
+    geoState: current.geoState,
+    activeTab: current.activeTab,
+    selectedMetrics: current.selectedMetrics,
+    activeScenario: current.activeScenario as ScenarioId,
+    config: current.config,
+  };
+};
+
+const lastRevenue = (results: ReturnType<typeof simulateLite>) =>
+  results[results.length - 1]!.totalRevenue;
+
+beforeEach(() => {
+  state().resetParams();
+  state().setGeoBloc(50);
+  state().setGeoEnergy(50);
+  state().setRiskStage('taiwan', 0);
+  state().setRiskStage('russiaNato', 0);
+  state().setRiskStage('middleEast', 0);
+});
+
+describe('Lite store integration', () => {
+  it('loads one of the six Lite presets', () => {
+    state().applyScenario('algoBreakthrough');
+    expect(state().activeScenario).toBe('algoBreakthrough');
+    expect(state().params.intelligence.algorithmicEfficiency).toBe(390);
+    expect(state().results).toHaveLength(44);
+  });
+
+  it('marks manual Lite input changes as custom', () => {
+    state().applyScenario('memoryWall');
+    state().setParam('silicon', 'packaging', 99);
+    expect(state().activeScenario).toBe('custom');
+    expect(state().params.silicon.packaging).toBe(99);
+  });
+
+  it('returns to the exact 14-input default', () => {
+    state().applyScenario('koreaFirstSpatial');
+    state().resetParams();
+    expect(state().activeScenario).toBe('base2026');
+    expect(state().params).toEqual(DEFAULT_LITE_PARAMS);
+    expect(state().config).toEqual(DEFAULT_CONFIG);
+  });
+
+  it('reproduces the curve after a v2 share round-trip', () => {
+    state().applyScenario('memoryWall');
+    state().setParam('energy', 'deliverablePower', 22);
+    const decoded = decodeState(encodeState(serializable()));
+    const rerun = simulateLite(decoded.params!, decoded.config ?? state().config);
+    expect(lastRevenue(rerun)).toBeCloseTo(lastRevenue(state().results), 2);
+  });
+
+  it('allows exactly one chart metric at a time', () => {
+    state().toggleMetric('edgeLoopSpeed');
+    expect(state().selectedMetrics).toEqual(['edgeLoopSpeed']);
+    state().toggleMetric('totalCAPEX');
+    expect(state().selectedMetrics).toEqual(['totalCAPEX']);
+  });
+
+  it('keeps all three risk modules independently editable', () => {
+    state().setRiskStage('russiaNato', 3);
+    state().setRiskEvent('middleEast', { stage: 2, startQuarter: '2028Q1', durationOverrideQ: 5 });
+    expect(state().geoState.risks.russiaNato.stage).toBe(3);
+    expect(state().geoState.risks.middleEast).toEqual({
+      stage: 2,
+      startQuarter: '2028Q1',
+      durationOverrideQ: 5,
+    });
+    expect(state().geoResults).toHaveLength(44);
+  });
+
+  it('moving the bloc axis from 50 to 0 accelerates the geopolitical flywheel', () => {
+    const before = state().geoResults[state().geoResults.length - 1]!.totalRevenue;
+    state().setGeoBloc(0);
+    const after = state().geoResults[state().geoResults.length - 1]!.totalRevenue;
+    expect(after).toBeGreaterThan(before);
+  });
+});
+
+describe('Lite result selectors', () => {
+  it('preserves the margin lead signal and reports physical-AI activation', () => {
+    const algo = simulateLite(LITE_SCENARIO_BY_ID.algoBreakthrough!.params, DEFAULT_CONFIG);
+    const physical = simulateLite(LITE_SCENARIO_BY_ID.physicalAITakeoff!.params, DEFAULT_CONFIG);
+    expect(marginLeadVsBase(algo)).toBeGreaterThan(0);
+    expect(marginLeadVsBase(simulateLite(DEFAULT_LITE_PARAMS, DEFAULT_CONFIG))).toBe(0);
+    expect(physicalAIActivationQuarter(physical)).toBe('2025Q1');
+    expect(physicalAIActivationQuarter(simulateLite(DEFAULT_LITE_PARAMS, DEFAULT_CONFIG))).toBeNull();
+  });
+});

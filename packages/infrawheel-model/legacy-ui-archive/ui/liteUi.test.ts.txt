@@ -1,0 +1,73 @@
+import { describe, expect, it } from 'vitest';
+import { NODE_GROUPS, getVisibleParamDefs } from './paramMeta';
+import { en } from './i18n/en';
+import { ko } from './i18n/ko';
+import { getStatusSnapshot } from './components/StatusCards';
+import { LITE_METRICS, getMetricValue, resolveSelectedMetric } from './components/TimelineChart';
+import { WHEEL_NODES } from './components/InfraWheelDiagram';
+import type { LiteCycleOutput } from '../types';
+
+function cycle(overrides: Partial<LiteCycleOutput> = {}): LiteCycleOutput {
+  return {
+    quarter: '2025Q1',
+    totalRevenue: 10,
+    totalCAPEX: 4,
+    bottleneckRatio: 0.6,
+    bottleneckNode: 'aiInfrastructure',
+    bottleneckCause: 'spatialCompute',
+    loopSpeeds: { hyperscale: 2, spatial: 1 },
+    nodeOutputs: {
+      confidence: 0.75,
+      physicalAIActive: false,
+    },
+    ...overrides,
+  } as LiteCycleOutput;
+}
+
+describe('Lite UI metadata', () => {
+  it('contains exactly six nodes, 14 advanced inputs, and one basic input per node', () => {
+    expect(NODE_GROUPS).toHaveLength(6);
+    expect(getVisibleParamDefs('advanced')).toHaveLength(14);
+    expect(getVisibleParamDefs('basic').map((param) => param.key)).toEqual([
+      'memorySupplyIndex',
+      'deliverablePower',
+      'cloudEfficiencyIndex',
+      'algorithmicEfficiency',
+      'revenueGrowth',
+      'reinvestRatio',
+    ]);
+    expect(WHEEL_NODES).toHaveLength(6);
+  });
+
+  it('keeps the Korean and English dictionaries in key parity', () => {
+    expect(Object.keys(ko).sort()).toEqual(Object.keys(en).sort());
+  });
+});
+
+describe('Lite status and chart selectors', () => {
+  it('derives the first Physical AI activation quarter and latest status', () => {
+    const results = [
+      cycle(),
+      cycle({ quarter: '2025Q2', nodeOutputs: { ...cycle().nodeOutputs, physicalAIActive: true } }),
+      cycle({ quarter: '2025Q3', bottleneckNode: 'capital', bottleneckCause: 'capital', nodeOutputs: { ...cycle().nodeOutputs, confidence: 0.9, physicalAIActive: true } }),
+    ];
+    expect(getStatusSnapshot(results)).toEqual({
+      bottleneckNode: 'capital',
+      bottleneckCause: 'capital',
+      confidence: 0.9,
+      physicalAIActive: true,
+      activationQuarter: '2025Q2',
+    });
+  });
+
+  it('exposes exactly five single-axis metrics and maps their values', () => {
+    const sample = cycle();
+    expect(LITE_METRICS.map((metric) => metric.key)).toEqual([
+      'totalRevenue', 'totalCAPEX', 'bottleneckHealth', 'cloudLoopSpeed', 'edgeLoopSpeed',
+    ]);
+    expect(getMetricValue(sample, 'bottleneckHealth')).toBe(0.6);
+    expect(getMetricValue(sample, 'cloudLoopSpeed')).toBe(2);
+    expect(getMetricValue(sample, 'edgeLoopSpeed')).toBe(1);
+    expect(resolveSelectedMetric(['unknown', 'edgeLoopSpeed'])).toBe('edgeLoopSpeed');
+  });
+});

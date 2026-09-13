@@ -1,0 +1,13 @@
+{
+  "name": "@stock/infrawheel-model",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "InfraWheel frozen legacy and corrected structural v2 quarterly model",
+  "exports": {
+    ".": "./src/index.ts",
+    "./legacy": "./src/legacy/index.ts",
+    "./v2": "./src/v2/index.ts"
+  },
+  "types": "./src/index.ts"
+}

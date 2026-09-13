@@ -430,6 +430,7 @@ export default function StockDetailPage() {
 
   return (
     <div className="mx-auto w-full max-w-5xl space-y-6 px-4 py-6">
+      <div className="mx-auto flex max-w-6xl flex-wrap gap-3 px-4 pt-5"><Link className="rounded-lg border px-4 py-2 font-medium" to={`/stock/${encodeURIComponent(stock.ticker)}/financials?market=${stock.market}`}>재무제표 · 핵심 12지표 →</Link><Link className="rounded-lg border px-4 py-2" to={`/lab?stock=${encodeURIComponent(stock.ticker)}`}>시뮬레이션 실험실 →</Link></div>
       {/* 상단 네비게이션 */}
       <div>
         <Button asChild variant="ghost" size="sm" className="-ml-2 text-muted-foreground">

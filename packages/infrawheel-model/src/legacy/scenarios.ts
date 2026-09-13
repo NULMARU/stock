@@ -1,0 +1,127 @@
+/**
+ * InfraWheel direct-parameter scenario presets.
+ *
+ * Each preset is a *relative override* on DEFAULT_PARAMS (Base Case 2026), so the
+ * presets stay valid after the base values are recalibrated for publication.
+ * Distinct from geopolitical presets (geoMapping.GEO_PRESETS), which adjust params
+ * via the overlay rather than setting them directly.
+ *
+ * Directions follow simulator-spec.md; threshold-sensitive values were verified against
+ * the engine so each scenario visibly exercises its intended dynamic (see notes).
+ */
+
+import { DEFAULT_PARAMS } from './defaults';
+import { collapseEngineParams } from './liteMapping';
+import type { InfraWheelParams, LiteParams, SimulationConfig } from './types';
+
+export interface Scenario {
+  /** matches i18n key `scenario.<id>` */
+  id: string;
+  /** complete param set (DEFAULT_PARAMS merged with the override) */
+  params: InfraWheelParams;
+  /** optional config overrides (merged onto DEFAULT_CONFIG when applied) */
+  config?: Partial<SimulationConfig>;
+}
+
+/** Merge a partial, node-wise override onto DEFAULT_PARAMS. */
+type ParamOverride = {
+  [N in keyof InfraWheelParams]?: Partial<InfraWheelParams[N]>;
+};
+
+function ov(o: ParamOverride): InfraWheelParams {
+  return {
+    silicon: { ...DEFAULT_PARAMS.silicon, ...o.silicon },
+    energy: { ...DEFAULT_PARAMS.energy, ...o.energy },
+    intelligence: { ...DEFAULT_PARAMS.intelligence, ...o.intelligence },
+    capital: { ...DEFAULT_PARAMS.capital, ...o.capital },
+    hyperscaleDC: { ...DEFAULT_PARAMS.hyperscaleDC, ...o.hyperscaleDC },
+    digitalAI: { ...DEFAULT_PARAMS.digitalAI, ...o.digitalAI },
+    spatialCompute: { ...DEFAULT_PARAMS.spatialCompute, ...o.spatialCompute },
+    physicalAI: { ...DEFAULT_PARAMS.physicalAI, ...o.physicalAI },
+  };
+}
+
+export const BASE_SCENARIO_ID = 'base2026';
+/** Sentinel id shown when the user edits params away from any preset. */
+export const CUSTOM_SCENARIO_ID = 'custom';
+
+export const SCENARIOS: Scenario[] = [
+  { id: 'base2026', params: ov({}) },
+
+  // Energy is the binding constraint: scarce power (E1 at the floor) + long lead time. Power-compute
+  // (E1×E3) drops below the chip ceiling so the ⑤ serving ceiling binds digital revenue. Compute
+  // density (E3) is intentionally left mid-range so it stays a *live lever*: raising it relieves the
+  // energy bottleneck (engine energy-ratio = power×density, normalised to base). deploymentRate is
+  // lifted just off the pilot floor (3→6) so spatial doesn't mask energy as the binding node — with
+  // spatial at 3, its 0.05 ratio sits below energy and the scenario reads as spatial-bound instead.
+  { id: 'energyBottleneck', params: ov({ energy: { deliverablePower: 15, computeDensity: 8, leadTime: 54 }, spatialCompute: { deploymentRate: 6 } }) },
+
+  // Confidence collapse: low reinvestment + low revenue growth + high sensitivity.
+  {
+    id: 'aiWinter',
+    params: ov({ capital: { reinvestRatio: 18 }, digitalAI: { revenueGrowth: 15 } }),
+    config: { sensitivity: 0.9 },
+  },
+
+  // Korea leads spatial: high AI-RAN deployment + capable nodes over a dense metro footprint.
+  {
+    id: 'koreaFirstSpatial',
+    params: ov({ spatialCompute: { deploymentRate: 25, perNodeTOPS: 400 } }),
+    config: { coveredAreaKm2: 50_000, metroBSCount: 500_000 },
+  },
+
+  // Software lever jumps: efficiency + frontier→edge transfer.
+  { id: 'algoBreakthrough', params: ov({ intelligence: { algorithmicEfficiency: 390, transferRatio: 60 } }) },
+
+  // Memory wall — note: the serving ceiling (1A) is min(capMemory, packaging); in reality the
+  // memory wall is largely advanced-packaging (CoWoS/HBM-integration) limited, so packaging is
+  // lowered too. Verified this actually binds the Digital AI serving ceiling.
+  { id: 'memoryWall', params: ov({ silicon: { bwMemory: 35, capMemory: 150, packaging: 40 } }) },
+
+  // Physical AI takeoff — dual-key needs latency <= threshold; perNodeTOPS raised to 600 so the
+  // spatial-latency key actually trips at deploymentRate 25–35 (verified active).
+  {
+    id: 'physicalAITakeoff',
+    params: ov({
+      physicalAI: { unitEconomics: 0.9 },
+      spatialCompute: { deploymentRate: 35, perNodeTOPS: 600 },
+      intelligence: { transferRatio: 60 },
+    }),
+  },
+
+  // Sovereign capital floods in: large exogenous policy CAPEX.
+  { id: 'policyBoostKorea', params: ov({ capital: { policyCAPEX: 70 } }) },
+];
+
+export const SCENARIO_BY_ID: Record<string, Scenario> = Object.fromEntries(
+  SCENARIOS.map((s) => [s.id, s]),
+);
+
+export interface LiteScenario {
+  id: string;
+  params: LiteParams;
+  config?: Partial<SimulationConfig>;
+}
+
+/** Six focused presets retained by the Lite interface. */
+export const LITE_SCENARIO_IDS = [
+  'base2026',
+  'energyBottleneck',
+  'koreaFirstSpatial',
+  'algoBreakthrough',
+  'memoryWall',
+  'physicalAITakeoff',
+] as const;
+
+export const LITE_SCENARIOS: LiteScenario[] = LITE_SCENARIO_IDS.map((id) => {
+  const scenario = SCENARIO_BY_ID[id]!;
+  return {
+    id,
+    params: collapseEngineParams(scenario.params),
+    ...(scenario.config ? { config: scenario.config } : {}),
+  };
+});
+
+export const LITE_SCENARIO_BY_ID: Record<string, LiteScenario> = Object.fromEntries(
+  LITE_SCENARIOS.map((scenario) => [scenario.id, scenario]),
+);

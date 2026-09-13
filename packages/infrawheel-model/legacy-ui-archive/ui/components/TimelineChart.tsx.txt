@@ -1,0 +1,174 @@
+import {
+  CartesianGrid,
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from 'recharts';
+import { useId } from 'react';
+import { useSimStore } from '../store';
+import { useI18n } from '../i18n';
+import type { LiteCycleOutput } from '../../types';
+import type { TranslationKey } from '../i18n';
+
+export type LiteMetricKey =
+  | 'totalRevenue'
+  | 'totalCAPEX'
+  | 'bottleneckHealth'
+  | 'cloudLoopSpeed'
+  | 'edgeLoopSpeed';
+
+interface MetricDef {
+  key: LiteMetricKey;
+  labelKey: TranslationKey;
+  unitKey: TranslationKey;
+  color: string;
+  percent?: boolean;
+}
+
+export const LITE_METRICS: readonly MetricDef[] = [
+  { key: 'totalRevenue', labelKey: 'metric.totalRevenue', unitKey: 'unit.billionQuarter', color: '#60a5fa' },
+  { key: 'totalCAPEX', labelKey: 'metric.totalCAPEX', unitKey: 'unit.billionQuarter', color: '#fb7185' },
+  { key: 'bottleneckHealth', labelKey: 'metric.bottleneckHealth', unitKey: 'unit.percent', color: '#fbbf24', percent: true },
+  { key: 'cloudLoopSpeed', labelKey: 'metric.cloudLoopSpeed', unitKey: 'unit.speedIndex', color: '#818cf8' },
+  { key: 'edgeLoopSpeed', labelKey: 'metric.edgeLoopSpeed', unitKey: 'unit.speedIndex', color: '#2dd4bf' },
+];
+
+const METRIC_BY_KEY = Object.fromEntries(
+  LITE_METRICS.map((metric) => [metric.key, metric]),
+) as Record<LiteMetricKey, MetricDef>;
+
+export function getMetricValue(cycle: LiteCycleOutput, key: LiteMetricKey): number {
+  switch (key) {
+    case 'totalRevenue':
+      return cycle.totalRevenue;
+    case 'totalCAPEX':
+      return cycle.totalCAPEX;
+    case 'bottleneckHealth':
+      return cycle.bottleneckRatio;
+    case 'cloudLoopSpeed':
+      return cycle.loopSpeeds.hyperscale;
+    case 'edgeLoopSpeed':
+      return cycle.loopSpeeds.spatial;
+  }
+}
+
+function isLiteMetric(value: string | undefined): value is LiteMetricKey {
+  return value !== undefined && value in METRIC_BY_KEY;
+}
+
+export function resolveSelectedMetric(selectedMetrics: readonly string[]): LiteMetricKey {
+  const selected = selectedMetrics.find((metric) => isLiteMetric(metric));
+  return isLiteMetric(selected) ? selected : 'totalRevenue';
+}
+
+function formatValue(value: number, metric: MetricDef): string {
+  if (metric.percent) return `${(value * 100).toFixed(1)}%`;
+  return value.toLocaleString(undefined, { maximumFractionDigits: 1 });
+}
+
+export function TimelineChart({ useGeoResults }: { useGeoResults?: boolean } = {}) {
+  const { t } = useI18n();
+  const titleId = useId();
+  const infraResults = useSimStore((state) => state.results) as LiteCycleOutput[];
+  const geoResults = useSimStore((state) => state.geoResults) as LiteCycleOutput[];
+  const results = useGeoResults ? geoResults : infraResults;
+  const selectedMetrics = useSimStore((state) => state.selectedMetrics) as string[];
+  const toggleMetric = useSimStore((state) => state.toggleMetric) as (metric: LiteMetricKey) => void;
+  const selectedMetric = resolveSelectedMetric(selectedMetrics);
+  const metric = METRIC_BY_KEY[selectedMetric];
+
+  const chartData = results.map((cycle) => ({
+    quarter: cycle.quarter,
+    value: Number(getMetricValue(cycle, selectedMetric).toFixed(4)),
+  }));
+  const first = chartData[0];
+  const latest = chartData[chartData.length - 1];
+  const domain: [number | 'auto', number | 'auto'] = metric.percent ? [0, 1] : [0, 'auto'];
+
+  return (
+    <section className="timeline-panel" aria-labelledby={titleId}>
+      <div className="timeline-header">
+        <h2 id={titleId}>{t('timelineProjection')}</h2>
+        <span className="timeline-unit">{t(metric.unitKey)}</span>
+      </div>
+      <div className="metric-toggles" role="group" aria-label={t('aria.metricPicker')}>
+        {LITE_METRICS.map((option) => {
+          const selected = option.key === selectedMetric;
+          return (
+            <button
+              type="button"
+              key={option.key}
+              className={`metric-toggle ${selected ? 'active' : ''}`}
+              style={{
+                borderColor: option.color,
+                backgroundColor: selected ? `${option.color}18` : undefined,
+              }}
+              aria-pressed={selected}
+              onClick={() => {
+                if (!selected) toggleMetric(option.key);
+              }}
+            >
+              <span className="metric-dot" style={{ backgroundColor: option.color }} aria-hidden="true" />
+              {t(option.labelKey)}
+            </button>
+          );
+        })}
+      </div>
+      <p className="sr-only" id={`${titleId}-summary`}>
+        {t(metric.labelKey)}. {first ? `${first.quarter}: ${formatValue(first.value, metric)}.` : ''}{' '}
+        {latest ? `${latest.quarter}: ${formatValue(latest.value, metric)}.` : ''}
+      </p>
+      <div
+        className="chart-container"
+        role="img"
+        aria-labelledby={`${titleId} ${titleId}-summary`}
+      >
+        <ResponsiveContainer
+          width="100%"
+          height="100%"
+          minWidth={0}
+          minHeight={0}
+          initialDimension={{ width: 320, height: 320 }}
+        >
+          <LineChart data={chartData} margin={{ top: 8, right: 16, bottom: 0, left: 0 }}>
+            <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
+            <XAxis
+              dataKey="quarter"
+              tick={{ fontSize: 11 }}
+              tickFormatter={(value: string, index: number) => index % 4 === 0 ? value : ''}
+              interval={0}
+            />
+            <YAxis
+              tick={{ fontSize: 11 }}
+              width={60}
+              domain={domain}
+              tickFormatter={(value: number) => metric.percent ? `${Math.round(value * 100)}%` : value.toLocaleString()}
+            />
+            <Tooltip
+              contentStyle={{
+                background: '#334155',
+                border: '1px solid #475569',
+                borderRadius: 8,
+                color: '#e2e8f0',
+                fontSize: 12,
+              }}
+              labelStyle={{ color: '#e2e8f0' }}
+            />
+            <Line
+              type="monotone"
+              dataKey="value"
+              name={t(metric.labelKey)}
+              stroke={metric.color}
+              strokeWidth={2.5}
+              dot={false}
+              isAnimationActive={false}
+            />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+    </section>
+  );
+}

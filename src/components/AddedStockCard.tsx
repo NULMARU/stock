@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import { useState } from 'react'
 import { Sparkles, Trash2 } from 'lucide-react'
 import type { UserAddedStock } from '@/types/stock'
@@ -87,7 +88,7 @@ export function AddedStockCard({ stock, editMode = false, onRemove }: AddedStock
 
         {/* 가격/점수 데이터 없음 안내 */}
         <div className="mt-auto rounded-lg border border-dashed border-border bg-muted/50 px-3 py-2.5 text-center text-xs text-muted-foreground">
-          데이터 대기 중 · 다음 자동 갱신부터 분석이 채워져요
+          추가한 종목 · 분석 데이터 연결 대기
         </div>
 
         {/* 하단: 뉴스 받기 (항상) + 삭제 (편집 모드) */}
@@ -118,11 +119,12 @@ export function AddedStockCard({ stock, editMode = false, onRemove }: AddedStock
               {stock.name} <span className="font-mono text-sm font-normal">({stock.ticker})</span>
             </DialogTitle>
             <DialogDescription className="pt-2 leading-relaxed">
-              간이 추가 종목이에요. 재무 분석·점수·뉴스는 다음 자동 갱신부터 반영돼요. 이 종목을
+              간이 추가 종목이에요. 재무 분석·점수·뉴스는 데이터 연결이 준비된 후 제공됩니다. 이 종목을
               정식 데이터에 영구 반영하려면 Kimi에게 추가를 요청해 주세요.
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>
+              <Link className="rounded-lg border px-4 py-2 text-sm" to={`/stock/${encodeURIComponent(stock.ticker)}/financials?market=${stock.market}`}>재무제표 보기</Link>
             <Button onClick={() => setInfoOpen(false)}>확인</Button>
           </DialogFooter>
         </DialogContent>

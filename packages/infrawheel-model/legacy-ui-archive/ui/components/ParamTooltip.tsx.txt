@@ -1,0 +1,61 @@
+import { useEffect, useId, useState } from 'react';
+import { useI18n } from '../i18n';
+import { getParamDescription } from '../content/paramDescriptions';
+import type { Confidence } from '../content/paramDescriptions';
+
+const CONFIDENCE_DOT: Record<Confidence, { color: string; labelKey: 'confidence.high' | 'confidence.medium' | 'confidence.low' }> = {
+  high: { color: '#22c55e', labelKey: 'confidence.high' },
+  medium: { color: '#eab308', labelKey: 'confidence.medium' },
+  low: { color: '#ef4444', labelKey: 'confidence.low' },
+};
+
+export function ParamTooltip({ paramKey }: { paramKey: string }) {
+  const [open, setOpen] = useState(false);
+  const { locale, t } = useI18n();
+  const tooltipId = useId();
+  const description = getParamDescription(paramKey, locale);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [open]);
+
+  if (!description) return null;
+
+  const confidence = CONFIDENCE_DOT[description.confidence];
+
+  return (
+    <span className="tooltip-wrapper">
+      <button
+        type="button"
+        className="tooltip-trigger"
+        onClick={() => setOpen((current) => !current)}
+        aria-label={t('aria.paramInfo')}
+        aria-expanded={open}
+        aria-controls={tooltipId}
+      >
+        <span aria-hidden="true">ⓘ</span>
+      </button>
+      {open && (
+        <>
+          <span className="tooltip-backdrop" aria-hidden="true" onClick={() => setOpen(false)} />
+          <span id={tooltipId} className="tooltip-popover" role="tooltip">
+            <span className="tooltip-confidence">
+              <span className="confidence-dot" style={{ backgroundColor: confidence.color }} aria-hidden="true" />
+              <span className="confidence-label">{t(confidence.labelKey)}</span>
+            </span>
+            <span className="tooltip-desc">{description.description}</span>
+            <span className="tooltip-meta">
+              <span className="tooltip-range">{description.range}</span>
+              <span className="tooltip-source">{description.source}</span>
+            </span>
+          </span>
+        </>
+      )}
+    </span>
+  );
+}

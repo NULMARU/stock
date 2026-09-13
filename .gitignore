@@ -25,3 +25,7 @@ dist-ssr
 
 scripts/.cache/
 __pycache__/
+
+.env
+.env.local
+.stock-data/

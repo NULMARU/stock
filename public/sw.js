@@ -5,7 +5,7 @@
  * - 그 외: network-first
  * - 활성화: 구버전 캐시 정리
  */
-const VERSION = 'v2';
+const VERSION = 'v3';
 const SHELL_CACHE = `stocklab-shell-${VERSION}`;
 const DATA_CACHE = `stocklab-data-${VERSION}`;
 const ASSET_CACHE = `stocklab-asset-${VERSION}`;
@@ -18,7 +18,7 @@ self.addEventListener('install', (event) => {
     caches
       .open(SHELL_CACHE)
       .then((cache) => cache.addAll(APP_SHELL))
-      .then(() => self.skipWaiting())
+
   );
 });
 
@@ -27,7 +27,7 @@ self.addEventListener('activate', (event) => {
     caches
       .keys()
       .then((keys) =>
-        Promise.all(keys.filter((k) => !ALL_CACHES.includes(k)).map((k) => caches.delete(k)))
+        Promise.all(keys.filter((k) => k.startsWith('stocklab-') && !ALL_CACHES.includes(k)).map((k) => caches.delete(k)))
       )
       .then(() => self.clients.claim())
   );

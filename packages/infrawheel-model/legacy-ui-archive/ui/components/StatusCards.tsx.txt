@@ -1,0 +1,89 @@
+import { useI18n } from '../i18n';
+import type { LiteCycleOutput, LiteNodeId, NodeId } from '../../types';
+import type { TranslationKey } from '../i18n';
+
+const NODE_LABELS: Record<LiteNodeId, TranslationKey> = {
+  silicon: 'node.silicon',
+  energy: 'node.energy',
+  aiInfrastructure: 'node.aiInfrastructure',
+  intelligence: 'node.intelligence',
+  aiApplications: 'node.aiApplications',
+  capital: 'node.capital',
+};
+
+const CAUSE_LABELS: Record<NodeId, TranslationKey> = {
+  silicon: 'node.silicon',
+  energy: 'node.energy',
+  hyperscaleDC: 'node.hyperscaleDC',
+  spatialCompute: 'node.spatialCompute',
+  intelligence: 'node.intelligence',
+  digitalAI: 'node.digitalAI',
+  physicalAI: 'node.physicalAI',
+  capital: 'node.capital',
+};
+
+export interface StatusSnapshot {
+  bottleneckNode: LiteNodeId | null;
+  bottleneckCause: NodeId | null;
+  confidence: number | null;
+  physicalAIActive: boolean;
+  activationQuarter: string | null;
+}
+
+export function getStatusSnapshot(results: LiteCycleOutput[]): StatusSnapshot {
+  const latest = results[results.length - 1];
+  const activationQuarter = results.find(
+    (cycle) => cycle.nodeOutputs.physicalAIActive,
+  )?.quarter ?? null;
+
+  return {
+    bottleneckNode: latest?.bottleneckNode ?? null,
+    bottleneckCause: latest?.bottleneckCause ?? null,
+    confidence: latest?.nodeOutputs.confidence ?? null,
+    physicalAIActive: latest?.nodeOutputs.physicalAIActive ?? false,
+    activationQuarter,
+  };
+}
+
+export function StatusCards({ results }: { results: LiteCycleOutput[] }) {
+  const { t } = useI18n();
+  const status = getStatusSnapshot(results);
+
+  return (
+    <dl className="status-cards" aria-label={t('status.summary')}>
+      <div className="status-card status-bottleneck">
+        <dt>{t('status.bottleneck')}</dt>
+        <dd>
+          <strong>
+            {status.bottleneckNode ? t(NODE_LABELS[status.bottleneckNode]) : '—'}
+          </strong>
+          {status.bottleneckCause && (
+            <span>{t('status.cause')}: {t(CAUSE_LABELS[status.bottleneckCause])}</span>
+          )}
+        </dd>
+      </div>
+      <div className="status-card">
+        <dt>{t('status.confidence')}</dt>
+        <dd>
+          <strong>
+            {status.confidence === null ? '—' : `${(status.confidence * 100).toFixed(1)}%`}
+          </strong>
+        </dd>
+      </div>
+      <div className="status-card">
+        <dt>{t('status.physicalAI')}</dt>
+        <dd>
+          <strong className={status.physicalAIActive ? 'status-active' : 'status-inactive'}>
+            {t(status.physicalAIActive ? 'active' : 'inactive')}
+          </strong>
+        </dd>
+      </div>
+      <div className="status-card">
+        <dt>{t('status.activationQuarter')}</dt>
+        <dd>
+          <strong>{status.activationQuarter ?? t('status.notWithinHorizon')}</strong>
+        </dd>
+      </div>
+    </dl>
+  );
+}

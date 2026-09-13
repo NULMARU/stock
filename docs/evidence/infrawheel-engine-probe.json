@@ -1,0 +1,56 @@
+{
+  "sourceCommit": "09c710e1f790ad505af4f8f9807944bed8663b99",
+  "modelDefaults": {
+    "start": "2025Q1",
+    "end": "2035Q4",
+    "count": 44
+  },
+  "powerUnitExample": {
+    "inputGW": 45,
+    "inputPFLOPSperMW": 20,
+    "actualPFLOPS": 900,
+    "dimensionallyExpectedPFLOPS": 900000
+  },
+  "zeroPowerBoundary": {
+    "normal": {
+      "spatial": 5250000,
+      "edge": 17.500139999999995
+    },
+    "zero": {
+      "spatial": 5250000,
+      "edge": 0
+    }
+  },
+  "monthlyEqualsQuarterly": true,
+  "reversedRange": 0,
+  "noCapital": {
+    "firstAlgo": 190,
+    "lastAlgo": 190,
+    "firstComputeDensity": 20,
+    "lastComputeDensity": 20
+  },
+  "localTiming": {
+    "runs": 100,
+    "work": "base + geopolitical, 44 quarters each",
+    "node": "v22.23.1",
+    "medianMs": 0.1579580000000007,
+    "p95Ms": 0.34025000000000105,
+    "scope": "single local Node process; not browser/mobile or corrected model benchmark"
+  },
+  "activePhysicalScenario": {
+    "scenario": "physicalAITakeoff",
+    "quarter": "2025Q1",
+    "normal": {
+      "physicalAIActive": true,
+      "physicalRevenue": 1575,
+      "spatial": 105000000
+    },
+    "zeroPower": {
+      "physicalAIActive": true,
+      "physicalRevenue": 1575,
+      "spatial": 105000000
+    },
+    "physicalRevenueInBillionIfUnitsAsDeclared": 1.575,
+    "note": "zero power is an adversarial engine-boundary input, below Lite UI minimum; exposes missing resource coupling"
+  }
+}

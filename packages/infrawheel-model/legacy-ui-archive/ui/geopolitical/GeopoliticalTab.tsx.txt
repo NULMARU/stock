@@ -1,0 +1,199 @@
+import { useSimStore } from '../store';
+import { useI18n } from '../i18n';
+import { getStructuralAdjustmentPcts } from '../../geopolitical';
+import { GeoMatrix } from './GeoMatrix';
+import { TimelineChart } from '../components/TimelineChart';
+import type { RiskEvent, RiskId, RiskStage } from '../../types';
+import type { TranslationKey } from '../i18n';
+
+const RISK_IDS: RiskId[] = ['taiwan', 'russiaNato', 'middleEast'];
+const RISK_LABELS: Record<RiskId, TranslationKey> = {
+  taiwan: 'geo.riskTaiwan',
+  russiaNato: 'geo.riskRussiaNato',
+  middleEast: 'geo.riskMiddleEast',
+};
+
+const PRESETS: Array<{
+  id: string;
+  blocPct: number;
+  energyPct: number;
+  taiwanStage?: RiskStage;
+  labelKey: TranslationKey;
+}> = [
+  { id: 'goldenAge', blocPct: 10, energyPct: 85, labelKey: 'geo.presetGolden' },
+  { id: 'tripolarAbundance', blocPct: 80, energyPct: 80, labelKey: 'geo.presetTripolarAbundance' },
+  { id: 'globalBottleneck', blocPct: 40, energyPct: 25, labelKey: 'geo.presetGlobalBottleneck' },
+  { id: 'tripolarScarcity', blocPct: 85, energyPct: 20, labelKey: 'geo.presetTripolarScarcity' },
+  { id: 'taiwanBlockade', blocPct: 50, energyPct: 50, taiwanStage: 3, labelKey: 'geo.presetTaiwanBlockade' },
+  { id: 'koreaOptimal', blocPct: 75, energyPct: 75, labelKey: 'geo.presetKoreaOptimal' },
+];
+
+const DISPLAY_PARAMS: { key: string; labelKey: TranslationKey }[] = [
+  { key: 'packaging', labelKey: 'param.packaging' },
+  { key: 'policyCAPEX', labelKey: 'param.policyCAPEX' },
+  { key: 'bwMemory', labelKey: 'param.memorySupplyIndex' },
+  { key: 'reinvestRatio', labelKey: 'param.reinvestRatio' },
+  { key: 'algorithmicEfficiency', labelKey: 'param.algorithmicEfficiency' },
+  { key: 'deliverablePower', labelKey: 'param.deliverablePower' },
+  { key: 'leadTime', labelKey: 'param.leadTime' },
+  { key: 'transferRatio', labelKey: 'param.transferRatio' },
+  { key: 'revenueGrowth', labelKey: 'param.revenueGrowth' },
+  { key: 'deploymentRate', labelKey: 'param.edgeReadinessIndex' },
+];
+
+function RiskControl({
+  id,
+  event,
+  quarters,
+  onChange,
+}: {
+  id: RiskId;
+  event: RiskEvent;
+  quarters: string[];
+  onChange: (event: RiskEvent) => void;
+}) {
+  const { t } = useI18n();
+
+  return (
+    <fieldset className="risk-control">
+      <legend>{t(RISK_LABELS[id])}</legend>
+      <label>
+        <span>{t('geo.riskStage')}</span>
+        <select
+          value={event.stage}
+          onChange={(e) => onChange({ ...event, stage: Number(e.target.value) as RiskStage })}
+        >
+          {([0, 1, 2, 3, 4] as RiskStage[]).map((stage) => (
+            <option key={stage} value={stage}>
+              {stage} · {stage === 0 ? t('geo.noAddedShock') : t('geo.stressStage')}
+            </option>
+          ))}
+        </select>
+      </label>
+      <label>
+        <span>{t('geo.startQuarter')}</span>
+        <select
+          value={event.startQuarter}
+          disabled={event.stage === 0}
+          onChange={(e) => onChange({ ...event, startQuarter: e.target.value })}
+        >
+          {quarters.map((quarter) => <option key={quarter}>{quarter}</option>)}
+        </select>
+      </label>
+      <label>
+        <span>{t('geo.durationOverride')}</span>
+        <input
+          type="number"
+          min={1}
+          max={44}
+          inputMode="numeric"
+          disabled={event.stage === 0}
+          value={event.durationOverrideQ ?? ''}
+          placeholder={t('geo.catalogDefault')}
+          onChange={(e) => {
+            if (!e.target.value) {
+              const { durationOverrideQ: _ignored, ...withoutOverride } = event;
+              onChange(withoutOverride);
+              return;
+            }
+            onChange({ ...event, durationOverrideQ: Number(e.target.value) });
+          }}
+        />
+      </label>
+    </fieldset>
+  );
+}
+
+export function GeopoliticalTab() {
+  const { t } = useI18n();
+  const geo = useSimStore((state) => state.geoState);
+  const results = useSimStore((state) => state.results);
+  const setBloc = useSimStore((state) => state.setGeoBloc);
+  const setEnergy = useSimStore((state) => state.setGeoEnergy);
+  const setRiskEvent = useSimStore((state) => state.setRiskEvent);
+  const applyPreset = useSimStore((state) => state.applyGeoPreset);
+  const adjustments = getStructuralAdjustmentPcts(geo);
+  const quarters = results.map((cycle) => cycle.quarter);
+
+  return (
+    <main className="geo-layout">
+      <aside className="geo-controls">
+        <div className="panel-header"><h2>{t('geo.title')}</h2></div>
+        <div className="panel-scroll">
+          <div className="geo-slider-group">
+            <div className="geo-slider-header">
+              <label htmlFor="geo-bloc">{t('geo.blocLabel')}</label>
+              <output htmlFor="geo-bloc" className="geo-slider-val">{geo.blocPct}%</output>
+            </div>
+            <input id="geo-bloc" type="range" min={0} max={100} step={1} value={geo.blocPct}
+              onChange={(e) => setBloc(Number(e.target.value))} />
+            <div className="geo-slider-range"><span>{t('geo.blocMin')}</span><span>{t('geo.blocMid')}</span><span>{t('geo.blocMax')}</span></div>
+          </div>
+
+          <div className="geo-slider-group">
+            <div className="geo-slider-header">
+              <label htmlFor="geo-energy">{t('geo.energyLabel')}</label>
+              <output htmlFor="geo-energy" className="geo-slider-val">{geo.energyPct}%</output>
+            </div>
+            <input id="geo-energy" type="range" min={0} max={100} step={1} value={geo.energyPct}
+              onChange={(e) => setEnergy(Number(e.target.value))} />
+            <div className="geo-slider-range"><span>{t('geo.energyMin')}</span><span>{t('geo.energyMid')}</span><span>{t('geo.energyMax')}</span></div>
+          </div>
+
+          <section className="geo-risks" aria-labelledby="regional-risks-title">
+            <h3 id="regional-risks-title">{t('geo.regionalRisks')}</h3>
+            {RISK_IDS.map((id) => (
+              <RiskControl
+                key={id}
+                id={id}
+                event={geo.risks[id]}
+                quarters={quarters}
+                onChange={(event) => setRiskEvent(id, event)}
+              />
+            ))}
+          </section>
+
+          <div className="geo-presets">
+            <h3>{t('geo.presets')}</h3>
+            <div className="preset-grid">
+              {PRESETS.map((preset) => (
+                <button key={preset.id} type="button" className="preset-btn"
+                  onClick={() => applyPreset(preset.blocPct, preset.energyPct, preset.taiwanStage)}>
+                  {t(preset.labelKey)}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <section className="geo-center">
+        <GeoMatrix blocPct={geo.blocPct} energyPct={geo.energyPct} />
+        <div className="geo-adjustments">
+          <h3>{t('geo.adjustments')}</h3>
+          <div className="adj-list">
+            {DISPLAY_PARAMS.map(({ key, labelKey }) => {
+              const adjustment = adjustments[key] ?? 0;
+              if (Math.abs(adjustment) < 0.001) return null;
+              const pct = Math.round(adjustment * 100);
+              return (
+                <div key={key} className="adj-row">
+                  <span className="adj-label">{t(labelKey)}</span>
+                  <div className="adj-bar-track" aria-hidden="true">
+                    <div className={`adj-bar ${pct >= 0 ? 'positive' : 'negative'}`}
+                      style={{ width: `${Math.min(Math.abs(pct), 100)}%` }} />
+                  </div>
+                  <span className={`adj-pct ${pct >= 0 ? 'positive' : 'negative'}`}>
+                    {pct > 0 ? '+' : ''}{pct}%
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <TimelineChart useGeoResults />
+    </main>
+  );
+}

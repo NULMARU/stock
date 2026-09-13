@@ -1,0 +1,89 @@
+import { useEffect, useId, useRef } from 'react';
+import { useI18n } from '../i18n';
+import { useSimStore } from '../store';
+import { getNodeDescription } from '../content/nodeDescriptions';
+import { getParamDef } from '../paramMeta';
+import type { LiteNodeId, LiteParams } from '../../types';
+
+export function NodePopover({
+  nodeId,
+  onClose,
+}: {
+  nodeId: LiteNodeId;
+  onClose: () => void;
+}) {
+  const { t, locale } = useI18n();
+  const titleId = useId();
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const description = getNodeDescription(nodeId, locale);
+  const params = useSimStore((state) => state.params);
+  const bottleneckNode = useSimStore(
+    (state) => state.results[state.results.length - 1]?.bottleneckNode,
+  );
+
+  useEffect(() => {
+    closeRef.current?.focus();
+    const onKeyDown = (event: globalThis.KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [onClose]);
+
+  if (!description) return null;
+
+  const paramValues = params[nodeId] as LiteParams[typeof nodeId] & Record<string, number>;
+  const isBottleneck = bottleneckNode === nodeId;
+
+  return (
+    <>
+      <div className="popover-backdrop" aria-hidden="true" onClick={onClose} />
+      <div
+        className="node-popover"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={titleId}
+      >
+        <div className="popover-header">
+          <h3 id={titleId}>{description.name}</h3>
+          {isBottleneck && (
+            <span className="popover-bottleneck">{t('status.currentBottleneck')}</span>
+          )}
+          <button
+            ref={closeRef}
+            type="button"
+            className="popover-close"
+            onClick={onClose}
+            aria-label={t('aria.closeNodeDetails')}
+          >
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <p className="popover-role">{description.role}</p>
+        <div className="popover-params">
+          <h4>{t('parameters')}</h4>
+          {description.paramKeys.map((key) => {
+            const definition = getParamDef(key);
+            const value = paramValues[key];
+            return (
+              <div key={key} className="popover-param-row">
+                <span className="popover-param-key">
+                  {definition ? t(definition.labelKey) : key}
+                </span>
+                <span className="popover-param-val">
+                  {value === undefined
+                    ? '—'
+                    : value % 1 === 0
+                      ? value
+                      : value.toFixed(2)}
+                  {definition && <small>{t(definition.unitKey)}</small>}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+        <p className="popover-transition">{description.transition}</p>
+      </div>
+    </>
+  );
+}

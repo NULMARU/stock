@@ -1,0 +1,2 @@
+/** Compatibility entry point. Domain logic lives outside the UI tree. */
+export * from '../../geopolitical';

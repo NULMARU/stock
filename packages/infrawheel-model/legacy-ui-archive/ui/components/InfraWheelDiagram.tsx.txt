@@ -1,0 +1,170 @@
+import { useId, useState } from 'react';
+import { useSimStore } from '../store';
+import { useI18n } from '../i18n';
+import { NodePopover } from './NodePopover';
+import { StatusCards } from './StatusCards';
+import type { KeyboardEvent } from 'react';
+import type { LiteNodeId } from '../../types';
+import type { TranslationKey } from '../i18n';
+
+interface WheelNode {
+  id: LiteNodeId;
+  labelKey: TranslationKey;
+  color: string;
+  angle: number;
+}
+
+export const WHEEL_NODES: readonly WheelNode[] = [
+  { id: 'silicon', labelKey: 'wheel.silicon', color: '#818cf8', angle: 0 },
+  { id: 'energy', labelKey: 'wheel.energy', color: '#fbbf24', angle: 60 },
+  { id: 'aiInfrastructure', labelKey: 'wheel.aiInfrastructure', color: '#2dd4bf', angle: 120 },
+  { id: 'intelligence', labelKey: 'wheel.intelligence', color: '#c084fc', angle: 180 },
+  { id: 'aiApplications', labelKey: 'wheel.aiApplications', color: '#f472b6', angle: 240 },
+  { id: 'capital', labelKey: 'wheel.capital', color: '#fb7185', angle: 300 },
+];
+
+const VIEWBOX_SIZE = 520;
+const CENTER = VIEWBOX_SIZE / 2;
+const WHEEL_RADIUS = 178;
+const NODE_RADIUS = 38;
+
+export function getNodePosition(angle: number) {
+  const radians = ((angle - 90) * Math.PI) / 180;
+  return {
+    x: CENTER + WHEEL_RADIUS * Math.cos(radians),
+    y: CENTER + WHEEL_RADIUS * Math.sin(radians),
+  };
+}
+
+function getEdgePoints(from: WheelNode, to: WheelNode) {
+  const start = getNodePosition(from.angle);
+  const end = getNodePosition(to.angle);
+  const dx = end.x - start.x;
+  const dy = end.y - start.y;
+  const length = Math.hypot(dx, dy);
+  const ux = dx / length;
+  const uy = dy / length;
+
+  return {
+    x1: start.x + ux * NODE_RADIUS,
+    y1: start.y + uy * NODE_RADIUS,
+    x2: end.x - ux * (NODE_RADIUS + 8),
+    y2: end.y - uy * (NODE_RADIUS + 8),
+  };
+}
+
+function labelLines(label: string): string[] {
+  const words = label.split(' ');
+  if (words.length < 2 || label.length <= 12) return [label];
+  const midpoint = Math.ceil(words.length / 2);
+  return [words.slice(0, midpoint).join(' '), words.slice(midpoint).join(' ')];
+}
+
+export function InfraWheelDiagram() {
+  const { t } = useI18n();
+  const markerId = `wheel-arrow-${useId().replace(/:/g, '')}`;
+  const titleId = useId();
+  const results = useSimStore((state) => state.results);
+  const latest = results[results.length - 1];
+  const [selectedNode, setSelectedNode] = useState<LiteNodeId | null>(null);
+
+  if (!latest) return null;
+
+  const activateNode = (nodeId: LiteNodeId) => setSelectedNode(nodeId);
+  const onNodeKeyDown = (event: KeyboardEvent<SVGGElement>, nodeId: LiteNodeId) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      activateNode(nodeId);
+    }
+  };
+
+  return (
+    <section className="diagram-panel" aria-labelledby={titleId}>
+      <h2 id={titleId}>{t('infrawheel')}</h2>
+      <div className="diagram-svg-wrapper">
+        <svg
+          className="diagram-svg"
+          viewBox={`0 0 ${VIEWBOX_SIZE} ${VIEWBOX_SIZE}`}
+          role="img"
+          aria-labelledby={`${titleId} wheel-description`}
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <desc id="wheel-description">{t('aria.wheelDescription')}</desc>
+          <defs>
+            <marker
+              id={markerId}
+              viewBox="0 0 10 10"
+              refX="8"
+              refY="5"
+              markerWidth="7"
+              markerHeight="7"
+              orient="auto-start-reverse"
+            >
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+            </marker>
+          </defs>
+
+          <circle className="wheel-track" cx={CENTER} cy={CENTER} r={WHEEL_RADIUS} />
+          {WHEEL_NODES.map((node, index) => {
+            const next = WHEEL_NODES[(index + 1) % WHEEL_NODES.length]!;
+            const edge = getEdgePoints(node, next);
+            return (
+              <line
+                key={`${node.id}-${next.id}`}
+                className="wheel-edge"
+                {...edge}
+                markerEnd={`url(#${markerId})`}
+              />
+            );
+          })}
+
+          <g className="wheel-center" aria-hidden="true">
+            <circle cx={CENTER} cy={CENTER} r="62" />
+            <text x={CENTER} y={CENTER - 4}>{t('wheel.center')}</text>
+            <text className="wheel-center-sub" x={CENTER} y={CENTER + 18}>{t('wheel.centerSub')}</text>
+          </g>
+
+          {WHEEL_NODES.map((node) => {
+            const position = getNodePosition(node.angle);
+            const isBottleneck = latest.bottleneckNode === node.id;
+            const lines = labelLines(t(node.labelKey));
+
+            return (
+              <g
+                key={node.id}
+                className={`wheel-node ${isBottleneck ? 'is-bottleneck' : ''}`}
+                transform={`translate(${position.x} ${position.y})`}
+                role="button"
+                tabIndex={0}
+                aria-label={`${t(node.labelKey)}${isBottleneck ? `, ${t('status.currentBottleneck')}` : ''}`}
+                aria-pressed={selectedNode === node.id}
+                onClick={() => activateNode(node.id)}
+                onKeyDown={(event) => onNodeKeyDown(event, node.id)}
+              >
+                <title>{t(node.labelKey)}</title>
+                {isBottleneck && <circle className="wheel-node-pulse" r={NODE_RADIUS + 2} />}
+                <circle
+                  className="wheel-node-circle"
+                  r={NODE_RADIUS}
+                  fill={`${node.color}24`}
+                  stroke={node.color}
+                />
+                <text className="wheel-node-label" textAnchor="middle">
+                  {lines.map((line, index) => (
+                    <tspan key={line} x="0" dy={index === 0 ? (lines.length > 1 ? '-0.2em' : '0.35em') : '1.2em'}>
+                      {line}
+                    </tspan>
+                  ))}
+                </text>
+              </g>
+            );
+          })}
+        </svg>
+      </div>
+      <StatusCards results={results} />
+      {selectedNode && (
+        <NodePopover nodeId={selectedNode} onClose={() => setSelectedNode(null)} />
+      )}
+    </section>
+  );
+}

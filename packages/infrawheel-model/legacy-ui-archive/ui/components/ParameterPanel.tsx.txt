@@ -1,0 +1,120 @@
+import { useId, useState } from 'react';
+import { useSimStore } from '../store';
+import { useI18n } from '../i18n';
+import { NODE_GROUPS } from '../paramMeta';
+import { ParamTooltip } from './ParamTooltip';
+import type { LiteNodeId, LiteParams } from '../../types';
+import type { LiteParamSetter, NodeGroup, ParamDef, ParamMode } from '../paramMeta';
+
+export function formatParamValue(value: number, step: number): string {
+  if (step >= 1) return String(value);
+  const decimals = Math.max(0, Math.ceil(-Math.log10(step)));
+  return value.toFixed(decimals);
+}
+
+function ParamSlider({ def }: { def: ParamDef }) {
+  const { t } = useI18n();
+  const inputId = useId();
+  const value = useSimStore(
+    (state) => (state.params[def.node] as Record<string, number>)[def.key]!,
+  );
+  const setParam = useSimStore((state) => state.setParam) as LiteParamSetter;
+  const formattedValue = formatParamValue(value, def.step);
+  const unit = t(def.unitKey);
+
+  return (
+    <div className="param-slider">
+      <div className="param-header">
+        <span className="param-label-wrap">
+          <label className="param-label" htmlFor={inputId}>{t(def.labelKey)}</label>
+          <ParamTooltip paramKey={def.key} />
+        </span>
+        <output className="param-value" htmlFor={inputId}>
+          {formattedValue} <span className="param-unit">{unit}</span>
+        </output>
+      </div>
+      <input
+        id={inputId}
+        type="range"
+        min={def.min}
+        max={def.max}
+        step={def.step}
+        value={value}
+        aria-valuetext={`${formattedValue} ${unit}`}
+        onChange={(event) => {
+          setParam(
+            def.node as keyof LiteParams,
+            def.key as never,
+            Number(event.target.value),
+          );
+        }}
+      />
+    </div>
+  );
+}
+
+function NodeSection({ group, mode }: { group: NodeGroup; mode: ParamMode }) {
+  const [open, setOpen] = useState(true);
+  const { t } = useI18n();
+  const contentId = useId();
+  const params = group.params.filter((param) => mode === 'advanced' || param.basic);
+
+  return (
+    <section className="node-section" data-node={group.node}>
+      <button
+        type="button"
+        className="node-header"
+        onClick={() => setOpen((current) => !current)}
+        style={{ borderLeftColor: group.color }}
+        aria-expanded={open}
+        aria-controls={contentId}
+      >
+        <span className="node-label">{t(group.labelKey)}</span>
+        <span className="node-toggle" aria-hidden="true">{open ? '−' : '+'}</span>
+      </button>
+      <div id={contentId} className="node-params" hidden={!open}>
+        {params.map((param) => (
+          <ParamSlider key={`${param.node}-${param.key}`} def={param} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export function ParameterPanel() {
+  const { t } = useI18n();
+  const [mode, setMode] = useState<ParamMode>('basic');
+  const resetParams = useSimStore((state) => state.resetParams);
+
+  return (
+    <aside className="parameter-panel" aria-labelledby="parameter-panel-title">
+      <div className="panel-header">
+        <h2 id="parameter-panel-title">{t('parameters')}</h2>
+        <button type="button" className="reset-btn" onClick={resetParams}>
+          {t('reset')}
+        </button>
+      </div>
+      <div className="param-mode" role="group" aria-label={t('parameters.mode')}>
+        {(['basic', 'advanced'] as const).map((option) => (
+          <button
+            type="button"
+            key={option}
+            className={`param-mode-btn ${mode === option ? 'active' : ''}`}
+            aria-pressed={mode === option}
+            onClick={() => setMode(option)}
+          >
+            {t(`parameters.${option}`)}
+          </button>
+        ))}
+      </div>
+      <p className="param-mode-hint">
+        {t(mode === 'basic' ? 'parameters.basicHint' : 'parameters.advancedHint')}
+      </p>
+      <div className="panel-scroll">
+        {NODE_GROUPS.map((group) => (
+          <NodeSection key={group.node satisfies LiteNodeId} group={group} mode={mode} />
+        ))}
+      </div>
+    </aside>
+  );
+}

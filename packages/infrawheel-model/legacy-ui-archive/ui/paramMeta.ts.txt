@@ -1,0 +1,101 @@
+/** Metadata for the 14 public Lite inputs, grouped by the six display nodes. */
+
+import type { LiteNodeId, LiteParams } from '../types';
+import type { TranslationKey } from './i18n';
+
+export type ParamMode = 'basic' | 'advanced';
+
+export interface ParamDef {
+  node: LiteNodeId;
+  key: string;
+  labelKey: TranslationKey;
+  unitKey: TranslationKey;
+  min: number;
+  max: number;
+  step: number;
+  /** Exactly one representative input per display node is shown in basic mode. */
+  basic: boolean;
+}
+
+export interface NodeGroup {
+  node: LiteNodeId;
+  labelKey: TranslationKey;
+  color: string;
+  params: ParamDef[];
+}
+
+export const NODE_GROUPS: NodeGroup[] = [
+  {
+    node: 'silicon',
+    labelKey: 'node.silicon',
+    color: '#818cf8',
+    params: [
+      { node: 'silicon', key: 'memorySupplyIndex', labelKey: 'param.memorySupplyIndex', unitKey: 'unit.index', min: 0, max: 100, step: 1, basic: true },
+      { node: 'silicon', key: 'packaging', labelKey: 'param.packaging', unitKey: 'unit.kWafersQuarter', min: 30, max: 200, step: 1, basic: false },
+    ],
+  },
+  {
+    node: 'energy',
+    labelKey: 'node.energy',
+    color: '#fbbf24',
+    params: [
+      { node: 'energy', key: 'deliverablePower', labelKey: 'param.deliverablePower', unitKey: 'unit.gw', min: 15, max: 80, step: 1, basic: true },
+      { node: 'energy', key: 'leadTime', labelKey: 'param.leadTime', unitKey: 'unit.months', min: 12, max: 60, step: 1, basic: false },
+      { node: 'energy', key: 'computeDensity', labelKey: 'param.computeDensity', unitKey: 'unit.pflopsMw', min: 5, max: 50, step: 1, basic: false },
+    ],
+  },
+  {
+    node: 'aiInfrastructure',
+    labelKey: 'node.aiInfrastructure',
+    color: '#2dd4bf',
+    params: [
+      { node: 'aiInfrastructure', key: 'cloudEfficiencyIndex', labelKey: 'param.cloudEfficiencyIndex', unitKey: 'unit.index', min: 0, max: 100, step: 1, basic: true },
+      { node: 'aiInfrastructure', key: 'edgeReadinessIndex', labelKey: 'param.edgeReadinessIndex', unitKey: 'unit.index', min: 0, max: 100, step: 1, basic: false },
+    ],
+  },
+  {
+    node: 'intelligence',
+    labelKey: 'node.intelligence',
+    color: '#c084fc',
+    params: [
+      { node: 'intelligence', key: 'algorithmicEfficiency', labelKey: 'param.algorithmicEfficiency', unitKey: 'unit.index', min: 100, max: 2000, step: 10, basic: true },
+      { node: 'intelligence', key: 'transferRatio', labelKey: 'param.transferRatio', unitKey: 'unit.percent', min: 10, max: 80, step: 1, basic: false },
+    ],
+  },
+  {
+    node: 'aiApplications',
+    labelKey: 'node.aiApplications',
+    color: '#f472b6',
+    params: [
+      { node: 'aiApplications', key: 'revenueGrowth', labelKey: 'param.revenueGrowth', unitKey: 'unit.percentYoy', min: 15, max: 80, step: 1, basic: true },
+      { node: 'aiApplications', key: 'grossMargin', labelKey: 'param.grossMargin', unitKey: 'unit.percent', min: 20, max: 75, step: 1, basic: false },
+      { node: 'aiApplications', key: 'unitEconomics', labelKey: 'param.unitEconomics', unitKey: 'unit.ratio', min: 0.2, max: 1.5, step: 0.05, basic: false },
+    ],
+  },
+  {
+    node: 'capital',
+    labelKey: 'node.capital',
+    color: '#fb7185',
+    params: [
+      { node: 'capital', key: 'reinvestRatio', labelKey: 'param.reinvestRatio', unitKey: 'unit.percent', min: 15, max: 50, step: 1, basic: true },
+      { node: 'capital', key: 'policyCAPEX', labelKey: 'param.policyCAPEX', unitKey: 'unit.billionYear', min: 0, max: 80, step: 1, basic: false },
+    ],
+  },
+];
+
+export function getVisibleParamDefs(mode: ParamMode): ParamDef[] {
+  return NODE_GROUPS.flatMap((group) =>
+    group.params.filter((param) => mode === 'advanced' || param.basic),
+  );
+}
+
+export function getParamDef(key: string): ParamDef | undefined {
+  return NODE_GROUPS.flatMap((group) => group.params).find((param) => param.key === key);
+}
+
+/** Compile-time bridge used by the generic store setter. */
+export type LiteParamSetter = <N extends keyof LiteParams>(
+  node: N,
+  key: keyof LiteParams[N],
+  value: number,
+) => void;

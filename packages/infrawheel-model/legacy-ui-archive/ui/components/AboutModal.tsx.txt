@@ -1,0 +1,150 @@
+import { useEffect, useId, useRef, useState } from 'react';
+import { useI18n } from '../i18n';
+import { getAboutContent } from '../content/aboutContent';
+
+export function AboutModal({ onClose }: { onClose: () => void }) {
+  const { locale } = useI18n();
+  const content = getAboutContent(locale);
+  const titleId = useId();
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const [showEquation, setShowEquation] = useState(false);
+  const [showSources, setShowSources] = useState(false);
+
+  useEffect(() => {
+    closeRef.current?.focus();
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [onClose]);
+
+  return (
+    <>
+      <div className="modal-backdrop" aria-hidden="true" onClick={onClose} />
+      <div className="about-modal" role="dialog" aria-modal="true" aria-labelledby={titleId}>
+        <div className="about-header">
+          <h2 id={titleId}>{content.whatIs.title}</h2>
+          <button
+            ref={closeRef}
+            type="button"
+            className="modal-close"
+            aria-label={locale === 'ko' ? '소개 닫기' : 'Close about dialog'}
+            onClick={onClose}
+          >
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div className="about-scroll">
+          <section className="about-section">
+            <p className="about-body">{content.whatIs.body}</p>
+          </section>
+
+          <section className="about-section">
+            <h3>{content.twoLoops.title}</h3>
+            <p className="about-body">{content.twoLoops.body}</p>
+          </section>
+
+          <section className="about-section">
+            <h3>{content.howToUse.title}</h3>
+            <p className="about-body">{content.howToUse.body}</p>
+          </section>
+
+          <section className="about-section">
+            <button
+              type="button"
+              className="about-toggle"
+              aria-expanded={showEquation}
+              onClick={() => setShowEquation(!showEquation)}
+            >
+              {content.equationToggle} {showEquation ? '▲' : '▼'}
+            </button>
+            {showEquation && (
+              <pre className="about-code">{content.equation}</pre>
+            )}
+          </section>
+
+          <section className="about-section">
+            <button
+              type="button"
+              className="about-toggle"
+              aria-expanded={showSources}
+              onClick={() => setShowSources(!showSources)}
+            >
+              {content.sourceToggle} {showSources ? '▲' : '▼'}
+            </button>
+            {showSources && (
+              <div className="about-sources">
+                <SourceTable locale={locale} />
+              </div>
+            )}
+          </section>
+
+          <footer className="about-footer">
+            <p>{content.footer}</p>
+          </footer>
+        </div>
+      </div>
+    </>
+  );
+}
+
+function SourceTable({ locale }: { locale: string }) {
+  const sources =
+    locale === 'ko'
+      ? [
+          ['AI 메모리 공급지수', 'SK하이닉스·Samsung·Micron 실적, TrendForce, Gartner/IDC', '분기'],
+          ['첨단 패키징 생산력', 'TSMC·Samsung Foundry 실적 발표', '분기'],
+          ['E1 Deliverable Power', 'IEA Data Centre Energy Tracker, US EIA, 한전', '반기'],
+          ['E2 Lead Time', 'FERC interconnection queue, 산업 보고서', '반기'],
+          ['E3 Compute Density', 'DC 사업자 PUE 공시, 랙 밀도 보고서', '반기'],
+          ['클라우드 인프라 효율지수', 'NVIDIA·Broadcom 실적, LightCounting, MLPerf', '분기'],
+          ['엣지 준비도 지수', '통신사 공시, GSMA Intelligence, Edge AI 벤치마크', '반기'],
+          ['I1 Algorithmic Efficiency', 'Stanford AI Index, Epoch AI', '반기'],
+          ['I2 Transfer Ratio', 'Open LLM Leaderboard', '분기'],
+          ['D1 Revenue Growth', 'Synergy Research, IDC, AI 기업 실적', '분기'],
+          ['D2 Gross Margin', 'OpenAI/Anthropic 추정, MSFT/GOOG 세그먼트', '분기'],
+          ['PA2 Unit Economics', '기업 case study, 산업 ROI 보고서', '반기'],
+          ['C1 Reinvestment Ratio', 'Big Tech 분기 실적 CAPEX guidance', '분기'],
+          ['C2 Policy CAPEX', '각국 정부 예산안, CHIPS Act 현황', '반기'],
+        ]
+      : [
+          ['AI Memory Supply Index', 'SK hynix, Samsung, Micron earnings; TrendForce; Gartner/IDC', 'Quarterly'],
+          ['Advanced Packaging Capacity', 'TSMC, Samsung Foundry earnings', 'Quarterly'],
+          ['E1 Deliverable Power', 'IEA Data Centre Energy Tracker, US EIA', 'Semi-annual'],
+          ['E2 Lead Time', 'FERC interconnection queue, industry reports', 'Semi-annual'],
+          ['E3 Compute Density', 'DC operator PUE disclosures, rack density reports', 'Semi-annual'],
+          ['Cloud Infrastructure Efficiency', 'NVIDIA, Broadcom earnings; LightCounting; MLPerf', 'Quarterly'],
+          ['Edge Readiness Index', 'Telco disclosures, GSMA Intelligence, Edge AI benchmarks', 'Semi-annual'],
+          ['I1 Algorithmic Efficiency', 'Stanford AI Index, Epoch AI', 'Semi-annual'],
+          ['I2 Transfer Ratio', 'Open LLM Leaderboard', 'Quarterly'],
+          ['D1 Revenue Growth', 'Synergy Research, IDC, AI company earnings', 'Quarterly'],
+          ['D2 Gross Margin', 'OpenAI/Anthropic est., MSFT/GOOG segments', 'Quarterly'],
+          ['PA2 Unit Economics', 'Company case studies, industry ROI reports', 'Semi-annual'],
+          ['C1 Reinvestment Ratio', 'Big Tech quarterly CAPEX guidance', 'Quarterly'],
+          ['C2 Policy CAPEX', 'National budgets, CHIPS Act status', 'Semi-annual'],
+        ];
+
+  const headers = locale === 'ko' ? ['파라미터', '출처', '업데이트'] : ['Parameter', 'Source', 'Update'];
+
+  return (
+    <table className="source-table">
+      <thead>
+        <tr>
+          {headers.map((h) => (
+            <th key={h}>{h}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {sources.map(([param, source, freq]) => (
+          <tr key={param}>
+            <td>{param}</td>
+            <td>{source}</td>
+            <td>{freq}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}

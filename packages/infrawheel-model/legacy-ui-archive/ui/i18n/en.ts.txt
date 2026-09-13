@@ -1,0 +1,243 @@
+export const en = {
+  // Header
+  appTitle: 'AI Flywheel Simulator',
+  phaseBadge: 'Phase 2 Preview',
+  langToggle: '한',
+
+  // Parameter panel
+  parameters: 'Parameters',
+  reset: 'Reset',
+  'parameters.mode': 'Parameter detail',
+  'parameters.basic': 'Basic',
+  'parameters.advanced': 'Advanced',
+  'parameters.basicHint': 'One representative input for each node',
+  'parameters.advancedHint': 'All 14 public inputs',
+
+  // Node groups
+  'node.silicon': 'Silicon',
+  'node.energy': 'Energy',
+  'node.aiInfrastructure': 'AI Infrastructure',
+  'node.hyperscaleDC': 'Hyperscale DC',
+  'node.spatialCompute': 'Spatial Compute',
+  'node.intelligence': 'Intelligence',
+  'node.aiApplications': 'AI Applications',
+  'node.digitalAI': 'Digital AI',
+  'node.physicalAI': 'Physical AI',
+  'node.capital': 'Capital',
+
+  // Silicon params
+  'param.memorySupplyIndex': 'AI Memory Supply Index',
+  'param.bwMemory': 'BW Memory Supply',
+  'param.capMemory': 'Capacity Memory Pool',
+  'param.packaging': 'Packaging Throughput',
+
+  // Energy params
+  'param.deliverablePower': 'Deliverable Power',
+  'param.leadTime': 'Pipeline Lead Time',
+  'param.computeDensity': 'Compute Density',
+
+  // AI infrastructure composite indices
+  'param.cloudEfficiencyIndex': 'Cloud Infrastructure Efficiency',
+  'param.edgeReadinessIndex': 'Edge Readiness',
+
+  // Hyperscale DC params
+  'param.bisectionBW': 'Bisection BW',
+  'param.utilization': 'Utilization',
+
+  // Spatial Compute params
+  'param.deploymentRate': 'AI-RAN Deploy Rate',
+  'param.perNodeTOPS': 'Per-node Capacity',
+
+  // Intelligence params
+  'param.algorithmicEfficiency': 'Algorithmic Efficiency',
+  'param.transferRatio': 'Frontier→Edge Transfer',
+
+  // Digital AI params
+  'param.revenueGrowth': 'Revenue Growth',
+  'param.grossMargin': 'Gross Margin',
+
+  // Physical AI params
+  'param.fleetDeployment': 'Fleet Deployment',
+  'param.unitEconomics': 'Unit Economics',
+
+  // Capital params
+  'param.reinvestRatio': 'Reinvestment Ratio',
+  'param.policyCAPEX': 'Policy CAPEX',
+
+  // Timeline chart
+  timelineProjection: 'Timeline Projection',
+
+  // Units
+  'unit.index': 'index',
+  'unit.kWafersQuarter': 'K wafers/Q',
+  'unit.gw': 'GW',
+  'unit.months': 'months',
+  'unit.pflopsMw': 'PFLOPS/MW',
+  'unit.percent': '%',
+  'unit.percentYoy': '% YoY',
+  'unit.ratio': 'rev/cost',
+  'unit.billionYear': '$B/yr',
+  'unit.billionQuarter': '$B/Q',
+  'unit.speedIndex': 'speed index',
+
+  // Metrics
+  'metric.totalRevenue': 'Total AI Revenue ($B/Q)',
+  'metric.totalCAPEX': 'Total CAPEX ($B/Q)',
+  'metric.bottleneckRatio': 'Bottleneck Ratio',
+  'metric.digitalRevenue': 'Digital AI Revenue ($B/Q)',
+  'metric.physicalRevenue': 'Physical AI Revenue ($B/Q)',
+  'metric.hyperscaleEffective': 'Hyperscale Effective Compute',
+  'metric.spatialEffective': 'Spatial Effective Compute',
+  'metric.frontierCapability': 'Frontier Capability',
+  'metric.confidence': 'Market Confidence',
+  'metric.bottleneckHealth': 'Bottleneck Health',
+  'metric.cloudLoopSpeed': 'Cloud Loop Speed',
+  'metric.edgeLoopSpeed': 'Edge Loop Speed',
+
+  // Diagram
+  infrawheel: 'AI Flywheel',
+  'tab.flywheel': 'AI Flywheel',
+  'tab.geopolitical': 'Geopolitical',
+  bottleneck: 'Bottleneck',
+  bottleneckRatioLabel: 'Bottleneck Ratio',
+  confidenceLabel: 'Confidence',
+  hyperscaleLoop: 'Hyperscale Loop',
+  spatialLoop: 'Spatial Loop',
+  physicalAIStatus: 'Physical AI',
+  active: 'ACTIVE',
+  inactive: 'Inactive',
+
+  // Status cards
+  'status.summary': 'Simulation status',
+  'status.bottleneck': 'Bottleneck node',
+  'status.cause': 'Internal cause',
+  'status.confidence': 'Confidence',
+  'status.physicalAI': 'Physical AI',
+  'status.activationQuarter': 'Expected activation',
+  'status.notWithinHorizon': 'Not within horizon',
+  'status.currentBottleneck': 'Current bottleneck',
+
+  // Accessibility
+  'aria.wheelDescription': 'Six interactive nodes form a clockwise AI industry flywheel. Select a node for details.',
+  'aria.closeNodeDetails': 'Close node details',
+  'aria.paramInfo': 'Show parameter explanation',
+  'aria.metricPicker': 'Select timeline metric',
+  'aria.toggleLanguage': 'Switch language',
+  'confidence.high': 'High confidence',
+  'confidence.medium': 'Medium confidence',
+  'confidence.low': 'Low confidence',
+
+  // Diagram nodes (wheel)
+  'wheel.silicon': 'Silicon',
+  'wheel.energy': 'Energy',
+  'wheel.aiInfrastructure': 'AI Infrastructure',
+  'wheel.hyperscale': 'Hyperscale',
+  'wheel.spatial': 'Spatial',
+  'wheel.intelligence': 'Intelligence',
+  'wheel.aiApplications': 'AI Applications',
+  'wheel.digital': 'Digital AI',
+  'wheel.physical': 'Physical AI',
+  'wheel.capital': 'Capital',
+  'wheel.center': 'AI Flywheel',
+  'wheel.centerSub': 'Cloud + Edge',
+
+  // Scenarios
+  scenario: 'Scenario',
+  'scenario.base2026': 'Base Case 2026',
+  'scenario.energyBottleneck': 'Energy Bottleneck',
+  'scenario.aiWinter': 'AI Winter',
+  'scenario.koreaFirstSpatial': 'Korea-first Spatial',
+  'scenario.algoBreakthrough': 'Algorithmic Breakthrough',
+  'scenario.memoryWall': 'Memory Wall',
+  'scenario.physicalAITakeoff': 'Physical AI Takeoff',
+  'scenario.policyBoostKorea': 'Policy Boost (Korea)',
+  'scenario.custom': 'Custom',
+  share: 'Share',
+  shareCopied: 'Copied!',
+  marginLeadTitle: '75% margin',
+  earlierThanBase: 'earlier vs Base',
+  laterThanBase: 'later vs Base',
+  quarterUnit: 'Q',
+
+  // Landing
+  'landing.navSimulator': 'Simulator',
+  'landing.eyebrow': 'AI Industry Flywheel Simulator',
+  'landing.title': 'The AI industry is an engine.\nThe AI Flywheel shows you how it spins.',
+  'landing.subtitle': 'Explore 14 inputs across six connected nodes — from silicon to capital and back. Move a slider and see the future change.',
+  'landing.cta': 'Launch Simulator',
+  'landing.statNodes': 'Nodes',
+  'landing.statParams': 'Parameters',
+  'landing.statQuarters': 'Quarters',
+  'landing.statLoops': 'Loops',
+  'landing.loopsTitle': 'Two Loops',
+  'landing.hyperscaleTitle': 'Hyperscale Loop',
+  'landing.hyperscaleDesc': 'Already spinning. Trains AI models in massive data centers, delivers cloud services, generates revenue. The engine you can already hear.',
+  'landing.spatialTitle': 'Spatial Loop',
+  'landing.spatialDesc': 'Approaching activation. AI-RAN base stations and 6G infrastructure bring inference to the physical world — robots, vehicles, everything.',
+  'landing.nodesTitle': 'Six Nodes, One Engine',
+  'landing.nodeSilicon': 'Memory and packaging — the physical ceiling of AI compute.',
+  'landing.nodeEnergy': 'Not generation but delivery. Lead time determines wheel speed.',
+  'landing.nodeHyperscale': 'Converts chips + power into effective compute. Depth.',
+  'landing.nodeSpatial': 'Blankets physical space with inference. Reach.',
+  'landing.nodeIntelligence': 'Where both engines meet. Pure SW lever for both loops.',
+  'landing.nodeDigital': 'SaaS displacement + AI-native creation. Cloud revenue.',
+  'landing.nodePhysical': 'Robots, AVs, smart infra. Real-economy revenue.',
+  'landing.nodeCapital': 'Cash flows back to silicon. The joint that closes the loop.',
+  'landing.nodeAIInfrastructure': 'Cloud depth and edge reach, combined without losing the weaker internal cause.',
+  'landing.nodeAIApplications': 'Digital growth and Physical AI viability turn intelligence into revenue.',
+  'landing.howTitle': 'How It Works',
+  'landing.step1': 'Start with six representative controls, or open Advanced mode for all 14 inputs.',
+  'landing.step2': 'Watch the flywheel respond in real time. See which node becomes the bottleneck, how confidence shifts.',
+  'landing.step3': 'Explore scenarios: What if energy stalls? What if Korea leads spatial? The timeline shows you 10 years ahead.',
+  'landing.bottomTagline': 'The gap between the two loops is where the investment timing lives.',
+  'landing.footer': 'Based on the AI Flywheel framework from "Jihoon Jeong\'s AI Investment Lectures" by Jihoon Jeong (JJ). Published by Hanbit Media.',
+  'landing.geoTitle': 'The Weather the Wheel Spins In',
+  'landing.geoIntro': 'The flywheel\'s structure stays the same — but the world it operates in changes everything. Bloc fragmentation, energy scarcity, and Taiwan risk reshape the parameters from the outside. Two axes define four worlds.',
+  'landing.geoA': 'Global supply chains intact, energy abundant. The fastest possible flywheel. Low probability.',
+  'landing.geoB': 'Three blocs build parallel infrastructure. Redundant investment everywhere. Korea\'s optimal scenario.',
+  'landing.geoC': 'One world, but energy-constrained. The most realistic near-term trajectory.',
+  'landing.geoD': 'Fragmented and starved. Confidence collapses, AI winter risk. Taiwan crisis accelerates this.',
+  'landing.geoTaiwan': 'A Taiwan crisis acts as an event shock on top of any scenario — blockade alone cuts global advanced packaging by 80%. The Geopolitical tab lets you simulate this in real time.',
+  'landing.backToHome': '← Back',
+
+  // Geopolitical tab
+  'geo.title': 'Geopolitical Overlay',
+  'geo.regionalRisks': 'Regional stress events',
+  'geo.riskTaiwan': 'Taiwan Strait',
+  'geo.riskRussiaNato': 'Russia–Ukraine / NATO',
+  'geo.riskMiddleEast': 'Middle East / Hormuz / Red Sea',
+  'geo.riskStage': 'Stress stage',
+  'geo.noAddedShock': 'No added shock',
+  'geo.stressStage': 'Stress',
+  'geo.startQuarter': 'Start quarter',
+  'geo.durationOverride': 'Full-impact duration (quarters)',
+  'geo.catalogDefault': 'Catalog default',
+  'geo.blocLabel': 'Bloc Fragmentation',
+  'geo.blocMin': 'Global',
+  'geo.blocMid': 'Bipolar',
+  'geo.blocMax': 'Tripolar',
+  'geo.energyLabel': 'Energy Abundance',
+  'geo.energyMin': 'Scarce',
+  'geo.energyMid': 'Current',
+  'geo.energyMax': 'Abundant',
+  'geo.taiwanLabel': 'Taiwan Crisis',
+  'geo.taiwanOff': 'OFF',
+  'geo.taiwanIslands': 'Outer Islands',
+  'geo.taiwanQuarantine': 'Quarantine',
+  'geo.taiwanBlockade': 'Blockade',
+  'geo.taiwanInvasion': 'Invasion',
+  'geo.presets': 'Presets',
+  'geo.presetGolden': 'A. Golden Age',
+  'geo.presetTripolarAbundance': 'B. Tripolar Abundance',
+  'geo.presetGlobalBottleneck': 'C. Global Bottleneck',
+  'geo.presetTripolarScarcity': 'D. Tripolar Scarcity',
+  'geo.presetTaiwanBlockade': 'Taiwan Blockade',
+  'geo.presetKoreaOptimal': 'Korea Optimal',
+  'geo.adjustments': 'Parameter Adjustments',
+  'geo.matrixAbundant': 'Abundant',
+  'geo.matrixScarce': 'Scarce',
+  'geo.matrixTripolar': '3-Polar',
+  'geo.matrixGlobal': 'Global',
+} as const;
+
+export type TranslationKey = keyof typeof en;
