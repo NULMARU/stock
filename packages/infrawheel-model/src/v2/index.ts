@@ -110,6 +110,34 @@ const positive = new Set([
   "bandwidthGBsPerPFLOPS",
   "computePerChip",
 ]);
+const INPUT_UNITS: Record<string, string> = {
+  initialComputePFLOPS: "PFLOPS",
+  initialPowerMW: "MW",
+  mwPerPFLOPS: "MW/PFLOPS",
+  initialDigitalDemandB: "USD B/분기",
+  revenuePerPFLOPS: "USD B/(PFLOPS·분기)",
+  policyFundingBPerQ: "USD B/분기",
+  computePerCapexB: "PFLOPS/USD B",
+  mwPerCapexB: "MW/USD B",
+  computeLeadQuarters: "분기",
+  powerLeadQuarters: "분기",
+  initialFleetUnits: "기기",
+  tasksPerUnitQ: "작업/(기기·분기)",
+  edgeComputePerUnit: "PFLOPS/기기",
+  initialPhysicalTaskDemand: "작업/분기",
+  revenuePerTask: "USD/작업",
+  unitsPerCapexB: "기기/USD B",
+  hardwareFlowPFLOPS: "PFLOPS/분기",
+  memoryCapacityGB: "GB",
+  memoryGBPerPFLOPS: "GB/PFLOPS",
+  memoryBandwidthGBs: "GB/s",
+  bandwidthGBsPerPFLOPS: "(GB/s)/PFLOPS",
+  packagingWafersPerQ: "웨이퍼/분기",
+  chipsPerWafer: "칩/웨이퍼",
+  computePerChip: "PFLOPS/칩",
+  memorySupplyGBPerQ: "GB/분기",
+  initialCashB: "USD B",
+};
 export const FIELD_RULES: FieldRule[] = Object.entries(DEFAULT_INPUTS).map(
   ([key, value]) => ({
     key,
@@ -125,23 +153,7 @@ export const FIELD_RULES: FieldRule[] = Object.entries(DEFAULT_INPUTS).map(
           : 1e12,
     integer: key.endsWith("LeadQuarters"),
     unit:
-      ratios.has(key) || growth.has(key)
-        ? "비율"
-        : key.includes("PFLOPS") || key === "computePerChip"
-          ? "PFLOPS"
-          : key.includes("GBs")
-            ? "GB/s"
-            : key.includes("GB")
-              ? "GB"
-              : key.includes("MW")
-                ? "MW"
-                : key.includes("B")
-                  ? "USD B"
-                  : key.includes("Quarters")
-                    ? "분기"
-                    : key === "revenuePerTask"
-                      ? "USD/task"
-                      : "수량/계수",
+      ratios.has(key) || growth.has(key) ? "비율" : (INPUT_UNITS[key] ?? "배"),
   }),
 );
 export const BASIC_KEYS = [
