@@ -588,8 +588,8 @@ export default function HomePage() {
           <DialogHeader>
             <DialogTitle>종목 추가</DialogTitle>
             <DialogDescription>
-              목록에 없는 종목을 간이 카드로 추가해요. 재무 분석·점수는 다음 자동 갱신부터
-              채워져요.
+              목록에 없는 종목을 간이 카드로 추가해요. 재무제표 버튼으로 바로 조회할 수 있으며,
+              제공되는 정보는 종목별 데이터 연결 상태에 따라 달라요.
             </DialogDescription>
           </DialogHeader>
           <form onSubmit={handleAddSubmit} className="space-y-4">
