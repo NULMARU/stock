@@ -5,7 +5,7 @@
  * - 그 외: network-first
  * - 활성화: 구버전 캐시 정리
  */
-const VERSION = 'v3';
+const VERSION = 'v4-__BUILD_ID__';
 const SHELL_CACHE = `stocklab-shell-${VERSION}`;
 const DATA_CACHE = `stocklab-data-${VERSION}`;
 const ASSET_CACHE = `stocklab-asset-${VERSION}`;
@@ -26,11 +26,16 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches
       .keys()
-      .then((keys) =>
-        Promise.all(keys.filter((k) => k.startsWith('stocklab-') && !ALL_CACHES.includes(k)).map((k) => caches.delete(k)))
-      )
+      .then((keys) => {
+        const previous=keys.filter(k=>k.startsWith('stocklab-asset-')&&!ALL_CACHES.includes(k)).slice(-2);
+        return Promise.all(keys.filter(k=>k.startsWith('stocklab-')&&!ALL_CACHES.includes(k)&&!previous.includes(k)).map(k=>caches.delete(k)));
+      })
       .then(() => self.clients.claim())
   );
+});
+
+self.addEventListener('message', event => {
+  if(event.data?.type === 'ACTIVATE_UPDATE')event.waitUntil(self.skipWaiting());
 });
 
 // 쿼리를 제거한 요청을 캐시 키로 사용 (cache-busting 쿼리 대응)
@@ -70,7 +75,7 @@ async function networkFirst(request, cacheName, ignoreQuery) {
 
 async function cacheFirst(request, cacheName) {
   const cache = await caches.open(cacheName);
-  const cached = await cache.match(request, { ignoreSearch: true });
+  const cached = await cache.match(request, { ignoreSearch: true }) || await caches.match(request);
   if (cached) return cached;
   const response = await fetch(request);
   if (response && response.ok) {
@@ -85,6 +90,11 @@ self.addEventListener('fetch', (event) => {
 
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return; // 외부 요청(CDN 폰트 등)은 그대로 통과
+
+  if(url.pathname.endsWith('/version.json')){
+    event.respondWith(fetch(request,{cache:'no-store'}));
+    return;
+  }
 
   // 데이터 JSON: network-first, 쿼리 무시 키
   if (isDataJson(url)) {

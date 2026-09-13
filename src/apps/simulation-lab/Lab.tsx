@@ -22,6 +22,7 @@ import {
   importExperiment,
   parseScenario,
 } from "./storage";
+import { addUpdateGuard } from "@/lib/appUpdates";
 import styles from "./Lab.module.css";
 const number = (v: number | undefined) =>
   v == null
@@ -156,6 +157,25 @@ export default function Lab() {
     const timer = setTimeout(() => void persist(), 800);
     return () => clearTimeout(timer);
   }, [editHash, storageReady]);
+  useEffect(
+    () =>
+      addUpdateGuard(async () => {
+        if (busy || savePending.current) return false;
+        await persist();
+        const doc = current.current;
+        return (
+          lastSaved.current ===
+          canonicalHash({
+            id: doc.id,
+            title: doc.title,
+            inputs: doc.inputs,
+            timeline: doc.timeline,
+            events: doc.events,
+          })
+        );
+      }),
+    [busy, editHash],
+  );
   const cancel = () => {
     active.current = "";
     worker.current?.terminate();
