@@ -2,6 +2,7 @@ import { Link } from 'react-router'
 import { useState } from 'react'
 import { Sparkles, Trash2 } from 'lucide-react'
 import type { UserAddedStock } from '@/types/stock'
+import { FinancialStatementLink } from '@/components/FinancialStatementLink'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -34,17 +35,9 @@ export function AddedStockCard({ stock, editMode = false, onRemove }: AddedStock
   return (
     <>
       <Card
-        role="button"
-        tabIndex={0}
-        onClick={() => setInfoOpen(true)}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault()
-            setInfoOpen(true)
-          }
-        }}
-        className="flex h-full cursor-pointer flex-col gap-3 rounded-xl border-dashed border-primary/40 p-5 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        className="relative flex h-full cursor-pointer flex-col gap-3 rounded-xl border-dashed border-primary/40 p-5 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       >
+        <button type="button" aria-label={`${stock.name} (${stock.ticker}) 추가 종목 안내`} onClick={()=>setInfoOpen(true)} className="absolute inset-0 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" />
         {/* 상단: 시장 배지 + '내가 추가함' 배지 */}
         <div className="flex items-center justify-between gap-2">
           <Badge
@@ -91,8 +84,10 @@ export function AddedStockCard({ stock, editMode = false, onRemove }: AddedStock
           추가한 종목 · 분석 데이터 연결 대기
         </div>
 
+        <FinancialStatementLink ticker={stock.ticker} market={stock.market} name={stock.name} />
+
         {/* 하단: 뉴스 받기 (항상) + 삭제 (편집 모드) */}
-        <div className="flex items-center justify-between gap-2 border-t border-border/60 pt-2.5">
+        <div className="relative z-10 flex items-center justify-between gap-2 border-t border-border/60 pt-2.5">
           <NewsCheckToggle ticker={stock.ticker} />
           {editMode && onRemove && (
             <button
@@ -119,8 +114,8 @@ export function AddedStockCard({ stock, editMode = false, onRemove }: AddedStock
               {stock.name} <span className="font-mono text-sm font-normal">({stock.ticker})</span>
             </DialogTitle>
             <DialogDescription className="pt-2 leading-relaxed">
-              간이 추가 종목이에요. 재무 분석·점수·뉴스는 데이터 연결이 준비된 후 제공됩니다. 이 종목을
-              정식 데이터에 영구 반영하려면 Kimi에게 추가를 요청해 주세요.
+              간이 추가 종목이에요. 재무제표 화면에서 이 종목의 데이터 연결 상태를 확인할 수 있어요.
+              분석·점수·뉴스는 제공 자료가 준비된 종목부터 표시됩니다.
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>

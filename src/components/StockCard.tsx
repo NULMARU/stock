@@ -1,6 +1,7 @@
 import { Link } from 'react-router'
 import { EyeOff } from 'lucide-react'
 import type { BeginnerFit, StockEntry } from '@/types/stock'
+import { FinancialStatementLink } from '@/components/FinancialStatementLink'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { ScoreBar } from '@/components/ScoreBar'
@@ -49,8 +50,8 @@ export function StockCard({ stock, editMode = false, onHide, forecastCentral }: 
   const isChecked = newsChecked.some((t) => t.toUpperCase() === stock.ticker.toUpperCase())
 
   return (
-    <Link to={`/stock/${stock.ticker}`} className="block focus:outline-none">
-      <Card className="flex h-full flex-col gap-3 rounded-xl border-border/70 p-5 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover focus-visible:ring-2 focus-visible:ring-ring">
+    <Card className="flex h-full flex-col gap-3 rounded-xl border-border/70 p-5 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover">
+      <Link to={`/stock/${encodeURIComponent(stock.ticker)}`} aria-label={`${stock.name} (${stock.ticker}) 종목 상세`} className="flex flex-1 flex-col gap-3 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
         {/* 상단: 시장 배지 + 초보 적합도 */}
         <div className="flex items-center justify-between gap-2">
           <Badge
@@ -134,6 +135,9 @@ export function StockCard({ stock, editMode = false, onHide, forecastCentral }: 
           </div>
         )}
 
+      </Link>
+      <FinancialStatementLink ticker={stock.ticker} market={stock.market} name={stock.name} />
+
         {/* 하단: 뉴스 받기 (항상) + 숨기기 (편집 모드) */}
         <div className="flex items-center justify-between gap-2 border-t border-border/60 pt-2.5">
           <NewsCheckToggle ticker={stock.ticker} />
@@ -152,7 +156,6 @@ export function StockCard({ stock, editMode = false, onHide, forecastCentral }: 
             </button>
           )}
         </div>
-      </Card>
-    </Link>
+    </Card>
   )
 }
