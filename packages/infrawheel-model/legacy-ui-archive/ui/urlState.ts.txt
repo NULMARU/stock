@@ -1,0 +1,444 @@
+/** Versioned URL-hash serialization and v1 → v2 migration. */
+
+import { DEFAULT_CONFIG, DEFAULT_PARAMS } from '../defaults';
+import {
+  DEFAULT_LITE_PARAMS,
+  collapseEngineParams,
+  normalizeLiteParams,
+} from '../liteMapping';
+import type {
+  GeoState,
+  InfraWheelParams,
+  LiteParams,
+  RiskEvent,
+  RiskId,
+  RiskStage,
+  SimulationConfig,
+} from '../types';
+
+export type MetricKey =
+  | 'totalRevenue'
+  | 'totalCAPEX'
+  | 'bottleneckHealth'
+  | 'cloudLoopSpeed'
+  | 'edgeLoopSpeed';
+
+export type SimTab = 'infrawheel' | 'geopolitical';
+
+export type ScenarioId =
+  | 'base2026'
+  | 'energyBottleneck'
+  | 'koreaFirstSpatial'
+  | 'algoBreakthrough'
+  | 'memoryWall'
+  | 'physicalAITakeoff'
+  | 'custom';
+
+export interface SerializableState {
+  params: LiteParams;
+  geoState: GeoState;
+  activeTab: SimTab;
+  selectedMetrics: MetricKey[];
+  activeScenario: ScenarioId;
+  config: SimulationConfig;
+}
+
+/** Mutable config keys worth sharing; the rest remain model constants. */
+const CONFIG_KEYS = [
+  'sensitivity',
+  'hyperscaleAllocRatio',
+  'metroBSCount',
+  'coveredAreaKm2',
+] as const;
+
+const METRIC_KEYS: readonly MetricKey[] = [
+  'totalRevenue',
+  'totalCAPEX',
+  'bottleneckHealth',
+  'cloudLoopSpeed',
+  'edgeLoopSpeed',
+];
+
+const SCENARIO_IDS: readonly ScenarioId[] = [
+  'base2026',
+  'energyBottleneck',
+  'koreaFirstSpatial',
+  'algoBreakthrough',
+  'memoryWall',
+  'physicalAITakeoff',
+  'custom',
+];
+
+const RISK_IDS: readonly RiskId[] = ['taiwan', 'russiaNato', 'middleEast'];
+const RISK_URL_KEYS: Record<RiskId, 't' | 'r' | 'm'> = {
+  taiwan: 't',
+  russiaNato: 'r',
+  middleEast: 'm',
+};
+
+const DEFAULT_RISK_EVENT = (): RiskEvent => ({
+  stage: 0,
+  startQuarter: DEFAULT_CONFIG.startQuarter,
+});
+
+export const DEFAULT_URL_GEO_STATE: GeoState = {
+  blocPct: 50,
+  energyPct: 50,
+  risks: {
+    taiwan: DEFAULT_RISK_EVENT(),
+    russiaNato: DEFAULT_RISK_EVENT(),
+    middleEast: DEFAULT_RISK_EVENT(),
+  },
+};
+
+const V1_TAIWAN_STAGE: Record<string, RiskStage> = {
+  off: 0,
+  islands: 1,
+  quarantine: 2,
+  blockade: 3,
+  invasion: 4,
+};
+
+/** Every v1 metric is deliberately mapped or deliberately retired. */
+const V1_METRIC_MAP: Record<string, MetricKey | null> = {
+  totalRevenue: 'totalRevenue',
+  totalCAPEX: 'totalCAPEX',
+  bottleneckRatio: 'bottleneckHealth',
+  digitalRevenue: 'totalRevenue',
+  physicalRevenue: 'totalRevenue',
+  hyperscaleEffective: 'cloudLoopSpeed',
+  frontierCapability: 'cloudLoopSpeed',
+  spatialEffective: 'edgeLoopSpeed',
+  confidence: null,
+};
+
+const round2 = (value: number) => Math.round(value * 100) / 100;
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === 'object' && value !== null && !Array.isArray(value);
+}
+
+function cloneDefaultGeo(): GeoState {
+  return {
+    blocPct: DEFAULT_URL_GEO_STATE.blocPct,
+    energyPct: DEFAULT_URL_GEO_STATE.energyPct,
+    risks: {
+      taiwan: { ...DEFAULT_URL_GEO_STATE.risks.taiwan },
+      russiaNato: { ...DEFAULT_URL_GEO_STATE.risks.russiaNato },
+      middleEast: { ...DEFAULT_URL_GEO_STATE.risks.middleEast },
+    },
+  };
+}
+
+function roundParams(params: LiteParams): LiteParams {
+  const safe = normalizeLiteParams(params);
+  return {
+    silicon: {
+      memorySupplyIndex: round2(safe.silicon.memorySupplyIndex),
+      packaging: round2(safe.silicon.packaging),
+    },
+    energy: {
+      deliverablePower: round2(safe.energy.deliverablePower),
+      leadTime: round2(safe.energy.leadTime),
+      computeDensity: round2(safe.energy.computeDensity),
+    },
+    aiInfrastructure: {
+      cloudEfficiencyIndex: round2(safe.aiInfrastructure.cloudEfficiencyIndex),
+      edgeReadinessIndex: round2(safe.aiInfrastructure.edgeReadinessIndex),
+    },
+    intelligence: {
+      algorithmicEfficiency: round2(safe.intelligence.algorithmicEfficiency),
+      transferRatio: round2(safe.intelligence.transferRatio),
+    },
+    aiApplications: {
+      revenueGrowth: round2(safe.aiApplications.revenueGrowth),
+      grossMargin: round2(safe.aiApplications.grossMargin),
+      unitEconomics: round2(safe.aiApplications.unitEconomics),
+    },
+    capital: {
+      reinvestRatio: round2(safe.capital.reinvestRatio),
+      policyCAPEX: round2(safe.capital.policyCAPEX),
+    },
+  };
+}
+
+function encodeRisk(event: RiskEvent): [RiskStage, string] | [RiskStage, string, number] {
+  const safe = normalizeRiskEvent(event);
+  return safe.durationOverrideQ === undefined
+    ? [safe.stage, safe.startQuarter]
+    : [safe.stage, safe.startQuarter, safe.durationOverrideQ];
+}
+
+export function encodeState(state: SerializableState): string {
+  const config: Record<string, number> = {};
+  for (const key of CONFIG_KEYS) config[key] = round2(state.config[key]);
+
+  const geo = normalizeGeoState(state.geoState);
+  const obj = {
+    v: 2,
+    p: roundParams(state.params),
+    g: {
+      b: round2(geo.blocPct),
+      e: round2(geo.energyPct),
+      r: {
+        t: encodeRisk(geo.risks.taiwan),
+        r: encodeRisk(geo.risks.russiaNato),
+        m: encodeRisk(geo.risks.middleEast),
+      },
+    },
+    t: state.activeTab,
+    m: normalizeV2Metrics(state.selectedMetrics),
+    s: normalizeScenario(state.activeScenario),
+    c: config,
+  };
+  return encodeURIComponent(JSON.stringify(obj));
+}
+
+export function decodeState(hash: string): Partial<SerializableState> {
+  try {
+    const raw = hash.startsWith('#') ? hash.slice(1) : hash;
+    if (!raw) return {};
+    const parsed: unknown = JSON.parse(decodeURIComponent(raw));
+    if (!isRecord(parsed)) return {};
+    if (parsed.v === undefined) return decodeV1(parsed);
+    if (parsed.v === 2) return decodeV2(parsed);
+    return {};
+  } catch {
+    return {};
+  }
+}
+
+function decodeV2(obj: Record<string, unknown>): Partial<SerializableState> {
+  const out: Partial<SerializableState> = {};
+
+  if (obj.p !== undefined) out.params = mergeLiteParams(obj.p);
+  if (obj.g !== undefined) out.geoState = decodeV2Geo(obj.g);
+  if (isTab(obj.t)) out.activeTab = obj.t;
+
+  if (Array.isArray(obj.m)) {
+    const metrics = normalizeV2Metrics(obj.m);
+    if (metrics.length > 0) out.selectedMetrics = metrics;
+  }
+
+  if (typeof obj.s === 'string') out.activeScenario = normalizeScenario(obj.s);
+  if (obj.c !== undefined) out.config = mergeConfig(obj.c);
+  return out;
+}
+
+function decodeV1(obj: Record<string, unknown>): Partial<SerializableState> {
+  const out: Partial<SerializableState> = {};
+
+  if (obj.p !== undefined) out.params = collapseEngineParams(mergeEngineParams(obj.p));
+  if (obj.g !== undefined) out.geoState = decodeV1Geo(obj.g);
+  if (isTab(obj.t)) out.activeTab = obj.t;
+
+  if (Array.isArray(obj.m)) {
+    const metrics = normalizeV1Metrics(obj.m);
+    if (metrics.length > 0) out.selectedMetrics = metrics;
+  }
+
+  if (typeof obj.s === 'string') out.activeScenario = normalizeScenario(obj.s);
+  if (obj.c !== undefined) out.config = mergeConfig(obj.c);
+  return out;
+}
+
+function mergeLiteParams(value: unknown): LiteParams {
+  const root = isRecord(value) ? value : {};
+  const group = (key: keyof LiteParams): Record<string, unknown> =>
+    isRecord(root[key]) ? root[key] : {};
+  const silicon = group('silicon');
+  const energy = group('energy');
+  const infrastructure = group('aiInfrastructure');
+  const intelligence = group('intelligence');
+  const applications = group('aiApplications');
+  const capital = group('capital');
+
+  return normalizeLiteParams({
+    silicon: {
+      memorySupplyIndex: finiteOr(silicon.memorySupplyIndex, DEFAULT_LITE_PARAMS.silicon.memorySupplyIndex),
+      packaging: finiteOr(silicon.packaging, DEFAULT_LITE_PARAMS.silicon.packaging),
+    },
+    energy: {
+      deliverablePower: finiteOr(energy.deliverablePower, DEFAULT_LITE_PARAMS.energy.deliverablePower),
+      leadTime: finiteOr(energy.leadTime, DEFAULT_LITE_PARAMS.energy.leadTime),
+      computeDensity: finiteOr(energy.computeDensity, DEFAULT_LITE_PARAMS.energy.computeDensity),
+    },
+    aiInfrastructure: {
+      cloudEfficiencyIndex: finiteOr(
+        infrastructure.cloudEfficiencyIndex,
+        DEFAULT_LITE_PARAMS.aiInfrastructure.cloudEfficiencyIndex,
+      ),
+      edgeReadinessIndex: finiteOr(
+        infrastructure.edgeReadinessIndex,
+        DEFAULT_LITE_PARAMS.aiInfrastructure.edgeReadinessIndex,
+      ),
+    },
+    intelligence: {
+      algorithmicEfficiency: finiteOr(
+        intelligence.algorithmicEfficiency,
+        DEFAULT_LITE_PARAMS.intelligence.algorithmicEfficiency,
+      ),
+      transferRatio: finiteOr(intelligence.transferRatio, DEFAULT_LITE_PARAMS.intelligence.transferRatio),
+    },
+    aiApplications: {
+      revenueGrowth: finiteOr(applications.revenueGrowth, DEFAULT_LITE_PARAMS.aiApplications.revenueGrowth),
+      grossMargin: finiteOr(applications.grossMargin, DEFAULT_LITE_PARAMS.aiApplications.grossMargin),
+      unitEconomics: finiteOr(applications.unitEconomics, DEFAULT_LITE_PARAMS.aiApplications.unitEconomics),
+    },
+    capital: {
+      reinvestRatio: finiteOr(capital.reinvestRatio, DEFAULT_LITE_PARAMS.capital.reinvestRatio),
+      policyCAPEX: finiteOr(capital.policyCAPEX, DEFAULT_LITE_PARAMS.capital.policyCAPEX),
+    },
+  });
+}
+
+/** Merge a v1 param object onto the exact legacy defaults before collapsing it. */
+function mergeEngineParams(value: unknown): InfraWheelParams {
+  const root = isRecord(value) ? value : {};
+  const copy = structuredEngineDefaults();
+
+  for (const node of Object.keys(copy) as (keyof InfraWheelParams)[]) {
+    const incoming = isRecord(root[node]) ? root[node] : {};
+    const target = copy[node] as Record<string, number>;
+    for (const key of Object.keys(target)) target[key] = finiteOr(incoming[key], target[key]!);
+  }
+  return copy;
+}
+
+function structuredEngineDefaults(): InfraWheelParams {
+  return {
+    silicon: { ...DEFAULT_PARAMS.silicon },
+    energy: { ...DEFAULT_PARAMS.energy },
+    intelligence: { ...DEFAULT_PARAMS.intelligence },
+    capital: { ...DEFAULT_PARAMS.capital },
+    hyperscaleDC: { ...DEFAULT_PARAMS.hyperscaleDC },
+    digitalAI: { ...DEFAULT_PARAMS.digitalAI },
+    spatialCompute: { ...DEFAULT_PARAMS.spatialCompute },
+    physicalAI: { ...DEFAULT_PARAMS.physicalAI },
+  };
+}
+
+function normalizeGeoState(value: GeoState): GeoState {
+  return {
+    blocPct: clamped(value.blocPct, DEFAULT_URL_GEO_STATE.blocPct, 0, 100),
+    energyPct: clamped(value.energyPct, DEFAULT_URL_GEO_STATE.energyPct, 0, 100),
+    risks: {
+      taiwan: normalizeRiskEvent(value.risks.taiwan),
+      russiaNato: normalizeRiskEvent(value.risks.russiaNato),
+      middleEast: normalizeRiskEvent(value.risks.middleEast),
+    },
+  };
+}
+
+function decodeV2Geo(value: unknown): GeoState {
+  const base = cloneDefaultGeo();
+  if (!isRecord(value)) return base;
+  base.blocPct = clamped(value.b, base.blocPct, 0, 100);
+  base.energyPct = clamped(value.e, base.energyPct, 0, 100);
+
+  if (!isRecord(value.r)) return base;
+  for (const riskId of RISK_IDS) {
+    base.risks[riskId] = decodeRisk(value.r[RISK_URL_KEYS[riskId]], base.risks[riskId]);
+  }
+  return base;
+}
+
+function decodeV1Geo(value: unknown): GeoState {
+  const base = cloneDefaultGeo();
+  if (!isRecord(value)) return base;
+  base.blocPct = clamped(value.b, base.blocPct, 0, 100);
+  base.energyPct = clamped(value.e, base.energyPct, 0, 100);
+  base.risks.taiwan.stage = typeof value.t === 'string'
+    ? (V1_TAIWAN_STAGE[value.t] ?? 0)
+    : 0;
+  return base;
+}
+
+function decodeRisk(value: unknown, fallback: RiskEvent): RiskEvent {
+  if (!Array.isArray(value)) return { ...fallback };
+  return normalizeRiskEvent({
+    stage: isRiskStage(value[0]) ? value[0] : fallback.stage,
+    startQuarter: isQuarter(value[1]) ? value[1] : fallback.startQuarter,
+    ...(isDuration(value[2]) ? { durationOverrideQ: Math.round(value[2]) } : {}),
+  });
+}
+
+function normalizeRiskEvent(value: RiskEvent): RiskEvent {
+  return {
+    stage: isRiskStage(value.stage) ? value.stage : 0,
+    startQuarter: isQuarter(value.startQuarter) ? value.startQuarter : DEFAULT_CONFIG.startQuarter,
+    ...(isDuration(value.durationOverrideQ)
+      ? { durationOverrideQ: Math.round(value.durationOverrideQ) }
+      : {}),
+  };
+}
+
+function mergeConfig(value: unknown): SimulationConfig {
+  const incoming = isRecord(value) ? value : {};
+  return {
+    ...DEFAULT_CONFIG,
+    sensitivity: clamped(incoming.sensitivity, DEFAULT_CONFIG.sensitivity, 0.3, 1),
+    hyperscaleAllocRatio: clamped(
+      incoming.hyperscaleAllocRatio,
+      DEFAULT_CONFIG.hyperscaleAllocRatio,
+      0,
+      1,
+    ),
+    metroBSCount: clamped(incoming.metroBSCount, DEFAULT_CONFIG.metroBSCount, 1, Number.MAX_SAFE_INTEGER),
+    coveredAreaKm2: clamped(
+      incoming.coveredAreaKm2,
+      DEFAULT_CONFIG.coveredAreaKm2,
+      1,
+      Number.MAX_SAFE_INTEGER,
+    ),
+  };
+}
+
+function normalizeV2Metrics(values: readonly unknown[]): MetricKey[] {
+  const allowed = new Set<string>(METRIC_KEYS);
+  return unique(values.filter((value): value is MetricKey =>
+    typeof value === 'string' && allowed.has(value),
+  ));
+}
+
+function normalizeV1Metrics(values: readonly unknown[]): MetricKey[] {
+  const mapped: MetricKey[] = [];
+  for (const value of values) {
+    if (typeof value !== 'string') continue;
+    const metric = V1_METRIC_MAP[value];
+    if (metric) mapped.push(metric);
+  }
+  return unique(mapped);
+}
+
+function unique<T>(values: readonly T[]): T[] {
+  return [...new Set(values)];
+}
+
+function normalizeScenario(value: string): ScenarioId {
+  return (SCENARIO_IDS as readonly string[]).includes(value) ? value as ScenarioId : 'custom';
+}
+
+function finiteOr(value: unknown, fallback: number): number {
+  return typeof value === 'number' && Number.isFinite(value) ? value : fallback;
+}
+
+function clamped(value: unknown, fallback: number, min: number, max: number): number {
+  return Math.min(max, Math.max(min, finiteOr(value, fallback)));
+}
+
+function isTab(value: unknown): value is SimTab {
+  return value === 'infrawheel' || value === 'geopolitical';
+}
+
+function isRiskStage(value: unknown): value is RiskStage {
+  return Number.isInteger(value) && typeof value === 'number' && value >= 0 && value <= 4;
+}
+
+function isQuarter(value: unknown): value is string {
+  return typeof value === 'string' && /^\d{4}Q[1-4]$/.test(value);
+}
+
+function isDuration(value: unknown): value is number {
+  return typeof value === 'number' && Number.isFinite(value) && value >= 1;
+}

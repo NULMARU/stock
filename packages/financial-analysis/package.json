@@ -1,0 +1,11 @@
+{
+  "name": "@stock/financial-analysis",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Pure financial statement contracts and FS01-FS12 indicator formulas with explicit applicability and calculation status. No DOM, network or clock.",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts"
+}

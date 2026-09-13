@@ -1,0 +1,121 @@
+/**
+ * About page content — bilingual.
+ */
+
+import type { Locale } from '../i18n';
+
+interface AboutContent {
+  whatIs: { title: string; body: string };
+  twoLoops: { title: string; body: string };
+  howToUse: { title: string; body: string };
+  equationToggle: string;
+  equation: string;
+  sourceToggle: string;
+  footer: string;
+}
+
+const ko: AboutContent = {
+  whatIs: {
+    title: 'AI 플라이휠이란',
+    body: `AI 산업은 하나의 엔진입니다.
+
+실리콘이 만들어지고, 에너지가 공급되고, 클라우드와 엣지 인프라에서 지능이 발전하고, AI 응용이 매출을 만들고, 그 수익이 다시 투자로 돌아갑니다.
+
+이 순환이 빨리 돌수록 AI 산업이 빠르게 성장합니다. 어느 한 곳이 막히면 전체가 느려집니다.
+
+InfraWheel Lite는 이 순환을 6개 표시 노드와 14개 핵심 입력으로 모델링합니다. 슬라이더를 움직여서 "만약 메모리 공급이 부족하면?", "만약 정부가 대규모 투자를 하면?" 같은 질문을 탐색할 수 있습니다.`,
+  },
+  twoLoops: {
+    title: '두 개의 바퀴',
+    body: `AI 플라이휠에는 두 개의 루프가 있습니다.
+
+Hyperscale 루프 (파랑): 이미 돌고 있는 바퀴. 대규모 데이터센터에서 AI 모델을 학습하고, 클라우드 서비스로 매출을 만드는 경로.
+
+Spatial 루프 (초록): 아직 활성화 접근 중인 바퀴. AI-RAN 기지국과 6G 인프라를 통해 Physical AI(로봇, 자율주행)가 실물경제에서 매출을 만드는 경로.
+
+두 루프의 시간차가 투자 타이밍의 핵심입니다.`,
+  },
+  howToUse: {
+    title: '사용법',
+    body: `• 좌측 패널: 기본 모드는 대표 입력 6개, 고급 모드는 전체 14개를 표시합니다. 각 ⓘ 아이콘으로 의미를 확인하세요.
+• 중앙 다이어그램: 6노드 휠이 실시간으로 반응합니다. 노란색 펄스가 현재 병목 노드이며, 선택하면 내부 원인과 입력을 확인할 수 있습니다.
+• 우측 차트: 44분기(2025~2035) 타임라인. 단위가 다른 다섯 지표 중 하나를 선택해 표시합니다.
+• 시나리오: 상단 드롭다운에서 프리셋 시나리오를 선택한 후 미세 조정할 수 있습니다.`,
+  },
+  equationToggle: 'Flywheel Equation 보기',
+  equation: `// Per cycle (quarterly):
+
+// 1. Silicon output
+Training_Silicon = min(S1_BW_mem, S3_Packaging) × hyperscale_alloc_ratio
+Inference_Silicon = min(S2_Cap_mem, S3_Packaging)
+
+// 2. Energy constraint
+Usable_Compute = E1_Power × E3_Density
+
+// 3. Infrastructure conversion
+Hyperscale_Effective = min(Usable_Compute_H, Training_Silicon) × min(1, H1_BW/required_BW) × H2_Util
+Spatial_Effective = SC1_Deploy% × Metro_BS_Count × SC2_TOPS
+
+// 4. Intelligence
+Frontier_Capability = Hyperscale_Effective × I1_Efficiency
+Edge_Capability = Frontier × I2_Transfer
+Spatial_Latency = f(SC1, SC2, metroBSCount, coveredArea)  // sqrt density model
+
+// 5. Applications
+Digital_Revenue = prev_Revenue × (1 + D1_Growth%)
+Physical_Active = (I2_Transfer > threshold) AND (Spatial_Latency < 10ms)
+Physical_Revenue = PA1_Fleet × PA2_UnitEcon × Unit_Cost
+
+// 6. Capital (with confidence feedback)
+Bottleneck_Ratio = min(actual/potential across all nodes)
+Confidence = Bottleneck_Ratio ^ sensitivity
+Effective_Reinvest = C1_Reinvest% × Confidence
+Total_CAPEX = (Digital_CF + Physical_CF) × Effective_Reinvest + C2_Policy
+
+// 7. Feed back to Silicon (with lag)
+Silicon_Orders(t+lag) += Total_CAPEX × silicon_share`,
+  sourceToggle: '파라미터별 데이터 출처 상세',
+  footer:
+    'AI 플라이휠은 정지훈(JJ)의 저서 『정지훈의 AI투자 강의』(한빛미디어)의 핵심 프레임워크입니다. 책에서 각 노드의 산업 분석, 투자 전략, 시나리오별 타임라인을 상세히 다룹니다.',
+};
+
+const en: AboutContent = {
+  whatIs: {
+    title: 'What is the AI Flywheel?',
+    body: `The AI industry is an engine.
+
+Silicon is produced, energy is delivered, intelligence advances across cloud and edge infrastructure, AI applications generate revenue, and that revenue flows back into investment.
+
+The faster this cycle spins, the faster AI grows. When any link gets blocked, the whole system slows down.
+
+InfraWheel Lite models this cycle through six display nodes and 14 public inputs. Move the sliders to explore questions like "What if memory supply falls short?" or "What if a government makes a massive investment?"`,
+  },
+  twoLoops: {
+    title: 'Two Loops',
+    body: `The AI Flywheel has two loops.
+
+Hyperscale Loop (blue): Already spinning. Trains AI models in large data centers and generates revenue through cloud services.
+
+Spatial Loop (teal): Approaching activation. Uses AI-RAN base stations and 6G infrastructure to let Physical AI (robots, autonomous vehicles) generate revenue in the real economy.
+
+The time gap between these two loops is the key to investment timing.`,
+  },
+  howToUse: {
+    title: 'How to Use',
+    body: `• Left panel: Basic mode shows six representative inputs; Advanced shows all 14. Select ⓘ for an explanation.
+• Center diagram: The six-node wheel reacts in real time. The yellow pulse marks the current top-level bottleneck; select it for the internal cause and inputs.
+• Right chart: A 44-quarter timeline (2025–2035). Select one of five differently scaled metrics at a time.
+• Scenarios: Pick a preset from the top dropdown, then fine-tune.`,
+  },
+  equationToggle: 'View Flywheel Equation',
+  equation: ko.equation, // same math notation
+  sourceToggle: 'Detailed Data Sources by Parameter',
+  footer:
+    'The AI Flywheel is the core framework from "Jihoon Jeong\'s AI Investment Lectures" by Jihoon Jeong (JJ), published by Hanbit Media. The book covers detailed industry analysis, investment strategies, and scenario timelines for each node.',
+};
+
+const dictionaries: Record<Locale, AboutContent> = { ko, en };
+
+export function getAboutContent(locale: Locale): AboutContent {
+  return dictionaries[locale];
+}

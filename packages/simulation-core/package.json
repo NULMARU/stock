@@ -1,0 +1,11 @@
+{
+  "name": "@stock/simulation-core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Model contracts, unit/time rules, execution, validation and diagnostics for the simulation lab. Pure TypeScript: no DOM, network, React, clock or global RNG.",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts"
+}

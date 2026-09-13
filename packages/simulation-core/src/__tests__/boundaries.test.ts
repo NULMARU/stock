@@ -1,0 +1,4 @@
+import {it,expect} from 'vitest';
+import {validateSamplingSpec,checkBudget,gridInputs,sweepInput,type SamplingSpec} from '../index';
+it('rejects invalid distribution and singular non-PSD correlations',()=>{const spec:SamplingSpec={sampleCount:10,seed:42,distributions:{x:{kind:'normal',mean:0,sd:1},y:{kind:'normal',mean:0,sd:1},z:{kind:'normal',mean:0,sd:1}},correlation:{variables:['x','y','z'],matrix:[[1,1,0],[1,1,.5],[0,.5,1]]}};expect(validateSamplingSpec(spec).ok).toBe(false);expect(validateSamplingSpec({...spec,correlation:undefined,distributions:{x:{kind:'unknown'} as never}}).ok).toBe(false);});
+it('rejects nonfinite budgets and invalid grid ranges',()=>{expect(checkBudget({x:1},NaN)).not.toBeNull();expect(()=>gridInputs({x:1,y:2},'x','x',{min:0,max:1,steps:2},{min:0,max:1,steps:2},p=>p.x)).toThrow();expect(()=>sweepInput({x:1},'x',0,Infinity,2,p=>p.x)).toThrow();});

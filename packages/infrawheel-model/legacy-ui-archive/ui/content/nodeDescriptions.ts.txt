@@ -1,0 +1,97 @@
+/** Bilingual descriptions for the six Lite display nodes. */
+
+import type { LiteNodeId } from '../../types';
+import type { Locale } from '../i18n';
+
+export interface NodeDescription {
+  name: string;
+  role: string;
+  transition: string;
+  paramKeys: string[];
+}
+
+type NodeDescMap = Record<LiteNodeId, NodeDescription>;
+
+const ko: NodeDescMap = {
+  silicon: {
+    name: '실리콘',
+    role: '메모리 공급과 첨단 패키징이 AI 연산의 물리적 천장을 만듭니다. 메모리 공급지수는 대역폭·용량 메모리를 함께 나타내고, 패키징 생산력은 완성 칩 출하를 제한합니다.',
+    transition: '→ 에너지: 더 많은 실리콘은 더 많은 전력과 냉각 용량을 요구합니다.',
+    paramKeys: ['memorySupplyIndex', 'packaging'],
+  },
+  energy: {
+    name: '에너지',
+    role: '발전량보다 데이터센터에 실제 연결되는 전력이 중요합니다. 구축기간과 전력당 연산효율이 같은 전력으로 얼마나 빨리 연산을 늘릴지 결정합니다.',
+    transition: '→ AI 인프라: 가용 전력은 클라우드와 엣지 경로의 공통 공급 제약입니다.',
+    paramKeys: ['deliverablePower', 'leadTime', 'computeDensity'],
+  },
+  aiInfrastructure: {
+    name: 'AI 인프라',
+    role: '클라우드의 네트워크·가동 효율과 엣지의 배포율·노드 성능을 두 복합지수로 보여줍니다. 내부의 더 약한 경로가 이 상위 노드의 병목 원인이 됩니다.',
+    transition: '→ 지능: 클라우드는 프론티어 능력을, 엣지는 물리 세계의 추론 접근성을 키웁니다.',
+    paramKeys: ['cloudEfficiencyIndex', 'edgeReadinessIndex'],
+  },
+  intelligence: {
+    name: '지능',
+    role: '알고리즘 효율은 같은 연산으로 더 많은 능력을 만들고, 엣지 전환율은 프론티어 모델의 능력이 현장 장치에 얼마나 보존되는지 나타냅니다.',
+    transition: '→ AI 응용: 지능 향상은 디지털 서비스의 경제성과 피지컬 AI 활성 조건을 함께 개선합니다.',
+    paramKeys: ['algorithmicEfficiency', 'transferRatio'],
+  },
+  aiApplications: {
+    name: 'AI 응용',
+    role: '디지털 AI의 성장·마진과 피지컬 AI의 사업성을 하나의 매출 노드로 묶습니다. 내부의 디지털 또는 피지컬 경로가 세부 병목 원인으로 남습니다.',
+    transition: '→ 자본: 응용 매출과 현금흐름이 다음 인프라 투자 재원을 만듭니다.',
+    paramKeys: ['revenueGrowth', 'grossMargin', 'unitEconomics'],
+  },
+  capital: {
+    name: '자본',
+    role: '영업현금흐름 재투자와 정책자본이 플라이휠의 속도를 결정합니다. 신뢰도가 낮아지면 민간 재투자가 줄고 정책자본이 외부 완충 역할을 합니다.',
+    transition: '→ 실리콘: 자본은 시차를 두고 메모리와 패키징 공급 확대로 돌아옵니다.',
+    paramKeys: ['reinvestRatio', 'policyCAPEX'],
+  },
+};
+
+const en: NodeDescMap = {
+  silicon: {
+    name: 'Silicon',
+    role: 'Memory supply and advanced packaging set the physical ceiling for AI compute. The memory supply index combines bandwidth and capacity memory; packaging determines how many completed chips can ship.',
+    transition: '→ Energy: more silicon requires more connected power and cooling capacity.',
+    paramKeys: ['memorySupplyIndex', 'packaging'],
+  },
+  energy: {
+    name: 'Energy',
+    role: 'Power actually connected to data centers matters more than headline generation. Build time and compute per watt determine how quickly usable compute can grow.',
+    transition: '→ AI Infrastructure: available power is the shared supply constraint for cloud and edge paths.',
+    paramKeys: ['deliverablePower', 'leadTime', 'computeDensity'],
+  },
+  aiInfrastructure: {
+    name: 'AI Infrastructure',
+    role: 'Two composite indices capture cloud network/utilization efficiency and edge deployment/node performance. The weaker internal path remains visible as this node’s bottleneck cause.',
+    transition: '→ Intelligence: cloud builds frontier capability while edge expands real-world inference access.',
+    paramKeys: ['cloudEfficiencyIndex', 'edgeReadinessIndex'],
+  },
+  intelligence: {
+    name: 'Intelligence',
+    role: 'Algorithmic efficiency creates more capability from the same compute. Edge transfer measures how much frontier capability survives deployment onto smaller, local devices.',
+    transition: '→ AI Applications: better intelligence improves both digital economics and Physical AI activation conditions.',
+    paramKeys: ['algorithmicEfficiency', 'transferRatio'],
+  },
+  aiApplications: {
+    name: 'AI Applications',
+    role: 'Digital AI growth and margins join Physical AI business viability in one revenue node. The digital or physical path remains visible as the detailed bottleneck cause.',
+    transition: '→ Capital: application revenue and cash flow fund the next infrastructure investment cycle.',
+    paramKeys: ['revenueGrowth', 'grossMargin', 'unitEconomics'],
+  },
+  capital: {
+    name: 'Capital',
+    role: 'Operating cash reinvestment and policy capital set the flywheel throttle. When confidence falls, private reinvestment contracts and policy capital acts as an external buffer.',
+    transition: '→ Silicon: capital returns, after a lag, as added memory and packaging supply.',
+    paramKeys: ['reinvestRatio', 'policyCAPEX'],
+  },
+};
+
+const dictionaries: Record<Locale, NodeDescMap> = { ko, en };
+
+export function getNodeDescription(nodeId: LiteNodeId, locale: Locale): NodeDescription {
+  return dictionaries[locale][nodeId];
+}

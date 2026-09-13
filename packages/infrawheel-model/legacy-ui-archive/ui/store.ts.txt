@@ -1,0 +1,249 @@
+/**
+ * Zustand store for the 14-input Lite simulator and its geopolitical overlay.
+ * Lite parameters are the sole editable source of truth; the 18 engine inputs stay
+ * behind the adapter boundary.
+ */
+
+import { create } from 'zustand';
+import { DEFAULT_CONFIG } from '../defaults';
+import { DEFAULT_LITE_PARAMS } from '../liteMapping';
+import { simulateLite } from '../liteEngine';
+import { DEFAULT_GEO_STATE, simulateGeopolitical } from '../geopolitical';
+import {
+  LITE_SCENARIO_BY_ID,
+  BASE_SCENARIO_ID,
+  CUSTOM_SCENARIO_ID,
+} from '../scenarios';
+import { encodeState, decodeState } from './urlState';
+import type { ScenarioId } from './urlState';
+import type {
+  GeoState,
+  LiteCycleOutput,
+  LiteParams,
+  RiskEvent,
+  RiskId,
+  RiskStage,
+  SimulationConfig,
+} from '../types';
+import type { TranslationKey } from './i18n';
+
+export type MetricKey =
+  | 'totalRevenue'
+  | 'totalCAPEX'
+  | 'bottleneckHealth'
+  | 'cloudLoopSpeed'
+  | 'edgeLoopSpeed';
+
+export const METRIC_I18N: Record<MetricKey, TranslationKey> = {
+  totalRevenue: 'metric.totalRevenue',
+  totalCAPEX: 'metric.totalCAPEX',
+  bottleneckHealth: 'metric.bottleneckHealth',
+  cloudLoopSpeed: 'metric.cloudLoopSpeed',
+  edgeLoopSpeed: 'metric.edgeLoopSpeed',
+};
+
+export const ALL_METRICS: MetricKey[] = Object.keys(METRIC_I18N) as MetricKey[];
+export const DEFAULT_METRICS: MetricKey[] = ['totalRevenue'];
+
+export type SimTab = 'infrawheel' | 'geopolitical';
+
+interface SimStore {
+  config: SimulationConfig;
+  selectedMetrics: MetricKey[];
+  activeTab: SimTab;
+  activeScenario: ScenarioId;
+  params: LiteParams;
+  results: LiteCycleOutput[];
+  geoState: GeoState;
+  geoResults: LiteCycleOutput[];
+
+  setParam: <N extends keyof LiteParams>(
+    node: N,
+    key: keyof LiteParams[N],
+    value: number,
+  ) => void;
+  resetParams: () => void;
+  applyScenario: (id: ScenarioId) => void;
+  toggleMetric: (metric: MetricKey) => void;
+  setActiveTab: (tab: SimTab) => void;
+  setGeoBloc: (pct: number) => void;
+  setGeoEnergy: (pct: number) => void;
+  setRiskEvent: (id: RiskId, event: RiskEvent) => void;
+  setRiskStage: (id: RiskId, stage: RiskStage) => void;
+  applyGeoPreset: (blocPct: number, energyPct: number, taiwanStage?: RiskStage) => void;
+}
+
+function cloneLiteParams(params: LiteParams): LiteParams {
+  return {
+    silicon: { ...params.silicon },
+    energy: { ...params.energy },
+    aiInfrastructure: { ...params.aiInfrastructure },
+    intelligence: { ...params.intelligence },
+    aiApplications: { ...params.aiApplications },
+    capital: { ...params.capital },
+  };
+}
+
+function cloneGeoState(geo: GeoState): GeoState {
+  return {
+    blocPct: geo.blocPct,
+    energyPct: geo.energyPct,
+    risks: {
+      taiwan: { ...geo.risks.taiwan },
+      russiaNato: { ...geo.risks.russiaNato },
+      middleEast: { ...geo.risks.middleEast },
+    },
+  };
+}
+
+function runSim(params: LiteParams, config: SimulationConfig): LiteCycleOutput[] {
+  return simulateLite(params, config);
+}
+
+function computeGeo(params: LiteParams, geo: GeoState, config: SimulationConfig) {
+  return { geoResults: simulateGeopolitical(params, geo, config) };
+}
+
+function scenarioSlice(id: ScenarioId, geoState: GeoState) {
+  const scenario = LITE_SCENARIO_BY_ID[id];
+  const params = cloneLiteParams(scenario?.params ?? DEFAULT_LITE_PARAMS);
+  const config = scenario?.config
+    ? { ...DEFAULT_CONFIG, ...scenario.config }
+    : { ...DEFAULT_CONFIG };
+  return {
+    activeScenario: scenario ? id : BASE_SCENARIO_ID,
+    params,
+    config,
+    results: runSim(params, config),
+    ...computeGeo(params, geoState, config),
+  };
+}
+
+const MARGIN_TARGET = 75;
+const BASE_REF_RESULTS = simulateLite(DEFAULT_LITE_PARAMS, DEFAULT_CONFIG);
+
+function quarterReachingMargin(results: LiteCycleOutput[]): number {
+  return results.findIndex((cycle) => cycle.nodeOutputs.effectiveMargin >= MARGIN_TARGET - 1e-9);
+}
+
+export function marginLeadVsBase(results: LiteCycleOutput[]): number | null {
+  const current = quarterReachingMargin(results);
+  const base = quarterReachingMargin(BASE_REF_RESULTS);
+  if (current < 0 || base < 0) return null;
+  return base - current;
+}
+
+export function physicalAIActivationQuarter(results: LiteCycleOutput[]): string | null {
+  return results.find((cycle) => cycle.nodeOutputs.physicalAIActive)?.quarter ?? null;
+}
+
+export const useSimStore = create<SimStore>((set) => {
+  const decoded = decodeState(typeof location !== 'undefined' ? location.hash : '');
+  const params = cloneLiteParams(decoded.params ?? DEFAULT_LITE_PARAMS);
+  const config = decoded.config ?? { ...DEFAULT_CONFIG };
+  const geoState = cloneGeoState(decoded.geoState ?? DEFAULT_GEO_STATE);
+  const activeTab = decoded.activeTab ?? 'infrawheel';
+  const selectedMetrics = decoded.selectedMetrics?.length
+    ? [decoded.selectedMetrics[0]!]
+    : DEFAULT_METRICS;
+  const activeScenario = decoded.activeScenario ?? BASE_SCENARIO_ID;
+
+  return {
+    config,
+    selectedMetrics,
+    activeTab,
+    activeScenario,
+    params,
+    results: runSim(params, config),
+    geoState,
+    ...computeGeo(params, geoState, config),
+
+    setParam: (node, key, value) =>
+      set((state) => {
+        if (!Number.isFinite(value)) return state;
+        const newParams = {
+          ...state.params,
+          [node]: { ...state.params[node], [key]: value },
+        } as LiteParams;
+        return {
+          params: newParams,
+          activeScenario: CUSTOM_SCENARIO_ID,
+          results: runSim(newParams, state.config),
+          ...computeGeo(newParams, state.geoState, state.config),
+        };
+      }),
+
+    resetParams: () => set((state) => scenarioSlice(BASE_SCENARIO_ID, state.geoState)),
+    applyScenario: (id) => set((state) => scenarioSlice(id, state.geoState)),
+    toggleMetric: (metric) => set({ selectedMetrics: [metric] }),
+    setActiveTab: (tab) => set({ activeTab: tab }),
+
+    setGeoBloc: (pct) =>
+      set((state) => {
+        const geo = { ...state.geoState, blocPct: Math.min(100, Math.max(0, pct)) };
+        return { geoState: geo, ...computeGeo(state.params, geo, state.config) };
+      }),
+
+    setGeoEnergy: (pct) =>
+      set((state) => {
+        const geo = { ...state.geoState, energyPct: Math.min(100, Math.max(0, pct)) };
+        return { geoState: geo, ...computeGeo(state.params, geo, state.config) };
+      }),
+
+    setRiskEvent: (id, event) =>
+      set((state) => {
+        const geo: GeoState = {
+          ...state.geoState,
+          risks: { ...state.geoState.risks, [id]: { ...event } },
+        };
+        return { geoState: geo, ...computeGeo(state.params, geo, state.config) };
+      }),
+
+    setRiskStage: (id, stage) =>
+      set((state) => {
+        const geo: GeoState = {
+          ...state.geoState,
+          risks: {
+            ...state.geoState.risks,
+            [id]: { ...state.geoState.risks[id], stage },
+          },
+        };
+        return { geoState: geo, ...computeGeo(state.params, geo, state.config) };
+      }),
+
+    applyGeoPreset: (blocPct, energyPct, taiwanStage = 0) =>
+      set((state) => {
+        const geo: GeoState = {
+          blocPct,
+          energyPct,
+          risks: {
+            taiwan: {
+              stage: taiwanStage,
+              startQuarter: state.geoState.risks.taiwan.startQuarter,
+            },
+            russiaNato: { ...DEFAULT_GEO_STATE.risks.russiaNato },
+            middleEast: { ...DEFAULT_GEO_STATE.risks.middleEast },
+          },
+        };
+        return { geoState: geo, ...computeGeo(state.params, geo, state.config) };
+      }),
+  };
+});
+
+if (typeof history !== 'undefined' && typeof location !== 'undefined') {
+  useSimStore.subscribe((state) => {
+    try {
+      const hash = encodeState({
+        params: state.params,
+        geoState: state.geoState,
+        activeTab: state.activeTab,
+        selectedMetrics: state.selectedMetrics,
+        activeScenario: state.activeScenario,
+        config: state.config,
+      });
+      history.replaceState(null, '', `#${hash}`);
+    } catch {
+      // URL synchronization must never make the simulator unusable.
+    }
+  });
+}

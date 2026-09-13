@@ -1,0 +1,185 @@
+import { describe, expect, it } from 'vitest';
+import { DEFAULT_CONFIG } from '../defaults';
+import { DEFAULT_LITE_PARAMS } from '../liteMapping';
+import {
+  DEFAULT_URL_GEO_STATE,
+  decodeState,
+  encodeState,
+} from '../ui/urlState';
+import type { SerializableState } from '../ui/urlState';
+
+/**
+ * Literal output captured from the original unversioned encoder. Do not replace
+ * this with an encodeState call: it is the compatibility contract for v1 links.
+ */
+const LEGACY_V1_HASH = '%7B%22p%22%3A%7B%22silicon%22%3A%7B%22bwMemory%22%3A72.5%2C%22capMemory%22%3A410%2C%22packaging%22%3A88%7D%2C%22energy%22%3A%7B%22deliverablePower%22%3A45%2C%22leadTime%22%3A33%2C%22computeDensity%22%3A20%7D%2C%22intelligence%22%3A%7B%22algorithmicEfficiency%22%3A190%2C%22transferRatio%22%3A48%7D%2C%22capital%22%3A%7B%22reinvestRatio%22%3A40%2C%22policyCAPEX%22%3A30%7D%2C%22hyperscaleDC%22%3A%7B%22bisectionBW%22%3A75%2C%22utilization%22%3A43%7D%2C%22digitalAI%22%3A%7B%22revenueGrowth%22%3A45%2C%22grossMargin%22%3A50%7D%2C%22spatialCompute%22%3A%7B%22deploymentRate%22%3A3%2C%22perNodeTOPS%22%3A350%7D%2C%22physicalAI%22%3A%7B%22fleetDeployment%22%3A70%2C%22unitEconomics%22%3A0.35%7D%7D%2C%22g%22%3A%7B%22b%22%3A20%2C%22e%22%3A75%2C%22t%22%3A%22blockade%22%7D%2C%22t%22%3A%22geopolitical%22%2C%22m%22%3A%5B%22totalRevenue%22%2C%22confidence%22%5D%2C%22s%22%3A%22memoryWall%22%2C%22c%22%3A%7B%22sensitivity%22%3A0.9%2C%22hyperscaleAllocRatio%22%3A0.7%2C%22metroBSCount%22%3A500000%2C%22coveredAreaKm2%22%3A300000%7D%7D';
+
+const sample: SerializableState = {
+  params: {
+    ...DEFAULT_LITE_PARAMS,
+    silicon: { memorySupplyIndex: 27.125, packaging: 88 },
+    aiInfrastructure: { cloudEfficiencyIndex: 61.5, edgeReadinessIndex: 70 },
+  },
+  geoState: {
+    blocPct: 20,
+    energyPct: 75,
+    risks: {
+      taiwan: { stage: 3, startQuarter: '2027Q2' },
+      russiaNato: { stage: 2, startQuarter: '2028Q1', durationOverrideQ: 7 },
+      middleEast: { stage: 0, startQuarter: '2025Q1' },
+    },
+  },
+  activeTab: 'geopolitical',
+  selectedMetrics: ['totalRevenue', 'cloudLoopSpeed'],
+  activeScenario: 'memoryWall',
+  config: { ...DEFAULT_CONFIG, sensitivity: 0.9, coveredAreaKm2: 300_000 },
+};
+
+const hashObject = (value: object) => encodeURIComponent(JSON.stringify(value));
+
+describe('URL v2 round-trip', () => {
+  it('writes v:2 and decodes the 14-input state', () => {
+    const hash = encodeState(sample);
+    const raw = JSON.parse(decodeURIComponent(hash)) as Record<string, unknown>;
+    expect(raw.v).toBe(2);
+
+    const decoded = decodeState(hash);
+    expect(decoded.params!.silicon).toEqual({ memorySupplyIndex: 27.13, packaging: 88 });
+    expect(decoded.params!.aiInfrastructure).toEqual({
+      cloudEfficiencyIndex: 61.5,
+      edgeReadinessIndex: 70,
+    });
+    expect(decoded.geoState).toEqual(sample.geoState);
+    expect(decoded.selectedMetrics).toEqual(['totalRevenue', 'cloudLoopSpeed']);
+    expect(decoded.activeScenario).toBe('memoryWall');
+    expect(decoded.config!.coveredAreaKm2).toBe(300_000);
+  });
+
+  it('tolerates a leading # and is stable on re-encode', () => {
+    const hash = encodeState(sample);
+    const decoded = decodeState(`#${hash}`);
+    const reencoded = encodeState({ ...sample, ...decoded } as SerializableState);
+    expect(reencoded).toBe(hash);
+  });
+
+  it('rejects unknown future versions rather than guessing their schema', () => {
+    expect(decodeState(hashObject({ v: 3, p: sample.params }))).toEqual({});
+  });
+});
+
+describe('literal v1 migration', () => {
+  it('migrates an original encoder hash without throwing', () => {
+    const decoded = decodeState(`#${LEGACY_V1_HASH}`);
+    expect(decoded.params!.silicon.packaging).toBe(88);
+    expect(decoded.params!.aiInfrastructure.cloudEfficiencyIndex).toBe(50);
+    expect(decoded.params!.aiInfrastructure.edgeReadinessIndex).toBe(50);
+    expect(decoded.geoState).toEqual({
+      blocPct: 20,
+      energyPct: 75,
+      risks: {
+        taiwan: { stage: 3, startQuarter: DEFAULT_CONFIG.startQuarter },
+        russiaNato: { stage: 0, startQuarter: DEFAULT_CONFIG.startQuarter },
+        middleEast: { stage: 0, startQuarter: DEFAULT_CONFIG.startQuarter },
+      },
+    });
+    expect(decoded.selectedMetrics).toEqual(['totalRevenue']);
+    expect(decoded.activeScenario).toBe('memoryWall');
+    expect(decoded.config!.sensitivity).toBe(0.9);
+  });
+
+  it.each([
+    ['off', 0],
+    ['islands', 1],
+    ['quarantine', 2],
+    ['blockade', 3],
+    ['invasion', 4],
+  ] as const)('maps Taiwan stage %s to %i', (legacy, stage) => {
+    const decoded = decodeState(hashObject({ g: { b: 50, e: 50, t: legacy } }));
+    expect(decoded.geoState!.risks.taiwan.stage).toBe(stage);
+    expect(decoded.geoState!.risks.russiaNato.stage).toBe(0);
+    expect(decoded.geoState!.risks.middleEast.stage).toBe(0);
+  });
+
+  it('maps every known legacy metric and removes unknown or retired metrics', () => {
+    const decoded = decodeState(hashObject({
+      m: [
+        'totalRevenue',
+        'digitalRevenue',
+        'physicalRevenue',
+        'totalCAPEX',
+        'bottleneckRatio',
+        'hyperscaleEffective',
+        'frontierCapability',
+        'spatialEffective',
+        'confidence',
+        'madeUpMetric',
+      ],
+    }));
+    expect(decoded.selectedMetrics).toEqual([
+      'totalRevenue',
+      'totalCAPEX',
+      'bottleneckHealth',
+      'cloudLoopSpeed',
+      'edgeLoopSpeed',
+    ]);
+  });
+
+  it.each([
+    ['base2026', 'base2026'],
+    ['energyBottleneck', 'energyBottleneck'],
+    ['policyBoostKorea', 'custom'],
+    ['aiWinter', 'custom'],
+    ['unknown', 'custom'],
+  ] as const)('maps legacy scenario %s to %s', (legacy, migrated) => {
+    expect(decodeState(hashObject({ s: legacy })).activeScenario).toBe(migrated);
+  });
+
+  it('treats a versionless partial hash as v1', () => {
+    expect(decodeState(hashObject({ t: 'infrawheel' }))).toEqual({ activeTab: 'infrawheel' });
+  });
+});
+
+describe('defensive decoding', () => {
+  it('returns {} for empty or malformed hashes', () => {
+    expect(decodeState('')).toEqual({});
+    expect(decodeState('not-json')).toEqual({});
+    expect(decodeState('%')).toEqual({});
+  });
+
+  it('allow-lists v2 metrics, removes duplicates, and ignores an empty result', () => {
+    const valid = decodeState(hashObject({
+      v: 2,
+      m: ['totalRevenue', 'unknown', 'totalRevenue', 'edgeLoopSpeed'],
+    }));
+    expect(valid.selectedMetrics).toEqual(['totalRevenue', 'edgeLoopSpeed']);
+    expect(decodeState(hashObject({ v: 2, m: ['unknown'] })).selectedMetrics).toBeUndefined();
+  });
+
+  it('clamps v2 params and replaces non-finite values with defaults', () => {
+    const decoded = decodeState(encodeURIComponent(
+      '{"v":2,"p":{"silicon":{"memorySupplyIndex":1e999,"packaging":-10},"aiInfrastructure":{"edgeReadinessIndex":999}}}',
+    ));
+    expect(decoded.params!.silicon.memorySupplyIndex).toBe(50);
+    expect(decoded.params!.silicon.packaging).toBe(30);
+    expect(decoded.params!.aiInfrastructure.edgeReadinessIndex).toBe(100);
+  });
+
+  it('clamps axes/config and falls back for invalid risk tuples', () => {
+    const decoded = decodeState(hashObject({
+      v: 2,
+      g: { b: 999, e: 'x', r: { t: [9, 'today'], r: [2, '2028Q3', 4.4] } },
+      c: { sensitivity: 99, hyperscaleAllocRatio: -2, metroBSCount: -1 },
+    }));
+    expect(decoded.geoState!.blocPct).toBe(100);
+    expect(decoded.geoState!.energyPct).toBe(DEFAULT_URL_GEO_STATE.energyPct);
+    expect(decoded.geoState!.risks.taiwan).toEqual({ stage: 0, startQuarter: '2025Q1' });
+    expect(decoded.geoState!.risks.russiaNato).toEqual({
+      stage: 2,
+      startQuarter: '2028Q3',
+      durationOverrideQ: 4,
+    });
+    expect(decoded.config!.sensitivity).toBe(1);
+    expect(decoded.config!.hyperscaleAllocRatio).toBe(0);
+    expect(decoded.config!.metroBSCount).toBe(1);
+  });
+});
